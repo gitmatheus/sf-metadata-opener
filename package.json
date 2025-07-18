@@ -1,0 +1,82 @@
+{
+  "name": "sf-metadata-opener",
+  "displayName": "sf-metadata-opener",
+  "description": "Right-click to open Salesforce metadata in the browser (Flow Builder, Run Mode, etc.)",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.101.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onCommand:extension.openCurrentFlowFileInBuilder",
+    "onCommand:extension.openFlowInBuilder",
+    "onCommand:extension.openFlowInRunMode"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.openFlowInBuilder",
+        "title": "Open Flow in Builder",
+        "category": "SFDX"
+      },
+      {
+        "command": "extension.openFlowInRunMode",
+        "title": "Open Flow in Run Mode",
+        "category": "SFDX"
+      },
+      {
+        "command": "extension.openCurrentFlowFileInBuilder",
+        "title": "Open Current Flow in Builder",
+        "category": "SFDX"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.openFlowInBuilder",
+          "when": "resourceFilename =~ /\\.flow-meta\\.xml$/",
+          "group": "navigation@1"
+        },
+        {
+          "command": "extension.openFlowInRunMode",
+          "when": "resourceFilename =~ /\\.flow-meta\\.xml$/",
+          "group": "navigation@2"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test",
+    "local-no-ext": "npm run compile && code --disable-extensions --extensionDevelopmentPath=${PWD}",
+    "local": "npm run compile && code --extensionDevelopmentPath=${PWD}"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.102.0",
+    "@types/xml2js": "^0.4.14",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "@vscode/test-cli": "^0.0.8",
+    "@vscode/test-electron": "^2.3.9",
+    "eslint": "^8.57.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "xml2js": "^0.6.2"
+  }
+}
