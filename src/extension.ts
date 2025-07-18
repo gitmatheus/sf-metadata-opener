@@ -19,13 +19,6 @@ export function activate(context: vscode.ExtensionContext) {
       cmd.openCurrentFlowFileInBuilder
     )
   );
-
-  utils.showInformationMessage(
-    "Extension 'sf-metadata-opener' is now active! Use the commands to open Salesforce metadata in the browser."
-  );
-  console.log(
-    'Congratulations, your extension "sf-metadata-opener" is now active!'
-  );
 }
 
 // This method is called when your extension is deactivated

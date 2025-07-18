@@ -20,7 +20,7 @@ export async function getLatestFlowInfo(
       cancellable: false,
     },
     async (progress) => {
-      progress.report({ message: `Deploying Flow metadata to Salesforce...` });
+      progress.report({ message: `Deploying Flow metadata...` });
 
       // 🧠 Deploy flow XML file before querying
       const deployCmd = `sf project deploy start --source-dir "${filePath}" --json`;
@@ -39,7 +39,7 @@ export async function getLatestFlowInfo(
         }
 
         progress.report({
-          message: `Querying latest version for Flow: ${flowName}`,
+          message: `Querying latest version for Flow: ${flowName} ...`,
         });
 
         // Uses get record command with tooling API to get the latest Flow version
