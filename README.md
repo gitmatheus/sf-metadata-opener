@@ -19,11 +19,13 @@ Currently supports **Flows**, with more metadata types on the roadmap (Other Met
 - **Right-click a `.flow-meta.xml`** file in the Explorer:
 
   - `SFDX: Open Flow in Flow Builder`
-  - `SFDX: Open Flow in Run Mode` _(only for supported Flow types like Screen Flows)_
+  - `SFDX: Open Flow in Run Mode`
 
 - **Use the Command Palette** with a `.flow-meta.xml` file active:
   - `SFDX: Open Current Flow in Flow Builder`
   - `SFDX: Open Current Flow in Run Mode`
+
+The commands to open the flow in Run Moe will only support certain Flow types, like Screen Flows.
 
 Both entry points share robust logic:
 
