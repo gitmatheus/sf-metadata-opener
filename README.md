@@ -59,3 +59,15 @@ Temporarily enable all context menu actions with this in `package.json`:
 ```json
 "when": "true"
 ```
+
+Use with caution. This disables file filtering.
+
+## 📣 Feedback
+
+Found a bug? Have a cool use case in mind?
+
+Create an [issue](https://github.com/gitmatheus/sf-metadata-opener/issues) or send me an email on contact@matheus.dev.
+
+---
+
+Made with ❤️ for Salesforce Developers and Trailblazers.
