@@ -31,7 +31,7 @@ export async function openFlow(filePath: string, mode: FlowOpenMode): Promise<vo
     // Validate if Run Mode is allowed
     if (!flowInfo.ProcessType || !sf.shouldOfferRunMode(flowInfo.ProcessType)) {
       utils.showWarningMessage(
-        `⚠️ Run Mode is not supported for this Flow type: ${flowInfo.ProcessType || "Unknown"}`
+        `Run Mode is not supported for this Flow type: ${flowInfo.ProcessType || "Unknown"}`
       );
       return;
     }
@@ -48,7 +48,7 @@ export async function openFlow(filePath: string, mode: FlowOpenMode): Promise<vo
   try {
     await utils.runShellCommand(openCommand);
     const action = mode === FlowOpenMode.RUN ? "Run Mode" : "Flow Builder";
-    utils.showInformationMessage(`✅ Opened Flow in ${action} via CLI`);
+    utils.showInformationMessage(`Opened Flow in ${action} via CLI`);
     
   } catch (error: any) {
     utils.showErrorMessage(`Failed to open Flow via CLI: ${error.message}`);
