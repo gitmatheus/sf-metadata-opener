@@ -1,22 +1,61 @@
-# Salesforce Metadata Opener
+# 🚀 Salesforce Metadata Opener
 
-Quickly open metadata in your Salesforce org directly from VS Code!
+A sleek, no-friction way to open Salesforce metadata directly in your browser — right from VS Code.
 
-This extension adds right-click options to metadata files like:
+Currently supports **Flows**, with more metadata types on the roadmap (Other Metadata, Reports, Dashboards, etc.).
 
-- **Flows**: Open in Flow Builder or Run Mode
-- [Planned] **Apex Classes**, **LWC Components**, **Triggers**, etc.
+## ✨ Features
+
+✅ Context-aware file actions  
+✅ Command Palette integration  
+✅ Auto-deploys your Flow metadata before launching  
+✅ Supports both **Flow Builder** and **Run Mode**  
+✅ Uses `sf org open` under the hood (respects your default org/session)
+
+---
+
+## 🧠 What It Does
+
+- **Right-click a `.flow-meta.xml`** file in the Explorer:
+
+  - `SFDX: Open Flow in Flow Builder`
+  - `SFDX: Open Flow in Run Mode` _(only for supported Flow types like Screen Flows)_
+
+- **Use the Command Palette** with a `.flow-meta.xml` file active:
+  - `SFDX: Open Current Flow in Flow Builder`
+  - `SFDX: Open Current Flow in Run Mode`
+
+Both entry points share robust logic:
+
+- Validates file extension
+- Reads the flow type from XML (`<processType>`)
+- Deploys your flow to Salesforce
+- Opens the Flow using `sf org open --path ...`
+
+---
 
 ## ✅ Requirements
 
-- Salesforce CLI (`sfdx`)
-- Authenticated default org (`sfdx org display`)
+- **Salesforce CLI (`sf`)** installed
+- An authenticated **default org** (`sf org display`)
+- A Salesforce project with metadata (`force-app/main/default/flows/...`)
 
-## 🚀 Usage
+---
 
-Right-click any `.flow-meta.xml` file and select:
+## 🔮 Coming Soon
 
-- `Open Flow in Builder`
-- `Open Flow in Run Mode` (if screen flow)
+- Support for:
+  - Configurable metadata targets
+  - Better telemetry & debug logging
+  - More Metadata Types
 
-More metadata types coming soon!
+---
+
+## 💡 Pro Tip
+
+Want to experiment?
+Temporarily enable all context menu actions with this in `package.json`:
+
+```json
+"when": "true"
+```
