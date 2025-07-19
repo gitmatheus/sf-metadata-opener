@@ -3,34 +3,85 @@ import * as sf from "../salesforce";
 import * as utils from "../utils";
 
 /**
- * Opens the Flow in Run Mode, if applicable
+ * Opens the selected Flow in Run Mode via CLI
  */
-export async function openFlowInRunMode(uri: vscode.Uri) {
+export async function openFlowInRunMode(uri: vscode.Uri): Promise<void> {
   try {
-    const flowName = utils.parseFlowNameFromFilePath(uri.fsPath);
-    const flowInfo: sf.Flow | null = await sf.getLatestFlowInfo(flowName);
+    const filePath = uri.fsPath;
+    const flowName = utils.parseFlowNameFromFilePath(filePath);
 
-    // Return early if flowInfo is null or missing required properties
-    if (!flowInfo || !flowInfo.Id || !flowInfo.ProcessType) {
+    const flowInfo: sf.Flow | null = await sf.getLatestFlowInfo(filePath);
+
+    if (!flowInfo?.Id || !flowInfo.ProcessType) {
+      utils.showErrorMessage(`No Flow version found for: ${flowName}`);
       return;
     }
 
     if (!sf.shouldOfferRunMode(flowInfo.ProcessType)) {
       utils.showWarningMessage(
-        `Flow type "${flowInfo.ProcessType}" does not support Run Mode.`
+        `⚠️ Run Mode is not supported for this Flow type: ${flowInfo.ProcessType}`
       );
       return;
     }
 
-    const domain = await sf.getOrgDomain();
-    const vfDomain = domain.replace(
-      ".my.salesforce.com",
-      "--c.visual.force.com"
-    );
-    const url = `${vfDomain}/flow/${flowName}/${flowInfo.Id}`;
+    const runPath = `/flow/${flowName}/${flowInfo.Id}`;
+    const openCommand = `sf org open --path "${runPath}" --json`;
 
-    vscode.env.openExternal(vscode.Uri.parse(url));
+    await utils.runShellCommand(openCommand);
+
+    utils.showInformationMessage("✅ Opened Flow in Run Mode via CLI");
   } catch (error: any) {
     utils.showErrorMessage(`Failed to open Flow in Run Mode: ${error.message}`);
+  }
+}
+
+/**
+ * Opens the currently active Flow file (if it's a `.flow-meta.xml`) in Run Mode
+ */
+export async function openCurrentFlowFileInRunMode(): Promise<void> {
+  try {
+    const activeEditor = vscode.window.activeTextEditor;
+
+    if (!activeEditor) {
+      utils.showWarningMessage("No active editor found.");
+      return;
+    }
+
+    const filePath = activeEditor.document.uri.fsPath;
+
+    if (!filePath.endsWith(".flow-meta.xml")) {
+      utils.showWarningMessage(
+        "The currently active file is not a valid Flow metadata file (.flow-meta.xml)."
+      );
+      return;
+    }
+
+    const flowInfo: sf.Flow | null = await sf.getLatestFlowInfo(filePath);
+
+    if (!flowInfo?.Id || !flowInfo.ProcessType) {
+      utils.showErrorMessage("No Flow version found with that name.");
+      return;
+    }
+
+    if (!sf.shouldOfferRunMode(flowInfo.ProcessType)) {
+      utils.showWarningMessage(
+        `⚠️ Run Mode is not supported for this Flow type: ${flowInfo.ProcessType}`
+      );
+      return;
+    }
+
+    const flowName = utils.parseFlowNameFromFilePath(filePath);
+    const runPath = `/flow/${flowName}/${flowInfo.Id}`;
+    const openCommand = `sf org open --path "${runPath}" --json`;
+
+    try {
+      await utils.runShellCommand(openCommand);
+      utils.showInformationMessage("✅ Opened Flow in Flow Builder via CLI");
+    } catch (error: any) {
+      utils.showErrorMessage(`Failed to open Flow via CLI: ${error.message}`);
+    }
+
+  } catch (error: any) {
+    utils.showErrorMessage(`Failed to open Flow in Builder: ${error.message}`);
   }
 }

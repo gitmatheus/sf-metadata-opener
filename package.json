@@ -13,7 +13,8 @@
   "activationEvents": [
     "onCommand:extension.openCurrentFlowFileInBuilder",
     "onCommand:extension.openFlowInBuilder",
-    "onCommand:extension.openFlowInRunMode"
+    "onCommand:extension.openFlowInRunMode",
+    "onCommand:extension.openCurrentFlowFileInRunMode"
   ],
   "contributes": {
     "commands": [
@@ -31,18 +32,23 @@
         "command": "extension.openCurrentFlowFileInBuilder",
         "title": "Open Current Flow in Builder",
         "category": "SFDX"
+      },
+      {
+        "command": "extension.openCurrentFlowFileInRunMode",
+        "title": "Open Current Flow in Run Mode",
+        "category": "SFDX"
       }
     ],
     "menus": {
       "explorer/context": [
         {
           "command": "extension.openFlowInBuilder",
-          "when": "resourceFilename =~ /\\.flow-meta\\.xml$/",
+          "when": "resourceExtname == .flow-meta.xml && explorerViewletVisible",
           "group": "navigation@1"
         },
         {
           "command": "extension.openFlowInRunMode",
-          "when": "resourceFilename =~ /\\.flow-meta\\.xml$/",
+          "when": "resourceExtname == .flow-meta.xml && explorerViewletVisible",
           "group": "navigation@2"
         }
       ]

@@ -17,6 +17,10 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand(
       "extension.openCurrentFlowFileInBuilder",
       cmd.openCurrentFlowFileInBuilder
+    ),
+    vscode.commands.registerCommand(
+      "extension.openCurrentFlowFileInRunMode",
+      cmd.openCurrentFlowFileInRunMode
     )
   );
 }

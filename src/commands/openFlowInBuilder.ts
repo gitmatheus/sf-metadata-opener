@@ -9,9 +9,11 @@ export async function openFlowInBuilder(uri: vscode.Uri) {
   try {
     const flowName = utils.parseFlowNameFromFilePath(uri.fsPath);
     const flowInfo: sf.Flow | null = await sf.getLatestFlowInfo(flowName);
-    
+
     // Return early if flowInfo is null or missing required properties
-    if (!flowInfo || !flowInfo.Id) {return;}
+    if (!flowInfo || !flowInfo.Id) {
+      return;
+    }
 
     const domain = await sf.getOrgDomain();
 
@@ -46,20 +48,22 @@ export async function openCurrentFlowFileInBuilder(): Promise<void> {
     }
 
     const flowInfo: sf.Flow | null = await sf.getLatestFlowInfo(filePath);
-  
+
     if (!flowInfo?.Id) {
       utils.showErrorMessage("No Flow version found with that name.");
       return;
     }
 
-    const domain = await sf.getOrgDomain();
-    const url = `${domain}/builder_platform_interaction/flowBuilder.app?flowId=${flowInfo.Id}`;
+    const openCommand = `sf org open --path "/builder_platform_interaction/flowBuilder.app?flowId=${flowInfo.Id}" --json`;
 
-    await vscode.env.openExternal(vscode.Uri.parse(url));
-    utils.showInformationMessage(`✅ Opened Flow in Flow Builder`);
+    try {
+      await utils.runShellCommand(openCommand);
+      utils.showInformationMessage("✅ Opened Flow in Flow Builder via CLI");
+    } catch (error: any) {
+      utils.showErrorMessage(`Failed to open Flow via CLI: ${error.message}`);
+    }
+
   } catch (error: any) {
-    utils.showErrorMessage(
-      `Failed to open Flow in Builder: ${error.message}`
-    );
+    utils.showErrorMessage(`Failed to open Flow in Builder: ${error.message}`);
   }
 }
