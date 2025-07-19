@@ -41,12 +41,8 @@ This extension enables rapid navigation from your VS Code workspace to Flow meta
 
 You can customize the extension’s behavior via VS Code settings:
 
-#### `Salesforce Metadata Opener: Use Sf Command To Open Flow`
+<img width="945" height="231" alt="Screenshot 2025-07-19 at 11 13 43 AM" src="https://github.com/user-attachments/assets/bf88bdd0-9ab1-4f3e-bcf1-9e0baa286728" />
 
-> **Default: `true`**
-
-- When enabled, uses `sf org open --source-file ...` to open the Flow.
-- When disabled, the extension queries your org for the Flow ID and opens it using `/builder_platform_interaction/...` or `/flow/...` depending on the mode.
 
 #### `Salesforce Metadata Opener: Deploy Before Open`
 
@@ -55,7 +51,12 @@ You can customize the extension’s behavior via VS Code settings:
 - Automatically deploys your local metadata file to your default org before opening it.
 - Disable this if your metadata is already deployed or managed elsewhere.
 
----
+#### `Salesforce Metadata Opener: Use Sf Command To Open Flow`
+
+> **Default: `true`**
+
+- When enabled, uses `sf org open --source-file ...` to open the Flow.
+- When disabled, the extension queries your org for the Flow ID and opens it using `/builder_platform_interaction/...` or `/flow/...` depending on the mode.
 
 ---
 
