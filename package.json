@@ -14,7 +14,7 @@
     "commands": [
       {
         "command": "extension.openFlowInBuilder",
-        "title": "SFDX: Open Flow in Builder",
+        "title": "SFDX: Open Flow in Flow Builder",
         "category": "SFDX"
       },
       {
@@ -24,7 +24,7 @@
       },
       {
         "command": "extension.openCurrentFlowFileInBuilder",
-        "title": "SFDX: Open Current Flow in Builder",
+        "title": "SFDX: Open Current Flow in Flow Builder",
         "category": "SFDX"
       },
       {
