@@ -2,11 +2,6 @@ import * as vscode from "vscode";
 import * as utils from "../utils";
 import * as constants from "../constants";
 
-const RUN_MODE_SUPPORTED_TYPES = new Set([
-  "Flow",         // Main supported type for screen flows
-  "ScreenFlow"    // Some APIs or tools may refer to it this way
-]);
-
 /**
  * Deploys a specific metadata file to the default Salesforce org using the Salesforce CLI.
  * 
@@ -50,8 +45,8 @@ export async function deployMetadata(filePath: string): Promise<boolean> {
 }
 
 /**
- * Determines whether the given Flow type supports being run in "Run Mode"
+ * Builds the default `sf org open` command to launch a metadata in the browser.
  */
-export function shouldOfferRunMode(processType: string): boolean {
-  return RUN_MODE_SUPPORTED_TYPES.has(processType);
+export async function buildDefaultOpenCommand(filePath: string): Promise<string> {
+    return `sf org open --source-file ${filePath}`;
 }

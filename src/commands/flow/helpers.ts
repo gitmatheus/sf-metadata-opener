@@ -13,6 +13,14 @@ export enum FlowOpenMode {
 }
 
 /**
+ * Supported Flow types for Run Mode
+ */
+const RUN_MODE_SUPPORTED_TYPES = new Set([
+  "Flow",         // Main supported type for screen flows
+  "ScreenFlow"    // Some APIs or tools may refer to it this way
+]);
+
+/**
  * Handles opening a Flow file (right-click or command palette)
  */
 export async function openFlow(
@@ -29,7 +37,7 @@ export async function openFlow(
   if (mode === FlowOpenMode.RUN) {
     const processType = await parseProcessTypeFromXml(filePath);
     // Validate if Run Mode is allowed
-    if (!processType || !sf.shouldOfferRunMode(processType)) {
+    if (!processType || !shouldOfferRunMode(processType)) {
       utils.showWarningMessage(
         `Run Mode is not supported for this Flow type: ${
           processType || "Unknown"
@@ -48,7 +56,7 @@ export async function openFlow(
     }
   }
 
-  let openCommand = await buildOpenCommand(filePath, mode);
+  let openCommand = await buildOpenFlowCommand(filePath, mode);
   if (!openCommand) {
     return;
   }
@@ -97,12 +105,12 @@ export async function parseProcessTypeFromXml(
  * @param mode - The mode in which the Flow should be opened (EDIT or RUN).
  * @returns A fully constructed CLI command string, or null if the Flow could not be resolved.
  */
-async function buildOpenCommand(
+async function buildOpenFlowCommand(
   filePath: string,
   mode: FlowOpenMode
 ): Promise<string | null> {
   if (Properties.useSfCommandToOpenMetadata && mode === FlowOpenMode.EDIT) {
-    return `sf org open --source-file ${filePath}`;
+    return sf.buildDefaultOpenCommand(filePath);
   }
 
   // If not using sf command, or not in Edit mode, we need to get the Flow info from Salesforce
@@ -119,4 +127,11 @@ async function buildOpenCommand(
       : `/builder_platform_interaction/flowBuilder.app?flowId=${flowInfo.Id}`;
 
   return `sf org open --path "${runPath}" --json`;
+}
+
+/**
+ * Determines whether the given Flow type supports being run in "Run Mode"
+ */
+function shouldOfferRunMode(processType: string): boolean {
+  return RUN_MODE_SUPPORTED_TYPES.has(processType);
 }
