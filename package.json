@@ -14,23 +14,19 @@
     "commands": [
       {
         "command": "extension.openFlowInBuilder",
-        "title": "SFDX: Open Flow in Flow Builder",
-        "category": "SFDX"
+        "title": "SFDX: Open Flow in Flow Builder"
       },
       {
         "command": "extension.openFlowInRunMode",
-        "title": "SFDX: Open Flow in Run Mode",
-        "category": "SFDX"
+        "title": "SFDX: Open Flow in Run Mode"
       },
       {
         "command": "extension.openCurrentFlowFileInBuilder",
-        "title": "SFDX: Open Current Flow in Flow Builder",
-        "category": "SFDX"
+        "title": "SFDX: Open Current Flow in Flow Builder"
       },
       {
         "command": "extension.openCurrentFlowFileInRunMode",
-        "title": "SFDX: Open Current Flow in Run Mode",
-        "category": "SFDX"
+        "title": "SFDX: Open Current Flow in Run Mode"
       }
     ],
     "menus": {
