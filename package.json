@@ -43,13 +43,13 @@
       "explorer/context": [
         {
           "command": "extension.openFlowInBuilder",
-          "when": "resourceExtname == .flow-meta.xml && explorerViewletVisible",
-          "group": "navigation@1"
+          "when": "true",
+          "group": "3_run"
         },
         {
           "command": "extension.openFlowInRunMode",
-          "when": "resourceExtname == .flow-meta.xml && explorerViewletVisible",
-          "group": "navigation@2"
+          "when": "true",
+          "group": "3_run"
         }
       ]
     }
