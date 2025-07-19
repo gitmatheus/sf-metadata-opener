@@ -10,32 +10,26 @@
     "Other"
   ],
   "main": "./dist/extension.js",
-  "activationEvents": [
-    "onCommand:extension.openCurrentFlowFileInBuilder",
-    "onCommand:extension.openFlowInBuilder",
-    "onCommand:extension.openFlowInRunMode",
-    "onCommand:extension.openCurrentFlowFileInRunMode"
-  ],
   "contributes": {
     "commands": [
       {
         "command": "extension.openFlowInBuilder",
-        "title": "Open Flow in Builder",
+        "title": "SFDX: Open Flow in Builder",
         "category": "SFDX"
       },
       {
         "command": "extension.openFlowInRunMode",
-        "title": "Open Flow in Run Mode",
+        "title": "SFDX: Open Flow in Run Mode",
         "category": "SFDX"
       },
       {
         "command": "extension.openCurrentFlowFileInBuilder",
-        "title": "Open Current Flow in Builder",
+        "title": "SFDX: Open Current Flow in Builder",
         "category": "SFDX"
       },
       {
         "command": "extension.openCurrentFlowFileInRunMode",
-        "title": "Open Current Flow in Run Mode",
+        "title": "SFDX: Open Current Flow in Run Mode",
         "category": "SFDX"
       }
     ],
@@ -43,13 +37,13 @@
       "explorer/context": [
         {
           "command": "extension.openFlowInBuilder",
-          "when": "true",
-          "group": "3_run"
+          "when": "resourceFilename =~ /\\.flow-meta\\.xml$/",
+          "group": "z_commands"
         },
         {
           "command": "extension.openFlowInRunMode",
-          "when": "true",
-          "group": "3_run"
+          "when": "resourceFilename =~ /\\.flow-meta\\.xml$/",
+          "group": "z_commands"
         }
       ]
     }
