@@ -16,6 +16,8 @@ Currently supports **Flows**, with more metadata types on the roadmap (Other Met
 
 ## 🧠 What It Does
 
+This extension enables rapid navigation from your VS Code workspace to Flow metadata in the browser. It ensures you are always looking at the latest deployed version.
+
 - **Right-click a `.flow-meta.xml`** file in the Explorer:
 
   - `SFDX: Open Flow in Flow Builder`
@@ -23,7 +25,7 @@ Currently supports **Flows**, with more metadata types on the roadmap (Other Met
 
 <img width="726" height="637" alt="Screenshot 2025-07-18 at 6 53 15 PM" src="https://github.com/user-attachments/assets/d2ad9bdc-2eec-4f7d-97a7-f06287200474" />
 
---- 
+---
 
 - **Use the Command Palette** with a `.flow-meta.xml` file active:
   - `SFDX: Open Current Flow in Flow Builder`
@@ -31,15 +33,18 @@ Currently supports **Flows**, with more metadata types on the roadmap (Other Met
 
 <img width="754" height="177" alt="Screenshot 2025-07-18 at 6 55 32 PM" src="https://github.com/user-attachments/assets/73f0d216-3fb3-458c-8391-ca2f992e9e98" />
 
-
 ℹ The commands to open the flow in Run Moe will only support certain Flow types, like Screen Flows.
 
-All entry points share robust logic:
+---
 
-- Validates file extension
-- Reads the flow type from XML (`<processType>`)
-- Deploys your flow to Salesforce
-- Opens the Flow using `sf org open --path ...`
+### 🧩 Under the Hood
+
+All commands share robust common logic:
+
+- ✅ Validates `.flow-meta.xml` extension
+- 🔍 Parses XML for `<processType>` to verify flow type
+- 🚀 Deploys your local file using `sf project deploy start`
+- 🌐 Opens the flow using `sf org open --path ...`
 
 ---
 
@@ -73,9 +78,10 @@ Use with caution. This disables file filtering.
 
 ## 📣 Feedback
 
-Found a bug? Have a cool use case in mind?
+Have a feature request? Found a bug?
 
-Create an [issue](https://github.com/gitmatheus/sf-metadata-opener/issues) or send me an email on contact@matheus.dev.
+→ Create an [Issue](https://github.com/gitmatheus/sf-metadata-opener/issues)
+→ Or email: contact@matheus.dev
 
 ---
 
