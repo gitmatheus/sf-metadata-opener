@@ -1,9 +1,9 @@
 import * as vscode from "vscode";
 import * as utils from "../utils";
+import { deployMetadata } from "../salesforce";
 import * as constants from "../constants";
 import { Flow } from "../salesforce/model/flow";
-import * as fs from "fs/promises";
-import * as xml2js from "xml2js";
+
 
 /**
  * Queries Salesforce to get the latest Flow version info by flow name
@@ -20,24 +20,7 @@ export async function getLatestFlowInfo(
       cancellable: false,
     },
     async (progress) => {
-      progress.report({ message: `Deploying Flow metadata...` });
-
-      // 🧠 Deploy flow XML file before querying
-      const deployCmd = `sf project deploy start --source-dir "${filePath}" --json`;
-
       try {
-        const deployOutput = await utils.runShellCommand(deployCmd);
-        const deployResult = JSON.parse(deployOutput);
-
-        if (deployResult.status !== 0) {
-          utils.showErrorMessage(
-            `Flow deployment failed: ${
-              deployResult.message || deployResult.stderr
-            }`
-          );
-          return null;
-        }
-
         progress.report({
           message: `Querying latest version for Flow: ${flowName} ...`,
         });
@@ -48,11 +31,8 @@ export async function getLatestFlowInfo(
         const data = JSON.parse(output);
 
         if (data?.result?.LatestVersionId) {
-          const processType = await parseProcessTypeFromXml(filePath);
-
           return {
             Id: data.result.LatestVersionId,
-            ProcessType: processType,
           };
         } else {
           utils.showErrorMessage(`No flow found with API name: ${flowName}`);
@@ -66,25 +46,4 @@ export async function getLatestFlowInfo(
   );
 }
 
-/**
- * Reads the ProcessType value from a .flow-meta.xml file
- */
-export async function parseProcessTypeFromXml(
-  filePath: string
-): Promise<string | undefined> {
-  try {
-    const fileContents = await fs.readFile(filePath, "utf-8");
-    const parser = new xml2js.Parser();
-    const parsed = await parser.parseStringPromise(fileContents);
 
-    // Salesforce uses a namespace so we need to access Flow.processType[0]
-    const processType = parsed?.Flow?.processType?.[0];
-
-    return processType;
-  } catch (error: any) {
-    utils.showWarningMessage(
-      `Warning: Unable to read processType from XML (${filePath}): ${error.message}`
-    );
-    return undefined;
-  }
-}

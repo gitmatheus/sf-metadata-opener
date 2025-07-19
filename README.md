@@ -33,7 +33,29 @@ This extension enables rapid navigation from your VS Code workspace to Flow meta
 
 <img width="754" height="177" alt="Screenshot 2025-07-18 at 6 55 32 PM" src="https://github.com/user-attachments/assets/73f0d216-3fb3-458c-8391-ca2f992e9e98" />
 
-ℹ The commands to open the flow in Run Moe will only support certain Flow types, like Screen Flows.
+ℹ️ Run Mode is only available for supported Flow types (e.g., **Screen Flows**). AutoLaunched and system flows are not compatible with direct browser execution.
+
+---
+
+## ⚙️ Configuration Options
+
+You can customize the extension’s behavior via VS Code settings:
+
+#### `Salesforce Metadata Opener: Use Sf Command To Open Flow`
+
+> **Default: `true`**
+
+- When enabled, uses `sf org open --source-file ...` to open the Flow.
+- When disabled, the extension queries your org for the Flow ID and opens it using `/builder_platform_interaction/...` or `/flow/...` depending on the mode.
+
+#### `Salesforce Metadata Opener: Deploy Before Open`
+
+> **Default: `true`**
+
+- Automatically deploys your local metadata file to your default org before opening it.
+- Disable this if your metadata is already deployed or managed elsewhere.
+
+---
 
 ---
 
@@ -65,22 +87,12 @@ All commands share robust common logic:
 
 ---
 
-## 💡 Pro Tip
-
-Want to experiment?
-Temporarily enable all context menu actions with this in `package.json`:
-
-```json
-"when": "true"
-```
-
-Use with caution. This disables file filtering.
-
 ## 📣 Feedback
 
 Have a feature request? Found a bug?
 
 → Create an [Issue](https://github.com/gitmatheus/sf-metadata-opener/issues)
+
 → Or email: contact@matheus.dev
 
 ---
