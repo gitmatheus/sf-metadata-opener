@@ -1,6 +1,7 @@
 {
   "name": "sf-metadata-opener",
   "displayName": "sf-metadata-opener",
+  "publisher": "MatheusGoncalves",
   "repository": "https://github.com/gitmatheus/sf-metadata-opener",
   "description": "Right-click to open Salesforce metadata in the browser (Flow Builder, Run Mode, etc.)",
   "version": "0.0.1",
