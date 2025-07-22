@@ -4,6 +4,36 @@ All notable changes to this project will be documented here.
 
 ---
 
+## [0.0.3] - 2025-07-21
+
+### ✨ Added
+
+- 🧠 **Agentforce Agent (Bot) support**:
+  - Right-click `.bot-meta.xml` to open in:
+    - Agentforce Builder
+    - Setup (Details page)
+  - Command Palette equivalents also available.
+- 📁 New folder structure under `src/commands/bot` for Bot logic.
+- 🔍 `getLatestBotInfo()` uses nested SOQL to fetch the latest BotVersion in one query.
+- ⚙️ New `fileExtensions.ts` enum for shared metadata suffixes (`.flow-meta.xml`, `.bot-meta.xml`).
+- 🧱 `parseBotNameFromFilePath()` and `parseMetadataNameFromFilePath()` helpers in `utils/`.
+
+### ⚙️ Changed
+
+- All open logic now routes through shared `open()` functions in both `flow/helpers.ts` and `bot/helpers.ts`.
+- Shared `Mode` enums for open type (`EDIT`, `RUN`, `BUILDER`, `SETUP`) to streamline flow and bot behavior.
+- `sf org open` logic now respects new extension settings for both Bots and Flows.
+- Centralized path detection from editor via `resolveFilePathFromEditor()` in `utils/path.ts`.
+
+### 🧼 Internal
+
+- Moved Salesforce metadata queries into a new `salesforce/data/` folder.
+- Defined typed interfaces for `Bot` and `BotVersion` with subquery support in `salesforce/model/bot.ts`.
+- Consolidated open command logic into `buildOpenCommand()` inside each metadata type helper.
+- Extracted settings management to the `Properties` utility and connected it to `onDidChangeConfiguration`.
+
+---
+
 ## [0.0.2] - 2025-07-19
 
 ### ✨ Added

@@ -1,9 +1,7 @@
 import * as vscode from "vscode";
-import * as utils from "../utils";
-import { deployMetadata } from "../salesforce";
-import * as constants from "../constants";
-import { Flow } from "../salesforce/model/flow";
-
+import * as utils from "../../utils";
+import * as constants from "../../constants";
+import { Flow } from "../../salesforce";
 
 /**
  * Queries Salesforce to get the latest Flow version info by flow name
@@ -45,5 +43,3 @@ export async function getLatestFlowInfo(
     }
   );
 }
-
-

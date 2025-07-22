@@ -1,7 +1,8 @@
+import { Record } from "./standard";
+
 /**
  * Interface representing the metadata of a Flow retrieved from Salesforce
  */
-export interface Flow {
-  Id?: string;
+export interface Flow extends Record {
   ProcessType?: string;
 }
