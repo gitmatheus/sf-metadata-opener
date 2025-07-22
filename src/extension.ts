@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import * as cmd from "./commands/flow";
+import * as cmd from "./commands";
 import { Properties } from "./properties";
 
 // This method is called when your extension is activated
@@ -24,6 +24,23 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand(
       "extension.openCurrentFlowFileInRunMode",
       cmd.openCurrentFlowFileInRunMode
+    ),
+
+    vscode.commands.registerCommand(
+      "extension.openBotInBuilder",
+      cmd.openBotInBuilder
+    ),
+    vscode.commands.registerCommand(
+      "extension.openBotInSetup",
+      cmd.openBotInSetup
+    ),
+    vscode.commands.registerCommand(
+      "extension.openCurrentBotFileInBuilder",
+      cmd.openCurrentBotFileInBuilder
+    ),
+    vscode.commands.registerCommand(
+      "extension.openCurrentBotFileInSetup",
+      cmd.openCurrentBotFileInSetup
     ),
 
     vscode.workspace.onDidChangeConfiguration((e) => {

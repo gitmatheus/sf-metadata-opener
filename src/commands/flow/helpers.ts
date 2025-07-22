@@ -7,7 +7,7 @@ import * as xml2js from "xml2js";
 /**
  * Mode in which the Flow will be opened
  */
-export enum FlowOpenMode {
+export enum Mode {
   RUN = "run",
   EDIT = "edit",
 }
@@ -16,25 +16,25 @@ export enum FlowOpenMode {
  * Supported Flow types for Run Mode
  */
 const RUN_MODE_SUPPORTED_TYPES = new Set([
-  "Flow",         // Main supported type for screen flows
-  "ScreenFlow"    // Some APIs or tools may refer to it this way
+  "Flow", // Main supported type for screen flows
+  "ScreenFlow", // Some APIs or tools may refer to it this way
 ]);
 
 /**
  * Handles opening a Flow file (right-click or command palette)
  */
-export async function openFlow(
+export async function open(
   filePath: string,
-  mode: FlowOpenMode
+  mode: Mode
 ): Promise<void> {
-  if (!filePath.endsWith(".flow-meta.xml")) {
+  if (!filePath.endsWith(sf.Extensions.Flow)) {
     utils.showWarningMessage(
-      "The selected file is not a valid Flow metadata file (.flow-meta.xml)."
+      `The selected file is not a valid Flow metadata file (${sf.Extensions.Flow}).`
     );
     return;
   }
 
-  if (mode === FlowOpenMode.RUN) {
+  if (mode === Mode.RUN) {
     const processType = await parseProcessTypeFromXml(filePath);
     // Validate if Run Mode is allowed
     if (!processType || !shouldOfferRunMode(processType)) {
@@ -56,14 +56,14 @@ export async function openFlow(
     }
   }
 
-  let openCommand = await buildOpenFlowCommand(filePath, mode);
+  let openCommand = await buildOpenCommand(filePath, mode);
   if (!openCommand) {
     return;
   }
 
   try {
     await utils.runShellCommand(openCommand);
-    const action = mode === FlowOpenMode.RUN ? "Run Mode" : "Flow Builder";
+    const action = mode === Mode.RUN ? "Run Mode" : "Flow Builder";
     utils.showInformationMessage(`Opened Flow in ${action} via CLI`);
   } catch (error: any) {
     utils.showErrorMessage(`Failed to open Flow via CLI: ${error.message}`);
@@ -71,7 +71,7 @@ export async function openFlow(
 }
 
 /**
- * Reads the ProcessType value from a .flow-meta.xml file
+ * Reads the ProcessType value from a xml file
  */
 export async function parseProcessTypeFromXml(
   filePath: string
@@ -100,16 +100,12 @@ export async function parseProcessTypeFromXml(
  * the function returns a direct `--source-file` CLI command.
  * Otherwise, it queries Salesforce to retrieve the Flow ID and constructs the appropriate
  * path for either Run Mode or Flow Builder mode.
- *
- * @param filePath - The full path to the .flow-meta.xml file.
- * @param mode - The mode in which the Flow should be opened (EDIT or RUN).
- * @returns A fully constructed CLI command string, or null if the Flow could not be resolved.
  */
-async function buildOpenFlowCommand(
+async function buildOpenCommand(
   filePath: string,
-  mode: FlowOpenMode
+  mode: Mode
 ): Promise<string | null> {
-  if (Properties.useSfCommandToOpenMetadata && mode === FlowOpenMode.EDIT) {
+  if (Properties.useSfCommandToOpenMetadata && mode === Mode.EDIT) {
     return sf.buildDefaultOpenCommand(filePath);
   }
 
@@ -122,7 +118,7 @@ async function buildOpenFlowCommand(
 
   const flowName = utils.parseFlowNameFromFilePath(filePath);
   const runPath =
-    mode === FlowOpenMode.RUN
+    mode === Mode.RUN
       ? `/flow/${flowName}/${flowInfo.Id}`
       : `/builder_platform_interaction/flowBuilder.app?flowId=${flowInfo.Id}`;
 

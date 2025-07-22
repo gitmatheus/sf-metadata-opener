@@ -17,7 +17,11 @@
     "onCommand:extension.openFlowInBuilder",
     "onCommand:extension.openFlowInRunMode",
     "onCommand:extension.openCurrentFlowFileInBuilder",
-    "onCommand:extension.openCurrentFlowFileInRunMode"
+    "onCommand:extension.openCurrentFlowFileInRunMode",
+    "onCommand:extension.openBotInBuilder",
+    "onCommand:extension.openBotInSetup",
+    "onCommand:extension.openCurrentBotFileInBuilder",
+    "onCommand:extension.openCurrentBotFileInSetup"    
   ],
   "contributes": {
     "configuration": {
@@ -51,6 +55,22 @@
       {
         "command": "extension.openCurrentFlowFileInRunMode",
         "title": "SFDX: Open Current Flow in Run Mode"
+      },
+      {
+        "command": "extension.openBotInBuilder",
+        "title": "SFDX: Open Agent in Agentforce Builder"
+      },
+      {
+        "command": "extension.openBotInSetup",
+        "title": "SFDX: Open Agent Details in Setup"
+      },
+      {
+        "command": "extension.openCurrentBotFileInBuilder",
+        "title": "SFDX: Open Current Agent in Agentforce Builder"
+      },
+      {
+        "command": "extension.openCurrentBotFileInSetup",
+        "title": "SFDX: Open Current Agent Details in Setup"
       }
     ],
     "menus": {
@@ -64,6 +84,16 @@
           "command": "extension.openFlowInRunMode",
           "when": "resourceFilename =~ /\\.flow-meta\\.xml$/",
           "group": "z_commands"
+        },
+        {
+          "command": "extension.openBotInBuilder",
+          "when": "resourceFilename =~ /\\.bot-meta\\.xml$/",
+          "group": "z_commands"
+        },
+        {
+          "command": "extension.openBotInSetup",
+          "when": "resourceFilename =~ /\\.bot-meta\\.xml$/",
+          "group": "z_commands"
         }
       ],
       "commandPalette": [
@@ -73,6 +103,14 @@
         },
         {
           "command": "extension.openFlowInRunMode",
+          "when": "false"
+        },
+        {
+          "command": "extension.openBotInBuilder",
+          "when": "false"
+        },
+        {
+          "command": "extension.openBotInSetup",
           "when": "false"
         }
       ]
