@@ -25,6 +25,8 @@ More metadata types coming soon (Reports, Dashboards, LWC, etc.)
 
 This extension enables rapid navigation from your VS Code workspace to your Salesforce metadata in the browser.
 
+<img width="611" height="133" alt="Screenshot 2025-07-21 at 7 37 29 PM" src="https://github.com/user-attachments/assets/f351f593-3208-44c8-bc73-92ebf66afff8" />
+
 ---
 
 ### 💡 Flows
@@ -38,7 +40,10 @@ This extension enables rapid navigation from your VS Code workspace to your Sale
   - `SFDX: Open Current Flow in Flow Builder`
   - `SFDX: Open Current Flow in Run Mode`
 
+<img width="620" height="627" alt="Screenshot 2025-07-21 at 7 36 58 PM" src="https://github.com/user-attachments/assets/0cc11620-6a7c-441f-983e-644b9207b097" /> 
+
 ℹ️ Run Mode is only available for supported Flow types (e.g., **Screen Flows**). AutoLaunched and system flows are not compatible.
+
 
 ---
 
@@ -52,8 +57,13 @@ This extension enables rapid navigation from your VS Code workspace to your Sale
 - **Use the Command Palette** with a `.bot-meta.xml` file active:
   - `SFDX: Open Current Agent in Agentforce Builder`
   - `SFDX: Open Current Agent Details in Setup`
+ 
+
+<img width="705" height="620" alt="Screenshot 2025-07-21 at 7 36 44 PM" src="https://github.com/user-attachments/assets/53642776-368d-464f-b3ff-5ac7dc7b0811" />
 
 ℹ️ Agent Builder uses version-based routing, and this extension fetches the latest BotVersion automatically.
+
+
 
 ---
 
@@ -74,6 +84,8 @@ You can customize the extension’s behavior via VS Code settings:
 
 - When enabled, uses `sf org open --source-file ...` for direct opening.
 - When disabled, the extension queries the org for IDs and constructs builder/setup links using metadata APIs.
+
+<img width="763" height="356" alt="Screenshot 2025-07-21 at 7 45 09 PM" src="https://github.com/user-attachments/assets/6b65a975-3fa6-48c0-9f04-177b0de3a632" />
 
 ---
 
