@@ -2,38 +2,58 @@
 
 A sleek, no-friction way to open Salesforce metadata directly in your browser — right from VS Code.
 
-Currently supports **Flows**, with more metadata types on the roadmap (Other Metadata, Reports, Dashboards, etc.).
+Currently supports:
+
+- ✅ **Flows** (Screen Flows, Auto-launched, etc.)
+- ✅ **Agentforce Agents (Bots)**
+
+More metadata types coming soon (Reports, Dashboards, LWC, etc.)
+
+---
 
 ## ✨ Features
 
 ✅ Context-aware file actions  
 ✅ Command Palette integration  
-✅ Auto-deploys your Flow metadata before launching  
-✅ Supports both **Flow Builder** and **Run Mode**  
+✅ Auto-deploys your metadata before launching  
+✅ Supports both **Flow Builder / Run Mode** and **Agentforce Builder / Setup**  
 ✅ Uses `sf org open` under the hood (respects your default org/session)
 
 ---
 
 ## 🧠 What It Does
 
-This extension enables rapid navigation from your VS Code workspace to Flow metadata in the browser. It ensures you are always looking at the latest deployed version.
+This extension enables rapid navigation from your VS Code workspace to your Salesforce metadata in the browser.
+
+---
+
+### 💡 Flows
 
 - **Right-click a `.flow-meta.xml`** file in the Explorer:
 
   - `SFDX: Open Flow in Flow Builder`
   - `SFDX: Open Flow in Run Mode`
 
-<img width="726" height="637" alt="Screenshot 2025-07-18 at 6 53 15 PM" src="https://github.com/user-attachments/assets/d2ad9bdc-2eec-4f7d-97a7-f06287200474" />
-
----
-
 - **Use the Command Palette** with a `.flow-meta.xml` file active:
   - `SFDX: Open Current Flow in Flow Builder`
   - `SFDX: Open Current Flow in Run Mode`
 
-<img width="754" height="177" alt="Screenshot 2025-07-18 at 6 55 32 PM" src="https://github.com/user-attachments/assets/73f0d216-3fb3-458c-8391-ca2f992e9e98" />
+ℹ️ Run Mode is only available for supported Flow types (e.g., **Screen Flows**). AutoLaunched and system flows are not compatible.
 
-ℹ️ Run Mode is only available for supported Flow types (e.g., **Screen Flows**). AutoLaunched and system flows are not compatible with direct browser execution.
+---
+
+### 🤖 Agentforce Bots (Copilot Agents)
+
+- **Right-click a `.bot-meta.xml`** file in the Explorer:
+
+  - `SFDX: Open Agent in Agentforce Builder`
+  - `SFDX: Open Agent Details in Setup`
+
+- **Use the Command Palette** with a `.bot-meta.xml` file active:
+  - `SFDX: Open Current Agent in Agentforce Builder`
+  - `SFDX: Open Current Agent Details in Setup`
+
+ℹ️ Agent Builder uses version-based routing, and this extension fetches the latest BotVersion automatically.
 
 ---
 
@@ -41,33 +61,30 @@ This extension enables rapid navigation from your VS Code workspace to Flow meta
 
 You can customize the extension’s behavior via VS Code settings:
 
-<img width="945" height="231" alt="Screenshot 2025-07-19 at 11 13 43 AM" src="https://github.com/user-attachments/assets/bf88bdd0-9ab1-4f3e-bcf1-9e0baa286728" />
-
-
 #### `Salesforce Metadata Opener: Deploy Before Open`
 
 > **Default: `true`**
 
-- Automatically deploys your local metadata file to your default org before opening it.
-- Disable this if your metadata is already deployed or managed elsewhere.
+- Automatically deploys your local metadata file before opening it in the browser.
+- Disable this if your metadata is already deployed or managed externally.
 
-#### `Salesforce Metadata Opener: Use Sf Command To Open Flow`
+#### `Salesforce Metadata Opener: Use Sf Command To Open Metadata`
 
 > **Default: `true`**
 
-- When enabled, uses `sf org open --source-file ...` to open the Flow.
-- When disabled, the extension queries your org for the Flow ID and opens it using `/builder_platform_interaction/...` or `/flow/...` depending on the mode.
+- When enabled, uses `sf org open --source-file ...` for direct opening.
+- When disabled, the extension queries the org for IDs and constructs builder/setup links using metadata APIs.
 
 ---
 
-### 🧩 Under the Hood
+## 🧩 Under the Hood
 
 All commands share robust common logic:
 
-- ✅ Validates `.flow-meta.xml` extension
-- 🔍 Parses XML for `<processType>` to verify flow type
-- 🚀 Deploys your local file using `sf project deploy start`
-- 🌐 Opens the flow using `sf org open --path ...`
+- ✅ Validates file extension (`.flow-meta.xml`, `.bot-meta.xml`)
+- 🔍 Parses metadata file (for flows) or resolves DeveloperName
+- 🚀 Deploys metadata using `sf project deploy start`
+- 🔗 Opens browser via `sf org open` (either with `--source-file` or `--path`)
 
 ---
 
@@ -75,16 +92,16 @@ All commands share robust common logic:
 
 - **Salesforce CLI (`sf`)** installed
 - An authenticated **default org** (`sf org display`)
-- A Salesforce project with metadata (`force-app/main/default/flows/...`)
+- A Salesforce project with metadata (e.g., `force-app/main/default/flows/`, `.../bots/`)
 
 ---
 
 ## 🔮 Coming Soon
 
 - Support for:
-  - Configurable metadata targets
-  - Better telemetry & debug logging
-  - More Metadata Types
+  - More metadata targets (Reports, Apex, LWC)
+  - Better debug logging
+  - Custom org aliases and context awareness
 
 ---
 
@@ -92,8 +109,7 @@ All commands share robust common logic:
 
 Have a feature request? Found a bug?
 
-→ Create an [Issue](https://github.com/gitmatheus/sf-metadata-opener/issues)
-
+→ Create an [Issue](https://github.com/gitmatheus/sf-metadata-opener/issues)  
 → Or email: contact@matheus.dev
 
 ---
