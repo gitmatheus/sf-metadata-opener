@@ -7,7 +7,7 @@ import { Bot, BotVersion } from "../../salesforce";
  * Retrieves the BotDefinition and latest BotVersion from Salesforce for the given bot name.
  */
 export async function getLatestBotInfo(
-  botName: string
+  metadataName: string
 ): Promise<{ bot: Bot; version: BotVersion } | null> {
   return vscode.window.withProgress(
     {
@@ -18,14 +18,14 @@ export async function getLatestBotInfo(
     async (progress) => {
       try {
         progress.report({
-          message: `Querying BotDefinition and versions for: ${botName}`,
+          message: `Querying BotDefinition and versions for: ${metadataName}`,
         });
 
         const query = `
           SELECT Id, DeveloperName, MasterLabel,
             (SELECT Id, Status, VersionNumber FROM BotVersions ORDER BY VersionNumber DESC LIMIT 1)
           FROM BotDefinition
-          WHERE DeveloperName = '${botName}' 
+          WHERE DeveloperName = '${metadataName}' 
             AND IsDeleted = false
           LIMIT 1`;
 
@@ -39,7 +39,7 @@ export async function getLatestBotInfo(
 
         if (!bot?.Id || !version?.Id) {
           utils.showErrorMessage(
-            `No BotDefinition or versions found for DeveloperName: ${botName}`
+            `No BotDefinition or versions found for DeveloperName: ${metadataName}`
           );
           return null;
         }

@@ -1,16 +1,14 @@
 import * as vscode from "vscode";
 import * as utils from "../../utils";
 import * as constants from "../../constants";
-import { Flow } from "../../salesforce";
+import { Flow, FileType } from "../../salesforce";
 
 /**
  * Queries Salesforce to get the latest Flow version info by flow name
  */
 export async function getLatestFlowInfo(
-  filePath: string
+  metadataName: string
 ): Promise<Flow | null> {
-  const flowName = utils.parseFlowNameFromFilePath(filePath);
-
   return vscode.window.withProgress<Flow | null>(
     {
       location: vscode.ProgressLocation.Notification,
@@ -20,11 +18,15 @@ export async function getLatestFlowInfo(
     async (progress) => {
       try {
         progress.report({
-          message: `Querying latest version for Flow: ${flowName} ...`,
+          message: `Querying latest version for Flow: ${metadataName} ...`,
         });
 
         // Uses get record command with tooling API to get the latest Flow version
-        const command = `sf data get record --use-tooling-api --sobject FlowDefinition --where "DeveloperName='${flowName}'" --json`;
+        const command = `sf data get record --use-tooling-api 
+                                            --sobject FlowDefinition 
+                                            --where "DeveloperName='${metadataName}'" 
+                                            --json`;
+
         const output = await utils.runShellCommand(command);
         const data = JSON.parse(output);
 
@@ -33,7 +35,9 @@ export async function getLatestFlowInfo(
             Id: data.result.LatestVersionId,
           };
         } else {
-          utils.showErrorMessage(`No flow found with API name: ${flowName}`);
+          utils.showErrorMessage(
+            `No flow found with API name: ${metadataName}`
+          );
           return null;
         }
       } catch (error: any) {

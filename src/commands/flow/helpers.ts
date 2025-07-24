@@ -3,6 +3,7 @@ import * as utils from "../../utils";
 import { Properties } from "../../properties";
 import * as fs from "fs/promises";
 import * as xml2js from "xml2js";
+import * as builder from "../builder";
 
 /**
  * Mode in which the Flow will be opened
@@ -23,13 +24,10 @@ const RUN_MODE_SUPPORTED_TYPES = new Set([
 /**
  * Handles opening a Flow file (right-click or command palette)
  */
-export async function open(
-  filePath: string,
-  mode: Mode
-): Promise<void> {
-  if (!filePath.endsWith(sf.Extensions.Flow)) {
+export async function open(filePath: string, mode: Mode): Promise<void> {
+  if (!filePath.endsWith(sf.FileType.Flow)) {
     utils.showWarningMessage(
-      `The selected file is not a valid Flow metadata file (${sf.Extensions.Flow}).`
+      `The selected file is not a valid Flow metadata file (${sf.FileType.Flow}).`
     );
     return;
   }
@@ -57,13 +55,13 @@ export async function open(
   }
 
   let openCommand = await buildOpenCommand(filePath, mode);
-  if (!openCommand) {
-    return;
-  }
+  if (!openCommand) return;
 
   try {
     await utils.runShellCommand(openCommand);
+
     const action = mode === Mode.RUN ? "Run Mode" : "Flow Builder";
+
     utils.showInformationMessage(`Opened Flow in ${action} via CLI`);
   } catch (error: any) {
     utils.showErrorMessage(`Failed to open Flow via CLI: ${error.message}`);
@@ -105,24 +103,18 @@ async function buildOpenCommand(
   filePath: string,
   mode: Mode
 ): Promise<string | null> {
-  if (Properties.useSfCommandToOpenMetadata && mode === Mode.EDIT) {
-    return sf.buildDefaultOpenCommand(filePath);
-  }
-
-  // If not using sf command, or not in Edit mode, we need to get the Flow info from Salesforce
-  const flowInfo = await sf.getLatestFlowInfo(filePath);
-
-  if (!flowInfo?.Id) {
-    return null;
-  }
-
-  const flowName = utils.parseFlowNameFromFilePath(filePath);
-  const runPath =
-    mode === Mode.RUN
-      ? `/flow/${flowName}/${flowInfo.Id}`
-      : `/builder_platform_interaction/flowBuilder.app?flowId=${flowInfo.Id}`;
-
-  return `sf org open --path "${runPath}" --json`;
+  return builder.buildOpenCommand(filePath, mode, {    
+    cliMode: Mode.EDIT,
+    metadataType: sf.FileType.Flow,
+    fetchMetadata: sf.getLatestFlowInfo,
+    
+    getPathFromMetadata: (flow, mode) => {
+      const name = utils.parseMetadataNameFromFilePath(filePath, sf.FileType.Flow);
+      return mode === Mode.RUN
+        ? `/flow/${name}/${flow.Id}`
+        : `/builder_platform_interaction/flowBuilder.app?flowId=${flow.Id}`;
+    },
+  });
 }
 
 /**
