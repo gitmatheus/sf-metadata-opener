@@ -46,7 +46,7 @@ export async function createOpenCommand<T>(
   options: {
     cliMode: string;
     metadataType: sf.FileType;
-    fetchMetadata: (metadataName: string) => Promise<T | null>;
+    fetchMetadata: (metadataName: string, metadataType: sf.FileType) => Promise<T | null>;
   }
 ): Promise<string | null> {
   if (Properties.useSfCommandToOpenMetadata && mode === options.cliMode) {
@@ -57,7 +57,7 @@ export async function createOpenCommand<T>(
     filePath,
     options.metadataType
   );
-  const metadata = await options.fetchMetadata(metadataName);
+  const metadata = await options.fetchMetadata(metadataName, options.metadataType);
   if (!metadata) return null;
 
   const path = utils.resolveMetadataPath({

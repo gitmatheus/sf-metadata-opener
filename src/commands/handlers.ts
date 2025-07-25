@@ -20,7 +20,7 @@ export async function openMetadata<T>({
   buildOpenCommand: (filePath: string, mode: string) => Promise<string | null>;
 }): Promise<void> {
   const metadataLabel = sf.MetadataLabels[fileType] ?? fileType;
-  
+
   if (!filePath.endsWith(fileType)) {
     return utils.showWarningMessage(
       `The selected file is not a valid ${metadataLabel} metadata file.`
@@ -37,7 +37,7 @@ export async function openMetadata<T>({
 
   try {
     await utils.runShellCommand(openCommand);
-    utils.showInformationMessage(`Opened ${metadataLabel} in ${mode} via CLI`);
+    utils.showInformationMessage(`Opened ${metadataLabel} via CLI`);
   } catch (error: any) {
     utils.showErrorMessage(`Failed to open ${metadataLabel}: ${error.message}`);
   }
