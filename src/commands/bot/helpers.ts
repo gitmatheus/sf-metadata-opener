@@ -3,11 +3,13 @@ import * as utils from "../../utils";
 import { Properties } from "../../properties";
 import * as builder from "../builder";
 
-
 /**
  * Handles opening a Bot file from right-click or command palette.
  */
-export async function open(filePath: string, mode: builder.OpenMode): Promise<void> {
+export async function open(
+  filePath: string,
+  mode: builder.OpenMode
+): Promise<void> {
   if (!filePath.endsWith(sf.FileType.Bot)) {
     utils.showWarningMessage(
       "The selected file is not a valid Agentforce Agent (Bot) metadata file."
@@ -31,7 +33,9 @@ export async function open(filePath: string, mode: builder.OpenMode): Promise<vo
     await utils.runShellCommand(openCommand);
 
     const action =
-      mode === builder.OpenMode.EDIT ? "Agentforce Builder" : "Agent Details (Setup)";
+      mode === builder.OpenMode.EDIT
+        ? "Agentforce Builder"
+        : "Agent Details (Setup)";
 
     utils.showInformationMessage(`Opened Bot in ${action} via CLI`);
   } catch (error: any) {
@@ -52,6 +56,6 @@ async function buildOpenCommand(
   return builder.buildOpenCommand(filePath, mode, {
     cliMode: builder.OpenMode.EDIT,
     metadataType: sf.FileType.Bot,
-    fetchMetadata: sf.getLatestBotInfo
+    fetchMetadata: sf.getLatestBotInfo,
   });
 }

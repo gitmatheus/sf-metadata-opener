@@ -16,7 +16,10 @@ const RUN_MODE_SUPPORTED_TYPES = new Set([
 /**
  * Handles opening a Flow file (right-click or command palette)
  */
-export async function open(filePath: string, mode: builder.OpenMode): Promise<void> {
+export async function open(
+  filePath: string,
+  mode: builder.OpenMode
+): Promise<void> {
   if (!filePath.endsWith(sf.FileType.Flow)) {
     utils.showWarningMessage(
       `The selected file is not a valid Flow metadata file (${sf.FileType.Flow}).`
@@ -52,7 +55,7 @@ export async function open(filePath: string, mode: builder.OpenMode): Promise<vo
   try {
     await utils.runShellCommand(openCommand);
 
-    const action = mode === builder.OpenMode.RUN ? "Run Mode" : "Flow Builder";
+    const action = mode === builder.OpenMode.EDIT ? "Flow Builder" : "Run Mode";
 
     utils.showInformationMessage(`Opened Flow in ${action} via CLI`);
   } catch (error: any) {
