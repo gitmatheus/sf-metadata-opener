@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+import * as path from "path";
 import { FileType } from "../salesforce";
 import { OpenMode } from "../commands/factory";
 
@@ -70,4 +71,15 @@ function resolveBotPath(ctx: PathContext): string {
   return ctx.mode === OpenMode.EDIT
     ? `/AiCopilot/copilotStudio.app#/copilot/builder?copilotId=${botId}&versionId=${versionId}`
     : `/lightning/setup/EinsteinCopilot/${botId}/edit`;
+}
+
+
+/**
+ * Extracts the metadata developer name from .xml file name
+ */
+export function parseMetadataNameFromFilePath(
+  filePath: string,
+  fileType: FileType
+): string {
+  return path.basename(filePath).replace(fileType, "");
 }

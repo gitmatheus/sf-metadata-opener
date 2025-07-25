@@ -24,7 +24,8 @@ export async function getMetadataInfo(
                 ORDER BY VersionNumber 
                  DESC LIMIT 1)
         FROM BotDefinition
-       WHERE DeveloperName = '${name}' AND IsDeleted = false
+       WHERE DeveloperName = '${name}' 
+         AND IsDeleted = false
        LIMIT 1" --json`,
 
     parseResult: (data) => {
