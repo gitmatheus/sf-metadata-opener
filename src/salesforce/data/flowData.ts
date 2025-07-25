@@ -22,10 +22,7 @@ export async function getLatestFlowInfo(
         });
 
         // Uses get record command with tooling API to get the latest Flow version
-        const command = `sf data get record --use-tooling-api 
-                                            --sobject FlowDefinition 
-                                            --where "DeveloperName='${metadataName}'" 
-                                            --json`;
+        const command = `sf data get record --use-tooling-api --sobject FlowDefinition --where "DeveloperName='${metadataName}'" --json`;
 
         const output = await utils.runShellCommand(command);
         const data = JSON.parse(output);

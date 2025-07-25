@@ -1,19 +1,20 @@
 import * as vscode from "vscode";
 import * as utils from "../../utils";
-import { open, Mode } from "./helpers";
+import { open } from "./helpers";
+import { OpenMode } from "./../builder";
 
 /**
  * Opens Bot in Builder via context menu or file path
  */
 export function openBotInBuilder(uri: vscode.Uri) {
-  return open(uri.fsPath, Mode.BUILDER);
+  return open(uri.fsPath, OpenMode.EDIT);
 }
 
 /**
  * Opens Bot in Setup via context menu or file path
  */
 export function openBotInSetup(uri: vscode.Uri) {
-    return open(uri.fsPath, Mode.SETUP);
+  return open(uri.fsPath, OpenMode.VIEW);
 }
 
 /**
@@ -24,7 +25,7 @@ export async function openCurrentBotFileInBuilder() {
   if (!filePath) {
     return utils.showWarningMessage("No active editor found.");
   }
-  return open(filePath, Mode.BUILDER);
+  return open(filePath, OpenMode.EDIT);
 }
 
 /**
@@ -35,5 +36,5 @@ export async function openCurrentBotFileInSetup() {
   if (!filePath) {
     return utils.showWarningMessage("No active editor found.");
   }
-  return open(filePath, Mode.SETUP);
+  return open(filePath, OpenMode.VIEW);
 }

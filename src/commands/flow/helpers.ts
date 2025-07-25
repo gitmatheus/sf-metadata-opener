@@ -6,14 +6,6 @@ import * as xml2js from "xml2js";
 import * as builder from "../builder";
 
 /**
- * Mode in which the Flow will be opened
- */
-export enum Mode {
-  RUN = "run",
-  EDIT = "edit",
-}
-
-/**
  * Supported Flow types for Run Mode
  */
 const RUN_MODE_SUPPORTED_TYPES = new Set([
@@ -24,7 +16,7 @@ const RUN_MODE_SUPPORTED_TYPES = new Set([
 /**
  * Handles opening a Flow file (right-click or command palette)
  */
-export async function open(filePath: string, mode: Mode): Promise<void> {
+export async function open(filePath: string, mode: builder.OpenMode): Promise<void> {
   if (!filePath.endsWith(sf.FileType.Flow)) {
     utils.showWarningMessage(
       `The selected file is not a valid Flow metadata file (${sf.FileType.Flow}).`
@@ -32,7 +24,7 @@ export async function open(filePath: string, mode: Mode): Promise<void> {
     return;
   }
 
-  if (mode === Mode.RUN) {
+  if (mode === builder.OpenMode.RUN) {
     const processType = await parseProcessTypeFromXml(filePath);
     // Validate if Run Mode is allowed
     if (!processType || !shouldOfferRunMode(processType)) {
@@ -60,7 +52,7 @@ export async function open(filePath: string, mode: Mode): Promise<void> {
   try {
     await utils.runShellCommand(openCommand);
 
-    const action = mode === Mode.RUN ? "Run Mode" : "Flow Builder";
+    const action = mode === builder.OpenMode.RUN ? "Run Mode" : "Flow Builder";
 
     utils.showInformationMessage(`Opened Flow in ${action} via CLI`);
   } catch (error: any) {
@@ -101,19 +93,12 @@ export async function parseProcessTypeFromXml(
  */
 async function buildOpenCommand(
   filePath: string,
-  mode: Mode
+  mode: builder.OpenMode
 ): Promise<string | null> {
-  return builder.buildOpenCommand(filePath, mode, {    
-    cliMode: Mode.EDIT,
+  return builder.buildOpenCommand(filePath, mode, {
+    cliMode: builder.OpenMode.EDIT,
     metadataType: sf.FileType.Flow,
     fetchMetadata: sf.getLatestFlowInfo,
-    
-    getPathFromMetadata: (flow, mode) => {
-      const name = utils.parseMetadataNameFromFilePath(filePath, sf.FileType.Flow);
-      return mode === Mode.RUN
-        ? `/flow/${name}/${flow.Id}`
-        : `/builder_platform_interaction/flowBuilder.app?flowId=${flow.Id}`;
-    },
   });
 }
 

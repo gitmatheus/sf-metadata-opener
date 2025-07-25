@@ -3,18 +3,11 @@ import * as utils from "../../utils";
 import { Properties } from "../../properties";
 import * as builder from "../builder";
 
-/**
- * Mode in which the Agentforce Bot will be opened
- */
-export enum Mode {
-  BUILDER = "builder",
-  SETUP = "edit",
-}
 
 /**
  * Handles opening a Bot file from right-click or command palette.
  */
-export async function open(filePath: string, mode: Mode): Promise<void> {
+export async function open(filePath: string, mode: builder.OpenMode): Promise<void> {
   if (!filePath.endsWith(sf.FileType.Bot)) {
     utils.showWarningMessage(
       "The selected file is not a valid Agentforce Agent (Bot) metadata file."
@@ -38,7 +31,7 @@ export async function open(filePath: string, mode: Mode): Promise<void> {
     await utils.runShellCommand(openCommand);
 
     const action =
-      mode === Mode.BUILDER ? "Agentforce Builder" : "Agent Details (Setup)";
+      mode === builder.OpenMode.EDIT ? "Agentforce Builder" : "Agent Details (Setup)";
 
     utils.showInformationMessage(`Opened Bot in ${action} via CLI`);
   } catch (error: any) {
@@ -54,16 +47,11 @@ export async function open(filePath: string, mode: Mode): Promise<void> {
  */
 async function buildOpenCommand(
   filePath: string,
-  mode: Mode
+  mode: builder.OpenMode
 ): Promise<string | null> {
   return builder.buildOpenCommand(filePath, mode, {
-    cliMode: Mode.BUILDER,
+    cliMode: builder.OpenMode.EDIT,
     metadataType: sf.FileType.Bot,
-    fetchMetadata: sf.getLatestBotInfo,
-    getPathFromMetadata: ({ bot, version }, mode) => {
-      return mode === Mode.BUILDER
-        ? `/AiCopilot/copilotStudio.app#/copilot/builder?copilotId=${bot.Id}&versionId=${version.Id}`
-        : `/lightning/setup/EinsteinCopilot/${bot.Id}/edit`;
-    },
+    fetchMetadata: sf.getLatestBotInfo
   });
 }
