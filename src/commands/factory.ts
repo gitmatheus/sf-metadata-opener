@@ -51,7 +51,7 @@ export function createOpenHandlers<TMode extends string>(
  */
 export async function createOpenCommand<T>(
   filePath: string,
-  mode: string,
+  mode: OpenMode,
   options: {
     metadataType: sf.FileType;
     fetchMetadata: (metadataName: string, metadataType: sf.FileType) => Promise<T | null>;

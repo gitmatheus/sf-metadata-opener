@@ -12,7 +12,7 @@ export async function open(filePath: string, mode: OpenMode): Promise<void> {
     mode,
     fileType: FileType.Bot,
     buildOpenCommand: (filePath, mode) =>
-      createOpenCommand(filePath, mode, {
+      createOpenCommand(filePath, mode as OpenMode, {
         metadataType: FileType.Bot,
         fetchMetadata: metadata.getMetadataInfo,
       }),

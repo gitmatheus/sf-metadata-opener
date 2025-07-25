@@ -35,7 +35,7 @@ export async function open(filePath: string, mode: OpenMode): Promise<void> {
     mode,
     fileType: FileType.Flow,
     buildOpenCommand: (filePath, mode) =>
-      createOpenCommand(filePath, mode, {
+      createOpenCommand(filePath, mode as OpenMode, {
         metadataType: FileType.Flow,
         fetchMetadata: metadata.getMetadataInfo,
       }),

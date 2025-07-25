@@ -1,6 +1,7 @@
 import * as utils from "../utils";
 import * as sf from "../salesforce";
 import { Properties } from "../properties";
+import { OpenMode } from "./factory";
 
 /**
  * Standardized handler to open a metadata file by path and mode.
@@ -15,9 +16,9 @@ export async function openMetadata<T>({
   buildOpenCommand,
 }: {
   filePath: string;
-  mode: string;
+  mode: OpenMode;
   fileType: sf.FileType;
-  buildOpenCommand: (filePath: string, mode: string) => Promise<string | null>;
+  buildOpenCommand: (filePath: string, mode: OpenMode) => Promise<string | null>;
 }): Promise<void> {
   const metadataLabel = sf.MetadataLabels[fileType] ?? fileType;
 
