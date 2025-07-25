@@ -18,7 +18,7 @@ export async function getMetadataInfo(
     async (progress) => {
       try {
         progress.report({
-          message: `Querying latest version for Flow: ${metadataName} ...`,
+          message: `Retrieving metadata info for: ${metadataName}`,
         });
 
         // Uses get record command with tooling API to get the latest Flow version

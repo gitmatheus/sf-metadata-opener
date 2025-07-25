@@ -18,7 +18,7 @@ export async function getMetadataInfo(
     async (progress) => {
       try {
         progress.report({
-          message: `Querying BotDefinition and versions for: ${metadataName}`,
+          message: `Retrieving metadata info for: ${metadataName}`,
         });
 
         const query = `
