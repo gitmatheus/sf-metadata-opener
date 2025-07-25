@@ -1,9 +1,10 @@
-import * as sf from "../../salesforce";
+import * as metadata from "../../salesforce/data/flow";
 import * as utils from "../../utils";
-import { Properties } from "../../properties";
 import * as fs from "fs/promises";
 import * as xml2js from "xml2js";
-import * as builder from "../builder";
+import * as handlers from "../handlers";
+import { createOpenCommand, OpenMode } from "../factory";
+import { FileType } from "../../salesforce";
 
 /**
  * Supported Flow types for Run Mode
@@ -16,51 +17,29 @@ const RUN_MODE_SUPPORTED_TYPES = new Set([
 /**
  * Handles opening a Flow file (right-click or command palette)
  */
-export async function open(
-  filePath: string,
-  mode: builder.OpenMode
-): Promise<void> {
-  if (!filePath.endsWith(sf.FileType.Flow)) {
-    utils.showWarningMessage(
-      `The selected file is not a valid Flow metadata file (${sf.FileType.Flow}).`
-    );
-    return;
-  }
-
-  if (mode === builder.OpenMode.RUN) {
+export async function open(filePath: string, mode: OpenMode): Promise<void> {
+  if (mode === OpenMode.RUN) {
     const processType = await parseProcessTypeFromXml(filePath);
-    // Validate if Run Mode is allowed
     if (!processType || !shouldOfferRunMode(processType)) {
-      utils.showWarningMessage(
+      return utils.showWarningMessage(
         `Run Mode is not supported for this Flow type: ${
           processType || "Unknown"
         }`
       );
-      return;
     }
   }
 
-  // Deploy the metadata file before attempting to open it
-  // This ensures the latest version is available in Salesforce
-  if (Properties.deployBeforeOpen) {
-    const deployed = await sf.deployMetadata(filePath);
-    if (!deployed) {
-      return; // Stop if deployment failed
-    }
-  }
-
-  let openCommand = await buildOpenCommand(filePath, mode);
-  if (!openCommand) return;
-
-  try {
-    await utils.runShellCommand(openCommand);
-
-    const action = mode === builder.OpenMode.EDIT ? "Flow Builder" : "Run Mode";
-
-    utils.showInformationMessage(`Opened Flow in ${action} via CLI`);
-  } catch (error: any) {
-    utils.showErrorMessage(`Failed to open Flow via CLI: ${error.message}`);
-  }
+  return handlers.openMetadata({
+    filePath,
+    mode,
+    fileType: FileType.Flow,
+    buildOpenCommand: (filePath, mode) =>
+      createOpenCommand(filePath, mode, {
+        cliMode: OpenMode.EDIT,
+        metadataType: FileType.Flow,
+        fetchMetadata: metadata.getMetadataInfo,
+      }),
+  });
 }
 
 /**
@@ -84,25 +63,6 @@ export async function parseProcessTypeFromXml(
     );
     return undefined;
   }
-}
-
-/**
- * Builds the appropriate `sf org open` command to launch a Flow in the browser.
- *
- * If the user has enabled the `useSfCommandToOpenMetadata` setting and the mode is EDIT,
- * the function returns a direct `--source-file` CLI command.
- * Otherwise, it queries Salesforce to retrieve the Flow ID and constructs the appropriate
- * path for either Run Mode or Flow Builder mode.
- */
-async function buildOpenCommand(
-  filePath: string,
-  mode: builder.OpenMode
-): Promise<string | null> {
-  return builder.buildOpenCommand(filePath, mode, {
-    cliMode: builder.OpenMode.EDIT,
-    metadataType: sf.FileType.Flow,
-    fetchMetadata: sf.getLatestFlowInfo,
-  });
 }
 
 /**

@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 import { FileType } from "../salesforce";
-import { OpenMode } from "../commands";
+import { OpenMode } from "../commands/factory";
 
 /**
  * Resolves the absolute file path from the currently active text editor in VS Code.

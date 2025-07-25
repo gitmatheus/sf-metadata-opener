@@ -1,12 +1,12 @@
 import * as vscode from "vscode";
 import * as utils from "../../utils";
 import * as constants from "../../constants";
-import { Flow, FileType } from "../../salesforce";
+import { Flow } from "..";
 
 /**
  * Queries Salesforce to get the latest Flow version info by flow name
  */
-export async function getLatestFlowInfo(
+export async function getMetadataInfo(
   metadataName: string
 ): Promise<Flow | null> {
   return vscode.window.withProgress<Flow | null>(

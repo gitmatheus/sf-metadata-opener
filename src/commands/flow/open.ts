@@ -1,6 +1,6 @@
 import { createOpenHandlers } from "../factory";
 import { open } from "./helpers";
-import {OpenMode} from "../builder";
+import { OpenMode } from "../factory";
 
 const handlers = createOpenHandlers(open);
 

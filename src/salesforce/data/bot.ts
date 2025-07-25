@@ -1,12 +1,12 @@
 import * as vscode from "vscode";
 import * as utils from "../../utils";
 import * as constants from "../../constants";
-import { Bot, BotVersion } from "../../salesforce";
+import { Bot, BotVersion } from "..";
 
 /**
  * Retrieves the BotDefinition and latest BotVersion from Salesforce for the given bot name.
  */
-export async function getLatestBotInfo(
+export async function getMetadataInfo(
   metadataName: string
 ): Promise<{ bot: Bot; version: BotVersion } | null> {
   return vscode.window.withProgress(
