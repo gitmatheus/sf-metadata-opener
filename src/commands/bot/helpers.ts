@@ -13,7 +13,6 @@ export async function open(filePath: string, mode: OpenMode): Promise<void> {
     fileType: FileType.Bot,
     buildOpenCommand: (filePath, mode) =>
       createOpenCommand(filePath, mode, {
-        cliMode: OpenMode.EDIT,
         metadataType: FileType.Bot,
         fetchMetadata: metadata.getMetadataInfo,
       }),

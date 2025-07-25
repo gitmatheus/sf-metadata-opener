@@ -13,6 +13,15 @@ export enum OpenMode {
 }
 
 /**
+ * Indicates which OpenModes support the use of default cli commands
+ */
+export const AllowDefaultCliMode: Record<OpenMode, boolean> = {
+  [OpenMode.RUN]: false,
+  [OpenMode.EDIT]: true,
+  [OpenMode.VIEW]: false,
+};
+
+/**
  * Factory for generating open handlers for both context menu and command palette commands.
  *
  * This utility allows you to avoid duplicating logic when registering VS Code commands
@@ -44,12 +53,11 @@ export async function createOpenCommand<T>(
   filePath: string,
   mode: string,
   options: {
-    cliMode: string;
     metadataType: sf.FileType;
     fetchMetadata: (metadataName: string, metadataType: sf.FileType) => Promise<T | null>;
   }
 ): Promise<string | null> {
-  if (Properties.useSfCommandToOpenMetadata && mode === options.cliMode) {
+   if (Properties.useSfCommandToOpenMetadata && AllowDefaultCliMode[mode as OpenMode]) {
     return sf.buildDefaultOpenCommand(filePath);
   }
 

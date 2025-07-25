@@ -6,6 +6,7 @@ import * as handlers from "../handlers";
 import { createOpenCommand, OpenMode } from "../factory";
 import { FileType } from "../../salesforce";
 
+
 /**
  * Supported Flow types for Run Mode
  */
@@ -35,7 +36,6 @@ export async function open(filePath: string, mode: OpenMode): Promise<void> {
     fileType: FileType.Flow,
     buildOpenCommand: (filePath, mode) =>
       createOpenCommand(filePath, mode, {
-        cliMode: OpenMode.EDIT,
         metadataType: FileType.Flow,
         fetchMetadata: metadata.getMetadataInfo,
       }),
