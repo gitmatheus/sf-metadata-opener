@@ -1,46 +1,50 @@
 import * as vscode from "vscode";
-import * as cmd from "./commands";
 import { Properties } from "./properties";
+import * as BotCommands from "./commands/bot";
+import * as FlowCommands from "./commands/flow";
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
+    
+    // Flow commands
     vscode.commands.registerCommand(
       "extension.openFlowInBuilder",
-      cmd.openFlowInBuilder
+      FlowCommands.openInEditMode
     ),
 
     vscode.commands.registerCommand(
       "extension.openFlowInRunMode",
-      cmd.openFlowInRunMode
+      FlowCommands.openInRunMode
     ),
 
     vscode.commands.registerCommand(
-      "extension.openCurrentFlowFileInBuilder",
-      cmd.openCurrentFlowFileInBuilder
+      "extension.openCurrentFlowInEditMode",
+      FlowCommands.openFileInEditMode
     ),
 
     vscode.commands.registerCommand(
-      "extension.openCurrentFlowFileInRunMode",
-      cmd.openCurrentFlowFileInRunMode
+      "extension.openCurrentFlowInRunMode",
+      FlowCommands.openFileInRunMode
     ),
 
+    // Agentforce Agents (Bot) commands
     vscode.commands.registerCommand(
-      "extension.openBotInBuilder",
-      cmd.openBotInBuilder
+      "extension.openBotInEditMode",
+      BotCommands.openInEditMode
     ),
     vscode.commands.registerCommand(
-      "extension.openBotInSetup",
-      cmd.openBotInSetup
+      "extension.openBotInViewMode",
+      BotCommands.openInViewMode
     ),
     vscode.commands.registerCommand(
-      "extension.openCurrentBotFileInBuilder",
-      cmd.openCurrentBotFileInBuilder
+      "extension.openCurrentBotInEditMode",
+      BotCommands.openFileInEditMode
     ),
     vscode.commands.registerCommand(
-      "extension.openCurrentBotFileInSetup",
-      cmd.openCurrentBotFileInSetup
+      "extension.openCurrentBotInViewMode",
+      BotCommands.openFileInViewMode
     ),
 
     vscode.workspace.onDidChangeConfiguration((e) => {

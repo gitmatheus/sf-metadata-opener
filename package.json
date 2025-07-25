@@ -16,12 +16,12 @@
   "activationEvents": [
     "onCommand:extension.openFlowInBuilder",
     "onCommand:extension.openFlowInRunMode",
-    "onCommand:extension.openCurrentFlowFileInBuilder",
-    "onCommand:extension.openCurrentFlowFileInRunMode",
-    "onCommand:extension.openBotInBuilder",
-    "onCommand:extension.openBotInSetup",
-    "onCommand:extension.openCurrentBotFileInBuilder",
-    "onCommand:extension.openCurrentBotFileInSetup"    
+    "onCommand:extension.openCurrentFlowInEditMode",
+    "onCommand:extension.openCurrentFlowInRunMode",
+    "onCommand:extension.openBotInEditMode",
+    "onCommand:extension.openBotInViewMode",
+    "onCommand:extension.openCurrentBotInEditMode",
+    "onCommand:extension.openCurrentBotInViewMode"    
   ],
   "contributes": {
     "configuration": {
@@ -49,27 +49,27 @@
         "title": "SFDX: Open Flow in Run Mode"
       },
       {
-        "command": "extension.openCurrentFlowFileInBuilder",
+        "command": "extension.openCurrentFlowInEditMode",
         "title": "SFDX: Open Current Flow in Flow Builder"
       },
       {
-        "command": "extension.openCurrentFlowFileInRunMode",
+        "command": "extension.openCurrentFlowInRunMode",
         "title": "SFDX: Open Current Flow in Run Mode"
       },
       {
-        "command": "extension.openBotInBuilder",
+        "command": "extension.openBotInEditMode",
         "title": "SFDX: Open Agent in Agentforce Builder"
       },
       {
-        "command": "extension.openBotInSetup",
+        "command": "extension.openBotInViewMode",
         "title": "SFDX: Open Agent Details in Setup"
       },
       {
-        "command": "extension.openCurrentBotFileInBuilder",
+        "command": "extension.openCurrentBotInEditMode",
         "title": "SFDX: Open Current Agent in Agentforce Builder"
       },
       {
-        "command": "extension.openCurrentBotFileInSetup",
+        "command": "extension.openCurrentBotInViewMode",
         "title": "SFDX: Open Current Agent Details in Setup"
       }
     ],
@@ -86,12 +86,12 @@
           "group": "z_commands"
         },
         {
-          "command": "extension.openBotInBuilder",
+          "command": "extension.openBotInEditMode",
           "when": "resourceFilename =~ /\\.bot-meta\\.xml$/",
           "group": "z_commands"
         },
         {
-          "command": "extension.openBotInSetup",
+          "command": "extension.openBotInViewMode",
           "when": "resourceFilename =~ /\\.bot-meta\\.xml$/",
           "group": "z_commands"
         }
@@ -106,11 +106,11 @@
           "when": "false"
         },
         {
-          "command": "extension.openBotInBuilder",
+          "command": "extension.openBotInEditMode",
           "when": "false"
         },
         {
-          "command": "extension.openBotInSetup",
+          "command": "extension.openBotInViewMode",
           "when": "false"
         }
       ]
