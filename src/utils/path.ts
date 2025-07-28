@@ -1,7 +1,10 @@
 import * as vscode from "vscode";
 import * as path from "path";
 import { FileType } from "../salesforce";
-import { OpenMode } from "../commands/factory";
+
+import * as flow from "../commands/flow/helpers";
+import * as bot from "../commands/bot/helpers";
+import * as report from "../commands/report/helpers";
 
 /**
  * Resolves the absolute file path from the currently active text editor in VS Code.
@@ -32,47 +35,20 @@ export type PathContext = {
 export function resolveMetadataPath(ctx: PathContext): string {
   switch (ctx.fileType) {
     case FileType.Flow:
-      return resolveFlowPath(ctx);
+      return flow.resolvePath(ctx);
 
     case FileType.Bot:
-      return resolveBotPath(ctx);
+      return bot.resolvePath(ctx);
+
+    case FileType.Report:
+      return report.resolvePath(ctx);
 
     default:
-      throw new Error(`Unsupported FileType: ${ctx.fileType}`);
+      throw new Error(
+        `Unsupported FileType: ${ctx.fileType}. Contact your developer so this new type can be supported (path).`
+      );
   }
 }
-
-/**
- * Resolves the browser path to open a Flow either in Flow Builder or Run Mode.
- *
- * @param ctx - Flow-specific context including ID and mode
- * @returns URL path for Flow Builder or Run Mode
- */
-function resolveFlowPath(ctx: PathContext): string {
-  const flowId = ctx.metadata?.Id;
-  if (!flowId) throw new Error("Missing Flow ID");
-
-  return ctx.mode === OpenMode.RUN
-    ? `/flow/${ctx.metadataName}/${flowId}`
-    : `/builder_platform_interaction/flowBuilder.app?flowId=${flowId}`;
-}
-
-/**
- * Resolves the browser path to open a Bot in either Agentforce Builder or Setup.
- *
- * @param ctx - Bot-specific context including bot/version IDs and mode
- * @returns URL path for Agentforce Builder or Setup
- */
-function resolveBotPath(ctx: PathContext): string {
-  const botId = ctx.metadata?.bot?.Id;
-  const versionId = ctx.metadata?.version?.Id;
-  if (!botId) throw new Error("Missing Bot ID");
-
-  return ctx.mode === OpenMode.EDIT
-    ? `/AiCopilot/copilotStudio.app#/copilot/builder?copilotId=${botId}&versionId=${versionId}`
-    : `/lightning/setup/EinsteinCopilot/${botId}/edit`;
-}
-
 
 /**
  * Extracts the metadata developer name from .xml file name

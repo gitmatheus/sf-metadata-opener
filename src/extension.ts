@@ -21,10 +21,10 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand("extension.openCurrentBotInViewMode", bot.openFileInViewMode),
 
     // report commands
-    vscode.commands.registerCommand("extension.openBotInEditMode", report.openInEditMode),
-    vscode.commands.registerCommand("extension.openBotInViewMode", report.openInViewMode),
-    vscode.commands.registerCommand("extension.openCurrentBotInEditMode", report.openFileInEditMode),
-    vscode.commands.registerCommand("extension.openCurrentBotInViewMode", report.openFileInViewMode),
+    vscode.commands.registerCommand("extension.openReportInEditMode", report.openInEditMode),
+    vscode.commands.registerCommand("extension.openReportInViewMode", report.openInViewMode),
+    vscode.commands.registerCommand("extension.openCurrentReportInEditMode", report.openFileInEditMode),
+    vscode.commands.registerCommand("extension.openCurrentReportInViewMode", report.openFileInViewMode),
 
     vscode.workspace.onDidChangeConfiguration((e) => {
       if (e.affectsConfiguration("SalesforceMetadataOpener")) {

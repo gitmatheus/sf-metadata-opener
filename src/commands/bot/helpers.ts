@@ -1,5 +1,6 @@
 import * as metadata from "../../salesforce/data/bot";
 import * as handlers from "../handlers";
+import * as utils from "../../utils";
 import { FileType } from "../../salesforce";
 import { createOpenCommand, OpenMode } from "../factory";
 
@@ -17,4 +18,17 @@ export async function open(filePath: string, mode: OpenMode): Promise<void> {
         fetchMetadata: metadata.getMetadataInfo,
       }),
   });
+}
+
+/**
+ * Resolves the browser path to open a Bot in Agentforce Builder or Setup.
+ */
+export function resolvePath(ctx: utils.PathContext): string {
+  const botId = ctx.metadata?.bot?.Id;
+  const versionId = ctx.metadata?.version?.Id;
+  if (!botId) throw new Error("Missing Bot ID");
+
+  return ctx.mode === OpenMode.EDIT
+    ? `/AiCopilot/copilotStudio.app#/copilot/builder?copilotId=${botId}&versionId=${versionId}`
+    : `/lightning/setup/EinsteinCopilot/${botId}/edit`;
 }

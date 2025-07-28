@@ -1,5 +1,6 @@
-import * as metadata from "../../salesforce/data/bot";
+import * as metadata from "../../salesforce/data/report";
 import * as handlers from "../handlers";
+import * as utils from "../../utils";
 import { FileType } from "../../salesforce";
 import { createOpenCommand, OpenMode } from "../factory";
 
@@ -10,11 +11,23 @@ export async function open(filePath: string, mode: OpenMode): Promise<void> {
   return handlers.openMetadata({
     filePath,
     mode,
-    fileType: FileType.Bot,
+    fileType: FileType.Report,
     buildOpenCommand: (filePath, mode) =>
       createOpenCommand(filePath, mode as OpenMode, {
-        metadataType: FileType.Bot,
+        metadataType: FileType.Report,
         fetchMetadata: metadata.getMetadataInfo,
+        skipDefaultCli: true, // Reports should always use the custom open command
       }),
   });
+}
+
+/**
+ * Resolves the browser path to open a Report in view or edit mode.
+ */
+export function resolvePath(ctx: utils.PathContext): string {
+  const reportId = ctx.metadata?.Id;
+  if (!reportId) throw new Error("Missing Report ID");
+
+  const action = ctx.mode === OpenMode.EDIT ? "edit" : "view";
+  return `/lightning/r/Report/${reportId}/${action}?queryScope=userFolders`;
 }

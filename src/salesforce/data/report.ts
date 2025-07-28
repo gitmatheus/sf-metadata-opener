@@ -13,18 +13,19 @@ export async function getMetadataInfo(
     metadataName,
     metadataType,
     getCommand: (name) =>
-      `sf data get record --sobject Report --where "DeveloperName='${name}'" --json`,
+      `sf data get record --sobject Report --where "DeveloperName='${name}'" --json`,    
     parseResult: (data) => {
       const result = data?.result;
-      return result?.Id
-        ? {
+      if (result?.Id) {
+        return {
             Id: result.Id,
             Name: result.Name,
             DeveloperName: result.DeveloperName,
             FolderName: result.FolderName,
             Format: result.Format,
-          }
-        : null;
+          };
+      }
+      return null;
     },
   });
 }

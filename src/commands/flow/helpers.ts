@@ -6,7 +6,6 @@ import * as handlers from "../handlers";
 import { createOpenCommand, OpenMode } from "../factory";
 import { FileType } from "../../salesforce";
 
-
 /**
  * Supported Flow types for Run Mode
  */
@@ -70,4 +69,16 @@ export async function parseProcessTypeFromXml(
  */
 function shouldOfferRunMode(processType: string): boolean {
   return RUN_MODE_SUPPORTED_TYPES.has(processType);
+}
+
+/**
+ * Resolves the browser path to open a Flow either in Flow Builder or Run Mode.
+ */
+export function resolvePath(ctx: utils.PathContext): string {
+  const flowId = ctx.metadata?.Id;
+  if (!flowId) throw new Error("Missing Flow ID");
+
+  return ctx.mode === OpenMode.RUN
+    ? `/flow/${ctx.metadataName}/${flowId}`
+    : `/builder_platform_interaction/flowBuilder.app?flowId=${flowId}`;
 }

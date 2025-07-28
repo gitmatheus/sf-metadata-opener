@@ -1,6 +1,5 @@
 import * as vscode from "vscode";
 import * as utils from "../../utils";
-import * as constants from "../../constants";
 import { FileType, MetadataLabels } from "../../salesforce";
 
 /**
@@ -27,10 +26,11 @@ export async function retrieveMetadata<T>({
     async (progress) => {
       try {
         progress.report({
-          message: `Retrieving metadata info for ${metadataLabel}: "${metadataName}"`,
+          message: `Retrieving record info for ${metadataLabel}: "${metadataName}"`,
         });
 
         const command = getCommand(metadataName);
+
         const output = await utils.runShellCommand(command);
         const json = JSON.parse(output);
 

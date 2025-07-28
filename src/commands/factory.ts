@@ -55,23 +55,27 @@ export async function createOpenCommand<T>(
   options: {
     metadataType: sf.FileType;
     fetchMetadata: (metadataName: string, metadataType: sf.FileType) => Promise<T | null>;
+    skipDefaultCli?: boolean;
   }
 ): Promise<string | null> {
-   if (Properties.useSfCommandToOpenMetadata && AllowDefaultCliMode[mode as OpenMode]) {
+  const { metadataType, fetchMetadata, skipDefaultCli = false } = options;
+  
+  const useCliMode = !skipDefaultCli && AllowDefaultCliMode[mode as OpenMode];
+  if (Properties.useSfCommandToOpenMetadata && useCliMode) {
     return sf.buildDefaultOpenCommand(filePath);
   }
 
   const metadataName = utils.parseMetadataNameFromFilePath(
     filePath,
-    options.metadataType
+    metadataType
   );
-  const metadata = await options.fetchMetadata(metadataName, options.metadataType);
+  const metadata = await fetchMetadata(metadataName, metadataType);
   if (!metadata) return null;
 
   const path = utils.resolveMetadataPath({
     filePath,
     mode,
-    fileType: options.metadataType,
+    fileType: metadataType,
     metadataName,
     metadata,
   });
