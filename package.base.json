@@ -1,0 +1,66 @@
+{
+  "name": "sf-metadata-opener",
+  "displayName": "Salesforce Metadata Opener",
+  "publisher": "MatheusGoncalves",
+  "icon": "icon.png",
+  "repository": "https://github.com/gitmatheus/sf-metadata-opener",
+  "description": "Right-click to open Salesforce metadata in the browser (Flows, Agentforce agents, etc.)",
+  "version": "0.0.4",
+  "engines": {
+    "vscode": "^1.102.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Salesforce Metadata Opener",
+      "properties": {
+        "SalesforceMetadataOpener.useSfCommandToOpenMetadata": {
+          "type": "boolean",
+          "default": true,
+          "description": "Use the `sf` CLI to open the metadata in the browser. Disable this to have the extension query the org for the metadata ID instead."
+        },
+        "SalesforceMetadataOpener.deployBeforeOpen": {
+          "type": "boolean",
+          "default": true,
+          "description": "Deploy the local metadata file before opening it in the browser."
+        }
+      }
+    }     
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "prepare:manifest": "node ./scripts/manifest/build-manifest.js",
+    "compile": "npm run prepare:manifest && webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "publish": "vsce package",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test",
+    "local-no-ext": "npm run compile && code --disable-extensions --extensionDevelopmentPath=${PWD}",
+    "local": "npm run compile && code --extensionDevelopmentPath=${PWD}"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.102.0",
+    "@types/xml2js": "^0.4.14",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "@vscode/test-cli": "^0.0.8",
+    "@vscode/test-electron": "^2.3.9",
+    "eslint": "^8.57.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "xml2js": "^0.6.2"
+  }
+}

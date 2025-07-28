@@ -1,16 +1,10 @@
-import * as sf from "../../salesforce";
+import * as metadata from "../../salesforce/data/flow";
 import * as utils from "../../utils";
-import { Properties } from "../../properties";
 import * as fs from "fs/promises";
 import * as xml2js from "xml2js";
-
-/**
- * Mode in which the Flow will be opened
- */
-export enum Mode {
-  RUN = "run",
-  EDIT = "edit",
-}
+import * as handlers from "../handlers";
+import { createOpenCommand, OpenMode } from "../factory";
+import { FileType } from "../../salesforce";
 
 /**
  * Supported Flow types for Run Mode
@@ -23,51 +17,28 @@ const RUN_MODE_SUPPORTED_TYPES = new Set([
 /**
  * Handles opening a Flow file (right-click or command palette)
  */
-export async function open(
-  filePath: string,
-  mode: Mode
-): Promise<void> {
-  if (!filePath.endsWith(sf.Extensions.Flow)) {
-    utils.showWarningMessage(
-      `The selected file is not a valid Flow metadata file (${sf.Extensions.Flow}).`
-    );
-    return;
-  }
-
-  if (mode === Mode.RUN) {
+export async function open(filePath: string, mode: OpenMode): Promise<void> {
+  if (mode === OpenMode.RUN) {
     const processType = await parseProcessTypeFromXml(filePath);
-    // Validate if Run Mode is allowed
     if (!processType || !shouldOfferRunMode(processType)) {
-      utils.showWarningMessage(
+      return utils.showWarningMessage(
         `Run Mode is not supported for this Flow type: ${
           processType || "Unknown"
         }`
       );
-      return;
     }
   }
 
-  // Deploy the metadata file before attempting to open it
-  // This ensures the latest version is available in Salesforce
-  if (Properties.deployBeforeOpen) {
-    const deployed = await sf.deployMetadata(filePath);
-    if (!deployed) {
-      return; // Stop if deployment failed
-    }
-  }
-
-  let openCommand = await buildOpenCommand(filePath, mode);
-  if (!openCommand) {
-    return;
-  }
-
-  try {
-    await utils.runShellCommand(openCommand);
-    const action = mode === Mode.RUN ? "Run Mode" : "Flow Builder";
-    utils.showInformationMessage(`Opened Flow in ${action} via CLI`);
-  } catch (error: any) {
-    utils.showErrorMessage(`Failed to open Flow via CLI: ${error.message}`);
-  }
+  return handlers.openMetadata({
+    filePath,
+    mode,
+    fileType: FileType.Flow,
+    buildOpenCommand: (filePath, mode) =>
+      createOpenCommand(filePath, mode as OpenMode, {
+        metadataType: FileType.Flow,
+        fetchMetadata: metadata.getMetadataInfo,
+      }),
+  });
 }
 
 /**
@@ -94,40 +65,20 @@ export async function parseProcessTypeFromXml(
 }
 
 /**
- * Builds the appropriate `sf org open` command to launch a Flow in the browser.
- *
- * If the user has enabled the `useSfCommandToOpenMetadata` setting and the mode is EDIT,
- * the function returns a direct `--source-file` CLI command.
- * Otherwise, it queries Salesforce to retrieve the Flow ID and constructs the appropriate
- * path for either Run Mode or Flow Builder mode.
- */
-async function buildOpenCommand(
-  filePath: string,
-  mode: Mode
-): Promise<string | null> {
-  if (Properties.useSfCommandToOpenMetadata && mode === Mode.EDIT) {
-    return sf.buildDefaultOpenCommand(filePath);
-  }
-
-  // If not using sf command, or not in Edit mode, we need to get the Flow info from Salesforce
-  const flowInfo = await sf.getLatestFlowInfo(filePath);
-
-  if (!flowInfo?.Id) {
-    return null;
-  }
-
-  const flowName = utils.parseFlowNameFromFilePath(filePath);
-  const runPath =
-    mode === Mode.RUN
-      ? `/flow/${flowName}/${flowInfo.Id}`
-      : `/builder_platform_interaction/flowBuilder.app?flowId=${flowInfo.Id}`;
-
-  return `sf org open --path "${runPath}" --json`;
-}
-
-/**
  * Determines whether the given Flow type supports being run in "Run Mode"
  */
 function shouldOfferRunMode(processType: string): boolean {
   return RUN_MODE_SUPPORTED_TYPES.has(processType);
+}
+
+/**
+ * Resolves the browser path to open a Flow either in Flow Builder or Run Mode.
+ */
+export function resolvePath(ctx: utils.PathContext): string {
+  const flowId = ctx.metadata?.Id;
+  if (!flowId) throw new Error("Missing Flow ID");
+
+  return ctx.mode === OpenMode.RUN
+    ? `/flow/${ctx.metadataName}/${flowId}`
+    : `/builder_platform_interaction/flowBuilder.app?flowId=${flowId}`;
 }

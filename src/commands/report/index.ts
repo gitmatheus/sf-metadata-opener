@@ -4,6 +4,6 @@ import { registerOpenHandlers } from "../handlers";
 // Export the handlers
 const handlers = registerOpenHandlers(open);
 export const openInEditMode = handlers.inEditMode;
-export const openInRunMode = handlers.inRunMode;
+export const openInViewMode = handlers.inViewMode;
 export const openFileInEditMode = handlers.currentInEditMode;
-export const openFileInRunMode = handlers.currentInRunMode;
+export const openFileInViewMode = handlers.currentInViewMode;

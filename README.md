@@ -1,23 +1,24 @@
 # 🚀 Salesforce Metadata Opener
 
-A sleek, no-friction way to open Salesforce metadata directly in your browser — right from VS Code.
+A sleek, no-friction way to open Salesforce metadata directly in your browser, right from VS Code.
 
 Currently supports:
 
 - ✅ **Flows** (Screen Flows, Auto-launched, etc.)
 - ✅ **Agentforce Agents (Bots)**
+- 🆕 **Reports** (Standard and Custom Reports)
 
-More metadata types coming soon (Reports, Dashboards, LWC, etc.)
+More metadata types coming soon (Dashboards, LWC, Apex, etc.)
 
 ---
 
 ## ✨ Features
 
-✅ Context-aware file actions  
-✅ Command Palette integration  
-✅ Auto-deploys your metadata before launching  
-✅ Supports both **Flow Builder / Run Mode** and **Agentforce Builder / Setup**  
-✅ Uses `sf org open` under the hood (respects your default org/session)
+- Context-aware file actions
+- Command Palette integration
+- Auto-deploys your metadata before launching
+- Supports both **Flow Builder / Run Mode**, **Agentforce Builder / Setup**, and **Report View / Edit**
+- Uses `sf org open` under the hood (respects your default org/session)
 
 ---
 
@@ -37,6 +38,7 @@ This extension enables rapid navigation from your VS Code workspace to your Sale
   - `SFDX: Open Flow in Run Mode`
 
 - **Use the Command Palette** with a `.flow-meta.xml` file active:
+
   - `SFDX: Open Current Flow in Flow Builder`
   - `SFDX: Open Current Flow in Run Mode`
 
@@ -55,6 +57,7 @@ This extension enables rapid navigation from your VS Code workspace to your Sale
   - `SFDX: Open Agent Details in Setup`
 
 - **Use the Command Palette** with a `.bot-meta.xml` file active:
+
   - `SFDX: Open Current Agent in Agentforce Builder`
   - `SFDX: Open Current Agent Details in Setup`
  
@@ -64,6 +67,22 @@ This extension enables rapid navigation from your VS Code workspace to your Sale
 ℹ️ Agent Builder uses version-based routing, and this extension fetches the latest BotVersion automatically.
 
 
+
+---
+
+### 📊 Reports
+
+- **Right-click a `.report-meta.xml`** file in the Explorer:
+
+  - `SFDX: Open Report in Edit Mode`
+  - `SFDX: Open Report in View Mode`
+
+- **Use the Command Palette** with a `.report-meta.xml` file active:
+
+  - `SFDX: Open Current Report in Edit Mode`
+  - `SFDX: Open Current Report in View Mode`
+
+ℹ️ Report URLs are opened using direct ID-based paths. This metadata type bypasses the default CLI and always uses org queries to build the correct URL.
 
 ---
 
@@ -93,8 +112,8 @@ You can customize the extension’s behavior via VS Code settings:
 
 All commands share robust common logic:
 
-- ✅ Validates file extension (`.flow-meta.xml`, `.bot-meta.xml`)
-- 🔍 Parses metadata file (for flows) or resolves DeveloperName
+- ✅ Validates file extension (`.flow-meta.xml`, `.bot-meta.xml`, `.report-meta.xml`)
+- 🔍 Parses metadata file or resolves DeveloperName
 - 🚀 Deploys metadata using `sf project deploy start`
 - 🔗 Opens browser via `sf org open` (either with `--source-file` or `--path`)
 
@@ -104,14 +123,15 @@ All commands share robust common logic:
 
 - **Salesforce CLI (`sf`)** installed
 - An authenticated **default org** (`sf org display`)
-- A Salesforce project with metadata (e.g., `force-app/main/default/flows/`, `.../bots/`)
+- A Salesforce project with metadata (e.g., `force-app/main/default/flows/`, `.../bots/`, `.../reports/`)
 
 ---
 
 ## 🔮 Coming Soon
 
 - Support for:
-  - More metadata targets (Reports, Apex, LWC)
+
+  - More metadata targets (Apex, Dashboards, LWC)
   - Better debug logging
   - Custom org aliases and context awareness
 
@@ -121,8 +141,9 @@ All commands share robust common logic:
 
 Have a feature request? Found a bug?
 
-→ Create an [Issue](https://github.com/gitmatheus/sf-metadata-opener/issues)  
-→ Or email: contact@matheus.dev
+→ Create an [Issue](https://github.com/gitmatheus/sf-metadata-opener/issues)
+
+→ Or email: [contact@matheus.dev](mailto:contact@matheus.dev)
 
 ---
 

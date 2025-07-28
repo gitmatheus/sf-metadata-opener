@@ -1,0 +1,50 @@
+[
+  {
+    "command": "extension.openFlowInBuilder",
+    "title": "SFDX: Open Flow in Flow Builder"
+  },
+  {
+    "command": "extension.openFlowInRunMode",
+    "title": "SFDX: Open Flow in Run Mode"
+  },
+  {
+    "command": "extension.openCurrentFlowInEditMode",
+    "title": "SFDX: Open Current Flow in Flow Builder"
+  },
+  {
+    "command": "extension.openCurrentFlowInRunMode",
+    "title": "SFDX: Open Current Flow in Run Mode"
+  },
+  {
+    "command": "extension.openBotInEditMode",
+    "title": "SFDX: Open Agent in Agentforce Builder"
+  },
+  {
+    "command": "extension.openBotInViewMode",
+    "title": "SFDX: Open Agent Details in Setup"
+  },
+  {
+    "command": "extension.openCurrentBotInEditMode",
+    "title": "SFDX: Open Current Agent in Agentforce Builder"
+  },
+  {
+    "command": "extension.openCurrentBotInViewMode",
+    "title": "SFDX: Open Current Agent Details in Setup"
+  },
+  {
+    "command": "extension.openReportInEditMode",
+    "title": "SFDX: Open Report in Edit Mode"
+  },
+  {
+    "command": "extension.openReportInViewMode",
+    "title": "SFDX: Open Report in View Mode"
+  },
+  {
+    "command": "extension.openCurrentReportInEditMode",
+    "title": "SFDX: Open Current Report in Edit Mode"
+  },
+  {
+    "command": "extension.openCurrentReportInViewMode",
+    "title": "SFDX: Open Current Report in View Mode"
+  }
+]
