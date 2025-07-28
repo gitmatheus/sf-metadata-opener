@@ -21,7 +21,11 @@
     "onCommand:extension.openBotInEditMode",
     "onCommand:extension.openBotInViewMode",
     "onCommand:extension.openCurrentBotInEditMode",
-    "onCommand:extension.openCurrentBotInViewMode"    
+    "onCommand:extension.openCurrentBotInViewMode",
+    "onCommand:extension.openReportInEditMode",
+    "onCommand:extension.openReportInViewMode",
+    "onCommand:extension.openCurrentReportInEditMode",
+    "onCommand:extension.openCurrentReportInViewMode"
   ],
   "contributes": {
     "configuration": {
@@ -71,6 +75,22 @@
       {
         "command": "extension.openCurrentBotInViewMode",
         "title": "SFDX: Open Current Agent Details in Setup"
+      },
+      {
+        "command": "extension.openReportInEditMode",
+        "title": "SFDX: Open Report in Edit Mode"
+      },
+      {
+        "command": "extension.openReportInViewMode",
+        "title": "SFDX: Open Report in View Mode"
+      },
+      {
+        "command": "extension.openCurrentReportInEditMode",
+        "title": "SFDX: Open Current Report in Edit Mode"
+      },
+      {
+        "command": "extension.openCurrentReportInViewMode",
+        "title": "SFDX: Open Current Report in View Mode"
       }
     ],
     "menus": {
@@ -94,6 +114,16 @@
           "command": "extension.openBotInViewMode",
           "when": "resourceFilename =~ /\\.bot-meta\\.xml$/",
           "group": "z_commands"
+        },
+        {
+          "command": "extension.openReportInEditMode",
+          "when": "resourceFilename =~ /\\.report-meta\\.xml$/",
+          "group": "z_commands"
+        },
+        {
+          "command": "extension.openReportInViewMode",
+          "when": "resourceFilename =~ /\\.report-meta\\.xml$/",
+          "group": "z_commands"
         }
       ],
       "commandPalette": [
@@ -111,6 +141,14 @@
         },
         {
           "command": "extension.openBotInViewMode",
+          "when": "false"
+        },
+        {
+          "command": "extension.openReportInEditMode",
+          "when": "false"
+        },
+        {
+          "command": "extension.openReportInViewMode",
           "when": "false"
         }
       ]
