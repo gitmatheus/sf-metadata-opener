@@ -1,5 +1,5 @@
 import { open } from "./helpers";
-import { registerOpenHandlers } from "../open";
+import { registerOpenHandlers } from "../handlers";
 
 // Export the handlers
 const handlers = registerOpenHandlers(open);

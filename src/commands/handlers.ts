@@ -1,7 +1,7 @@
 import * as utils from "../utils";
 import * as sf from "../salesforce";
 import { Properties } from "../properties";
-import { OpenMode } from "./factory";
+import { createOpenHandlers, OpenMode } from "./factory";
 
 /**
  * Standardized handler to open a metadata file by path and mode.
@@ -42,4 +42,23 @@ export async function openMetadata<T>({
   } catch (error: any) {
     utils.showErrorMessage(`Failed to open ${metadataLabel}: ${error.message}`);
   }
+}
+
+/**
+ * Creates standard open handlers for common metadata types.
+ *
+ * Used to avoid duplicate `open.ts` files for each metadata module.
+ */
+export function registerOpenHandlers(openFn: (filePath: string, mode: OpenMode) => Promise<void>) {
+  const handlers = createOpenHandlers(openFn);
+
+  return {
+    inEditMode: handlers.fromUri(OpenMode.EDIT),
+    inViewMode: handlers.fromUri(OpenMode.VIEW),
+    inRunMode: handlers.fromUri(OpenMode.RUN),
+
+    currentInEditMode: handlers.fromEditor(OpenMode.EDIT),
+    currentInViewMode: handlers.fromEditor(OpenMode.VIEW),
+    currentInRunMode: handlers.fromEditor(OpenMode.RUN),
+  };
 }

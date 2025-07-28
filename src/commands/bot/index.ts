@@ -1,5 +1,5 @@
 import { open } from "./helpers";
-import { registerOpenHandlers } from "../open";
+import { registerOpenHandlers } from "../handlers";
 
 export * from "./helpers";
 
