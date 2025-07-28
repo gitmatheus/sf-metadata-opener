@@ -1,0 +1,14 @@
+[
+  "onCommand:extension.openFlowInBuilder",
+  "onCommand:extension.openFlowInRunMode",
+  "onCommand:extension.openCurrentFlowInEditMode",
+  "onCommand:extension.openCurrentFlowInRunMode",
+  "onCommand:extension.openBotInEditMode",
+  "onCommand:extension.openBotInViewMode",
+  "onCommand:extension.openCurrentBotInEditMode",
+  "onCommand:extension.openCurrentBotInViewMode",
+  "onCommand:extension.openReportInEditMode",
+  "onCommand:extension.openReportInViewMode",
+  "onCommand:extension.openCurrentReportInEditMode",
+  "onCommand:extension.openCurrentReportInViewMode"
+]

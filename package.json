@@ -13,20 +13,6 @@
     "Other"
   ],
   "main": "./dist/extension.js",
-  "activationEvents": [
-    "onCommand:extension.openFlowInBuilder",
-    "onCommand:extension.openFlowInRunMode",
-    "onCommand:extension.openCurrentFlowInEditMode",
-    "onCommand:extension.openCurrentFlowInRunMode",
-    "onCommand:extension.openBotInEditMode",
-    "onCommand:extension.openBotInViewMode",
-    "onCommand:extension.openCurrentBotInEditMode",
-    "onCommand:extension.openCurrentBotInViewMode",
-    "onCommand:extension.openReportInEditMode",
-    "onCommand:extension.openReportInViewMode",
-    "onCommand:extension.openCurrentReportInEditMode",
-    "onCommand:extension.openCurrentReportInViewMode"
-  ],
   "contributes": {
     "configuration": {
       "title": "Salesforce Metadata Opener",
@@ -156,7 +142,8 @@
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
-    "compile": "webpack",
+    "prepare:manifest": "node ./scripts/manifest/build-manifest.js",
+    "compile": "npm run prepare:manifest && webpack",
     "watch": "webpack --watch",
     "package": "webpack --mode production --devtool hidden-source-map",
     "publish": "vsce package",
@@ -185,5 +172,19 @@
   },
   "dependencies": {
     "xml2js": "^0.6.2"
-  }
+  },
+  "activationEvents": [
+    "onCommand:extension.openFlowInBuilder",
+    "onCommand:extension.openFlowInRunMode",
+    "onCommand:extension.openCurrentFlowInEditMode",
+    "onCommand:extension.openCurrentFlowInRunMode",
+    "onCommand:extension.openBotInEditMode",
+    "onCommand:extension.openBotInViewMode",
+    "onCommand:extension.openCurrentBotInEditMode",
+    "onCommand:extension.openCurrentBotInViewMode",
+    "onCommand:extension.openReportInEditMode",
+    "onCommand:extension.openReportInViewMode",
+    "onCommand:extension.openCurrentReportInEditMode",
+    "onCommand:extension.openCurrentReportInViewMode"
+  ]
 }
