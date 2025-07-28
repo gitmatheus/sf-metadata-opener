@@ -4,6 +4,7 @@
 export const FileType = {
   Flow: ".flow-meta.xml",
   Bot: ".bot-meta.xml",
+  Report: ".report-meta.xml",
 };
 
 
@@ -13,6 +14,7 @@ export const FileType = {
 export const MetadataLabels: Record<FileType, string> = {
   [FileType.Flow]: "Flow",
   [FileType.Bot]: "Agentforce Agent (Bot)",
+  [FileType.Report]: "Report",
 };
 
 /**
@@ -21,21 +23,6 @@ export const MetadataLabels: Record<FileType, string> = {
 export interface Metadata {
   Id?: string;
   Name?: string;
-}
-
-/**
- * Interface representing the metadata of a Flow retrieved from Salesforce
- */
-export interface Flow extends Metadata {
-  ProcessType?: string;
-}
-
-/**
- * Interface representing the metadata of a Bot (Agentforce Agent) version retrieved from Salesforce
- */
-export interface BotVersion extends Metadata {
-  Status?: string;
-  VersionNumber?: number;
 }
 
 /**
@@ -50,6 +37,30 @@ export interface Bot extends Metadata {
   };
 }
 
+/**
+ * Interface representing the metadata of a Bot (Agentforce Agent) version retrieved from Salesforce
+ */
+export interface BotVersion extends Metadata {
+  Status?: string;
+  VersionNumber?: number;
+}
+
+/**
+ * Interface representing the metadata of a Flow retrieved from Salesforce
+ */
+export interface Flow extends Metadata {
+  ProcessType?: string;
+}
+
+
+/**
+ * Interface representing the metadata of a Flow retrieved from Salesforce
+ */
+export interface Report extends Metadata {
+  DeveloperName?: string;
+  FolderName?: string;
+  Format?: string;
+}
 
 /**
  * Metadata extension type for better type safety
