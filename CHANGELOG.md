@@ -4,15 +4,55 @@ All notable changes to this project will be documented here.
 
 ---
 
+## [0.0.4] - 2025-07-28
+
+### ✨ Added
+
+- 📊 **Report metadata support**:
+
+  - Right-click `.report-meta.xml` to open in:
+
+    - **Edit Mode** (Lightning Report Builder)
+    - **View Mode** (Standard Lightning Report Page)
+
+  - Command Palette equivalents also available.
+
+- 📁 New `src/commands/report/` folder added for Report-specific logic.
+- 🧠 `getMetadataInfo()` for reports queries the `Report` object using standard REST API, not Tooling.
+- 🔗 `resolvePath()` for Reports constructs direct ID-based Lightning URLs.
+- ⚙️ `skipDefaultCli` flag added to `createOpenCommand()` to force ID-based opening (used by Reports).
+
+### ⚙️ Changed
+
+- 🌐 `resolveMetadataPath()` no longer contains logic for each metadata type.
+
+  - That logic is now delegated to `resolvePath()` functions in each helper (`flow`, `bot`, `report`).
+
+- ✂️ Removed centralized `resolveBotPath`, `resolveFlowPath`, `resolveReportPath` from `utils/path.ts`.
+- 📦 `createOpenCommand()` refactored to use an `options` object, with optional `skipDefaultCli` parameter.
+
+### 🧼 Internal
+
+- 🤖 Helpers for Bot, Flow, and Report now consistently implement `resolvePath(ctx)` per type.
+- 🧩 Metadata-specific URL generation is modular and testable.
+- 🗂️ Manifest commands, menus, and activation events are now sourced from separate JSON files and merged into `package.json` at build time.
+- 🧼 `build-manifest.js` and `prepare.js` scripts added for maintainable packaging.
+
+---
+
 ## [0.0.3] - 2025-07-21
 
 ### ✨ Added
 
 - 🧠 **Agentforce Agent (Bot) support**:
+
   - Right-click `.bot-meta.xml` to open in:
+
     - Agentforce Builder
     - Setup (Details page)
+
   - Command Palette equivalents also available.
+
 - 📁 New folder structure under `src/commands/bot` for Bot logic.
 - 🔍 `getLatestBotInfo()` uses nested SOQL to fetch the latest BotVersion in one query.
 - ⚙️ New `fileExtensions.ts` enum for shared metadata suffixes (`.flow-meta.xml`, `.bot-meta.xml`).
@@ -39,6 +79,7 @@ All notable changes to this project will be documented here.
 ### ✨ Added
 
 - Configuration settings:
+
   - `Deploy Before Open`: Toggle automatic deployment before opening flows.
   - `Use Sf Command To Open Flow`: Open using `--source-file` instead of querying the org.
 
