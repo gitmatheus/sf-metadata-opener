@@ -13,23 +13,6 @@
     "Other"
   ],
   "main": "./dist/extension.js",
-  "contributes": {
-    "configuration": {
-      "title": "Salesforce Metadata Opener",
-      "properties": {
-        "SalesforceMetadataOpener.useSfCommandToOpenMetadata": {
-          "type": "boolean",
-          "default": true,
-          "description": "Use the `sf` CLI to open the metadata in the browser. Disable this to have the extension query the org for the metadata ID instead."
-        },
-        "SalesforceMetadataOpener.deployBeforeOpen": {
-          "type": "boolean",
-          "default": true,
-          "description": "Deploy the local metadata file before opening it in the browser."
-        }
-      }
-    }     
-  },
   "scripts": {
     "vscode:prepublish": "npm run package",
     "prepare:manifest": "node ./scripts/manifest/build-manifest.js",
