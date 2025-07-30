@@ -1,30 +1,36 @@
+import * as vscode from "vscode";
 import { FileType } from "../../salesforce";
 import { retrieveMetadata } from "./retriever";
 import { Dashboard } from "..";
 
 /**
  * Queries Salesforce to get the Dashboard metadata using the standard API.
+ * Caches the record ID if caching is enabled.
  */
 export async function getMetadataInfo(
   metadataName: string,
-  metadataType: FileType
+  metadataType: FileType,
+  context: vscode.ExtensionContext
 ): Promise<Dashboard | null> {
-  return retrieveMetadata<Dashboard>({
+  const result = await retrieveMetadata<Dashboard>({
     metadataName,
     metadataType,
     getCommand: (name) =>
-      `sf data get record --sobject Dashboard --where "DeveloperName='${name}'" --json`,    
+      `sf data get record --sobject Dashboard --where "DeveloperName='${name}'" --json`,
     parseResult: (data) => {
-      const result = data?.result;
-      if (result?.Id) {
+      const record = data?.result;
+      if (record?.Id) {
         return {
-            Id: result.Id,
-            Name: result.Name,
-            DeveloperName: result.DeveloperName,
-            FolderName: result.FolderName,
-          };
+          Id: record.Id,
+          Name: record.Name,
+          DeveloperName: record.DeveloperName,
+          FolderName: record.FolderName,
+        };
       }
       return null;
     },
+    context,
   });
+
+  return result;
 }

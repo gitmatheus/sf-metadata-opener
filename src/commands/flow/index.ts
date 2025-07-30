@@ -1,9 +1,13 @@
+import * as vscode from "vscode";
 import { open } from "./helpers";
 import { registerOpenHandlers } from "../handlers";
 
-// Export the handlers
-const handlers = registerOpenHandlers(open);
-export const openInEditMode = handlers.inEditMode;
-export const openInRunMode = handlers.inRunMode;
-export const openFileInEditMode = handlers.currentInEditMode;
-export const openFileInRunMode = handlers.currentInRunMode;
+export function registerHandlers(context: vscode.ExtensionContext) {  
+  const handlers = registerOpenHandlers(open, context);
+  return {
+    openInEditMode: handlers.inEditMode,
+    openInRunMode: handlers.inRunMode,
+    openFileInEditMode: handlers.currentInEditMode,
+    openFileInRunMode: handlers.currentInRunMode,
+  };
+}

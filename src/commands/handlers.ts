@@ -1,7 +1,8 @@
+import * as vscode from "vscode";
 import * as utils from "../utils";
 import * as sf from "../salesforce";
 import { Properties } from "../properties";
-import { createOpenHandlers, OpenMode } from "./factory";
+import { OpenMode } from "./factory";
 
 /**
  * Standardized handler to open a metadata file by path and mode.
@@ -46,19 +47,29 @@ export async function openMetadata<T>({
 
 /**
  * Creates standard open handlers for common metadata types.
- *
  * Used to avoid duplicate `open.ts` files for each metadata module.
  */
-export function registerOpenHandlers(openFn: (filePath: string, mode: OpenMode) => Promise<void>) {
-  const handlers = createOpenHandlers(openFn);
-
+export function registerOpenHandlers(
+  openFn: (filePath: string, mode: OpenMode, context: vscode.ExtensionContext) => Promise<void>,
+  context: vscode.ExtensionContext
+) {
   return {
-    inEditMode: handlers.fromUri(OpenMode.EDIT),
-    inViewMode: handlers.fromUri(OpenMode.VIEW),
-    inRunMode: handlers.fromUri(OpenMode.RUN),
+    inEditMode: (uri: vscode.Uri) => openFn(uri.fsPath, OpenMode.EDIT, context),
+    inViewMode: (uri: vscode.Uri) => openFn(uri.fsPath, OpenMode.VIEW, context),
+    inRunMode: (uri: vscode.Uri) => openFn(uri.fsPath, OpenMode.RUN, context),
 
-    currentInEditMode: handlers.fromEditor(OpenMode.EDIT),
-    currentInViewMode: handlers.fromEditor(OpenMode.VIEW),
-    currentInRunMode: handlers.fromEditor(OpenMode.RUN),
+    currentInEditMode: () => {
+      const filePath = utils.resolveFilePathFromEditor();
+      if (filePath) return openFn(filePath, OpenMode.EDIT, context);
+    },
+    currentInViewMode: () => {
+      const filePath = utils.resolveFilePathFromEditor();
+      if (filePath) return openFn(filePath, OpenMode.VIEW, context);
+    },
+    currentInRunMode: () => {
+      const filePath = utils.resolveFilePathFromEditor();
+      if (filePath) return openFn(filePath, OpenMode.RUN, context);
+    },
   };
 }
+

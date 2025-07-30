@@ -54,12 +54,17 @@ export async function createOpenCommand<T>(
   mode: OpenMode,
   options: {
     metadataType: sf.FileType;
-    fetchMetadata: (metadataName: string, metadataType: sf.FileType) => Promise<T | null>;
+    fetchMetadata: (
+      metadataName: string,
+      metadataType: sf.FileType,
+      context: vscode.ExtensionContext
+    ) => Promise<T | null>;
     skipDefaultCli?: boolean;
-  }
+  },
+  context: vscode.ExtensionContext
 ): Promise<string | null> {
   const { metadataType, fetchMetadata, skipDefaultCli = false } = options;
-  
+
   const useCliMode = !skipDefaultCli && AllowDefaultCliMode[mode as OpenMode];
   if (Properties.useSfCommandToOpenMetadata && useCliMode) {
     return sf.buildDefaultOpenCommand(filePath);
@@ -69,7 +74,8 @@ export async function createOpenCommand<T>(
     filePath,
     metadataType
   );
-  const metadata = await fetchMetadata(metadataName, metadataType);
+  const metadata = await fetchMetadata(metadataName, metadataType, context);
+
   if (!metadata) return null;
 
   const path = utils.resolveMetadataPath({

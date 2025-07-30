@@ -1,3 +1,4 @@
+import * as vscode from "vscode";
 import * as metadata from "../../salesforce/data/bot";
 import * as handlers from "../handlers";
 import * as utils from "../../utils";
@@ -7,16 +8,25 @@ import { createOpenCommand, OpenMode } from "../factory";
 /**
  * Handles opening a Bot file from right-click or command palette.
  */
-export async function open(filePath: string, mode: OpenMode): Promise<void> {
+export async function open(
+  filePath: string,
+  mode: OpenMode,
+  context: vscode.ExtensionContext
+): Promise<void> {
   return handlers.openMetadata({
     filePath,
     mode,
     fileType: FileType.Bot,
     buildOpenCommand: (filePath, mode) =>
-      createOpenCommand(filePath, mode as OpenMode, {
-        metadataType: FileType.Bot,
-        fetchMetadata: metadata.getMetadataInfo,
-      }),
+      createOpenCommand(
+        filePath,
+        mode as OpenMode,
+        {
+          metadataType: FileType.Bot,
+          fetchMetadata: metadata.getMetadataInfo,
+        },
+        context
+      ),
   });
 }
 

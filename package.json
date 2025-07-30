@@ -131,6 +131,10 @@
       {
         "command": "extension.openCurrentDashboardInViewMode",
         "title": "SFDX: Open Current Dashboard in View Mode"
+      },
+      {
+        "command": "extension.clearMetadataCache",
+        "title": "SFDX: Clear Cached Record Metadata"
       }
     ],
     "menus": {

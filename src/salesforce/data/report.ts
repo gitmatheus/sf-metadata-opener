@@ -1,31 +1,37 @@
+import * as vscode from "vscode";
 import { FileType } from "../../salesforce";
 import { retrieveMetadata } from "./retriever";
 import { Report } from "..";
 
 /**
  * Queries Salesforce to get the Report metadata using the standard API.
+ * Caches the record ID if caching is enabled.
  */
 export async function getMetadataInfo(
   metadataName: string,
-  metadataType: FileType
+  metadataType: FileType,
+  context: vscode.ExtensionContext
 ): Promise<Report | null> {
-  return retrieveMetadata<Report>({
+  const result = await retrieveMetadata<Report>({
     metadataName,
     metadataType,
     getCommand: (name) =>
-      `sf data get record --sobject Report --where "DeveloperName='${name}'" --json`,    
+      `sf data get record --sobject Report --where "DeveloperName='${name}'" --json`,
     parseResult: (data) => {
-      const result = data?.result;
-      if (result?.Id) {
+      const record = data?.result;
+      if (record?.Id) {
         return {
-            Id: result.Id,
-            Name: result.Name,
-            DeveloperName: result.DeveloperName,
-            FolderName: result.FolderName,
-            Format: result.Format,
-          };
+          Id: record.Id,
+          Name: record.Name,
+          DeveloperName: record.DeveloperName,
+          FolderName: record.FolderName,
+          Format: record.Format,
+        };
       }
       return null;
     },
+    context,
   });
+
+  return result;
 }

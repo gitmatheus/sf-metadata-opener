@@ -1,3 +1,4 @@
+import * as vscode from "vscode";
 import * as metadata from "../../salesforce/data/dashboard";
 import * as handlers from "../handlers";
 import * as utils from "../../utils";
@@ -5,19 +6,28 @@ import { FileType } from "../../salesforce";
 import { createOpenCommand, OpenMode } from "../factory";
 
 /**
- * Handles opening a record from right-click or command palette.
+ * Handles opening a Dashboard file from right-click or command palette.
  */
-export async function open(filePath: string, mode: OpenMode): Promise<void> {
+export async function open(
+  filePath: string,
+  mode: OpenMode,
+  context: vscode.ExtensionContext
+): Promise<void> {
   return handlers.openMetadata({
     filePath,
     mode,
     fileType: FileType.Dashboard,
     buildOpenCommand: (filePath, mode) =>
-      createOpenCommand(filePath, mode as OpenMode, {
-        metadataType: FileType.Dashboard,
-        fetchMetadata: metadata.getMetadataInfo,
-        skipDefaultCli: true, // This metadata should always use the custom open command
-      }),
+      createOpenCommand(
+        filePath,
+        mode as OpenMode,
+        {
+          metadataType: FileType.Dashboard,
+          fetchMetadata: metadata.getMetadataInfo,
+          skipDefaultCli: true, // This metadata should always use the custom open command
+        },
+        context
+      ),
   });
 }
 

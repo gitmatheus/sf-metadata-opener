@@ -1,22 +1,24 @@
-import { exec } from 'child_process';
-import util from 'util';
-
-const execPromise = util.promisify(exec);
+import { runShellCommand } from "../../utils/runners";
 
 /**
- * Gets the authenticated default Salesforce org's base domain
+ * Gets the authenticated default Salesforce org's unique ID.
  */
-export async function getOrgDomain(): Promise<string> {
-  try {
-    const { stdout } = await execPromise('sfdx org display --json');
-    const json = JSON.parse(stdout);
+export async function getOrgId(): Promise<string> {
+  const stdout = await runShellCommand("sf org list --json");
+  const json = JSON.parse(stdout);
 
-    if (!json.result?.instanceUrl) {
-      throw new Error('No default org set or instanceUrl not found');
-    }
+  const allOrgs = [
+    ...(json.result?.nonScratchOrgs || []),
+    ...(json.result?.scratchOrgs || []),
+    ...(json.result?.sandboxes || []),
+    ...(json.result?.other || []),
+  ];
 
-    return json.result.instanceUrl;
-  } catch {
-    throw new Error('Unable to determine default org. Run `sfdx org login web --set-default` first.');
+  const defaultOrg = allOrgs.find((org: any) => org.isDefaultUsername);
+
+  if (!defaultOrg?.orgId) {
+    throw new Error("Unable to determine default org ID.");
   }
+
+  return defaultOrg.orgId;
 }

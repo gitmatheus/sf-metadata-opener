@@ -8,7 +8,6 @@ export const FileType = {
   Dashboard: ".dashboard-meta.xml",
 };
 
-
 /**
  * Human-readable labels for each metadata type.
  */
@@ -48,12 +47,19 @@ export interface BotVersion extends Metadata {
 }
 
 /**
+ * Compound metadata type for Bot + Version
+ */
+export interface BotMetadataWrapper {
+  bot: Bot;
+  version: BotVersion;
+}
+
+/**
  * Interface representing the metadata of a Flow retrieved from Salesforce
  */
 export interface Flow extends Metadata {
   ProcessType?: string;
 }
-
 
 /**
  * Interface representing the metadata of a Report retrieved from Salesforce
