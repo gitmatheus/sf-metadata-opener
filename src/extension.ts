@@ -3,6 +3,7 @@ import { Properties } from "./properties";
 import * as bot from "./commands/bot";
 import * as flow from "./commands/flow";
 import * as report from "./commands/report";
+import * as dashboard from "./commands/dashboard";
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -25,6 +26,13 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand("extension.openReportInViewMode", report.openInViewMode),
     vscode.commands.registerCommand("extension.openCurrentReportInEditMode", report.openFileInEditMode),
     vscode.commands.registerCommand("extension.openCurrentReportInViewMode", report.openFileInViewMode),
+
+    // Dashboard commands
+    vscode.commands.registerCommand("extension.openDashboardInEditMode", dashboard.openInEditMode),
+    vscode.commands.registerCommand("extension.openDashboardInViewMode", dashboard.openInViewMode),
+    vscode.commands.registerCommand("extension.openCurrentDashboardInEditMode", dashboard.openFileInEditMode),
+    vscode.commands.registerCommand("extension.openCurrentDashboardInViewMode", dashboard.openFileInViewMode),
+
 
     vscode.workspace.onDidChangeConfiguration((e) => {
       if (e.affectsConfiguration("SalesforceMetadataOpener")) {

@@ -29,7 +29,7 @@ export async function retrieveMetadata<T>({
           message: `Retrieving record info for ${metadataLabel}: "${metadataName}"`,
         });
 
-        const command = getCommand(metadataName);
+        const command = getCommand(utils.sanitizeName(metadataName));
 
         const output = await utils.runShellCommand(command);
         const json = JSON.parse(output);

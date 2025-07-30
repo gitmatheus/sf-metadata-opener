@@ -5,7 +5,7 @@
   "icon": "icon.png",
   "repository": "https://github.com/gitmatheus/sf-metadata-opener",
   "description": "Right-click to open Salesforce metadata in the browser (Flows, Agentforce agents, etc.)",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "engines": {
     "vscode": "^1.102.0"
   },
@@ -77,6 +77,22 @@
       {
         "command": "extension.openCurrentReportInViewMode",
         "title": "SFDX: Open Current Report in View Mode"
+      },
+      {
+        "command": "extension.openDashboardInEditMode",
+        "title": "SFDX: Open Dashboard in Edit Mode"
+      },
+      {
+        "command": "extension.openDashboardInViewMode",
+        "title": "SFDX: Open Dashboard in View Mode"
+      },
+      {
+        "command": "extension.openCurrentDashboardInEditMode",
+        "title": "SFDX: Open Current Dashboard in Edit Mode"
+      },
+      {
+        "command": "extension.openCurrentDashboardInViewMode",
+        "title": "SFDX: Open Current Dashboard in View Mode"
       }
     ],
     "menus": {
@@ -110,6 +126,16 @@
           "command": "extension.openReportInViewMode",
           "when": "resourceFilename =~ /\\.report-meta\\.xml$/",
           "group": "z_commands"
+        },
+        {
+          "command": "extension.openDashboardInEditMode",
+          "when": "resourceFilename =~ /\\.dashboard-meta\\.xml$/",
+          "group": "z_commands"
+        },
+        {
+          "command": "extension.openDashboardInViewMode",
+          "when": "resourceFilename =~ /\\.dashboard-meta\\.xml$/",
+          "group": "z_commands"
         }
       ],
       "commandPalette": [
@@ -135,6 +161,14 @@
         },
         {
           "command": "extension.openReportInViewMode",
+          "when": "false"
+        },
+        {
+          "command": "extension.openDashboardInEditMode",
+          "when": "false"
+        },
+        {
+          "command": "extension.openDashboardInViewMode",
           "when": "false"
         }
       ]
@@ -185,6 +219,10 @@
     "onCommand:extension.openReportInEditMode",
     "onCommand:extension.openReportInViewMode",
     "onCommand:extension.openCurrentReportInEditMode",
-    "onCommand:extension.openCurrentReportInViewMode"
+    "onCommand:extension.openCurrentReportInViewMode",
+    "onCommand:extension.openDashboardInEditMode",
+    "onCommand:extension.openDashboardInViewMode",
+    "onCommand:extension.openCurrentDashboardInEditMode",
+    "onCommand:extension.openCurrentDashboardInViewMode"
   ]
 }

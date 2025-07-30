@@ -10,5 +10,9 @@
   "onCommand:extension.openReportInEditMode",
   "onCommand:extension.openReportInViewMode",
   "onCommand:extension.openCurrentReportInEditMode",
-  "onCommand:extension.openCurrentReportInViewMode"
+  "onCommand:extension.openCurrentReportInViewMode",
+  "onCommand:extension.openDashboardInEditMode",
+  "onCommand:extension.openDashboardInViewMode",
+  "onCommand:extension.openCurrentDashboardInEditMode",
+  "onCommand:extension.openCurrentDashboardInViewMode"
 ]

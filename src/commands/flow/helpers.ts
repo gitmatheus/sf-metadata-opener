@@ -75,10 +75,10 @@ function shouldOfferRunMode(processType: string): boolean {
  * Resolves the browser path to open a Flow either in Flow Builder or Run Mode.
  */
 export function resolvePath(ctx: utils.PathContext): string {
-  const flowId = ctx.metadata?.Id;
-  if (!flowId) throw new Error("Missing Flow ID");
+  const recordId = ctx.metadata?.Id;
+  if (!recordId) throw new Error("Missing Flow ID");
 
   return ctx.mode === OpenMode.RUN
-    ? `/flow/${ctx.metadataName}/${flowId}`
-    : `/builder_platform_interaction/flowBuilder.app?flowId=${flowId}`;
+    ? `/flow/${ctx.metadataName}/${recordId}`
+    : `/builder_platform_interaction/flowBuilder.app?flowId=${recordId}`;
 }

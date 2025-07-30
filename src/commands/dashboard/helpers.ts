@@ -1,4 +1,4 @@
-import * as metadata from "../../salesforce/data/report";
+import * as metadata from "../../salesforce/data/dashboard";
 import * as handlers from "../handlers";
 import * as utils from "../../utils";
 import { FileType } from "../../salesforce";
@@ -11,23 +11,23 @@ export async function open(filePath: string, mode: OpenMode): Promise<void> {
   return handlers.openMetadata({
     filePath,
     mode,
-    fileType: FileType.Report,
+    fileType: FileType.Dashboard,
     buildOpenCommand: (filePath, mode) =>
       createOpenCommand(filePath, mode as OpenMode, {
-        metadataType: FileType.Report,
+        metadataType: FileType.Dashboard,
         fetchMetadata: metadata.getMetadataInfo,
-        skipDefaultCli: true, // Reports should always use the custom open command
+        skipDefaultCli: true, // This metadata should always use the custom open command
       }),
   });
 }
 
 /**
- * Resolves the browser path to open a Report.
+ * Resolves the browser path to open a Dashboard.
  */
 export function resolvePath(ctx: utils.PathContext): string {
   const recordId = ctx.metadata?.Id;
-  if (!recordId) throw new Error("Missing Report ID");
+  if (!recordId) throw new Error("Missing Dashboard ID");
 
   const action = ctx.mode === OpenMode.EDIT ? "edit" : "view";
-  return `/lightning/r/Report/${recordId}/${action}?queryScope=userFolders`;
+  return `/lightning/r/Dashboard/${recordId}/${action}?queryScope=userFolders`;
 }

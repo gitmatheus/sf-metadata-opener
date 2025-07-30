@@ -21,14 +21,14 @@ export async function open(filePath: string, mode: OpenMode): Promise<void> {
 }
 
 /**
- * Resolves the browser path to open a Bot in Agentforce Builder or Setup.
+ * Resolves the browser path to open a Bot.
  */
 export function resolvePath(ctx: utils.PathContext): string {
-  const botId = ctx.metadata?.bot?.Id;
+  const recordId = ctx.metadata?.bot?.Id;
   const versionId = ctx.metadata?.version?.Id;
-  if (!botId) throw new Error("Missing Bot ID");
+  if (!recordId) throw new Error("Missing Bot ID");
 
   return ctx.mode === OpenMode.EDIT
-    ? `/AiCopilot/copilotStudio.app#/copilot/builder?copilotId=${botId}&versionId=${versionId}`
-    : `/lightning/setup/EinsteinCopilot/${botId}/edit`;
+    ? `/AiCopilot/copilotStudio.app#/copilot/builder?copilotId=${recordId}&versionId=${versionId}`
+    : `/lightning/setup/EinsteinCopilot/${recordId}/edit`;
 }

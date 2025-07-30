@@ -5,6 +5,7 @@ export const FileType = {
   Flow: ".flow-meta.xml",
   Bot: ".bot-meta.xml",
   Report: ".report-meta.xml",
+  Dashboard: ".dashboard-meta.xml",
 };
 
 
@@ -15,6 +16,7 @@ export const MetadataLabels: Record<FileType, string> = {
   [FileType.Flow]: "Flow",
   [FileType.Bot]: "Agentforce Agent (Bot)",
   [FileType.Report]: "Report",
+  [FileType.Dashboard]: "Dashboard",
 };
 
 /**
@@ -54,12 +56,20 @@ export interface Flow extends Metadata {
 
 
 /**
- * Interface representing the metadata of a Flow retrieved from Salesforce
+ * Interface representing the metadata of a Report retrieved from Salesforce
  */
 export interface Report extends Metadata {
   DeveloperName?: string;
   FolderName?: string;
   Format?: string;
+}
+
+/**
+ * Interface representing the metadata of a Dashboard retrieved from Salesforce
+ */
+export interface Dashboard extends Metadata {
+  DeveloperName?: string;
+  FolderName?: string;
 }
 
 /**

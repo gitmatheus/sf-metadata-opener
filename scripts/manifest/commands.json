@@ -46,5 +46,21 @@
   {
     "command": "extension.openCurrentReportInViewMode",
     "title": "SFDX: Open Current Report in View Mode"
+  },
+  {
+    "command": "extension.openDashboardInEditMode",
+    "title": "SFDX: Open Dashboard in Edit Mode"
+  },
+  {
+    "command": "extension.openDashboardInViewMode",
+    "title": "SFDX: Open Dashboard in View Mode"
+  },
+  {
+    "command": "extension.openCurrentDashboardInEditMode",
+    "title": "SFDX: Open Current Dashboard in Edit Mode"
+  },
+  {
+    "command": "extension.openCurrentDashboardInViewMode",
+    "title": "SFDX: Open Current Dashboard in View Mode"
   }
 ]
