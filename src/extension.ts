@@ -1,10 +1,10 @@
 import * as vscode from "vscode";
 import { Properties } from "./properties";
-import { clearMetadataCache } from "./salesforce/data/cache";
 import * as bot from "./commands/bot";
 import * as flow from "./commands/flow";
 import * as report from "./commands/report";
 import * as dashboard from "./commands/dashboard";
+import { clearMetadataCache, displayMetadataCache } from "./salesforce/data/cache";
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -39,6 +39,7 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand("extension.openCurrentDashboardInEditMode", dashboardHandlers.openFileInEditMode),
     vscode.commands.registerCommand("extension.openCurrentDashboardInViewMode", dashboardHandlers.openFileInViewMode),
 
+    // Metadata cache commands
     vscode.commands.registerCommand("extension.clearMetadataCache", async () => {
       try {
         await clearMetadataCache(context);
@@ -46,6 +47,9 @@ export function activate(context: vscode.ExtensionContext) {
       } catch (err: any) {
         vscode.window.showErrorMessage(`Error clearing cache: ${err.message}`);
       }
+    }),
+    vscode.commands.registerCommand("extension.displayMetadataCache", async () => {
+      displayMetadataCache(context);
     }),
 
     vscode.workspace.onDidChangeConfiguration((e) => {

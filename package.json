@@ -135,6 +135,10 @@
       {
         "command": "extension.clearMetadataCache",
         "title": "SFDX: Clear Cached Record Metadata"
+      },
+      {
+        "command": "extension.displayMetadataCache",
+        "title": "SFDX: Display Cached Record Metadata"
       }
     ],
     "menus": {
