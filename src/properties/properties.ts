@@ -15,12 +15,31 @@ export class Properties {
     EXTENSION_CONFIG_NAME
   );
 
+  /**
+   * Whether to use the `sf` CLI to open metadata directly.
+   * If disabled, the extension will query the org to resolve the record ID.
+   */
   static get useSfCommandToOpenMetadata(): boolean {
-    return this.extensionConfig.get<boolean>("useSfCommandToOpenMetadata", true);
+    return this.extensionConfig.get<boolean>(
+      "useSfCommandToOpenMetadata",
+      true
+    );
   }
 
+  /**
+   * Whether to deploy the local metadata file before opening it in the browser.
+   * Helps ensure the latest version is visible in the org.
+   */
   static get deployBeforeOpen(): boolean {
     return this.extensionConfig.get<boolean>("deployBeforeOpen", true);
+  }
+
+  /**
+   * Returns whether caching of record IDs is enabled.
+   * This helps avoid repeated queries for the same metadata.
+   */
+  static get enableCaching(): boolean {
+    return this.extensionConfig.get<boolean>("enableCaching", false);
   }
 
   static refresh(): void {

@@ -11,6 +11,11 @@
         "type": "boolean",
         "default": true,
         "description": "Deploy the local metadata file before opening it in the browser."
+      },
+      "SalesforceMetadataOpener.enableCaching": {
+        "type": "boolean",
+        "default": false,
+        "description": "Enable caching of record IDs to avoid repeated org queries for the same metadata."
       }
     }
   }
