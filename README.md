@@ -99,24 +99,33 @@ This extension enables rapid navigation from your VS Code workspace to your Sale
 
 You can customize the extension’s behavior via VS Code settings:
 
-### `Salesforce Metadata Opener: Deploy Before Open`
+### `Deploy Before Open`
 
 > **Default: `true`**
 
 Automatically deploys your metadata file before opening.
 Disable this if your metadata is already deployed or managed externally.
 
-### `Salesforce Metadata Opener: Use Sf Command To Open Metadata`
+### `Use Sf Command To Open Metadata`
 
 > **Default: `true`**
 
 Uses `sf org open --source-file` when possible. When disabled, falls back to org queries + Lightning URLs.
 
-### `Salesforce Metadata Opener: Enable Caching`
+### `Enable Caching`
 
 > **Default: `false`**
 
 Caches metadata results in memory per org, for performance and less requests to the org.
+
+#### Metadata Cache Behavior
+
+| Metadata Type | Caching Enabled | Notes                            |
+| ------------- | --------------- | -------------------------------- |
+| Flow          | ❌ No           | Always fetches latest version ID |
+| Bot           | ❌ No           | Always fetches latest BotVersion |
+| Report        | ✅ Yes          | Reads from cache if enabled      |
+| Dashboard     | ✅ Yes          | Reads from cache if enabled      |
 
 ---
 
