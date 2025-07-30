@@ -35,9 +35,9 @@ export async function open(
  * Resolves the browser path to open a Report.
  */
 export function resolvePath(ctx: utils.PathContext): string {
-  const reportId = ctx.metadata?.Id;
-  if (!reportId) throw new Error("Missing Report ID");
+  const recordId = ctx.metadata?.Id;
+  if (!recordId) throw new Error("Missing Report ID");
 
   const action = ctx.mode === OpenMode.EDIT ? "edit" : "view";
-  return `/lightning/r/Report/${reportId}/${action}?queryScope=userFolders`;
+  return `/lightning/r/Report/${recordId}/${action}?queryScope=userFolders`;
 }

@@ -3,12 +3,11 @@ import * as utils from "../../utils";
 import { Properties } from "../../properties";
 import { FileType, MetadataLabels } from "../../salesforce";
 import { readCachedMetadata, writeCachedMetadata } from "./cache";
-import type { Metadata } from "../../salesforce/model/metadata";
 
 /**
  * Generic helper to retrieve Salesforce metadata with CLI + progress feedback.
  */
-export async function retrieveMetadata<T>({
+export async function retrieve<T>({
   metadataName,
   metadataType,
   getCommand,
@@ -25,7 +24,7 @@ export async function retrieveMetadata<T>({
 }): Promise<T | null> {
   const metadataLabel = MetadataLabels[metadataType] ?? metadataType;
 
-  // 💾 Try memory/disk cache first (unless explicitly skipped)
+  // 💾 Try memory cache first (unless explicitly skipped)
   if (Properties.enableCaching && !skipCacheCheck) {
     const cached = await readCachedMetadata<T>(metadataName, context);
     if (cached) return cached;

@@ -1,0 +1,5307 @@
+[
+  {
+    "DurableId": "ContractHistory",
+    "DeveloperName": "ContractHistory",
+    "QualifiedApiName": "ContractHistory"
+  },
+  {
+    "DurableId": "ContractFeed",
+    "DeveloperName": "ContractFeed",
+    "QualifiedApiName": "ContractFeed"
+  },
+  {
+    "DurableId": "ContractChangeEvent",
+    "DeveloperName": "ContractChangeEvent",
+    "QualifiedApiName": "ContractChangeEvent"
+  },
+  {
+    "DurableId": "OrderShare",
+    "DeveloperName": "OrderShare",
+    "QualifiedApiName": "OrderShare"
+  },
+  {
+    "DurableId": "OrderHistory",
+    "DeveloperName": "OrderHistory",
+    "QualifiedApiName": "OrderHistory"
+  },
+  {
+    "DurableId": "OrderFeed",
+    "DeveloperName": "OrderFeed",
+    "QualifiedApiName": "OrderFeed"
+  },
+  {
+    "DurableId": "OrderChangeEvent",
+    "DeveloperName": "OrderChangeEvent",
+    "QualifiedApiName": "OrderChangeEvent"
+  },
+  {
+    "DurableId": "OrderItemHistory",
+    "DeveloperName": "OrderItemHistory",
+    "QualifiedApiName": "OrderItemHistory"
+  },
+  {
+    "DurableId": "OrderItemFeed",
+    "DeveloperName": "OrderItemFeed",
+    "QualifiedApiName": "OrderItemFeed"
+  },
+  {
+    "DurableId": "OrderItemChangeEvent",
+    "DeveloperName": "OrderItemChangeEvent",
+    "QualifiedApiName": "OrderItemChangeEvent"
+  },
+  {
+    "DurableId": "AcceptedEventRelation",
+    "DeveloperName": "AcceptedEventRelation",
+    "QualifiedApiName": "AcceptedEventRelation"
+  },
+  {
+    "DurableId": "ActivityHistory",
+    "DeveloperName": "ActivityHistory",
+    "QualifiedApiName": "ActivityHistory"
+  },
+  {
+    "DurableId": "AdditionalNumber",
+    "DeveloperName": "AdditionalNumber",
+    "QualifiedApiName": "AdditionalNumber"
+  },
+  {
+    "DurableId": "AggregateResult",
+    "DeveloperName": "AggregateResult",
+    "QualifiedApiName": "AggregateResult"
+  },
+  {
+    "DurableId": "ApexClass",
+    "DeveloperName": "ApexClass",
+    "QualifiedApiName": "ApexClass"
+  },
+  {
+    "DurableId": "ApexComponent",
+    "DeveloperName": "ApexComponent",
+    "QualifiedApiName": "ApexComponent"
+  },
+  {
+    "DurableId": "ApexLog",
+    "DeveloperName": "ApexLog",
+    "QualifiedApiName": "ApexLog"
+  },
+  {
+    "DurableId": "ApexPage",
+    "DeveloperName": "ApexPage",
+    "QualifiedApiName": "ApexPage"
+  },
+  {
+    "DurableId": "ApexTestQueueItem",
+    "DeveloperName": "ApexTestQueueItem",
+    "QualifiedApiName": "ApexTestQueueItem"
+  },
+  {
+    "DurableId": "ApexTestResult",
+    "DeveloperName": "ApexTestResult",
+    "QualifiedApiName": "ApexTestResult"
+  },
+  {
+    "DurableId": "ApexTrigger",
+    "DeveloperName": "ApexTrigger",
+    "QualifiedApiName": "ApexTrigger"
+  },
+  {
+    "DurableId": "AssetShare",
+    "DeveloperName": "AssetShare",
+    "QualifiedApiName": "AssetShare"
+  },
+  {
+    "DurableId": "AssetHistory",
+    "DeveloperName": "AssetHistory",
+    "QualifiedApiName": "AssetHistory"
+  },
+  {
+    "DurableId": "AssetFeed",
+    "DeveloperName": "AssetFeed",
+    "QualifiedApiName": "AssetFeed"
+  },
+  {
+    "DurableId": "AssetChangeEvent",
+    "DeveloperName": "AssetChangeEvent",
+    "QualifiedApiName": "AssetChangeEvent"
+  },
+  {
+    "DurableId": "AssignmentRule",
+    "DeveloperName": "AssignmentRule",
+    "QualifiedApiName": "AssignmentRule"
+  },
+  {
+    "DurableId": "AsyncApexJob",
+    "DeveloperName": "AsyncApexJob",
+    "QualifiedApiName": "AsyncApexJob"
+  },
+  {
+    "DurableId": "AccountShare",
+    "DeveloperName": "AccountShare",
+    "QualifiedApiName": "AccountShare"
+  },
+  {
+    "DurableId": "AccountHistory",
+    "DeveloperName": "AccountHistory",
+    "QualifiedApiName": "AccountHistory"
+  },
+  {
+    "DurableId": "AccountFeed",
+    "DeveloperName": "AccountFeed",
+    "QualifiedApiName": "AccountFeed"
+  },
+  {
+    "DurableId": "AccountChangeEvent",
+    "DeveloperName": "AccountChangeEvent",
+    "QualifiedApiName": "AccountChangeEvent"
+  },
+  {
+    "DurableId": "ContactShare",
+    "DeveloperName": "ContactShare",
+    "QualifiedApiName": "ContactShare"
+  },
+  {
+    "DurableId": "ContactHistory",
+    "DeveloperName": "ContactHistory",
+    "QualifiedApiName": "ContactHistory"
+  },
+  {
+    "DurableId": "ContactFeed",
+    "DeveloperName": "ContactFeed",
+    "QualifiedApiName": "ContactFeed"
+  },
+  {
+    "DurableId": "ContactChangeEvent",
+    "DeveloperName": "ContactChangeEvent",
+    "QualifiedApiName": "ContactChangeEvent"
+  },
+  {
+    "DurableId": "LeadShare",
+    "DeveloperName": "LeadShare",
+    "QualifiedApiName": "LeadShare"
+  },
+  {
+    "DurableId": "LeadHistory",
+    "DeveloperName": "LeadHistory",
+    "QualifiedApiName": "LeadHistory"
+  },
+  {
+    "DurableId": "LeadFeed",
+    "DeveloperName": "LeadFeed",
+    "QualifiedApiName": "LeadFeed"
+  },
+  {
+    "DurableId": "LeadChangeEvent",
+    "DeveloperName": "LeadChangeEvent",
+    "QualifiedApiName": "LeadChangeEvent"
+  },
+  {
+    "DurableId": "Partner",
+    "DeveloperName": "Partner",
+    "QualifiedApiName": "Partner"
+  },
+  {
+    "DurableId": "AccountPartner",
+    "DeveloperName": "AccountPartner",
+    "QualifiedApiName": "AccountPartner"
+  },
+  {
+    "DurableId": "Product2History",
+    "DeveloperName": "Product2History",
+    "QualifiedApiName": "Product2History"
+  },
+  {
+    "DurableId": "Product2Feed",
+    "DeveloperName": "Product2Feed",
+    "QualifiedApiName": "Product2Feed"
+  },
+  {
+    "DurableId": "Product2ChangeEvent",
+    "DeveloperName": "Product2ChangeEvent",
+    "QualifiedApiName": "Product2ChangeEvent"
+  },
+  {
+    "DurableId": "AttachedContentDocument",
+    "DeveloperName": "AttachedContentDocument",
+    "QualifiedApiName": "AttachedContentDocument"
+  },
+  {
+    "DurableId": "Attachment",
+    "DeveloperName": "Attachment",
+    "QualifiedApiName": "Attachment"
+  },
+  {
+    "DurableId": "AuthProvider",
+    "DeveloperName": "AuthProvider",
+    "QualifiedApiName": "AuthProvider"
+  },
+  {
+    "DurableId": "AuthSession",
+    "DeveloperName": "AuthSession",
+    "QualifiedApiName": "AuthSession"
+  },
+  {
+    "DurableId": "BrandTemplate",
+    "DeveloperName": "BrandTemplate",
+    "QualifiedApiName": "BrandTemplate"
+  },
+  {
+    "DurableId": "BusinessHours",
+    "DeveloperName": "BusinessHours",
+    "QualifiedApiName": "BusinessHours"
+  },
+  {
+    "DurableId": "BusinessProcess",
+    "DeveloperName": "BusinessProcess",
+    "QualifiedApiName": "BusinessProcess"
+  },
+  {
+    "DurableId": "ChatterActivity",
+    "DeveloperName": "ChatterActivity",
+    "QualifiedApiName": "ChatterActivity"
+  },
+  {
+    "DurableId": "UserRole",
+    "DeveloperName": "UserRole",
+    "QualifiedApiName": "UserRole"
+  },
+  {
+    "DurableId": "Group",
+    "DeveloperName": "Group",
+    "QualifiedApiName": "Group"
+  },
+  {
+    "DurableId": "GroupMember",
+    "DeveloperName": "GroupMember",
+    "QualifiedApiName": "GroupMember"
+  },
+  {
+    "DurableId": "QueueSobject",
+    "DeveloperName": "QueueSobject",
+    "QualifiedApiName": "QueueSobject"
+  },
+  {
+    "DurableId": "Calendar",
+    "DeveloperName": "Calendar",
+    "QualifiedApiName": "Calendar"
+  },
+  {
+    "DurableId": "CallCenter",
+    "DeveloperName": "CallCenter",
+    "QualifiedApiName": "CallCenter"
+  },
+  {
+    "DurableId": "CampaignShare",
+    "DeveloperName": "CampaignShare",
+    "QualifiedApiName": "CampaignShare"
+  },
+  {
+    "DurableId": "CampaignHistory",
+    "DeveloperName": "CampaignHistory",
+    "QualifiedApiName": "CampaignHistory"
+  },
+  {
+    "DurableId": "CampaignFeed",
+    "DeveloperName": "CampaignFeed",
+    "QualifiedApiName": "CampaignFeed"
+  },
+  {
+    "DurableId": "CampaignChangeEvent",
+    "DeveloperName": "CampaignChangeEvent",
+    "QualifiedApiName": "CampaignChangeEvent"
+  },
+  {
+    "DurableId": "CampaignMemberChangeEvent",
+    "DeveloperName": "CampaignMemberChangeEvent",
+    "QualifiedApiName": "CampaignMemberChangeEvent"
+  },
+  {
+    "DurableId": "CampaignMemberStatus",
+    "DeveloperName": "CampaignMemberStatus",
+    "QualifiedApiName": "CampaignMemberStatus"
+  },
+  {
+    "DurableId": "CampaignMemberStatusChangeEvent",
+    "DeveloperName": "CampaignMemberStatusChangeEvent",
+    "QualifiedApiName": "CampaignMemberStatusChangeEvent"
+  },
+  {
+    "DurableId": "CaseShare",
+    "DeveloperName": "CaseShare",
+    "QualifiedApiName": "CaseShare"
+  },
+  {
+    "DurableId": "CaseHistory",
+    "DeveloperName": "CaseHistory",
+    "QualifiedApiName": "CaseHistory"
+  },
+  {
+    "DurableId": "CaseFeed",
+    "DeveloperName": "CaseFeed",
+    "QualifiedApiName": "CaseFeed"
+  },
+  {
+    "DurableId": "CaseTeamTemplate",
+    "DeveloperName": "CaseTeamTemplate",
+    "QualifiedApiName": "CaseTeamTemplate"
+  },
+  {
+    "DurableId": "CaseTeamTemplateMember",
+    "DeveloperName": "CaseTeamTemplateMember",
+    "QualifiedApiName": "CaseTeamTemplateMember"
+  },
+  {
+    "DurableId": "CaseTeamMember",
+    "DeveloperName": "CaseTeamMember",
+    "QualifiedApiName": "CaseTeamMember"
+  },
+  {
+    "DurableId": "CaseTeamRole",
+    "DeveloperName": "CaseTeamRole",
+    "QualifiedApiName": "CaseTeamRole"
+  },
+  {
+    "DurableId": "CaseTeamTemplateRecord",
+    "DeveloperName": "CaseTeamTemplateRecord",
+    "QualifiedApiName": "CaseTeamTemplateRecord"
+  },
+  {
+    "DurableId": "CaseComment",
+    "DeveloperName": "CaseComment",
+    "QualifiedApiName": "CaseComment"
+  },
+  {
+    "DurableId": "CaseChangeEvent",
+    "DeveloperName": "CaseChangeEvent",
+    "QualifiedApiName": "CaseChangeEvent"
+  },
+  {
+    "DurableId": "CaseContactRole",
+    "DeveloperName": "CaseContactRole",
+    "QualifiedApiName": "CaseContactRole"
+  },
+  {
+    "DurableId": "CaseMilestone",
+    "DeveloperName": "CaseMilestone",
+    "QualifiedApiName": "CaseMilestone"
+  },
+  {
+    "DurableId": "CaseSolution",
+    "DeveloperName": "CaseSolution",
+    "QualifiedApiName": "CaseSolution"
+  },
+  {
+    "DurableId": "CaseStatus",
+    "DeveloperName": "CaseStatus",
+    "QualifiedApiName": "CaseStatus"
+  },
+  {
+    "DurableId": "UserRecordAccess",
+    "DeveloperName": "UserRecordAccess",
+    "QualifiedApiName": "UserRecordAccess"
+  },
+  {
+    "DurableId": "CategoryData",
+    "DeveloperName": "CategoryData",
+    "QualifiedApiName": "CategoryData"
+  },
+  {
+    "DurableId": "CategoryNode",
+    "DeveloperName": "CategoryNode",
+    "QualifiedApiName": "CategoryNode"
+  },
+  {
+    "DurableId": "CategoryNodeLocalization",
+    "DeveloperName": "CategoryNodeLocalization",
+    "QualifiedApiName": "CategoryNodeLocalization"
+  },
+  {
+    "DurableId": "ClientBrowser",
+    "DeveloperName": "ClientBrowser",
+    "QualifiedApiName": "ClientBrowser"
+  },
+  {
+    "DurableId": "CollaborationGroup",
+    "DeveloperName": "CollaborationGroup",
+    "QualifiedApiName": "CollaborationGroup"
+  },
+  {
+    "DurableId": "CollaborationGroupFeed",
+    "DeveloperName": "CollaborationGroupFeed",
+    "QualifiedApiName": "CollaborationGroupFeed"
+  },
+  {
+    "DurableId": "CollaborationGroupMember",
+    "DeveloperName": "CollaborationGroupMember",
+    "QualifiedApiName": "CollaborationGroupMember"
+  },
+  {
+    "DurableId": "CollaborationGroupMemberRequest",
+    "DeveloperName": "CollaborationGroupMemberRequest",
+    "QualifiedApiName": "CollaborationGroupMemberRequest"
+  },
+  {
+    "DurableId": "CollaborationInvitation",
+    "DeveloperName": "CollaborationInvitation",
+    "QualifiedApiName": "CollaborationInvitation"
+  },
+  {
+    "DurableId": "CombinedAttachment",
+    "DeveloperName": "CombinedAttachment",
+    "QualifiedApiName": "CombinedAttachment"
+  },
+  {
+    "DurableId": "Community",
+    "DeveloperName": "Community",
+    "QualifiedApiName": "Community"
+  },
+  {
+    "DurableId": "ConnectedApplication",
+    "DeveloperName": "ConnectedApplication",
+    "QualifiedApiName": "ConnectedApplication"
+  },
+  {
+    "DurableId": "ContentBody",
+    "DeveloperName": "ContentBody",
+    "QualifiedApiName": "ContentBody"
+  },
+  {
+    "DurableId": "ContentDistribution",
+    "DeveloperName": "ContentDistribution",
+    "QualifiedApiName": "ContentDistribution"
+  },
+  {
+    "DurableId": "ContentDistributionView",
+    "DeveloperName": "ContentDistributionView",
+    "QualifiedApiName": "ContentDistributionView"
+  },
+  {
+    "DurableId": "ContentDocument",
+    "DeveloperName": "ContentDocument",
+    "QualifiedApiName": "ContentDocument"
+  },
+  {
+    "DurableId": "ContentDocumentHistory",
+    "DeveloperName": "ContentDocumentHistory",
+    "QualifiedApiName": "ContentDocumentHistory"
+  },
+  {
+    "DurableId": "ContentDocumentFeed",
+    "DeveloperName": "ContentDocumentFeed",
+    "QualifiedApiName": "ContentDocumentFeed"
+  },
+  {
+    "DurableId": "ContentDocumentChangeEvent",
+    "DeveloperName": "ContentDocumentChangeEvent",
+    "QualifiedApiName": "ContentDocumentChangeEvent"
+  },
+  {
+    "DurableId": "ContentDocumentLink",
+    "DeveloperName": "ContentDocumentLink",
+    "QualifiedApiName": "ContentDocumentLink"
+  },
+  {
+    "DurableId": "ContentDocumentLinkChangeEvent",
+    "DeveloperName": "ContentDocumentLinkChangeEvent",
+    "QualifiedApiName": "ContentDocumentLinkChangeEvent"
+  },
+  {
+    "DurableId": "ContentDocumentSubscription",
+    "DeveloperName": "ContentDocumentSubscription",
+    "QualifiedApiName": "ContentDocumentSubscription"
+  },
+  {
+    "DurableId": "ContentFolderItem",
+    "DeveloperName": "ContentFolderItem",
+    "QualifiedApiName": "ContentFolderItem"
+  },
+  {
+    "DurableId": "ContentFolderLink",
+    "DeveloperName": "ContentFolderLink",
+    "QualifiedApiName": "ContentFolderLink"
+  },
+  {
+    "DurableId": "ContentFolderMember",
+    "DeveloperName": "ContentFolderMember",
+    "QualifiedApiName": "ContentFolderMember"
+  },
+  {
+    "DurableId": "ContentNotification",
+    "DeveloperName": "ContentNotification",
+    "QualifiedApiName": "ContentNotification"
+  },
+  {
+    "DurableId": "ContentTagSubscription",
+    "DeveloperName": "ContentTagSubscription",
+    "QualifiedApiName": "ContentTagSubscription"
+  },
+  {
+    "DurableId": "ContentUserSubscription",
+    "DeveloperName": "ContentUserSubscription",
+    "QualifiedApiName": "ContentUserSubscription"
+  },
+  {
+    "DurableId": "ContentVersionHistory",
+    "DeveloperName": "ContentVersionHistory",
+    "QualifiedApiName": "ContentVersionHistory"
+  },
+  {
+    "DurableId": "ContentVersionChangeEvent",
+    "DeveloperName": "ContentVersionChangeEvent",
+    "QualifiedApiName": "ContentVersionChangeEvent"
+  },
+  {
+    "DurableId": "ContentVersionComment",
+    "DeveloperName": "ContentVersionComment",
+    "QualifiedApiName": "ContentVersionComment"
+  },
+  {
+    "DurableId": "ContentVersionRating",
+    "DeveloperName": "ContentVersionRating",
+    "QualifiedApiName": "ContentVersionRating"
+  },
+  {
+    "DurableId": "ContentWorkspace",
+    "DeveloperName": "ContentWorkspace",
+    "QualifiedApiName": "ContentWorkspace"
+  },
+  {
+    "DurableId": "ContentWorkspaceDoc",
+    "DeveloperName": "ContentWorkspaceDoc",
+    "QualifiedApiName": "ContentWorkspaceDoc"
+  },
+  {
+    "DurableId": "ContentWorkspaceMember",
+    "DeveloperName": "ContentWorkspaceMember",
+    "QualifiedApiName": "ContentWorkspaceMember"
+  },
+  {
+    "DurableId": "ContentWorkspacePermission",
+    "DeveloperName": "ContentWorkspacePermission",
+    "QualifiedApiName": "ContentWorkspacePermission"
+  },
+  {
+    "DurableId": "ContentWorkspaceSubscription",
+    "DeveloperName": "ContentWorkspaceSubscription",
+    "QualifiedApiName": "ContentWorkspaceSubscription"
+  },
+  {
+    "DurableId": "ContractContactRole",
+    "DeveloperName": "ContractContactRole",
+    "QualifiedApiName": "ContractContactRole"
+  },
+  {
+    "DurableId": "ContractStatus",
+    "DeveloperName": "ContractStatus",
+    "QualifiedApiName": "ContractStatus"
+  },
+  {
+    "DurableId": "CronJobDetail",
+    "DeveloperName": "CronJobDetail",
+    "QualifiedApiName": "CronJobDetail"
+  },
+  {
+    "DurableId": "CronTrigger",
+    "DeveloperName": "CronTrigger",
+    "QualifiedApiName": "CronTrigger"
+  },
+  {
+    "DurableId": "CustomBrand",
+    "DeveloperName": "CustomBrand",
+    "QualifiedApiName": "CustomBrand"
+  },
+  {
+    "DurableId": "CustomBrandAsset",
+    "DeveloperName": "CustomBrandAsset",
+    "QualifiedApiName": "CustomBrandAsset"
+  },
+  {
+    "DurableId": "Dashboard",
+    "DeveloperName": "Dashboard",
+    "QualifiedApiName": "Dashboard"
+  },
+  {
+    "DurableId": "DashboardFeed",
+    "DeveloperName": "DashboardFeed",
+    "QualifiedApiName": "DashboardFeed"
+  },
+  {
+    "DurableId": "DashboardComponent",
+    "DeveloperName": "DashboardComponent",
+    "QualifiedApiName": "DashboardComponent"
+  },
+  {
+    "DurableId": "DashboardComponentFeed",
+    "DeveloperName": "DashboardComponentFeed",
+    "QualifiedApiName": "DashboardComponentFeed"
+  },
+  {
+    "DurableId": "DeclinedEventRelation",
+    "DeveloperName": "DeclinedEventRelation",
+    "QualifiedApiName": "DeclinedEventRelation"
+  },
+  {
+    "DurableId": "Document",
+    "DeveloperName": "Document",
+    "QualifiedApiName": "Document"
+  },
+  {
+    "DurableId": "DocumentAttachmentMap",
+    "DeveloperName": "DocumentAttachmentMap",
+    "QualifiedApiName": "DocumentAttachmentMap"
+  },
+  {
+    "DurableId": "Domain",
+    "DeveloperName": "Domain",
+    "QualifiedApiName": "Domain"
+  },
+  {
+    "DurableId": "DomainSite",
+    "DeveloperName": "DomainSite",
+    "QualifiedApiName": "DomainSite"
+  },
+  {
+    "DurableId": "EmailMessageChangeEvent",
+    "DeveloperName": "EmailMessageChangeEvent",
+    "QualifiedApiName": "EmailMessageChangeEvent"
+  },
+  {
+    "DurableId": "EmailMessageRelation",
+    "DeveloperName": "EmailMessageRelation",
+    "QualifiedApiName": "EmailMessageRelation"
+  },
+  {
+    "DurableId": "EmailServicesAddress",
+    "DeveloperName": "EmailServicesAddress",
+    "QualifiedApiName": "EmailServicesAddress"
+  },
+  {
+    "DurableId": "EmailServicesFunction",
+    "DeveloperName": "EmailServicesFunction",
+    "QualifiedApiName": "EmailServicesFunction"
+  },
+  {
+    "DurableId": "EmailStatus",
+    "DeveloperName": "EmailStatus",
+    "QualifiedApiName": "EmailStatus"
+  },
+  {
+    "DurableId": "EmailTemplate",
+    "DeveloperName": "EmailTemplate",
+    "QualifiedApiName": "EmailTemplate"
+  },
+  {
+    "DurableId": "EmailTemplateChangeEvent",
+    "DeveloperName": "EmailTemplateChangeEvent",
+    "QualifiedApiName": "EmailTemplateChangeEvent"
+  },
+  {
+    "DurableId": "EntitlementTemplate",
+    "DeveloperName": "EntitlementTemplate",
+    "QualifiedApiName": "EntitlementTemplate"
+  },
+  {
+    "DurableId": "EntitySubscription",
+    "DeveloperName": "EntitySubscription",
+    "QualifiedApiName": "EntitySubscription"
+  },
+  {
+    "DurableId": "EventFeed",
+    "DeveloperName": "EventFeed",
+    "QualifiedApiName": "EventFeed"
+  },
+  {
+    "DurableId": "EventChangeEvent",
+    "DeveloperName": "EventChangeEvent",
+    "QualifiedApiName": "EventChangeEvent"
+  },
+  {
+    "DurableId": "EventRelation",
+    "DeveloperName": "EventRelation",
+    "QualifiedApiName": "EventRelation"
+  },
+  {
+    "DurableId": "EventRelationChangeEvent",
+    "DeveloperName": "EventRelationChangeEvent",
+    "QualifiedApiName": "EventRelationChangeEvent"
+  },
+  {
+    "DurableId": "FeedAttachment",
+    "DeveloperName": "FeedAttachment",
+    "QualifiedApiName": "FeedAttachment"
+  },
+  {
+    "DurableId": "FeedComment",
+    "DeveloperName": "FeedComment",
+    "QualifiedApiName": "FeedComment"
+  },
+  {
+    "DurableId": "FeedItem",
+    "DeveloperName": "FeedItem",
+    "QualifiedApiName": "FeedItem"
+  },
+  {
+    "DurableId": "FeedLike",
+    "DeveloperName": "FeedLike",
+    "QualifiedApiName": "FeedLike"
+  },
+  {
+    "DurableId": "FeedPollChoice",
+    "DeveloperName": "FeedPollChoice",
+    "QualifiedApiName": "FeedPollChoice"
+  },
+  {
+    "DurableId": "FeedPollVote",
+    "DeveloperName": "FeedPollVote",
+    "QualifiedApiName": "FeedPollVote"
+  },
+  {
+    "DurableId": "FeedRevision",
+    "DeveloperName": "FeedRevision",
+    "QualifiedApiName": "FeedRevision"
+  },
+  {
+    "DurableId": "FeedSignal",
+    "DeveloperName": "FeedSignal",
+    "QualifiedApiName": "FeedSignal"
+  },
+  {
+    "DurableId": "FeedTrackedChange",
+    "DeveloperName": "FeedTrackedChange",
+    "QualifiedApiName": "FeedTrackedChange"
+  },
+  {
+    "DurableId": "FieldPermissions",
+    "DeveloperName": "FieldPermissions",
+    "QualifiedApiName": "FieldPermissions"
+  },
+  {
+    "DurableId": "FiscalYearSettings",
+    "DeveloperName": "FiscalYearSettings",
+    "QualifiedApiName": "FiscalYearSettings"
+  },
+  {
+    "DurableId": "Folder",
+    "DeveloperName": "Folder",
+    "QualifiedApiName": "Folder"
+  },
+  {
+    "DurableId": "FolderedContentDocument",
+    "DeveloperName": "FolderedContentDocument",
+    "QualifiedApiName": "FolderedContentDocument"
+  },
+  {
+    "DurableId": "Holiday",
+    "DeveloperName": "Holiday",
+    "QualifiedApiName": "Holiday"
+  },
+  {
+    "DurableId": "IdpEventLog",
+    "DeveloperName": "IdpEventLog",
+    "QualifiedApiName": "IdpEventLog"
+  },
+  {
+    "DurableId": "IndividualShare",
+    "DeveloperName": "IndividualShare",
+    "QualifiedApiName": "IndividualShare"
+  },
+  {
+    "DurableId": "IndividualHistory",
+    "DeveloperName": "IndividualHistory",
+    "QualifiedApiName": "IndividualHistory"
+  },
+  {
+    "DurableId": "IndividualChangeEvent",
+    "DeveloperName": "IndividualChangeEvent",
+    "QualifiedApiName": "IndividualChangeEvent"
+  },
+  {
+    "DurableId": "LeadStatus",
+    "DeveloperName": "LeadStatus",
+    "QualifiedApiName": "LeadStatus"
+  },
+  {
+    "DurableId": "ListView",
+    "DeveloperName": "ListView",
+    "QualifiedApiName": "ListView"
+  },
+  {
+    "DurableId": "LoginGeo",
+    "DeveloperName": "LoginGeo",
+    "QualifiedApiName": "LoginGeo"
+  },
+  {
+    "DurableId": "LoginHistory",
+    "DeveloperName": "LoginHistory",
+    "QualifiedApiName": "LoginHistory"
+  },
+  {
+    "DurableId": "LoginIp",
+    "DeveloperName": "LoginIp",
+    "QualifiedApiName": "LoginIp"
+  },
+  {
+    "DurableId": "LookedUpFromActivity",
+    "DeveloperName": "LookedUpFromActivity",
+    "QualifiedApiName": "LookedUpFromActivity"
+  },
+  {
+    "DurableId": "MailmergeTemplate",
+    "DeveloperName": "MailmergeTemplate",
+    "QualifiedApiName": "MailmergeTemplate"
+  },
+  {
+    "DurableId": "MilestoneType",
+    "DeveloperName": "MilestoneType",
+    "QualifiedApiName": "MilestoneType"
+  },
+  {
+    "DurableId": "MutingPermissionSet",
+    "DeveloperName": "MutingPermissionSet",
+    "QualifiedApiName": "MutingPermissionSet"
+  },
+  {
+    "DurableId": "Name",
+    "DeveloperName": "Name",
+    "QualifiedApiName": "Name"
+  },
+  {
+    "DurableId": "Network",
+    "DeveloperName": "Network",
+    "QualifiedApiName": "Network"
+  },
+  {
+    "DurableId": "NetworkMember",
+    "DeveloperName": "NetworkMember",
+    "QualifiedApiName": "NetworkMember"
+  },
+  {
+    "DurableId": "NetworkMemberGroup",
+    "DeveloperName": "NetworkMemberGroup",
+    "QualifiedApiName": "NetworkMemberGroup"
+  },
+  {
+    "DurableId": "NetworkModeration",
+    "DeveloperName": "NetworkModeration",
+    "QualifiedApiName": "NetworkModeration"
+  },
+  {
+    "DurableId": "Note",
+    "DeveloperName": "Note",
+    "QualifiedApiName": "Note"
+  },
+  {
+    "DurableId": "NoteAndAttachment",
+    "DeveloperName": "NoteAndAttachment",
+    "QualifiedApiName": "NoteAndAttachment"
+  },
+  {
+    "DurableId": "ObjectPermissions",
+    "DeveloperName": "ObjectPermissions",
+    "QualifiedApiName": "ObjectPermissions"
+  },
+  {
+    "DurableId": "OpenActivity",
+    "DeveloperName": "OpenActivity",
+    "QualifiedApiName": "OpenActivity"
+  },
+  {
+    "DurableId": "OpportunityShare",
+    "DeveloperName": "OpportunityShare",
+    "QualifiedApiName": "OpportunityShare"
+  },
+  {
+    "DurableId": "OpportunityFieldHistory",
+    "DeveloperName": "OpportunityFieldHistory",
+    "QualifiedApiName": "OpportunityFieldHistory"
+  },
+  {
+    "DurableId": "OpportunityFeed",
+    "DeveloperName": "OpportunityFeed",
+    "QualifiedApiName": "OpportunityFeed"
+  },
+  {
+    "DurableId": "OpportunityChangeEvent",
+    "DeveloperName": "OpportunityChangeEvent",
+    "QualifiedApiName": "OpportunityChangeEvent"
+  },
+  {
+    "DurableId": "OpportunityCompetitor",
+    "DeveloperName": "OpportunityCompetitor",
+    "QualifiedApiName": "OpportunityCompetitor"
+  },
+  {
+    "DurableId": "OpportunityContactRoleChangeEvent",
+    "DeveloperName": "OpportunityContactRoleChangeEvent",
+    "QualifiedApiName": "OpportunityContactRoleChangeEvent"
+  },
+  {
+    "DurableId": "OpportunityHistory",
+    "DeveloperName": "OpportunityHistory",
+    "QualifiedApiName": "OpportunityHistory"
+  },
+  {
+    "DurableId": "OpportunityPartner",
+    "DeveloperName": "OpportunityPartner",
+    "QualifiedApiName": "OpportunityPartner"
+  },
+  {
+    "DurableId": "OpportunityStage",
+    "DeveloperName": "OpportunityStage",
+    "QualifiedApiName": "OpportunityStage"
+  },
+  {
+    "DurableId": "OrgWideEmailAddress",
+    "DeveloperName": "OrgWideEmailAddress",
+    "QualifiedApiName": "OrgWideEmailAddress"
+  },
+  {
+    "DurableId": "Organization",
+    "DeveloperName": "Organization",
+    "QualifiedApiName": "Organization"
+  },
+  {
+    "DurableId": "OwnedContentDocument",
+    "DeveloperName": "OwnedContentDocument",
+    "QualifiedApiName": "OwnedContentDocument"
+  },
+  {
+    "DurableId": "PackageLicense",
+    "DeveloperName": "PackageLicense",
+    "QualifiedApiName": "PackageLicense"
+  },
+  {
+    "DurableId": "PartnerRole",
+    "DeveloperName": "PartnerRole",
+    "QualifiedApiName": "PartnerRole"
+  },
+  {
+    "DurableId": "Period",
+    "DeveloperName": "Period",
+    "QualifiedApiName": "Period"
+  },
+  {
+    "DurableId": "PermissionSetAssignment",
+    "DeveloperName": "PermissionSetAssignment",
+    "QualifiedApiName": "PermissionSetAssignment"
+  },
+  {
+    "DurableId": "PermissionSetTabSetting",
+    "DeveloperName": "PermissionSetTabSetting",
+    "QualifiedApiName": "PermissionSetTabSetting"
+  },
+  {
+    "DurableId": "PricebookEntryHistory",
+    "DeveloperName": "PricebookEntryHistory",
+    "QualifiedApiName": "PricebookEntryHistory"
+  },
+  {
+    "DurableId": "ProcessDefinition",
+    "DeveloperName": "ProcessDefinition",
+    "QualifiedApiName": "ProcessDefinition"
+  },
+  {
+    "DurableId": "ProcessInstance",
+    "DeveloperName": "ProcessInstance",
+    "QualifiedApiName": "ProcessInstance"
+  },
+  {
+    "DurableId": "ProcessInstanceHistory",
+    "DeveloperName": "ProcessInstanceHistory",
+    "QualifiedApiName": "ProcessInstanceHistory"
+  },
+  {
+    "DurableId": "ProcessInstanceStep",
+    "DeveloperName": "ProcessInstanceStep",
+    "QualifiedApiName": "ProcessInstanceStep"
+  },
+  {
+    "DurableId": "ProcessInstanceWorkitem",
+    "DeveloperName": "ProcessInstanceWorkitem",
+    "QualifiedApiName": "ProcessInstanceWorkitem"
+  },
+  {
+    "DurableId": "ProcessNode",
+    "DeveloperName": "ProcessNode",
+    "QualifiedApiName": "ProcessNode"
+  },
+  {
+    "DurableId": "ProductEntitlementTemplate",
+    "DeveloperName": "ProductEntitlementTemplate",
+    "QualifiedApiName": "ProductEntitlementTemplate"
+  },
+  {
+    "DurableId": "Profile",
+    "DeveloperName": "Profile",
+    "QualifiedApiName": "Profile"
+  },
+  {
+    "DurableId": "PushTopic",
+    "DeveloperName": "PushTopic",
+    "QualifiedApiName": "PushTopic"
+  },
+  {
+    "DurableId": "RecentlyViewed",
+    "DeveloperName": "RecentlyViewed",
+    "QualifiedApiName": "RecentlyViewed"
+  },
+  {
+    "DurableId": "RecordType",
+    "DeveloperName": "RecordType",
+    "QualifiedApiName": "RecordType"
+  },
+  {
+    "DurableId": "RecordTypeLocalization",
+    "DeveloperName": "RecordTypeLocalization",
+    "QualifiedApiName": "RecordTypeLocalization"
+  },
+  {
+    "DurableId": "Report",
+    "DeveloperName": "Report",
+    "QualifiedApiName": "Report"
+  },
+  {
+    "DurableId": "ReportFeed",
+    "DeveloperName": "ReportFeed",
+    "QualifiedApiName": "ReportFeed"
+  },
+  {
+    "DurableId": "Scontrol",
+    "DeveloperName": "Scontrol",
+    "QualifiedApiName": "Scontrol"
+  },
+  {
+    "DurableId": "ScontrolLocalization",
+    "DeveloperName": "ScontrolLocalization",
+    "QualifiedApiName": "ScontrolLocalization"
+  },
+  {
+    "DurableId": "SetupAuditTrail",
+    "DeveloperName": "SetupAuditTrail",
+    "QualifiedApiName": "SetupAuditTrail"
+  },
+  {
+    "DurableId": "SetupEntityAccess",
+    "DeveloperName": "SetupEntityAccess",
+    "QualifiedApiName": "SetupEntityAccess"
+  },
+  {
+    "DurableId": "Site",
+    "DeveloperName": "Site",
+    "QualifiedApiName": "Site"
+  },
+  {
+    "DurableId": "SiteHistory",
+    "DeveloperName": "SiteHistory",
+    "QualifiedApiName": "SiteHistory"
+  },
+  {
+    "DurableId": "SiteFeed",
+    "DeveloperName": "SiteFeed",
+    "QualifiedApiName": "SiteFeed"
+  },
+  {
+    "DurableId": "SiteRedirectMapping",
+    "DeveloperName": "SiteRedirectMapping",
+    "QualifiedApiName": "SiteRedirectMapping"
+  },
+  {
+    "DurableId": "SlaProcess",
+    "DeveloperName": "SlaProcess",
+    "QualifiedApiName": "SlaProcess"
+  },
+  {
+    "DurableId": "SolutionHistory",
+    "DeveloperName": "SolutionHistory",
+    "QualifiedApiName": "SolutionHistory"
+  },
+  {
+    "DurableId": "SolutionFeed",
+    "DeveloperName": "SolutionFeed",
+    "QualifiedApiName": "SolutionFeed"
+  },
+  {
+    "DurableId": "SolutionStatus",
+    "DeveloperName": "SolutionStatus",
+    "QualifiedApiName": "SolutionStatus"
+  },
+  {
+    "DurableId": "StaticResource",
+    "DeveloperName": "StaticResource",
+    "QualifiedApiName": "StaticResource"
+  },
+  {
+    "DurableId": "TaskFeed",
+    "DeveloperName": "TaskFeed",
+    "QualifiedApiName": "TaskFeed"
+  },
+  {
+    "DurableId": "TaskChangeEvent",
+    "DeveloperName": "TaskChangeEvent",
+    "QualifiedApiName": "TaskChangeEvent"
+  },
+  {
+    "DurableId": "TaskPriority",
+    "DeveloperName": "TaskPriority",
+    "QualifiedApiName": "TaskPriority"
+  },
+  {
+    "DurableId": "TaskStatus",
+    "DeveloperName": "TaskStatus",
+    "QualifiedApiName": "TaskStatus"
+  },
+  {
+    "DurableId": "KnowledgeableUser",
+    "DeveloperName": "KnowledgeableUser",
+    "QualifiedApiName": "KnowledgeableUser"
+  },
+  {
+    "DurableId": "Topic",
+    "DeveloperName": "Topic",
+    "QualifiedApiName": "Topic"
+  },
+  {
+    "DurableId": "TopicLocalization",
+    "DeveloperName": "TopicLocalization",
+    "QualifiedApiName": "TopicLocalization"
+  },
+  {
+    "DurableId": "TopicFeed",
+    "DeveloperName": "TopicFeed",
+    "QualifiedApiName": "TopicFeed"
+  },
+  {
+    "DurableId": "TopicAssignment",
+    "DeveloperName": "TopicAssignment",
+    "QualifiedApiName": "TopicAssignment"
+  },
+  {
+    "DurableId": "TopicUserEvent",
+    "DeveloperName": "TopicUserEvent",
+    "QualifiedApiName": "TopicUserEvent"
+  },
+  {
+    "DurableId": "Translation",
+    "DeveloperName": "Translation",
+    "QualifiedApiName": "Translation"
+  },
+  {
+    "DurableId": "VoiceCallShare",
+    "DeveloperName": "VoiceCallShare",
+    "QualifiedApiName": "VoiceCallShare"
+  },
+  {
+    "DurableId": "VoiceCallFeed",
+    "DeveloperName": "VoiceCallFeed",
+    "QualifiedApiName": "VoiceCallFeed"
+  },
+  {
+    "DurableId": "VoiceCallChangeEvent",
+    "DeveloperName": "VoiceCallChangeEvent",
+    "QualifiedApiName": "VoiceCallChangeEvent"
+  },
+  {
+    "DurableId": "ServiceAppointmentStatus",
+    "DeveloperName": "ServiceAppointmentStatus",
+    "QualifiedApiName": "ServiceAppointmentStatus"
+  },
+  {
+    "DurableId": "WorkOrderLineItemStatus",
+    "DeveloperName": "WorkOrderLineItemStatus",
+    "QualifiedApiName": "WorkOrderLineItemStatus"
+  },
+  {
+    "DurableId": "WorkOrderStatus",
+    "DeveloperName": "WorkOrderStatus",
+    "QualifiedApiName": "WorkOrderStatus"
+  },
+  {
+    "DurableId": "ConversationEntry",
+    "DeveloperName": "ConversationEntry",
+    "QualifiedApiName": "ConversationEntry"
+  },
+  {
+    "DurableId": "OrderStatus",
+    "DeveloperName": "OrderStatus",
+    "QualifiedApiName": "OrderStatus"
+  },
+  {
+    "DurableId": "FieldSecurityClassification",
+    "DeveloperName": "FieldSecurityClassification",
+    "QualifiedApiName": "FieldSecurityClassification"
+  },
+  {
+    "DurableId": "ShiftStatus",
+    "DeveloperName": "ShiftStatus",
+    "QualifiedApiName": "ShiftStatus"
+  },
+  {
+    "DurableId": "Conversation",
+    "DeveloperName": "Conversation",
+    "QualifiedApiName": "Conversation"
+  },
+  {
+    "DurableId": "ConversationParticipant",
+    "DeveloperName": "ConversationParticipant",
+    "QualifiedApiName": "ConversationParticipant"
+  },
+  {
+    "DurableId": "DeleteEvent",
+    "DeveloperName": "DeleteEvent",
+    "QualifiedApiName": "DeleteEvent"
+  },
+  {
+    "DurableId": "WorkStepStatus",
+    "DeveloperName": "WorkStepStatus",
+    "QualifiedApiName": "WorkStepStatus"
+  },
+  {
+    "DurableId": "UndecidedEventRelation",
+    "DeveloperName": "UndecidedEventRelation",
+    "QualifiedApiName": "UndecidedEventRelation"
+  },
+  {
+    "DurableId": "UserShare",
+    "DeveloperName": "UserShare",
+    "QualifiedApiName": "UserShare"
+  },
+  {
+    "DurableId": "UserFeed",
+    "DeveloperName": "UserFeed",
+    "QualifiedApiName": "UserFeed"
+  },
+  {
+    "DurableId": "UserChangeEvent",
+    "DeveloperName": "UserChangeEvent",
+    "QualifiedApiName": "UserChangeEvent"
+  },
+  {
+    "DurableId": "UserLicense",
+    "DeveloperName": "UserLicense",
+    "QualifiedApiName": "UserLicense"
+  },
+  {
+    "DurableId": "UserLogin",
+    "DeveloperName": "UserLogin",
+    "QualifiedApiName": "UserLogin"
+  },
+  {
+    "DurableId": "UserPackageLicense",
+    "DeveloperName": "UserPackageLicense",
+    "QualifiedApiName": "UserPackageLicense"
+  },
+  {
+    "DurableId": "UserPreference",
+    "DeveloperName": "UserPreference",
+    "QualifiedApiName": "UserPreference"
+  },
+  {
+    "DurableId": "VerificationHistory",
+    "DeveloperName": "VerificationHistory",
+    "QualifiedApiName": "VerificationHistory"
+  },
+  {
+    "DurableId": "VoiceCallRecording",
+    "DeveloperName": "VoiceCallRecording",
+    "QualifiedApiName": "VoiceCallRecording"
+  },
+  {
+    "DurableId": "VoiceCallRecordingChangeEvent",
+    "DeveloperName": "VoiceCallRecordingChangeEvent",
+    "QualifiedApiName": "VoiceCallRecordingChangeEvent"
+  },
+  {
+    "DurableId": "Vote",
+    "DeveloperName": "Vote",
+    "QualifiedApiName": "Vote"
+  },
+  {
+    "DurableId": "WebLink",
+    "DeveloperName": "WebLink",
+    "QualifiedApiName": "WebLink"
+  },
+  {
+    "DurableId": "WebLinkLocalization",
+    "DeveloperName": "WebLinkLocalization",
+    "QualifiedApiName": "WebLinkLocalization"
+  },
+  {
+    "DurableId": "EventBusSubscriber",
+    "DeveloperName": "EventBusSubscriber",
+    "QualifiedApiName": "EventBusSubscriber"
+  },
+  {
+    "DurableId": "EventLogFile",
+    "DeveloperName": "EventLogFile",
+    "QualifiedApiName": "EventLogFile"
+  },
+  {
+    "DurableId": "EntityDefinition",
+    "DeveloperName": "EntityDefinition",
+    "QualifiedApiName": "EntityDefinition"
+  },
+  {
+    "DurableId": "FieldDefinition",
+    "DeveloperName": "FieldDefinition",
+    "QualifiedApiName": "FieldDefinition"
+  },
+  {
+    "DurableId": "EntityParticle",
+    "DeveloperName": "EntityParticle",
+    "QualifiedApiName": "EntityParticle"
+  },
+  {
+    "DurableId": "PicklistValueInfo",
+    "DeveloperName": "PicklistValueInfo",
+    "QualifiedApiName": "PicklistValueInfo"
+  },
+  {
+    "DurableId": "RelationshipInfo",
+    "DeveloperName": "RelationshipInfo",
+    "QualifiedApiName": "RelationshipInfo"
+  },
+  {
+    "DurableId": "RelationshipDomain",
+    "DeveloperName": "RelationshipDomain",
+    "QualifiedApiName": "RelationshipDomain"
+  },
+  {
+    "DurableId": "SearchLayout",
+    "DeveloperName": "SearchLayout",
+    "QualifiedApiName": "SearchLayout"
+  },
+  {
+    "DurableId": "Publisher",
+    "DeveloperName": "Publisher",
+    "QualifiedApiName": "Publisher"
+  },
+  {
+    "DurableId": "DataType",
+    "DeveloperName": "DataType",
+    "QualifiedApiName": "DataType"
+  },
+  {
+    "DurableId": "UserFieldAccess",
+    "DeveloperName": "UserFieldAccess",
+    "QualifiedApiName": "UserFieldAccess"
+  },
+  {
+    "DurableId": "UserEntityAccess",
+    "DeveloperName": "UserEntityAccess",
+    "QualifiedApiName": "UserEntityAccess"
+  },
+  {
+    "DurableId": "OwnerChangeOptionInfo",
+    "DeveloperName": "OwnerChangeOptionInfo",
+    "QualifiedApiName": "OwnerChangeOptionInfo"
+  },
+  {
+    "DurableId": "DataStatistics",
+    "DeveloperName": "DataStatistics",
+    "QualifiedApiName": "DataStatistics"
+  },
+  {
+    "DurableId": "LoginEvent",
+    "DeveloperName": "LoginEvent",
+    "QualifiedApiName": "LoginEvent"
+  },
+  {
+    "DurableId": "LoginEventStream",
+    "DeveloperName": "LoginEventStream",
+    "QualifiedApiName": "LoginEventStream"
+  },
+  {
+    "DurableId": "ApiEvent",
+    "DeveloperName": "ApiEvent",
+    "QualifiedApiName": "ApiEvent"
+  },
+  {
+    "DurableId": "AccountContactRole",
+    "DeveloperName": "AccountContactRole",
+    "QualifiedApiName": "AccountContactRole"
+  },
+  {
+    "DurableId": "AccountContactRoleChangeEvent",
+    "DeveloperName": "AccountContactRoleChangeEvent",
+    "QualifiedApiName": "AccountContactRoleChangeEvent"
+  },
+  {
+    "DurableId": "WorkOrderShare",
+    "DeveloperName": "WorkOrderShare",
+    "QualifiedApiName": "WorkOrderShare"
+  },
+  {
+    "DurableId": "WorkOrderHistory",
+    "DeveloperName": "WorkOrderHistory",
+    "QualifiedApiName": "WorkOrderHistory"
+  },
+  {
+    "DurableId": "WorkOrderFeed",
+    "DeveloperName": "WorkOrderFeed",
+    "QualifiedApiName": "WorkOrderFeed"
+  },
+  {
+    "DurableId": "WorkOrderChangeEvent",
+    "DeveloperName": "WorkOrderChangeEvent",
+    "QualifiedApiName": "WorkOrderChangeEvent"
+  },
+  {
+    "DurableId": "WorkOrderLineItemHistory",
+    "DeveloperName": "WorkOrderLineItemHistory",
+    "QualifiedApiName": "WorkOrderLineItemHistory"
+  },
+  {
+    "DurableId": "WorkOrderLineItemFeed",
+    "DeveloperName": "WorkOrderLineItemFeed",
+    "QualifiedApiName": "WorkOrderLineItemFeed"
+  },
+  {
+    "DurableId": "WorkOrderLineItemChangeEvent",
+    "DeveloperName": "WorkOrderLineItemChangeEvent",
+    "QualifiedApiName": "WorkOrderLineItemChangeEvent"
+  },
+  {
+    "DurableId": "ServiceAppointmentShare",
+    "DeveloperName": "ServiceAppointmentShare",
+    "QualifiedApiName": "ServiceAppointmentShare"
+  },
+  {
+    "DurableId": "ServiceAppointmentHistory",
+    "DeveloperName": "ServiceAppointmentHistory",
+    "QualifiedApiName": "ServiceAppointmentHistory"
+  },
+  {
+    "DurableId": "ServiceAppointmentFeed",
+    "DeveloperName": "ServiceAppointmentFeed",
+    "QualifiedApiName": "ServiceAppointmentFeed"
+  },
+  {
+    "DurableId": "ServiceAppointmentChangeEvent",
+    "DeveloperName": "ServiceAppointmentChangeEvent",
+    "QualifiedApiName": "ServiceAppointmentChangeEvent"
+  },
+  {
+    "DurableId": "WorkTypeShare",
+    "DeveloperName": "WorkTypeShare",
+    "QualifiedApiName": "WorkTypeShare"
+  },
+  {
+    "DurableId": "WorkTypeHistory",
+    "DeveloperName": "WorkTypeHistory",
+    "QualifiedApiName": "WorkTypeHistory"
+  },
+  {
+    "DurableId": "WorkTypeFeed",
+    "DeveloperName": "WorkTypeFeed",
+    "QualifiedApiName": "WorkTypeFeed"
+  },
+  {
+    "DurableId": "WorkTypeChangeEvent",
+    "DeveloperName": "WorkTypeChangeEvent",
+    "QualifiedApiName": "WorkTypeChangeEvent"
+  },
+  {
+    "DurableId": "ServiceResourceShare",
+    "DeveloperName": "ServiceResourceShare",
+    "QualifiedApiName": "ServiceResourceShare"
+  },
+  {
+    "DurableId": "ServiceResourceHistory",
+    "DeveloperName": "ServiceResourceHistory",
+    "QualifiedApiName": "ServiceResourceHistory"
+  },
+  {
+    "DurableId": "ServiceResourceFeed",
+    "DeveloperName": "ServiceResourceFeed",
+    "QualifiedApiName": "ServiceResourceFeed"
+  },
+  {
+    "DurableId": "ServiceResourceChangeEvent",
+    "DeveloperName": "ServiceResourceChangeEvent",
+    "QualifiedApiName": "ServiceResourceChangeEvent"
+  },
+  {
+    "DurableId": "ServiceTerritoryShare",
+    "DeveloperName": "ServiceTerritoryShare",
+    "QualifiedApiName": "ServiceTerritoryShare"
+  },
+  {
+    "DurableId": "ServiceTerritoryHistory",
+    "DeveloperName": "ServiceTerritoryHistory",
+    "QualifiedApiName": "ServiceTerritoryHistory"
+  },
+  {
+    "DurableId": "ServiceTerritoryFeed",
+    "DeveloperName": "ServiceTerritoryFeed",
+    "QualifiedApiName": "ServiceTerritoryFeed"
+  },
+  {
+    "DurableId": "ServiceTerritoryChangeEvent",
+    "DeveloperName": "ServiceTerritoryChangeEvent",
+    "QualifiedApiName": "ServiceTerritoryChangeEvent"
+  },
+  {
+    "DurableId": "ServiceTerritoryMemberHistory",
+    "DeveloperName": "ServiceTerritoryMemberHistory",
+    "QualifiedApiName": "ServiceTerritoryMemberHistory"
+  },
+  {
+    "DurableId": "ServiceTerritoryMemberFeed",
+    "DeveloperName": "ServiceTerritoryMemberFeed",
+    "QualifiedApiName": "ServiceTerritoryMemberFeed"
+  },
+  {
+    "DurableId": "ServiceTerritoryMemberChangeEvent",
+    "DeveloperName": "ServiceTerritoryMemberChangeEvent",
+    "QualifiedApiName": "ServiceTerritoryMemberChangeEvent"
+  },
+  {
+    "DurableId": "ServiceResourceSkillHistory",
+    "DeveloperName": "ServiceResourceSkillHistory",
+    "QualifiedApiName": "ServiceResourceSkillHistory"
+  },
+  {
+    "DurableId": "ServiceResourceSkillFeed",
+    "DeveloperName": "ServiceResourceSkillFeed",
+    "QualifiedApiName": "ServiceResourceSkillFeed"
+  },
+  {
+    "DurableId": "ServiceResourceSkillChangeEvent",
+    "DeveloperName": "ServiceResourceSkillChangeEvent",
+    "QualifiedApiName": "ServiceResourceSkillChangeEvent"
+  },
+  {
+    "DurableId": "SkillRequirementHistory",
+    "DeveloperName": "SkillRequirementHistory",
+    "QualifiedApiName": "SkillRequirementHistory"
+  },
+  {
+    "DurableId": "SkillRequirementFeed",
+    "DeveloperName": "SkillRequirementFeed",
+    "QualifiedApiName": "SkillRequirementFeed"
+  },
+  {
+    "DurableId": "SkillRequirementChangeEvent",
+    "DeveloperName": "SkillRequirementChangeEvent",
+    "QualifiedApiName": "SkillRequirementChangeEvent"
+  },
+  {
+    "DurableId": "AssignedResourceFeed",
+    "DeveloperName": "AssignedResourceFeed",
+    "QualifiedApiName": "AssignedResourceFeed"
+  },
+  {
+    "DurableId": "AssignedResourceChangeEvent",
+    "DeveloperName": "AssignedResourceChangeEvent",
+    "QualifiedApiName": "AssignedResourceChangeEvent"
+  },
+  {
+    "DurableId": "OperatingHoursShare",
+    "DeveloperName": "OperatingHoursShare",
+    "QualifiedApiName": "OperatingHoursShare"
+  },
+  {
+    "DurableId": "OperatingHoursFeed",
+    "DeveloperName": "OperatingHoursFeed",
+    "QualifiedApiName": "OperatingHoursFeed"
+  },
+  {
+    "DurableId": "OperatingHoursChangeEvent",
+    "DeveloperName": "OperatingHoursChangeEvent",
+    "QualifiedApiName": "OperatingHoursChangeEvent"
+  },
+  {
+    "DurableId": "ResourceAbsenceHistory",
+    "DeveloperName": "ResourceAbsenceHistory",
+    "QualifiedApiName": "ResourceAbsenceHistory"
+  },
+  {
+    "DurableId": "ResourceAbsenceFeed",
+    "DeveloperName": "ResourceAbsenceFeed",
+    "QualifiedApiName": "ResourceAbsenceFeed"
+  },
+  {
+    "DurableId": "ResourceAbsenceChangeEvent",
+    "DeveloperName": "ResourceAbsenceChangeEvent",
+    "QualifiedApiName": "ResourceAbsenceChangeEvent"
+  },
+  {
+    "DurableId": "TimeSlotChangeEvent",
+    "DeveloperName": "TimeSlotChangeEvent",
+    "QualifiedApiName": "TimeSlotChangeEvent"
+  },
+  {
+    "DurableId": "ResourcePreferenceHistory",
+    "DeveloperName": "ResourcePreferenceHistory",
+    "QualifiedApiName": "ResourcePreferenceHistory"
+  },
+  {
+    "DurableId": "ResourcePreferenceFeed",
+    "DeveloperName": "ResourcePreferenceFeed",
+    "QualifiedApiName": "ResourcePreferenceFeed"
+  },
+  {
+    "DurableId": "ResourcePreferenceChangeEvent",
+    "DeveloperName": "ResourcePreferenceChangeEvent",
+    "QualifiedApiName": "ResourcePreferenceChangeEvent"
+  },
+  {
+    "DurableId": "AIApplication",
+    "DeveloperName": "AIApplication",
+    "QualifiedApiName": "AIApplication"
+  },
+  {
+    "DurableId": "AIInsightAction",
+    "DeveloperName": "AIInsightAction",
+    "QualifiedApiName": "AIInsightAction"
+  },
+  {
+    "DurableId": "AIInsightFeedback",
+    "DeveloperName": "AIInsightFeedback",
+    "QualifiedApiName": "AIInsightFeedback"
+  },
+  {
+    "DurableId": "AIInsightReason",
+    "DeveloperName": "AIInsightReason",
+    "QualifiedApiName": "AIInsightReason"
+  },
+  {
+    "DurableId": "AIInsightValue",
+    "DeveloperName": "AIInsightValue",
+    "QualifiedApiName": "AIInsightValue"
+  },
+  {
+    "DurableId": "AIPredictionEvent",
+    "DeveloperName": "AIPredictionEvent",
+    "QualifiedApiName": "AIPredictionEvent"
+  },
+  {
+    "DurableId": "AIRecordInsight",
+    "DeveloperName": "AIRecordInsight",
+    "QualifiedApiName": "AIRecordInsight"
+  },
+  {
+    "DurableId": "AccountBrandShare",
+    "DeveloperName": "AccountBrandShare",
+    "QualifiedApiName": "AccountBrandShare"
+  },
+  {
+    "DurableId": "ActionLinkGroupTemplate",
+    "DeveloperName": "ActionLinkGroupTemplate",
+    "QualifiedApiName": "ActionLinkGroupTemplate"
+  },
+  {
+    "DurableId": "ActionLinkTemplate",
+    "DeveloperName": "ActionLinkTemplate",
+    "QualifiedApiName": "ActionLinkTemplate"
+  },
+  {
+    "DurableId": "AddressHistory",
+    "DeveloperName": "AddressHistory",
+    "QualifiedApiName": "AddressHistory"
+  },
+  {
+    "DurableId": "Announcement",
+    "DeveloperName": "Announcement",
+    "QualifiedApiName": "Announcement"
+  },
+  {
+    "DurableId": "ApexEmailNotification",
+    "DeveloperName": "ApexEmailNotification",
+    "QualifiedApiName": "ApexEmailNotification"
+  },
+  {
+    "DurableId": "ApexPageInfo",
+    "DeveloperName": "ApexPageInfo",
+    "QualifiedApiName": "ApexPageInfo"
+  },
+  {
+    "DurableId": "ApexTestResultLimits",
+    "DeveloperName": "ApexTestResultLimits",
+    "QualifiedApiName": "ApexTestResultLimits"
+  },
+  {
+    "DurableId": "ApexTestRunResult",
+    "DeveloperName": "ApexTestRunResult",
+    "QualifiedApiName": "ApexTestRunResult"
+  },
+  {
+    "DurableId": "ApexTestSuite",
+    "DeveloperName": "ApexTestSuite",
+    "QualifiedApiName": "ApexTestSuite"
+  },
+  {
+    "DurableId": "AppDefinition",
+    "DeveloperName": "AppDefinition",
+    "QualifiedApiName": "AppDefinition"
+  },
+  {
+    "DurableId": "AppMenuItem",
+    "DeveloperName": "AppMenuItem",
+    "QualifiedApiName": "AppMenuItem"
+  },
+  {
+    "DurableId": "AppTabMember",
+    "DeveloperName": "AppTabMember",
+    "QualifiedApiName": "AppTabMember"
+  },
+  {
+    "DurableId": "AppointmentSchedulingPolicy",
+    "DeveloperName": "AppointmentSchedulingPolicy",
+    "QualifiedApiName": "AppointmentSchedulingPolicy"
+  },
+  {
+    "DurableId": "AssetRelationshipHistory",
+    "DeveloperName": "AssetRelationshipHistory",
+    "QualifiedApiName": "AssetRelationshipHistory"
+  },
+  {
+    "DurableId": "AssetRelationshipFeed",
+    "DeveloperName": "AssetRelationshipFeed",
+    "QualifiedApiName": "AssetRelationshipFeed"
+  },
+  {
+    "DurableId": "AssetTokenEvent",
+    "DeveloperName": "AssetTokenEvent",
+    "QualifiedApiName": "AssetTokenEvent"
+  },
+  {
+    "DurableId": "AssociatedLocationHistory",
+    "DeveloperName": "AssociatedLocationHistory",
+    "QualifiedApiName": "AssociatedLocationHistory"
+  },
+  {
+    "DurableId": "Audience",
+    "DeveloperName": "Audience",
+    "QualifiedApiName": "Audience"
+  },
+  {
+    "DurableId": "AuraDefinition",
+    "DeveloperName": "AuraDefinition",
+    "QualifiedApiName": "AuraDefinition"
+  },
+  {
+    "DurableId": "AuraDefinitionBundle",
+    "DeveloperName": "AuraDefinitionBundle",
+    "QualifiedApiName": "AuraDefinitionBundle"
+  },
+  {
+    "DurableId": "AuraDefinitionBundleInfo",
+    "DeveloperName": "AuraDefinitionBundleInfo",
+    "QualifiedApiName": "AuraDefinitionBundleInfo"
+  },
+  {
+    "DurableId": "AuraDefinitionInfo",
+    "DeveloperName": "AuraDefinitionInfo",
+    "QualifiedApiName": "AuraDefinitionInfo"
+  },
+  {
+    "DurableId": "AuthConfig",
+    "DeveloperName": "AuthConfig",
+    "QualifiedApiName": "AuthConfig"
+  },
+  {
+    "DurableId": "AuthConfigProviders",
+    "DeveloperName": "AuthConfigProviders",
+    "QualifiedApiName": "AuthConfigProviders"
+  },
+  {
+    "DurableId": "BackgroundOperation",
+    "DeveloperName": "BackgroundOperation",
+    "QualifiedApiName": "BackgroundOperation"
+  },
+  {
+    "DurableId": "BatchApexErrorEvent",
+    "DeveloperName": "BatchApexErrorEvent",
+    "QualifiedApiName": "BatchApexErrorEvent"
+  },
+  {
+    "DurableId": "BrandingSet",
+    "DeveloperName": "BrandingSet",
+    "QualifiedApiName": "BrandingSet"
+  },
+  {
+    "DurableId": "BrandingSetProperty",
+    "DeveloperName": "BrandingSetProperty",
+    "QualifiedApiName": "BrandingSetProperty"
+  },
+  {
+    "DurableId": "ChannelProgramShare",
+    "DeveloperName": "ChannelProgramShare",
+    "QualifiedApiName": "ChannelProgramShare"
+  },
+  {
+    "DurableId": "ChannelProgramHistory",
+    "DeveloperName": "ChannelProgramHistory",
+    "QualifiedApiName": "ChannelProgramHistory"
+  },
+  {
+    "DurableId": "ChannelProgramFeed",
+    "DeveloperName": "ChannelProgramFeed",
+    "QualifiedApiName": "ChannelProgramFeed"
+  },
+  {
+    "DurableId": "ChannelProgramLevelShare",
+    "DeveloperName": "ChannelProgramLevelShare",
+    "QualifiedApiName": "ChannelProgramLevelShare"
+  },
+  {
+    "DurableId": "ChannelProgramLevelHistory",
+    "DeveloperName": "ChannelProgramLevelHistory",
+    "QualifiedApiName": "ChannelProgramLevelHistory"
+  },
+  {
+    "DurableId": "ChannelProgramLevelFeed",
+    "DeveloperName": "ChannelProgramLevelFeed",
+    "QualifiedApiName": "ChannelProgramLevelFeed"
+  },
+  {
+    "DurableId": "ChannelProgramMemberShare",
+    "DeveloperName": "ChannelProgramMemberShare",
+    "QualifiedApiName": "ChannelProgramMemberShare"
+  },
+  {
+    "DurableId": "ChannelProgramMemberHistory",
+    "DeveloperName": "ChannelProgramMemberHistory",
+    "QualifiedApiName": "ChannelProgramMemberHistory"
+  },
+  {
+    "DurableId": "ChannelProgramMemberFeed",
+    "DeveloperName": "ChannelProgramMemberFeed",
+    "QualifiedApiName": "ChannelProgramMemberFeed"
+  },
+  {
+    "DurableId": "ChatterExtension",
+    "DeveloperName": "ChatterExtension",
+    "QualifiedApiName": "ChatterExtension"
+  },
+  {
+    "DurableId": "ChatterExtensionLocalization",
+    "DeveloperName": "ChatterExtensionLocalization",
+    "QualifiedApiName": "ChatterExtensionLocalization"
+  },
+  {
+    "DurableId": "ChatterExtensionConfig",
+    "DeveloperName": "ChatterExtensionConfig",
+    "QualifiedApiName": "ChatterExtensionConfig"
+  },
+  {
+    "DurableId": "CollaborationGroupRecord",
+    "DeveloperName": "CollaborationGroupRecord",
+    "QualifiedApiName": "CollaborationGroupRecord"
+  },
+  {
+    "DurableId": "ColorDefinition",
+    "DeveloperName": "ColorDefinition",
+    "QualifiedApiName": "ColorDefinition"
+  },
+  {
+    "DurableId": "ContentAsset",
+    "DeveloperName": "ContentAsset",
+    "QualifiedApiName": "ContentAsset"
+  },
+  {
+    "DurableId": "ContentFolder",
+    "DeveloperName": "ContentFolder",
+    "QualifiedApiName": "ContentFolder"
+  },
+  {
+    "DurableId": "ContractLineItemHistory",
+    "DeveloperName": "ContractLineItemHistory",
+    "QualifiedApiName": "ContractLineItemHistory"
+  },
+  {
+    "DurableId": "ContractLineItemFeed",
+    "DeveloperName": "ContractLineItemFeed",
+    "QualifiedApiName": "ContractLineItemFeed"
+  },
+  {
+    "DurableId": "ContractLineItemChangeEvent",
+    "DeveloperName": "ContractLineItemChangeEvent",
+    "QualifiedApiName": "ContractLineItemChangeEvent"
+  },
+  {
+    "DurableId": "CorsWhitelistEntry",
+    "DeveloperName": "CorsWhitelistEntry",
+    "QualifiedApiName": "CorsWhitelistEntry"
+  },
+  {
+    "DurableId": "CspTrustedSite",
+    "DeveloperName": "CspTrustedSite",
+    "QualifiedApiName": "CspTrustedSite"
+  },
+  {
+    "DurableId": "CustomHttpHeader",
+    "DeveloperName": "CustomHttpHeader",
+    "QualifiedApiName": "CustomHttpHeader"
+  },
+  {
+    "DurableId": "CustomNotificationType",
+    "DeveloperName": "CustomNotificationType",
+    "QualifiedApiName": "CustomNotificationType"
+  },
+  {
+    "DurableId": "CustomObjectUserLicenseMetrics",
+    "DeveloperName": "CustomObjectUserLicenseMetrics",
+    "QualifiedApiName": "CustomObjectUserLicenseMetrics"
+  },
+  {
+    "DurableId": "CustomPermission",
+    "DeveloperName": "CustomPermission",
+    "QualifiedApiName": "CustomPermission"
+  },
+  {
+    "DurableId": "CustomPermissionDependency",
+    "DeveloperName": "CustomPermissionDependency",
+    "QualifiedApiName": "CustomPermissionDependency"
+  },
+  {
+    "DurableId": "DataAssessmentFieldMetric",
+    "DeveloperName": "DataAssessmentFieldMetric",
+    "QualifiedApiName": "DataAssessmentFieldMetric"
+  },
+  {
+    "DurableId": "DataAssessmentMetric",
+    "DeveloperName": "DataAssessmentMetric",
+    "QualifiedApiName": "DataAssessmentMetric"
+  },
+  {
+    "DurableId": "DataAssessmentValueMetric",
+    "DeveloperName": "DataAssessmentValueMetric",
+    "QualifiedApiName": "DataAssessmentValueMetric"
+  },
+  {
+    "DurableId": "DatacloudAddress",
+    "DeveloperName": "DatacloudAddress",
+    "QualifiedApiName": "DatacloudAddress"
+  },
+  {
+    "DurableId": "DatacloudCompany",
+    "DeveloperName": "DatacloudCompany",
+    "QualifiedApiName": "DatacloudCompany"
+  },
+  {
+    "DurableId": "DatacloudContact",
+    "DeveloperName": "DatacloudContact",
+    "QualifiedApiName": "DatacloudContact"
+  },
+  {
+    "DurableId": "DatacloudDandBCompany",
+    "DeveloperName": "DatacloudDandBCompany",
+    "QualifiedApiName": "DatacloudDandBCompany"
+  },
+  {
+    "DurableId": "DatacloudOwnedEntity",
+    "DeveloperName": "DatacloudOwnedEntity",
+    "QualifiedApiName": "DatacloudOwnedEntity"
+  },
+  {
+    "DurableId": "DatacloudPurchaseUsage",
+    "DeveloperName": "DatacloudPurchaseUsage",
+    "QualifiedApiName": "DatacloudPurchaseUsage"
+  },
+  {
+    "DurableId": "DelegatedAccountShare",
+    "DeveloperName": "DelegatedAccountShare",
+    "QualifiedApiName": "DelegatedAccountShare"
+  },
+  {
+    "DurableId": "DelegatedAccountHistory",
+    "DeveloperName": "DelegatedAccountHistory",
+    "QualifiedApiName": "DelegatedAccountHistory"
+  },
+  {
+    "DurableId": "DelegatedAccountFeed",
+    "DeveloperName": "DelegatedAccountFeed",
+    "QualifiedApiName": "DelegatedAccountFeed"
+  },
+  {
+    "DurableId": "DuplicateRule",
+    "DeveloperName": "DuplicateRule",
+    "QualifiedApiName": "DuplicateRule"
+  },
+  {
+    "DurableId": "EmailCapture",
+    "DeveloperName": "EmailCapture",
+    "QualifiedApiName": "EmailCapture"
+  },
+  {
+    "DurableId": "EmailDomainKey",
+    "DeveloperName": "EmailDomainKey",
+    "QualifiedApiName": "EmailDomainKey"
+  },
+  {
+    "DurableId": "EmbeddedServiceDetail",
+    "DeveloperName": "EmbeddedServiceDetail",
+    "QualifiedApiName": "EmbeddedServiceDetail"
+  },
+  {
+    "DurableId": "EntitlementHistory",
+    "DeveloperName": "EntitlementHistory",
+    "QualifiedApiName": "EntitlementHistory"
+  },
+  {
+    "DurableId": "EntitlementFeed",
+    "DeveloperName": "EntitlementFeed",
+    "QualifiedApiName": "EntitlementFeed"
+  },
+  {
+    "DurableId": "EntitlementChangeEvent",
+    "DeveloperName": "EntitlementChangeEvent",
+    "QualifiedApiName": "EntitlementChangeEvent"
+  },
+  {
+    "DurableId": "EntitlementContact",
+    "DeveloperName": "EntitlementContact",
+    "QualifiedApiName": "EntitlementContact"
+  },
+  {
+    "DurableId": "EntityMilestoneHistory",
+    "DeveloperName": "EntityMilestoneHistory",
+    "QualifiedApiName": "EntityMilestoneHistory"
+  },
+  {
+    "DurableId": "EntityMilestoneFeed",
+    "DeveloperName": "EntityMilestoneFeed",
+    "QualifiedApiName": "EntityMilestoneFeed"
+  },
+  {
+    "DurableId": "ExpressionFilter",
+    "DeveloperName": "ExpressionFilter",
+    "QualifiedApiName": "ExpressionFilter"
+  },
+  {
+    "DurableId": "ExpressionFilterCriteria",
+    "DeveloperName": "ExpressionFilterCriteria",
+    "QualifiedApiName": "ExpressionFilterCriteria"
+  },
+  {
+    "DurableId": "ExternalDataSource",
+    "DeveloperName": "ExternalDataSource",
+    "QualifiedApiName": "ExternalDataSource"
+  },
+  {
+    "DurableId": "ExternalDataUserAuth",
+    "DeveloperName": "ExternalDataUserAuth",
+    "QualifiedApiName": "ExternalDataUserAuth"
+  },
+  {
+    "DurableId": "FileSearchActivity",
+    "DeveloperName": "FileSearchActivity",
+    "QualifiedApiName": "FileSearchActivity"
+  },
+  {
+    "DurableId": "FlexQueueItem",
+    "DeveloperName": "FlexQueueItem",
+    "QualifiedApiName": "FlexQueueItem"
+  },
+  {
+    "DurableId": "FlowInterview",
+    "DeveloperName": "FlowInterview",
+    "QualifiedApiName": "FlowInterview"
+  },
+  {
+    "DurableId": "FlowInterviewShare",
+    "DeveloperName": "FlowInterviewShare",
+    "QualifiedApiName": "FlowInterviewShare"
+  },
+  {
+    "DurableId": "FlowRecordRelation",
+    "DeveloperName": "FlowRecordRelation",
+    "QualifiedApiName": "FlowRecordRelation"
+  },
+  {
+    "DurableId": "FlowStageRelation",
+    "DeveloperName": "FlowStageRelation",
+    "QualifiedApiName": "FlowStageRelation"
+  },
+  {
+    "DurableId": "FormulaFunction",
+    "DeveloperName": "FormulaFunction",
+    "QualifiedApiName": "FormulaFunction"
+  },
+  {
+    "DurableId": "FormulaFunctionAllowedType",
+    "DeveloperName": "FormulaFunctionAllowedType",
+    "QualifiedApiName": "FormulaFunctionAllowedType"
+  },
+  {
+    "DurableId": "FormulaFunctionCategory",
+    "DeveloperName": "FormulaFunctionCategory",
+    "QualifiedApiName": "FormulaFunctionCategory"
+  },
+  {
+    "DurableId": "GrantedByLicense",
+    "DeveloperName": "GrantedByLicense",
+    "QualifiedApiName": "GrantedByLicense"
+  },
+  {
+    "DurableId": "IconDefinition",
+    "DeveloperName": "IconDefinition",
+    "QualifiedApiName": "IconDefinition"
+  },
+  {
+    "DurableId": "IdeaComment",
+    "DeveloperName": "IdeaComment",
+    "QualifiedApiName": "IdeaComment"
+  },
+  {
+    "DurableId": "CalendarView",
+    "DeveloperName": "CalendarView",
+    "QualifiedApiName": "CalendarView"
+  },
+  {
+    "DurableId": "CalendarViewShare",
+    "DeveloperName": "CalendarViewShare",
+    "QualifiedApiName": "CalendarViewShare"
+  },
+  {
+    "DurableId": "Skill",
+    "DeveloperName": "Skill",
+    "QualifiedApiName": "Skill"
+  },
+  {
+    "DurableId": "SkillChangeEvent",
+    "DeveloperName": "SkillChangeEvent",
+    "QualifiedApiName": "SkillChangeEvent"
+  },
+  {
+    "DurableId": "QuickTextShare",
+    "DeveloperName": "QuickTextShare",
+    "QualifiedApiName": "QuickTextShare"
+  },
+  {
+    "DurableId": "QuickTextHistory",
+    "DeveloperName": "QuickTextHistory",
+    "QualifiedApiName": "QuickTextHistory"
+  },
+  {
+    "DurableId": "QuickTextChangeEvent",
+    "DeveloperName": "QuickTextChangeEvent",
+    "QualifiedApiName": "QuickTextChangeEvent"
+  },
+  {
+    "DurableId": "LiveChatSensitiveDataRule",
+    "DeveloperName": "LiveChatSensitiveDataRule",
+    "QualifiedApiName": "LiveChatSensitiveDataRule"
+  },
+  {
+    "DurableId": "ServicePresenceStatus",
+    "DeveloperName": "ServicePresenceStatus",
+    "QualifiedApiName": "ServicePresenceStatus"
+  },
+  {
+    "DurableId": "ServiceChannel",
+    "DeveloperName": "ServiceChannel",
+    "QualifiedApiName": "ServiceChannel"
+  },
+  {
+    "DurableId": "ServiceChannelStatus",
+    "DeveloperName": "ServiceChannelStatus",
+    "QualifiedApiName": "ServiceChannelStatus"
+  },
+  {
+    "DurableId": "UserServicePresenceShare",
+    "DeveloperName": "UserServicePresenceShare",
+    "QualifiedApiName": "UserServicePresenceShare"
+  },
+  {
+    "DurableId": "AgentWorkShare",
+    "DeveloperName": "AgentWorkShare",
+    "QualifiedApiName": "AgentWorkShare"
+  },
+  {
+    "DurableId": "QueueRoutingConfig",
+    "DeveloperName": "QueueRoutingConfig",
+    "QualifiedApiName": "QueueRoutingConfig"
+  },
+  {
+    "DurableId": "PendingServiceRouting",
+    "DeveloperName": "PendingServiceRouting",
+    "QualifiedApiName": "PendingServiceRouting"
+  },
+  {
+    "DurableId": "PendingServiceRoutingShare",
+    "DeveloperName": "PendingServiceRoutingShare",
+    "QualifiedApiName": "PendingServiceRoutingShare"
+  },
+  {
+    "DurableId": "PresenceUserConfig",
+    "DeveloperName": "PresenceUserConfig",
+    "QualifiedApiName": "PresenceUserConfig"
+  },
+  {
+    "DurableId": "PresenceUserConfigUser",
+    "DeveloperName": "PresenceUserConfigUser",
+    "QualifiedApiName": "PresenceUserConfigUser"
+  },
+  {
+    "DurableId": "PresenceUserConfigProfile",
+    "DeveloperName": "PresenceUserConfigProfile",
+    "QualifiedApiName": "PresenceUserConfigProfile"
+  },
+  {
+    "DurableId": "PresenceDeclineReason",
+    "DeveloperName": "PresenceDeclineReason",
+    "QualifiedApiName": "PresenceDeclineReason"
+  },
+  {
+    "DurableId": "IframeWhiteListUrl",
+    "DeveloperName": "IframeWhiteListUrl",
+    "QualifiedApiName": "IframeWhiteListUrl"
+  },
+  {
+    "DurableId": "InstalledMobileApp",
+    "DeveloperName": "InstalledMobileApp",
+    "QualifiedApiName": "InstalledMobileApp"
+  },
+  {
+    "DurableId": "ConferenceNumber",
+    "DeveloperName": "ConferenceNumber",
+    "QualifiedApiName": "ConferenceNumber"
+  },
+  {
+    "DurableId": "ExternalEventMapping",
+    "DeveloperName": "ExternalEventMapping",
+    "QualifiedApiName": "ExternalEventMapping"
+  },
+  {
+    "DurableId": "ExternalEventMappingShare",
+    "DeveloperName": "ExternalEventMappingShare",
+    "QualifiedApiName": "ExternalEventMappingShare"
+  },
+  {
+    "DurableId": "ExternalEvent",
+    "DeveloperName": "ExternalEvent",
+    "QualifiedApiName": "ExternalEvent"
+  },
+  {
+    "DurableId": "MatchingInformation",
+    "DeveloperName": "MatchingInformation",
+    "QualifiedApiName": "MatchingInformation"
+  },
+  {
+    "DurableId": "TodayGoal",
+    "DeveloperName": "TodayGoal",
+    "QualifiedApiName": "TodayGoal"
+  },
+  {
+    "DurableId": "TodayGoalShare",
+    "DeveloperName": "TodayGoalShare",
+    "QualifiedApiName": "TodayGoalShare"
+  },
+  {
+    "DurableId": "ShipmentShare",
+    "DeveloperName": "ShipmentShare",
+    "QualifiedApiName": "ShipmentShare"
+  },
+  {
+    "DurableId": "ShipmentHistory",
+    "DeveloperName": "ShipmentHistory",
+    "QualifiedApiName": "ShipmentHistory"
+  },
+  {
+    "DurableId": "ShipmentFeed",
+    "DeveloperName": "ShipmentFeed",
+    "QualifiedApiName": "ShipmentFeed"
+  },
+  {
+    "DurableId": "ShipmentChangeEvent",
+    "DeveloperName": "ShipmentChangeEvent",
+    "QualifiedApiName": "ShipmentChangeEvent"
+  },
+  {
+    "DurableId": "NetworkAffinity",
+    "DeveloperName": "NetworkAffinity",
+    "QualifiedApiName": "NetworkAffinity"
+  },
+  {
+    "DurableId": "ApiEventStream",
+    "DeveloperName": "ApiEventStream",
+    "QualifiedApiName": "ApiEventStream"
+  },
+  {
+    "DurableId": "ReturnOrderShare",
+    "DeveloperName": "ReturnOrderShare",
+    "QualifiedApiName": "ReturnOrderShare"
+  },
+  {
+    "DurableId": "ReturnOrderHistory",
+    "DeveloperName": "ReturnOrderHistory",
+    "QualifiedApiName": "ReturnOrderHistory"
+  },
+  {
+    "DurableId": "ReturnOrderFeed",
+    "DeveloperName": "ReturnOrderFeed",
+    "QualifiedApiName": "ReturnOrderFeed"
+  },
+  {
+    "DurableId": "ReturnOrderChangeEvent",
+    "DeveloperName": "ReturnOrderChangeEvent",
+    "QualifiedApiName": "ReturnOrderChangeEvent"
+  },
+  {
+    "DurableId": "MlIntentUtterance",
+    "DeveloperName": "MlIntentUtterance",
+    "QualifiedApiName": "MlIntentUtterance"
+  },
+  {
+    "DurableId": "LightningUsageByAppTypeMetrics",
+    "DeveloperName": "LightningUsageByAppTypeMetrics",
+    "QualifiedApiName": "LightningUsageByAppTypeMetrics"
+  },
+  {
+    "DurableId": "LightningUsageByBrowserMetrics",
+    "DeveloperName": "LightningUsageByBrowserMetrics",
+    "QualifiedApiName": "LightningUsageByBrowserMetrics"
+  },
+  {
+    "DurableId": "LightningUsageByPageMetrics",
+    "DeveloperName": "LightningUsageByPageMetrics",
+    "QualifiedApiName": "LightningUsageByPageMetrics"
+  },
+  {
+    "DurableId": "ReturnOrderLineItemHistory",
+    "DeveloperName": "ReturnOrderLineItemHistory",
+    "QualifiedApiName": "ReturnOrderLineItemHistory"
+  },
+  {
+    "DurableId": "ReturnOrderLineItemFeed",
+    "DeveloperName": "ReturnOrderLineItemFeed",
+    "QualifiedApiName": "ReturnOrderLineItemFeed"
+  },
+  {
+    "DurableId": "ReturnOrderLineItemChangeEvent",
+    "DeveloperName": "ReturnOrderLineItemChangeEvent",
+    "QualifiedApiName": "ReturnOrderLineItemChangeEvent"
+  },
+  {
+    "DurableId": "BotVersion",
+    "DeveloperName": "BotVersion",
+    "QualifiedApiName": "BotVersion"
+  },
+  {
+    "DurableId": "LightningToggleMetrics",
+    "DeveloperName": "LightningToggleMetrics",
+    "QualifiedApiName": "LightningToggleMetrics"
+  },
+  {
+    "DurableId": "LightningExperienceTheme",
+    "DeveloperName": "LightningExperienceTheme",
+    "QualifiedApiName": "LightningExperienceTheme"
+  },
+  {
+    "DurableId": "ListEmail",
+    "DeveloperName": "ListEmail",
+    "QualifiedApiName": "ListEmail"
+  },
+  {
+    "DurableId": "ListEmailShare",
+    "DeveloperName": "ListEmailShare",
+    "QualifiedApiName": "ListEmailShare"
+  },
+  {
+    "DurableId": "ListEmailChangeEvent",
+    "DeveloperName": "ListEmailChangeEvent",
+    "QualifiedApiName": "ListEmailChangeEvent"
+  },
+  {
+    "DurableId": "ListEmailIndividualRecipient",
+    "DeveloperName": "ListEmailIndividualRecipient",
+    "QualifiedApiName": "ListEmailIndividualRecipient"
+  },
+  {
+    "DurableId": "ListEmailRecipientSource",
+    "DeveloperName": "ListEmailRecipientSource",
+    "QualifiedApiName": "ListEmailRecipientSource"
+  },
+  {
+    "DurableId": "ListViewChart",
+    "DeveloperName": "ListViewChart",
+    "QualifiedApiName": "ListViewChart"
+  },
+  {
+    "DurableId": "ListViewChartInstance",
+    "DeveloperName": "ListViewChartInstance",
+    "QualifiedApiName": "ListViewChartInstance"
+  },
+  {
+    "DurableId": "ListViewEvent",
+    "DeveloperName": "ListViewEvent",
+    "QualifiedApiName": "ListViewEvent"
+  },
+  {
+    "DurableId": "ListViewEventStream",
+    "DeveloperName": "ListViewEventStream",
+    "QualifiedApiName": "ListViewEventStream"
+  },
+  {
+    "DurableId": "LocationShare",
+    "DeveloperName": "LocationShare",
+    "QualifiedApiName": "LocationShare"
+  },
+  {
+    "DurableId": "LocationHistory",
+    "DeveloperName": "LocationHistory",
+    "QualifiedApiName": "LocationHistory"
+  },
+  {
+    "DurableId": "LocationFeed",
+    "DeveloperName": "LocationFeed",
+    "QualifiedApiName": "LocationFeed"
+  },
+  {
+    "DurableId": "LocationChangeEvent",
+    "DeveloperName": "LocationChangeEvent",
+    "QualifiedApiName": "LocationChangeEvent"
+  },
+  {
+    "DurableId": "LogoutEventStream",
+    "DeveloperName": "LogoutEventStream",
+    "QualifiedApiName": "LogoutEventStream"
+  },
+  {
+    "DurableId": "BotAnalytics",
+    "DeveloperName": "BotAnalytics",
+    "QualifiedApiName": "BotAnalytics"
+  },
+  {
+    "DurableId": "LightningUsageByFlexiPageMetrics",
+    "DeveloperName": "LightningUsageByFlexiPageMetrics",
+    "QualifiedApiName": "LightningUsageByFlexiPageMetrics"
+  },
+  {
+    "DurableId": "EmailDomainFilter",
+    "DeveloperName": "EmailDomainFilter",
+    "QualifiedApiName": "EmailDomainFilter"
+  },
+  {
+    "DurableId": "EmailRelay",
+    "DeveloperName": "EmailRelay",
+    "QualifiedApiName": "EmailRelay"
+  },
+  {
+    "DurableId": "ContactPointEmailShare",
+    "DeveloperName": "ContactPointEmailShare",
+    "QualifiedApiName": "ContactPointEmailShare"
+  },
+  {
+    "DurableId": "ContactPointEmailHistory",
+    "DeveloperName": "ContactPointEmailHistory",
+    "QualifiedApiName": "ContactPointEmailHistory"
+  },
+  {
+    "DurableId": "ContactPointEmailChangeEvent",
+    "DeveloperName": "ContactPointEmailChangeEvent",
+    "QualifiedApiName": "ContactPointEmailChangeEvent"
+  },
+  {
+    "DurableId": "ContactPointPhoneShare",
+    "DeveloperName": "ContactPointPhoneShare",
+    "QualifiedApiName": "ContactPointPhoneShare"
+  },
+  {
+    "DurableId": "ContactPointPhoneHistory",
+    "DeveloperName": "ContactPointPhoneHistory",
+    "QualifiedApiName": "ContactPointPhoneHistory"
+  },
+  {
+    "DurableId": "ContactPointPhoneChangeEvent",
+    "DeveloperName": "ContactPointPhoneChangeEvent",
+    "QualifiedApiName": "ContactPointPhoneChangeEvent"
+  },
+  {
+    "DurableId": "UriEvent",
+    "DeveloperName": "UriEvent",
+    "QualifiedApiName": "UriEvent"
+  },
+  {
+    "DurableId": "UriEventStream",
+    "DeveloperName": "UriEventStream",
+    "QualifiedApiName": "UriEventStream"
+  },
+  {
+    "DurableId": "LightningExitByPageMetrics",
+    "DeveloperName": "LightningExitByPageMetrics",
+    "QualifiedApiName": "LightningExitByPageMetrics"
+  },
+  {
+    "DurableId": "UserEmailPreferredPerson",
+    "DeveloperName": "UserEmailPreferredPerson",
+    "QualifiedApiName": "UserEmailPreferredPerson"
+  },
+  {
+    "DurableId": "UserEmailPreferredPersonShare",
+    "DeveloperName": "UserEmailPreferredPersonShare",
+    "QualifiedApiName": "UserEmailPreferredPersonShare"
+  },
+  {
+    "DurableId": "LoginAsEvent",
+    "DeveloperName": "LoginAsEvent",
+    "QualifiedApiName": "LoginAsEvent"
+  },
+  {
+    "DurableId": "LoginAsEventStream",
+    "DeveloperName": "LoginAsEventStream",
+    "QualifiedApiName": "LoginAsEventStream"
+  },
+  {
+    "DurableId": "ConsumptionScheduleShare",
+    "DeveloperName": "ConsumptionScheduleShare",
+    "QualifiedApiName": "ConsumptionScheduleShare"
+  },
+  {
+    "DurableId": "ConsumptionScheduleHistory",
+    "DeveloperName": "ConsumptionScheduleHistory",
+    "QualifiedApiName": "ConsumptionScheduleHistory"
+  },
+  {
+    "DurableId": "ConsumptionScheduleFeed",
+    "DeveloperName": "ConsumptionScheduleFeed",
+    "QualifiedApiName": "ConsumptionScheduleFeed"
+  },
+  {
+    "DurableId": "ConsumptionRateHistory",
+    "DeveloperName": "ConsumptionRateHistory",
+    "QualifiedApiName": "ConsumptionRateHistory"
+  },
+  {
+    "DurableId": "EmbeddedServiceLabel",
+    "DeveloperName": "EmbeddedServiceLabel",
+    "QualifiedApiName": "EmbeddedServiceLabel"
+  },
+  {
+    "DurableId": "ServiceTerritoryWorkTypeHistory",
+    "DeveloperName": "ServiceTerritoryWorkTypeHistory",
+    "QualifiedApiName": "ServiceTerritoryWorkTypeHistory"
+  },
+  {
+    "DurableId": "ServiceTerritoryWorkTypeFeed",
+    "DeveloperName": "ServiceTerritoryWorkTypeFeed",
+    "QualifiedApiName": "ServiceTerritoryWorkTypeFeed"
+  },
+  {
+    "DurableId": "LogoutEvent",
+    "DeveloperName": "LogoutEvent",
+    "QualifiedApiName": "LogoutEvent"
+  },
+  {
+    "DurableId": "BotDefinition",
+    "DeveloperName": "BotDefinition",
+    "QualifiedApiName": "BotDefinition"
+  },
+  {
+    "DurableId": "ConversationDefinitionSession",
+    "DeveloperName": "ConversationDefinitionSession",
+    "QualifiedApiName": "ConversationDefinitionSession"
+  },
+  {
+    "DurableId": "ConversationDefinitionDialog",
+    "DeveloperName": "ConversationDefinitionDialog",
+    "QualifiedApiName": "ConversationDefinitionDialog"
+  },
+  {
+    "DurableId": "ConversationDefinitionDialogLocalization",
+    "DeveloperName": "ConversationDefinitionDialogLocalization",
+    "QualifiedApiName": "ConversationDefinitionDialogLocalization"
+  },
+  {
+    "DurableId": "MlIntentUtteranceSuggestion",
+    "DeveloperName": "MlIntentUtteranceSuggestion",
+    "QualifiedApiName": "MlIntentUtteranceSuggestion"
+  },
+  {
+    "DurableId": "AnalyticsBotSession",
+    "DeveloperName": "AnalyticsBotSession",
+    "QualifiedApiName": "AnalyticsBotSession"
+  },
+  {
+    "DurableId": "ContactPointAddressShare",
+    "DeveloperName": "ContactPointAddressShare",
+    "QualifiedApiName": "ContactPointAddressShare"
+  },
+  {
+    "DurableId": "ContactPointAddressHistory",
+    "DeveloperName": "ContactPointAddressHistory",
+    "QualifiedApiName": "ContactPointAddressHistory"
+  },
+  {
+    "DurableId": "ContactPointAddressChangeEvent",
+    "DeveloperName": "ContactPointAddressChangeEvent",
+    "QualifiedApiName": "ContactPointAddressChangeEvent"
+  },
+  {
+    "DurableId": "ContactPointConsentShare",
+    "DeveloperName": "ContactPointConsentShare",
+    "QualifiedApiName": "ContactPointConsentShare"
+  },
+  {
+    "DurableId": "ContactPointConsentHistory",
+    "DeveloperName": "ContactPointConsentHistory",
+    "QualifiedApiName": "ContactPointConsentHistory"
+  },
+  {
+    "DurableId": "ContactPointConsentChangeEvent",
+    "DeveloperName": "ContactPointConsentChangeEvent",
+    "QualifiedApiName": "ContactPointConsentChangeEvent"
+  },
+  {
+    "DurableId": "ContactPointTypeConsentShare",
+    "DeveloperName": "ContactPointTypeConsentShare",
+    "QualifiedApiName": "ContactPointTypeConsentShare"
+  },
+  {
+    "DurableId": "ContactPointTypeConsentHistory",
+    "DeveloperName": "ContactPointTypeConsentHistory",
+    "QualifiedApiName": "ContactPointTypeConsentHistory"
+  },
+  {
+    "DurableId": "ContactPointTypeConsentChangeEvent",
+    "DeveloperName": "ContactPointTypeConsentChangeEvent",
+    "QualifiedApiName": "ContactPointTypeConsentChangeEvent"
+  },
+  {
+    "DurableId": "DataUseLegalBasisShare",
+    "DeveloperName": "DataUseLegalBasisShare",
+    "QualifiedApiName": "DataUseLegalBasisShare"
+  },
+  {
+    "DurableId": "DataUseLegalBasisHistory",
+    "DeveloperName": "DataUseLegalBasisHistory",
+    "QualifiedApiName": "DataUseLegalBasisHistory"
+  },
+  {
+    "DurableId": "DataUsePurposeShare",
+    "DeveloperName": "DataUsePurposeShare",
+    "QualifiedApiName": "DataUsePurposeShare"
+  },
+  {
+    "DurableId": "DataUsePurposeHistory",
+    "DeveloperName": "DataUsePurposeHistory",
+    "QualifiedApiName": "DataUsePurposeHistory"
+  },
+  {
+    "DurableId": "MyDomainDiscoverableLogin",
+    "DeveloperName": "MyDomainDiscoverableLogin",
+    "QualifiedApiName": "MyDomainDiscoverableLogin"
+  },
+  {
+    "DurableId": "PaymentGatewayLog",
+    "DeveloperName": "PaymentGatewayLog",
+    "QualifiedApiName": "PaymentGatewayLog"
+  },
+  {
+    "DurableId": "ProductCatalogShare",
+    "DeveloperName": "ProductCatalogShare",
+    "QualifiedApiName": "ProductCatalogShare"
+  },
+  {
+    "DurableId": "ProductCatalogHistory",
+    "DeveloperName": "ProductCatalogHistory",
+    "QualifiedApiName": "ProductCatalogHistory"
+  },
+  {
+    "DurableId": "ProductCatalogFeed",
+    "DeveloperName": "ProductCatalogFeed",
+    "QualifiedApiName": "ProductCatalogFeed"
+  },
+  {
+    "DurableId": "ProductCatalogChangeEvent",
+    "DeveloperName": "ProductCatalogChangeEvent",
+    "QualifiedApiName": "ProductCatalogChangeEvent"
+  },
+  {
+    "DurableId": "ProductCategoryHistory",
+    "DeveloperName": "ProductCategoryHistory",
+    "QualifiedApiName": "ProductCategoryHistory"
+  },
+  {
+    "DurableId": "ProductCategoryFeed",
+    "DeveloperName": "ProductCategoryFeed",
+    "QualifiedApiName": "ProductCategoryFeed"
+  },
+  {
+    "DurableId": "ProductCategoryChangeEvent",
+    "DeveloperName": "ProductCategoryChangeEvent",
+    "QualifiedApiName": "ProductCategoryChangeEvent"
+  },
+  {
+    "DurableId": "ProductCategoryProductHistory",
+    "DeveloperName": "ProductCategoryProductHistory",
+    "QualifiedApiName": "ProductCategoryProductHistory"
+  },
+  {
+    "DurableId": "ProductCategoryProductChangeEvent",
+    "DeveloperName": "ProductCategoryProductChangeEvent",
+    "QualifiedApiName": "ProductCategoryProductChangeEvent"
+  },
+  {
+    "DurableId": "WebStoreShare",
+    "DeveloperName": "WebStoreShare",
+    "QualifiedApiName": "WebStoreShare"
+  },
+  {
+    "DurableId": "WebStoreChangeEvent",
+    "DeveloperName": "WebStoreChangeEvent",
+    "QualifiedApiName": "WebStoreChangeEvent"
+  },
+  {
+    "DurableId": "WebStoreNetwork",
+    "DeveloperName": "WebStoreNetwork",
+    "QualifiedApiName": "WebStoreNetwork"
+  },
+  {
+    "DurableId": "AsyncOperationEvent",
+    "DeveloperName": "AsyncOperationEvent",
+    "QualifiedApiName": "AsyncOperationEvent"
+  },
+  {
+    "DurableId": "AsyncOperationStatus",
+    "DeveloperName": "AsyncOperationStatus",
+    "QualifiedApiName": "AsyncOperationStatus"
+  },
+  {
+    "DurableId": "AuthorizationFormShare",
+    "DeveloperName": "AuthorizationFormShare",
+    "QualifiedApiName": "AuthorizationFormShare"
+  },
+  {
+    "DurableId": "AuthorizationFormHistory",
+    "DeveloperName": "AuthorizationFormHistory",
+    "QualifiedApiName": "AuthorizationFormHistory"
+  },
+  {
+    "DurableId": "AuthorizationFormConsentShare",
+    "DeveloperName": "AuthorizationFormConsentShare",
+    "QualifiedApiName": "AuthorizationFormConsentShare"
+  },
+  {
+    "DurableId": "AuthorizationFormConsentHistory",
+    "DeveloperName": "AuthorizationFormConsentHistory",
+    "QualifiedApiName": "AuthorizationFormConsentHistory"
+  },
+  {
+    "DurableId": "AuthorizationFormConsentChangeEvent",
+    "DeveloperName": "AuthorizationFormConsentChangeEvent",
+    "QualifiedApiName": "AuthorizationFormConsentChangeEvent"
+  },
+  {
+    "DurableId": "AuthorizationFormDataUseShare",
+    "DeveloperName": "AuthorizationFormDataUseShare",
+    "QualifiedApiName": "AuthorizationFormDataUseShare"
+  },
+  {
+    "DurableId": "AuthorizationFormDataUseHistory",
+    "DeveloperName": "AuthorizationFormDataUseHistory",
+    "QualifiedApiName": "AuthorizationFormDataUseHistory"
+  },
+  {
+    "DurableId": "AuthorizationFormTextHistory",
+    "DeveloperName": "AuthorizationFormTextHistory",
+    "QualifiedApiName": "AuthorizationFormTextHistory"
+  },
+  {
+    "DurableId": "AuthorizationFormTextFeed",
+    "DeveloperName": "AuthorizationFormTextFeed",
+    "QualifiedApiName": "AuthorizationFormTextFeed"
+  },
+  {
+    "DurableId": "BuyerGroupShare",
+    "DeveloperName": "BuyerGroupShare",
+    "QualifiedApiName": "BuyerGroupShare"
+  },
+  {
+    "DurableId": "BuyerGroupHistory",
+    "DeveloperName": "BuyerGroupHistory",
+    "QualifiedApiName": "BuyerGroupHistory"
+  },
+  {
+    "DurableId": "BuyerGroupFeed",
+    "DeveloperName": "BuyerGroupFeed",
+    "QualifiedApiName": "BuyerGroupFeed"
+  },
+  {
+    "DurableId": "CartRelatedItem",
+    "DeveloperName": "CartRelatedItem",
+    "QualifiedApiName": "CartRelatedItem"
+  },
+  {
+    "DurableId": "ExternalAIModel",
+    "DeveloperName": "ExternalAIModel",
+    "QualifiedApiName": "ExternalAIModel"
+  },
+  {
+    "DurableId": "FlowDefinitionView",
+    "DeveloperName": "FlowDefinitionView",
+    "QualifiedApiName": "FlowDefinitionView"
+  },
+  {
+    "DurableId": "FlowVariableView",
+    "DeveloperName": "FlowVariableView",
+    "QualifiedApiName": "FlowVariableView"
+  },
+  {
+    "DurableId": "FlowVersionView",
+    "DeveloperName": "FlowVersionView",
+    "QualifiedApiName": "FlowVersionView"
+  },
+  {
+    "DurableId": "FulfillmentOrderShare",
+    "DeveloperName": "FulfillmentOrderShare",
+    "QualifiedApiName": "FulfillmentOrderShare"
+  },
+  {
+    "DurableId": "FulfillmentOrderFeed",
+    "DeveloperName": "FulfillmentOrderFeed",
+    "QualifiedApiName": "FulfillmentOrderFeed"
+  },
+  {
+    "DurableId": "FulfillmentOrderLineItemFeed",
+    "DeveloperName": "FulfillmentOrderLineItemFeed",
+    "QualifiedApiName": "FulfillmentOrderLineItemFeed"
+  },
+  {
+    "DurableId": "LightningUriEvent",
+    "DeveloperName": "LightningUriEvent",
+    "QualifiedApiName": "LightningUriEvent"
+  },
+  {
+    "DurableId": "LightningUriEventStream",
+    "DeveloperName": "LightningUriEventStream",
+    "QualifiedApiName": "LightningUriEventStream"
+  },
+  {
+    "DurableId": "PaymentFeed",
+    "DeveloperName": "PaymentFeed",
+    "QualifiedApiName": "PaymentFeed"
+  },
+  {
+    "DurableId": "PaymentGatewayProvider",
+    "DeveloperName": "PaymentGatewayProvider",
+    "QualifiedApiName": "PaymentGatewayProvider"
+  },
+  {
+    "DurableId": "ShiftShare",
+    "DeveloperName": "ShiftShare",
+    "QualifiedApiName": "ShiftShare"
+  },
+  {
+    "DurableId": "ShiftHistory",
+    "DeveloperName": "ShiftHistory",
+    "QualifiedApiName": "ShiftHistory"
+  },
+  {
+    "DurableId": "ShiftFeed",
+    "DeveloperName": "ShiftFeed",
+    "QualifiedApiName": "ShiftFeed"
+  },
+  {
+    "DurableId": "ShiftChangeEvent",
+    "DeveloperName": "ShiftChangeEvent",
+    "QualifiedApiName": "ShiftChangeEvent"
+  },
+  {
+    "DurableId": "WebCartShare",
+    "DeveloperName": "WebCartShare",
+    "QualifiedApiName": "WebCartShare"
+  },
+  {
+    "DurableId": "WebCartHistory",
+    "DeveloperName": "WebCartHistory",
+    "QualifiedApiName": "WebCartHistory"
+  },
+  {
+    "DurableId": "WebStoreBuyerGroupChangeEvent",
+    "DeveloperName": "WebStoreBuyerGroupChangeEvent",
+    "QualifiedApiName": "WebStoreBuyerGroupChangeEvent"
+  },
+  {
+    "DurableId": "WebStoreCatalogHistory",
+    "DeveloperName": "WebStoreCatalogHistory",
+    "QualifiedApiName": "WebStoreCatalogHistory"
+  },
+  {
+    "DurableId": "WebStoreCatalogChangeEvent",
+    "DeveloperName": "WebStoreCatalogChangeEvent",
+    "QualifiedApiName": "WebStoreCatalogChangeEvent"
+  },
+  {
+    "DurableId": "CartCheckoutSession",
+    "DeveloperName": "CartCheckoutSession",
+    "QualifiedApiName": "CartCheckoutSession"
+  },
+  {
+    "DurableId": "ConversationDefinitionEventLog",
+    "DeveloperName": "ConversationDefinitionEventLog",
+    "QualifiedApiName": "ConversationDefinitionEventLog"
+  },
+  {
+    "DurableId": "CreditMemoShare",
+    "DeveloperName": "CreditMemoShare",
+    "QualifiedApiName": "CreditMemoShare"
+  },
+  {
+    "DurableId": "CreditMemoHistory",
+    "DeveloperName": "CreditMemoHistory",
+    "QualifiedApiName": "CreditMemoHistory"
+  },
+  {
+    "DurableId": "CreditMemoFeed",
+    "DeveloperName": "CreditMemoFeed",
+    "QualifiedApiName": "CreditMemoFeed"
+  },
+  {
+    "DurableId": "CreditMemoLineHistory",
+    "DeveloperName": "CreditMemoLineHistory",
+    "QualifiedApiName": "CreditMemoLineHistory"
+  },
+  {
+    "DurableId": "CreditMemoLineFeed",
+    "DeveloperName": "CreditMemoLineFeed",
+    "QualifiedApiName": "CreditMemoLineFeed"
+  },
+  {
+    "DurableId": "DataStreamStatusEvent",
+    "DeveloperName": "DataStreamStatusEvent",
+    "QualifiedApiName": "DataStreamStatusEvent"
+  },
+  {
+    "DurableId": "FOStatusChangedEvent",
+    "DeveloperName": "FOStatusChangedEvent",
+    "QualifiedApiName": "FOStatusChangedEvent"
+  },
+  {
+    "DurableId": "FulfillmentOrderItemAdjustmentFeed",
+    "DeveloperName": "FulfillmentOrderItemAdjustmentFeed",
+    "QualifiedApiName": "FulfillmentOrderItemAdjustmentFeed"
+  },
+  {
+    "DurableId": "FulfillmentOrderItemTaxFeed",
+    "DeveloperName": "FulfillmentOrderItemTaxFeed",
+    "QualifiedApiName": "FulfillmentOrderItemTaxFeed"
+  },
+  {
+    "DurableId": "IdentityVerificationEvent",
+    "DeveloperName": "IdentityVerificationEvent",
+    "QualifiedApiName": "IdentityVerificationEvent"
+  },
+  {
+    "DurableId": "MarketSegment",
+    "DeveloperName": "MarketSegment",
+    "QualifiedApiName": "MarketSegment"
+  },
+  {
+    "DurableId": "MarketSegmentHistory",
+    "DeveloperName": "MarketSegmentHistory",
+    "QualifiedApiName": "MarketSegmentHistory"
+  },
+  {
+    "DurableId": "MarketSegmentFeed",
+    "DeveloperName": "MarketSegmentFeed",
+    "QualifiedApiName": "MarketSegmentFeed"
+  },
+  {
+    "DurableId": "OrgMetric",
+    "DeveloperName": "OrgMetric",
+    "QualifiedApiName": "OrgMetric"
+  },
+  {
+    "DurableId": "OrgMetricScanResult",
+    "DeveloperName": "OrgMetricScanResult",
+    "QualifiedApiName": "OrgMetricScanResult"
+  },
+  {
+    "DurableId": "OrgMetricScanSummary",
+    "DeveloperName": "OrgMetricScanSummary",
+    "QualifiedApiName": "OrgMetricScanSummary"
+  },
+  {
+    "DurableId": "AIApplicationConfig",
+    "DeveloperName": "AIApplicationConfig",
+    "QualifiedApiName": "AIApplicationConfig"
+  },
+  {
+    "DurableId": "CommSubscriptionShare",
+    "DeveloperName": "CommSubscriptionShare",
+    "QualifiedApiName": "CommSubscriptionShare"
+  },
+  {
+    "DurableId": "CommSubscriptionHistory",
+    "DeveloperName": "CommSubscriptionHistory",
+    "QualifiedApiName": "CommSubscriptionHistory"
+  },
+  {
+    "DurableId": "CommSubscriptionFeed",
+    "DeveloperName": "CommSubscriptionFeed",
+    "QualifiedApiName": "CommSubscriptionFeed"
+  },
+  {
+    "DurableId": "CommSubscriptionChannelTypeShare",
+    "DeveloperName": "CommSubscriptionChannelTypeShare",
+    "QualifiedApiName": "CommSubscriptionChannelTypeShare"
+  },
+  {
+    "DurableId": "CommSubscriptionChannelTypeHistory",
+    "DeveloperName": "CommSubscriptionChannelTypeHistory",
+    "QualifiedApiName": "CommSubscriptionChannelTypeHistory"
+  },
+  {
+    "DurableId": "CommSubscriptionChannelTypeFeed",
+    "DeveloperName": "CommSubscriptionChannelTypeFeed",
+    "QualifiedApiName": "CommSubscriptionChannelTypeFeed"
+  },
+  {
+    "DurableId": "CommSubscriptionConsentShare",
+    "DeveloperName": "CommSubscriptionConsentShare",
+    "QualifiedApiName": "CommSubscriptionConsentShare"
+  },
+  {
+    "DurableId": "CommSubscriptionConsentHistory",
+    "DeveloperName": "CommSubscriptionConsentHistory",
+    "QualifiedApiName": "CommSubscriptionConsentHistory"
+  },
+  {
+    "DurableId": "CommSubscriptionConsentFeed",
+    "DeveloperName": "CommSubscriptionConsentFeed",
+    "QualifiedApiName": "CommSubscriptionConsentFeed"
+  },
+  {
+    "DurableId": "CommSubscriptionConsentChangeEvent",
+    "DeveloperName": "CommSubscriptionConsentChangeEvent",
+    "QualifiedApiName": "CommSubscriptionConsentChangeEvent"
+  },
+  {
+    "DurableId": "CommSubscriptionTimingHistory",
+    "DeveloperName": "CommSubscriptionTimingHistory",
+    "QualifiedApiName": "CommSubscriptionTimingHistory"
+  },
+  {
+    "DurableId": "CommSubscriptionTimingFeed",
+    "DeveloperName": "CommSubscriptionTimingFeed",
+    "QualifiedApiName": "CommSubscriptionTimingFeed"
+  },
+  {
+    "DurableId": "CreditMemoInvApplicationHistory",
+    "DeveloperName": "CreditMemoInvApplicationHistory",
+    "QualifiedApiName": "CreditMemoInvApplicationHistory"
+  },
+  {
+    "DurableId": "CreditMemoInvApplicationFeed",
+    "DeveloperName": "CreditMemoInvApplicationFeed",
+    "QualifiedApiName": "CreditMemoInvApplicationFeed"
+  },
+  {
+    "DurableId": "EngagementChannelTypeShare",
+    "DeveloperName": "EngagementChannelTypeShare",
+    "QualifiedApiName": "EngagementChannelTypeShare"
+  },
+  {
+    "DurableId": "EngagementChannelTypeHistory",
+    "DeveloperName": "EngagementChannelTypeHistory",
+    "QualifiedApiName": "EngagementChannelTypeHistory"
+  },
+  {
+    "DurableId": "EngagementChannelTypeFeed",
+    "DeveloperName": "EngagementChannelTypeFeed",
+    "QualifiedApiName": "EngagementChannelTypeFeed"
+  },
+  {
+    "DurableId": "FinanceBalanceSnapshotShare",
+    "DeveloperName": "FinanceBalanceSnapshotShare",
+    "QualifiedApiName": "FinanceBalanceSnapshotShare"
+  },
+  {
+    "DurableId": "FinanceBalanceSnapshotChangeEvent",
+    "DeveloperName": "FinanceBalanceSnapshotChangeEvent",
+    "QualifiedApiName": "FinanceBalanceSnapshotChangeEvent"
+  },
+  {
+    "DurableId": "FinanceTransactionShare",
+    "DeveloperName": "FinanceTransactionShare",
+    "QualifiedApiName": "FinanceTransactionShare"
+  },
+  {
+    "DurableId": "FinanceTransactionChangeEvent",
+    "DeveloperName": "FinanceTransactionChangeEvent",
+    "QualifiedApiName": "FinanceTransactionChangeEvent"
+  },
+  {
+    "DurableId": "LegalEntityShare",
+    "DeveloperName": "LegalEntityShare",
+    "QualifiedApiName": "LegalEntityShare"
+  },
+  {
+    "DurableId": "LegalEntityHistory",
+    "DeveloperName": "LegalEntityHistory",
+    "QualifiedApiName": "LegalEntityHistory"
+  },
+  {
+    "DurableId": "LegalEntityFeed",
+    "DeveloperName": "LegalEntityFeed",
+    "QualifiedApiName": "LegalEntityFeed"
+  },
+  {
+    "DurableId": "MLModel",
+    "DeveloperName": "MLModel",
+    "QualifiedApiName": "MLModel"
+  },
+  {
+    "DurableId": "MLModelFactor",
+    "DeveloperName": "MLModelFactor",
+    "QualifiedApiName": "MLModelFactor"
+  },
+  {
+    "DurableId": "MLModelFactorComponent",
+    "DeveloperName": "MLModelFactorComponent",
+    "QualifiedApiName": "MLModelFactorComponent"
+  },
+  {
+    "DurableId": "MLModelMetric",
+    "DeveloperName": "MLModelMetric",
+    "QualifiedApiName": "MLModelMetric"
+  },
+  {
+    "DurableId": "MLPredictionDefinition",
+    "DeveloperName": "MLPredictionDefinition",
+    "QualifiedApiName": "MLPredictionDefinition"
+  },
+  {
+    "DurableId": "MacroShare",
+    "DeveloperName": "MacroShare",
+    "QualifiedApiName": "MacroShare"
+  },
+  {
+    "DurableId": "MacroHistory",
+    "DeveloperName": "MacroHistory",
+    "QualifiedApiName": "MacroHistory"
+  },
+  {
+    "DurableId": "MacroChangeEvent",
+    "DeveloperName": "MacroChangeEvent",
+    "QualifiedApiName": "MacroChangeEvent"
+  },
+  {
+    "DurableId": "MacroInstruction",
+    "DeveloperName": "MacroInstruction",
+    "QualifiedApiName": "MacroInstruction"
+  },
+  {
+    "DurableId": "MacroInstructionChangeEvent",
+    "DeveloperName": "MacroInstructionChangeEvent",
+    "QualifiedApiName": "MacroInstructionChangeEvent"
+  },
+  {
+    "DurableId": "MacroUsage",
+    "DeveloperName": "MacroUsage",
+    "QualifiedApiName": "MacroUsage"
+  },
+  {
+    "DurableId": "MacroUsageShare",
+    "DeveloperName": "MacroUsageShare",
+    "QualifiedApiName": "MacroUsageShare"
+  },
+  {
+    "DurableId": "ManagedContentChannel",
+    "DeveloperName": "ManagedContentChannel",
+    "QualifiedApiName": "ManagedContentChannel"
+  },
+  {
+    "DurableId": "ManagedContentSpace",
+    "DeveloperName": "ManagedContentSpace",
+    "QualifiedApiName": "ManagedContentSpace"
+  },
+  {
+    "DurableId": "MatchingRule",
+    "DeveloperName": "MatchingRule",
+    "QualifiedApiName": "MatchingRule"
+  },
+  {
+    "DurableId": "MatchingRuleItem",
+    "DeveloperName": "MatchingRuleItem",
+    "QualifiedApiName": "MatchingRuleItem"
+  },
+  {
+    "DurableId": "MobileApplicationDetail",
+    "DeveloperName": "MobileApplicationDetail",
+    "QualifiedApiName": "MobileApplicationDetail"
+  },
+  {
+    "DurableId": "NavigationLinkSet",
+    "DeveloperName": "NavigationLinkSet",
+    "QualifiedApiName": "NavigationLinkSet"
+  },
+  {
+    "DurableId": "NavigationMenuItem",
+    "DeveloperName": "NavigationMenuItem",
+    "QualifiedApiName": "NavigationMenuItem"
+  },
+  {
+    "DurableId": "NavigationMenuItemLocalization",
+    "DeveloperName": "NavigationMenuItemLocalization",
+    "QualifiedApiName": "NavigationMenuItemLocalization"
+  },
+  {
+    "DurableId": "NetworkActivityAudit",
+    "DeveloperName": "NetworkActivityAudit",
+    "QualifiedApiName": "NetworkActivityAudit"
+  },
+  {
+    "DurableId": "NetworkPageOverride",
+    "DeveloperName": "NetworkPageOverride",
+    "QualifiedApiName": "NetworkPageOverride"
+  },
+  {
+    "DurableId": "NetworkSelfRegistration",
+    "DeveloperName": "NetworkSelfRegistration",
+    "QualifiedApiName": "NetworkSelfRegistration"
+  },
+  {
+    "DurableId": "NetworkUserHistoryRecent",
+    "DeveloperName": "NetworkUserHistoryRecent",
+    "QualifiedApiName": "NetworkUserHistoryRecent"
+  },
+  {
+    "DurableId": "OauthCustomScope",
+    "DeveloperName": "OauthCustomScope",
+    "QualifiedApiName": "OauthCustomScope"
+  },
+  {
+    "DurableId": "OauthCustomScopeApp",
+    "DeveloperName": "OauthCustomScopeApp",
+    "QualifiedApiName": "OauthCustomScopeApp"
+  },
+  {
+    "DurableId": "OauthToken",
+    "DeveloperName": "OauthToken",
+    "QualifiedApiName": "OauthToken"
+  },
+  {
+    "DurableId": "OnboardingMetrics",
+    "DeveloperName": "OnboardingMetrics",
+    "QualifiedApiName": "OnboardingMetrics"
+  },
+  {
+    "DurableId": "OrgLifecycleNotification",
+    "DeveloperName": "OrgLifecycleNotification",
+    "QualifiedApiName": "OrgLifecycleNotification"
+  },
+  {
+    "DurableId": "OutgoingEmail",
+    "DeveloperName": "OutgoingEmail",
+    "QualifiedApiName": "OutgoingEmail"
+  },
+  {
+    "DurableId": "OutgoingEmailRelation",
+    "DeveloperName": "OutgoingEmailRelation",
+    "QualifiedApiName": "OutgoingEmailRelation"
+  },
+  {
+    "DurableId": "PartnerFundAllocationShare",
+    "DeveloperName": "PartnerFundAllocationShare",
+    "QualifiedApiName": "PartnerFundAllocationShare"
+  },
+  {
+    "DurableId": "PartnerFundAllocationHistory",
+    "DeveloperName": "PartnerFundAllocationHistory",
+    "QualifiedApiName": "PartnerFundAllocationHistory"
+  },
+  {
+    "DurableId": "PartnerFundAllocationFeed",
+    "DeveloperName": "PartnerFundAllocationFeed",
+    "QualifiedApiName": "PartnerFundAllocationFeed"
+  },
+  {
+    "DurableId": "PartnerFundClaimShare",
+    "DeveloperName": "PartnerFundClaimShare",
+    "QualifiedApiName": "PartnerFundClaimShare"
+  },
+  {
+    "DurableId": "PartnerFundClaimHistory",
+    "DeveloperName": "PartnerFundClaimHistory",
+    "QualifiedApiName": "PartnerFundClaimHistory"
+  },
+  {
+    "DurableId": "PartnerFundClaimFeed",
+    "DeveloperName": "PartnerFundClaimFeed",
+    "QualifiedApiName": "PartnerFundClaimFeed"
+  },
+  {
+    "DurableId": "PartnerFundRequestShare",
+    "DeveloperName": "PartnerFundRequestShare",
+    "QualifiedApiName": "PartnerFundRequestShare"
+  },
+  {
+    "DurableId": "PartnerFundRequestHistory",
+    "DeveloperName": "PartnerFundRequestHistory",
+    "QualifiedApiName": "PartnerFundRequestHistory"
+  },
+  {
+    "DurableId": "PartnerFundRequestFeed",
+    "DeveloperName": "PartnerFundRequestFeed",
+    "QualifiedApiName": "PartnerFundRequestFeed"
+  },
+  {
+    "DurableId": "PartnerMarketingBudgetShare",
+    "DeveloperName": "PartnerMarketingBudgetShare",
+    "QualifiedApiName": "PartnerMarketingBudgetShare"
+  },
+  {
+    "DurableId": "PartnerMarketingBudgetHistory",
+    "DeveloperName": "PartnerMarketingBudgetHistory",
+    "QualifiedApiName": "PartnerMarketingBudgetHistory"
+  },
+  {
+    "DurableId": "PartnerMarketingBudgetFeed",
+    "DeveloperName": "PartnerMarketingBudgetFeed",
+    "QualifiedApiName": "PartnerMarketingBudgetFeed"
+  },
+  {
+    "DurableId": "PermissionSet",
+    "DeveloperName": "PermissionSet",
+    "QualifiedApiName": "PermissionSet"
+  },
+  {
+    "DurableId": "PermissionSetGroup",
+    "DeveloperName": "PermissionSetGroup",
+    "QualifiedApiName": "PermissionSetGroup"
+  },
+  {
+    "DurableId": "PermissionSetGroupComponent",
+    "DeveloperName": "PermissionSetGroupComponent",
+    "QualifiedApiName": "PermissionSetGroupComponent"
+  },
+  {
+    "DurableId": "PermissionSetLicense",
+    "DeveloperName": "PermissionSetLicense",
+    "QualifiedApiName": "PermissionSetLicense"
+  },
+  {
+    "DurableId": "PermissionSetLicenseAssign",
+    "DeveloperName": "PermissionSetLicenseAssign",
+    "QualifiedApiName": "PermissionSetLicenseAssign"
+  },
+  {
+    "DurableId": "PersonalizationTargetInfo",
+    "DeveloperName": "PersonalizationTargetInfo",
+    "QualifiedApiName": "PersonalizationTargetInfo"
+  },
+  {
+    "DurableId": "PlatformAction",
+    "DeveloperName": "PlatformAction",
+    "QualifiedApiName": "PlatformAction"
+  },
+  {
+    "DurableId": "PlatformCachePartition",
+    "DeveloperName": "PlatformCachePartition",
+    "QualifiedApiName": "PlatformCachePartition"
+  },
+  {
+    "DurableId": "PlatformCachePartitionType",
+    "DeveloperName": "PlatformCachePartitionType",
+    "QualifiedApiName": "PlatformCachePartitionType"
+  },
+  {
+    "DurableId": "PlatformStatusAlertEvent",
+    "DeveloperName": "PlatformStatusAlertEvent",
+    "QualifiedApiName": "PlatformStatusAlertEvent"
+  },
+  {
+    "DurableId": "PortalDelegablePermissionSet",
+    "DeveloperName": "PortalDelegablePermissionSet",
+    "QualifiedApiName": "PortalDelegablePermissionSet"
+  },
+  {
+    "DurableId": "PresenceConfigDeclineReason",
+    "DeveloperName": "PresenceConfigDeclineReason",
+    "QualifiedApiName": "PresenceConfigDeclineReason"
+  },
+  {
+    "DurableId": "Pricebook2History",
+    "DeveloperName": "Pricebook2History",
+    "QualifiedApiName": "Pricebook2History"
+  },
+  {
+    "DurableId": "Pricebook2ChangeEvent",
+    "DeveloperName": "Pricebook2ChangeEvent",
+    "QualifiedApiName": "Pricebook2ChangeEvent"
+  },
+  {
+    "DurableId": "ProcessInstanceNode",
+    "DeveloperName": "ProcessInstanceNode",
+    "QualifiedApiName": "ProcessInstanceNode"
+  },
+  {
+    "DurableId": "QuickTextUsage",
+    "DeveloperName": "QuickTextUsage",
+    "QualifiedApiName": "QuickTextUsage"
+  },
+  {
+    "DurableId": "QuickTextUsageShare",
+    "DeveloperName": "QuickTextUsageShare",
+    "QualifiedApiName": "QuickTextUsageShare"
+  },
+  {
+    "DurableId": "QuoteTemplateRichTextData",
+    "DeveloperName": "QuoteTemplateRichTextData",
+    "QualifiedApiName": "QuoteTemplateRichTextData"
+  },
+  {
+    "DurableId": "RecommendationChangeEvent",
+    "DeveloperName": "RecommendationChangeEvent",
+    "QualifiedApiName": "RecommendationChangeEvent"
+  },
+  {
+    "DurableId": "ReportEvent",
+    "DeveloperName": "ReportEvent",
+    "QualifiedApiName": "ReportEvent"
+  },
+  {
+    "DurableId": "ReportEventStream",
+    "DeveloperName": "ReportEventStream",
+    "QualifiedApiName": "ReportEventStream"
+  },
+  {
+    "DurableId": "ReputationLevel",
+    "DeveloperName": "ReputationLevel",
+    "QualifiedApiName": "ReputationLevel"
+  },
+  {
+    "DurableId": "ReputationLevelLocalization",
+    "DeveloperName": "ReputationLevelLocalization",
+    "QualifiedApiName": "ReputationLevelLocalization"
+  },
+  {
+    "DurableId": "ReputationPointsRule",
+    "DeveloperName": "ReputationPointsRule",
+    "QualifiedApiName": "ReputationPointsRule"
+  },
+  {
+    "DurableId": "SPSamlAttributes",
+    "DeveloperName": "SPSamlAttributes",
+    "QualifiedApiName": "SPSamlAttributes"
+  },
+  {
+    "DurableId": "SamlSsoConfig",
+    "DeveloperName": "SamlSsoConfig",
+    "QualifiedApiName": "SamlSsoConfig"
+  },
+  {
+    "DurableId": "ScorecardShare",
+    "DeveloperName": "ScorecardShare",
+    "QualifiedApiName": "ScorecardShare"
+  },
+  {
+    "DurableId": "SearchPromotionRule",
+    "DeveloperName": "SearchPromotionRule",
+    "QualifiedApiName": "SearchPromotionRule"
+  },
+  {
+    "DurableId": "SecurityCustomBaseline",
+    "DeveloperName": "SecurityCustomBaseline",
+    "QualifiedApiName": "SecurityCustomBaseline"
+  },
+  {
+    "DurableId": "ServiceContractShare",
+    "DeveloperName": "ServiceContractShare",
+    "QualifiedApiName": "ServiceContractShare"
+  },
+  {
+    "DurableId": "ServiceContractHistory",
+    "DeveloperName": "ServiceContractHistory",
+    "QualifiedApiName": "ServiceContractHistory"
+  },
+  {
+    "DurableId": "ServiceContractFeed",
+    "DeveloperName": "ServiceContractFeed",
+    "QualifiedApiName": "ServiceContractFeed"
+  },
+  {
+    "DurableId": "ServiceContractChangeEvent",
+    "DeveloperName": "ServiceContractChangeEvent",
+    "QualifiedApiName": "ServiceContractChangeEvent"
+  },
+  {
+    "DurableId": "SessionPermSetActivation",
+    "DeveloperName": "SessionPermSetActivation",
+    "QualifiedApiName": "SessionPermSetActivation"
+  },
+  {
+    "DurableId": "SiteDetail",
+    "DeveloperName": "SiteDetail",
+    "QualifiedApiName": "SiteDetail"
+  },
+  {
+    "DurableId": "SiteIframeWhiteListUrl",
+    "DeveloperName": "SiteIframeWhiteListUrl",
+    "QualifiedApiName": "SiteIframeWhiteListUrl"
+  },
+  {
+    "DurableId": "Stamp",
+    "DeveloperName": "Stamp",
+    "QualifiedApiName": "Stamp"
+  },
+  {
+    "DurableId": "StampLocalization",
+    "DeveloperName": "StampLocalization",
+    "QualifiedApiName": "StampLocalization"
+  },
+  {
+    "DurableId": "StampAssignment",
+    "DeveloperName": "StampAssignment",
+    "QualifiedApiName": "StampAssignment"
+  },
+  {
+    "DurableId": "StreamingChannel",
+    "DeveloperName": "StreamingChannel",
+    "QualifiedApiName": "StreamingChannel"
+  },
+  {
+    "DurableId": "StreamingChannelShare",
+    "DeveloperName": "StreamingChannelShare",
+    "QualifiedApiName": "StreamingChannelShare"
+  },
+  {
+    "DurableId": "TabDefinition",
+    "DeveloperName": "TabDefinition",
+    "QualifiedApiName": "TabDefinition"
+  },
+  {
+    "DurableId": "TenantUsageEntitlement",
+    "DeveloperName": "TenantUsageEntitlement",
+    "QualifiedApiName": "TenantUsageEntitlement"
+  },
+  {
+    "DurableId": "TestSuiteMembership",
+    "DeveloperName": "TestSuiteMembership",
+    "QualifiedApiName": "TestSuiteMembership"
+  },
+  {
+    "DurableId": "ThirdPartyAccountLink",
+    "DeveloperName": "ThirdPartyAccountLink",
+    "QualifiedApiName": "ThirdPartyAccountLink"
+  },
+  {
+    "DurableId": "TransactionSecurityPolicy",
+    "DeveloperName": "TransactionSecurityPolicy",
+    "QualifiedApiName": "TransactionSecurityPolicy"
+  },
+  {
+    "DurableId": "UiFormulaCriterion",
+    "DeveloperName": "UiFormulaCriterion",
+    "QualifiedApiName": "UiFormulaCriterion"
+  },
+  {
+    "DurableId": "UiFormulaRule",
+    "DeveloperName": "UiFormulaRule",
+    "QualifiedApiName": "UiFormulaRule"
+  },
+  {
+    "DurableId": "UserAppInfo",
+    "DeveloperName": "UserAppInfo",
+    "QualifiedApiName": "UserAppInfo"
+  },
+  {
+    "DurableId": "UserAppMenuCustomization",
+    "DeveloperName": "UserAppMenuCustomization",
+    "QualifiedApiName": "UserAppMenuCustomization"
+  },
+  {
+    "DurableId": "UserAppMenuCustomizationShare",
+    "DeveloperName": "UserAppMenuCustomizationShare",
+    "QualifiedApiName": "UserAppMenuCustomizationShare"
+  },
+  {
+    "DurableId": "UserAppMenuItem",
+    "DeveloperName": "UserAppMenuItem",
+    "QualifiedApiName": "UserAppMenuItem"
+  },
+  {
+    "DurableId": "UserCustomBadge",
+    "DeveloperName": "UserCustomBadge",
+    "QualifiedApiName": "UserCustomBadge"
+  },
+  {
+    "DurableId": "UserCustomBadgeLocalization",
+    "DeveloperName": "UserCustomBadgeLocalization",
+    "QualifiedApiName": "UserCustomBadgeLocalization"
+  },
+  {
+    "DurableId": "UserListView",
+    "DeveloperName": "UserListView",
+    "QualifiedApiName": "UserListView"
+  },
+  {
+    "DurableId": "UserListViewCriterion",
+    "DeveloperName": "UserListViewCriterion",
+    "QualifiedApiName": "UserListViewCriterion"
+  },
+  {
+    "DurableId": "UserPermissionAccess",
+    "DeveloperName": "UserPermissionAccess",
+    "QualifiedApiName": "UserPermissionAccess"
+  },
+  {
+    "DurableId": "UserProvAccount",
+    "DeveloperName": "UserProvAccount",
+    "QualifiedApiName": "UserProvAccount"
+  },
+  {
+    "DurableId": "UserProvAccountStaging",
+    "DeveloperName": "UserProvAccountStaging",
+    "QualifiedApiName": "UserProvAccountStaging"
+  },
+  {
+    "DurableId": "UserProvMockTarget",
+    "DeveloperName": "UserProvMockTarget",
+    "QualifiedApiName": "UserProvMockTarget"
+  },
+  {
+    "DurableId": "UserProvisioningConfig",
+    "DeveloperName": "UserProvisioningConfig",
+    "QualifiedApiName": "UserProvisioningConfig"
+  },
+  {
+    "DurableId": "UserProvisioningLog",
+    "DeveloperName": "UserProvisioningLog",
+    "QualifiedApiName": "UserProvisioningLog"
+  },
+  {
+    "DurableId": "UserProvisioningRequestShare",
+    "DeveloperName": "UserProvisioningRequestShare",
+    "QualifiedApiName": "UserProvisioningRequestShare"
+  },
+  {
+    "DurableId": "VisualforceAccessMetrics",
+    "DeveloperName": "VisualforceAccessMetrics",
+    "QualifiedApiName": "VisualforceAccessMetrics"
+  },
+  {
+    "DurableId": "VoiceVendorInfo",
+    "DeveloperName": "VoiceVendorInfo",
+    "QualifiedApiName": "VoiceVendorInfo"
+  },
+  {
+    "DurableId": "WaveAutoInstallRequest",
+    "DeveloperName": "WaveAutoInstallRequest",
+    "QualifiedApiName": "WaveAutoInstallRequest"
+  },
+  {
+    "DurableId": "WaveCompatibilityCheckItem",
+    "DeveloperName": "WaveCompatibilityCheckItem",
+    "QualifiedApiName": "WaveCompatibilityCheckItem"
+  },
+  {
+    "DurableId": "MessagingChannel",
+    "DeveloperName": "MessagingChannel",
+    "QualifiedApiName": "MessagingChannel"
+  },
+  {
+    "DurableId": "MessagingLink",
+    "DeveloperName": "MessagingLink",
+    "QualifiedApiName": "MessagingLink"
+  },
+  {
+    "DurableId": "MessagingEndUserShare",
+    "DeveloperName": "MessagingEndUserShare",
+    "QualifiedApiName": "MessagingEndUserShare"
+  },
+  {
+    "DurableId": "MessagingEndUserHistory",
+    "DeveloperName": "MessagingEndUserHistory",
+    "QualifiedApiName": "MessagingEndUserHistory"
+  },
+  {
+    "DurableId": "OmniSupervisorConfig",
+    "DeveloperName": "OmniSupervisorConfig",
+    "QualifiedApiName": "OmniSupervisorConfig"
+  },
+  {
+    "DurableId": "OmniSupervisorConfigGroup",
+    "DeveloperName": "OmniSupervisorConfigGroup",
+    "QualifiedApiName": "OmniSupervisorConfigGroup"
+  },
+  {
+    "DurableId": "OmniSupervisorConfigProfile",
+    "DeveloperName": "OmniSupervisorConfigProfile",
+    "QualifiedApiName": "OmniSupervisorConfigProfile"
+  },
+  {
+    "DurableId": "OmniSupervisorConfigUser",
+    "DeveloperName": "OmniSupervisorConfigUser",
+    "QualifiedApiName": "OmniSupervisorConfigUser"
+  },
+  {
+    "DurableId": "MessagingSessionShare",
+    "DeveloperName": "MessagingSessionShare",
+    "QualifiedApiName": "MessagingSessionShare"
+  },
+  {
+    "DurableId": "MessagingSessionHistory",
+    "DeveloperName": "MessagingSessionHistory",
+    "QualifiedApiName": "MessagingSessionHistory"
+  },
+  {
+    "DurableId": "MessagingSessionFeed",
+    "DeveloperName": "MessagingSessionFeed",
+    "QualifiedApiName": "MessagingSessionFeed"
+  },
+  {
+    "DurableId": "MessagingTemplate",
+    "DeveloperName": "MessagingTemplate",
+    "QualifiedApiName": "MessagingTemplate"
+  },
+  {
+    "DurableId": "ContactRequestShare",
+    "DeveloperName": "ContactRequestShare",
+    "QualifiedApiName": "ContactRequestShare"
+  },
+  {
+    "DurableId": "NetworkDiscoverableLogin",
+    "DeveloperName": "NetworkDiscoverableLogin",
+    "QualifiedApiName": "NetworkDiscoverableLogin"
+  },
+  {
+    "DurableId": "MessagingDeliveryError",
+    "DeveloperName": "MessagingDeliveryError",
+    "QualifiedApiName": "MessagingDeliveryError"
+  },
+  {
+    "DurableId": "MessagingConfiguration",
+    "DeveloperName": "MessagingConfiguration",
+    "QualifiedApiName": "MessagingConfiguration"
+  },
+  {
+    "DurableId": "WorkTypeGroupShare",
+    "DeveloperName": "WorkTypeGroupShare",
+    "QualifiedApiName": "WorkTypeGroupShare"
+  },
+  {
+    "DurableId": "WorkTypeGroupHistory",
+    "DeveloperName": "WorkTypeGroupHistory",
+    "QualifiedApiName": "WorkTypeGroupHistory"
+  },
+  {
+    "DurableId": "WorkTypeGroupFeed",
+    "DeveloperName": "WorkTypeGroupFeed",
+    "QualifiedApiName": "WorkTypeGroupFeed"
+  },
+  {
+    "DurableId": "RecordActionHistory",
+    "DeveloperName": "RecordActionHistory",
+    "QualifiedApiName": "RecordActionHistory"
+  },
+  {
+    "DurableId": "RemoteKeyCalloutEvent",
+    "DeveloperName": "RemoteKeyCalloutEvent",
+    "QualifiedApiName": "RemoteKeyCalloutEvent"
+  },
+  {
+    "DurableId": "ManagedContent",
+    "DeveloperName": "ManagedContent",
+    "QualifiedApiName": "ManagedContent"
+  },
+  {
+    "DurableId": "AppAnalyticsQueryRequest",
+    "DeveloperName": "AppAnalyticsQueryRequest",
+    "QualifiedApiName": "AppAnalyticsQueryRequest"
+  },
+  {
+    "DurableId": "CustomHelpMenuItem",
+    "DeveloperName": "CustomHelpMenuItem",
+    "QualifiedApiName": "CustomHelpMenuItem"
+  },
+  {
+    "DurableId": "CustomHelpMenuSection",
+    "DeveloperName": "CustomHelpMenuSection",
+    "QualifiedApiName": "CustomHelpMenuSection"
+  },
+  {
+    "DurableId": "ImageShare",
+    "DeveloperName": "ImageShare",
+    "QualifiedApiName": "ImageShare"
+  },
+  {
+    "DurableId": "ImageHistory",
+    "DeveloperName": "ImageHistory",
+    "QualifiedApiName": "ImageHistory"
+  },
+  {
+    "DurableId": "ImageFeed",
+    "DeveloperName": "ImageFeed",
+    "QualifiedApiName": "ImageFeed"
+  },
+  {
+    "DurableId": "MessagingChannelSkill",
+    "DeveloperName": "MessagingChannelSkill",
+    "QualifiedApiName": "MessagingChannelSkill"
+  },
+  {
+    "DurableId": "WorkTypeGroupMemberHistory",
+    "DeveloperName": "WorkTypeGroupMemberHistory",
+    "QualifiedApiName": "WorkTypeGroupMemberHistory"
+  },
+  {
+    "DurableId": "WorkTypeGroupMemberFeed",
+    "DeveloperName": "WorkTypeGroupMemberFeed",
+    "QualifiedApiName": "WorkTypeGroupMemberFeed"
+  },
+  {
+    "DurableId": "EnhancedLetterhead",
+    "DeveloperName": "EnhancedLetterhead",
+    "QualifiedApiName": "EnhancedLetterhead"
+  },
+  {
+    "DurableId": "EnhancedLetterheadFeed",
+    "DeveloperName": "EnhancedLetterheadFeed",
+    "QualifiedApiName": "EnhancedLetterheadFeed"
+  },
+  {
+    "DurableId": "InvoiceShare",
+    "DeveloperName": "InvoiceShare",
+    "QualifiedApiName": "InvoiceShare"
+  },
+  {
+    "DurableId": "InvoiceHistory",
+    "DeveloperName": "InvoiceHistory",
+    "QualifiedApiName": "InvoiceHistory"
+  },
+  {
+    "DurableId": "InvoiceFeed",
+    "DeveloperName": "InvoiceFeed",
+    "QualifiedApiName": "InvoiceFeed"
+  },
+  {
+    "DurableId": "InvoiceLineHistory",
+    "DeveloperName": "InvoiceLineHistory",
+    "QualifiedApiName": "InvoiceLineHistory"
+  },
+  {
+    "DurableId": "InvoiceLineFeed",
+    "DeveloperName": "InvoiceLineFeed",
+    "QualifiedApiName": "InvoiceLineFeed"
+  },
+  {
+    "DurableId": "PromotionShare",
+    "DeveloperName": "PromotionShare",
+    "QualifiedApiName": "PromotionShare"
+  },
+  {
+    "DurableId": "PromotionHistory",
+    "DeveloperName": "PromotionHistory",
+    "QualifiedApiName": "PromotionHistory"
+  },
+  {
+    "DurableId": "PromotionFeed",
+    "DeveloperName": "PromotionFeed",
+    "QualifiedApiName": "PromotionFeed"
+  },
+  {
+    "DurableId": "Prompt",
+    "DeveloperName": "Prompt",
+    "QualifiedApiName": "Prompt"
+  },
+  {
+    "DurableId": "PromptLocalization",
+    "DeveloperName": "PromptLocalization",
+    "QualifiedApiName": "PromptLocalization"
+  },
+  {
+    "DurableId": "PromptAction",
+    "DeveloperName": "PromptAction",
+    "QualifiedApiName": "PromptAction"
+  },
+  {
+    "DurableId": "PromptActionShare",
+    "DeveloperName": "PromptActionShare",
+    "QualifiedApiName": "PromptActionShare"
+  },
+  {
+    "DurableId": "PromptVersion",
+    "DeveloperName": "PromptVersion",
+    "QualifiedApiName": "PromptVersion"
+  },
+  {
+    "DurableId": "PromptVersionLocalization",
+    "DeveloperName": "PromptVersionLocalization",
+    "QualifiedApiName": "PromptVersionLocalization"
+  },
+  {
+    "DurableId": "FlowExecutionErrorEvent",
+    "DeveloperName": "FlowExecutionErrorEvent",
+    "QualifiedApiName": "FlowExecutionErrorEvent"
+  },
+  {
+    "DurableId": "LightningOnboardingConfig",
+    "DeveloperName": "LightningOnboardingConfig",
+    "QualifiedApiName": "LightningOnboardingConfig"
+  },
+  {
+    "DurableId": "ManagedContentVariant",
+    "DeveloperName": "ManagedContentVariant",
+    "QualifiedApiName": "ManagedContentVariant"
+  },
+  {
+    "DurableId": "CredentialStuffingEvent",
+    "DeveloperName": "CredentialStuffingEvent",
+    "QualifiedApiName": "CredentialStuffingEvent"
+  },
+  {
+    "DurableId": "CredentialStuffingEventStore",
+    "DeveloperName": "CredentialStuffingEventStore",
+    "QualifiedApiName": "CredentialStuffingEventStore"
+  },
+  {
+    "DurableId": "CredentialStuffingEventStoreFeed",
+    "DeveloperName": "CredentialStuffingEventStoreFeed",
+    "QualifiedApiName": "CredentialStuffingEventStoreFeed"
+  },
+  {
+    "DurableId": "FlowInterviewLog",
+    "DeveloperName": "FlowInterviewLog",
+    "QualifiedApiName": "FlowInterviewLog"
+  },
+  {
+    "DurableId": "FlowInterviewLogShare",
+    "DeveloperName": "FlowInterviewLogShare",
+    "QualifiedApiName": "FlowInterviewLogShare"
+  },
+  {
+    "DurableId": "FlowInterviewLogEntry",
+    "DeveloperName": "FlowInterviewLogEntry",
+    "QualifiedApiName": "FlowInterviewLogEntry"
+  },
+  {
+    "DurableId": "MLRecommendationDefinition",
+    "DeveloperName": "MLRecommendationDefinition",
+    "QualifiedApiName": "MLRecommendationDefinition"
+  },
+  {
+    "DurableId": "MarketSegmentActivation",
+    "DeveloperName": "MarketSegmentActivation",
+    "QualifiedApiName": "MarketSegmentActivation"
+  },
+  {
+    "DurableId": "MarketSegmentActivationHistory",
+    "DeveloperName": "MarketSegmentActivationHistory",
+    "QualifiedApiName": "MarketSegmentActivationHistory"
+  },
+  {
+    "DurableId": "MarketSegmentActivationFeed",
+    "DeveloperName": "MarketSegmentActivationFeed",
+    "QualifiedApiName": "MarketSegmentActivationFeed"
+  },
+  {
+    "DurableId": "MobileSecurityAssignment",
+    "DeveloperName": "MobileSecurityAssignment",
+    "QualifiedApiName": "MobileSecurityAssignment"
+  },
+  {
+    "DurableId": "MobileSecurityPolicy",
+    "DeveloperName": "MobileSecurityPolicy",
+    "QualifiedApiName": "MobileSecurityPolicy"
+  },
+  {
+    "DurableId": "MobileSecurityUserMetric",
+    "DeveloperName": "MobileSecurityUserMetric",
+    "QualifiedApiName": "MobileSecurityUserMetric"
+  },
+  {
+    "DurableId": "MsgChannelLanguageKeyword",
+    "DeveloperName": "MsgChannelLanguageKeyword",
+    "QualifiedApiName": "MsgChannelLanguageKeyword"
+  },
+  {
+    "DurableId": "PartyConsentShare",
+    "DeveloperName": "PartyConsentShare",
+    "QualifiedApiName": "PartyConsentShare"
+  },
+  {
+    "DurableId": "PartyConsentHistory",
+    "DeveloperName": "PartyConsentHistory",
+    "QualifiedApiName": "PartyConsentHistory"
+  },
+  {
+    "DurableId": "PartyConsentFeed",
+    "DeveloperName": "PartyConsentFeed",
+    "QualifiedApiName": "PartyConsentFeed"
+  },
+  {
+    "DurableId": "PartyConsentChangeEvent",
+    "DeveloperName": "PartyConsentChangeEvent",
+    "QualifiedApiName": "PartyConsentChangeEvent"
+  },
+  {
+    "DurableId": "PermissionSetEvent",
+    "DeveloperName": "PermissionSetEvent",
+    "QualifiedApiName": "PermissionSetEvent"
+  },
+  {
+    "DurableId": "PermissionSetEventStore",
+    "DeveloperName": "PermissionSetEventStore",
+    "QualifiedApiName": "PermissionSetEventStore"
+  },
+  {
+    "DurableId": "RedirectWhitelistUrl",
+    "DeveloperName": "RedirectWhitelistUrl",
+    "QualifiedApiName": "RedirectWhitelistUrl"
+  },
+  {
+    "DurableId": "RegisteredExternalService",
+    "DeveloperName": "RegisteredExternalService",
+    "QualifiedApiName": "RegisteredExternalService"
+  },
+  {
+    "DurableId": "ReportAnomalyEvent",
+    "DeveloperName": "ReportAnomalyEvent",
+    "QualifiedApiName": "ReportAnomalyEvent"
+  },
+  {
+    "DurableId": "ReportAnomalyEventStore",
+    "DeveloperName": "ReportAnomalyEventStore",
+    "QualifiedApiName": "ReportAnomalyEventStore"
+  },
+  {
+    "DurableId": "ReportAnomalyEventStoreFeed",
+    "DeveloperName": "ReportAnomalyEventStoreFeed",
+    "QualifiedApiName": "ReportAnomalyEventStoreFeed"
+  },
+  {
+    "DurableId": "SessionHijackingEvent",
+    "DeveloperName": "SessionHijackingEvent",
+    "QualifiedApiName": "SessionHijackingEvent"
+  },
+  {
+    "DurableId": "SessionHijackingEventStore",
+    "DeveloperName": "SessionHijackingEventStore",
+    "QualifiedApiName": "SessionHijackingEventStore"
+  },
+  {
+    "DurableId": "SessionHijackingEventStoreFeed",
+    "DeveloperName": "SessionHijackingEventStoreFeed",
+    "QualifiedApiName": "SessionHijackingEventStoreFeed"
+  },
+  {
+    "DurableId": "StoreIntegratedService",
+    "DeveloperName": "StoreIntegratedService",
+    "QualifiedApiName": "StoreIntegratedService"
+  },
+  {
+    "DurableId": "UserSetupEntityAccess",
+    "DeveloperName": "UserSetupEntityAccess",
+    "QualifiedApiName": "UserSetupEntityAccess"
+  },
+  {
+    "DurableId": "ActivationTargetShare",
+    "DeveloperName": "ActivationTargetShare",
+    "QualifiedApiName": "ActivationTargetShare"
+  },
+  {
+    "DurableId": "ActivationTargetHistory",
+    "DeveloperName": "ActivationTargetHistory",
+    "QualifiedApiName": "ActivationTargetHistory"
+  },
+  {
+    "DurableId": "ActivationTargetFeed",
+    "DeveloperName": "ActivationTargetFeed",
+    "QualifiedApiName": "ActivationTargetFeed"
+  },
+  {
+    "DurableId": "ActivationTrgtIntOrgAccess",
+    "DeveloperName": "ActivationTrgtIntOrgAccess",
+    "QualifiedApiName": "ActivationTrgtIntOrgAccess"
+  },
+  {
+    "DurableId": "ActivationTrgtIntOrgAccessShare",
+    "DeveloperName": "ActivationTrgtIntOrgAccessShare",
+    "QualifiedApiName": "ActivationTrgtIntOrgAccessShare"
+  },
+  {
+    "DurableId": "ActivationTrgtIntOrgAccessHistory",
+    "DeveloperName": "ActivationTrgtIntOrgAccessHistory",
+    "QualifiedApiName": "ActivationTrgtIntOrgAccessHistory"
+  },
+  {
+    "DurableId": "ActivationTrgtIntOrgAccessFeed",
+    "DeveloperName": "ActivationTrgtIntOrgAccessFeed",
+    "QualifiedApiName": "ActivationTrgtIntOrgAccessFeed"
+  },
+  {
+    "DurableId": "AsgnRsrcApptSchdEvent",
+    "DeveloperName": "AsgnRsrcApptSchdEvent",
+    "QualifiedApiName": "AsgnRsrcApptSchdEvent"
+  },
+  {
+    "DurableId": "BriefcaseAssignment",
+    "DeveloperName": "BriefcaseAssignment",
+    "QualifiedApiName": "BriefcaseAssignment"
+  },
+  {
+    "DurableId": "BriefcaseAssignmentChangeEvent",
+    "DeveloperName": "BriefcaseAssignmentChangeEvent",
+    "QualifiedApiName": "BriefcaseAssignmentChangeEvent"
+  },
+  {
+    "DurableId": "BriefcaseDefinition",
+    "DeveloperName": "BriefcaseDefinition",
+    "QualifiedApiName": "BriefcaseDefinition"
+  },
+  {
+    "DurableId": "BriefcaseDefinitionChangeEvent",
+    "DeveloperName": "BriefcaseDefinitionChangeEvent",
+    "QualifiedApiName": "BriefcaseDefinitionChangeEvent"
+  },
+  {
+    "DurableId": "BriefcaseRule",
+    "DeveloperName": "BriefcaseRule",
+    "QualifiedApiName": "BriefcaseRule"
+  },
+  {
+    "DurableId": "BriefcaseRuleFilter",
+    "DeveloperName": "BriefcaseRuleFilter",
+    "QualifiedApiName": "BriefcaseRuleFilter"
+  },
+  {
+    "DurableId": "CallCoachingMediaProvider",
+    "DeveloperName": "CallCoachingMediaProvider",
+    "QualifiedApiName": "CallCoachingMediaProvider"
+  },
+  {
+    "DurableId": "ConcurLongRunApexErrEvent",
+    "DeveloperName": "ConcurLongRunApexErrEvent",
+    "QualifiedApiName": "ConcurLongRunApexErrEvent"
+  },
+  {
+    "DurableId": "ConversationDefinitionSessionEngagement",
+    "DeveloperName": "ConversationDefinitionSessionEngagement",
+    "QualifiedApiName": "ConversationDefinitionSessionEngagement"
+  },
+  {
+    "DurableId": "DataStream",
+    "DeveloperName": "DataStream",
+    "QualifiedApiName": "DataStream"
+  },
+  {
+    "DurableId": "DataStreamHistory",
+    "DeveloperName": "DataStreamHistory",
+    "QualifiedApiName": "DataStreamHistory"
+  },
+  {
+    "DurableId": "DataStreamFeed",
+    "DeveloperName": "DataStreamFeed",
+    "QualifiedApiName": "DataStreamFeed"
+  },
+  {
+    "DurableId": "MktSgmntActvtnAudAttribute",
+    "DeveloperName": "MktSgmntActvtnAudAttribute",
+    "QualifiedApiName": "MktSgmntActvtnAudAttribute"
+  },
+  {
+    "DurableId": "MktSgmntActvtnContactPoint",
+    "DeveloperName": "MktSgmntActvtnContactPoint",
+    "QualifiedApiName": "MktSgmntActvtnContactPoint"
+  },
+  {
+    "DurableId": "SvcApptSchdEvent",
+    "DeveloperName": "SvcApptSchdEvent",
+    "QualifiedApiName": "SvcApptSchdEvent"
+  },
+  {
+    "DurableId": "ThreatDetectionFeedback",
+    "DeveloperName": "ThreatDetectionFeedback",
+    "QualifiedApiName": "ThreatDetectionFeedback"
+  },
+  {
+    "DurableId": "ThreatDetectionFeedbackFeed",
+    "DeveloperName": "ThreatDetectionFeedbackFeed",
+    "QualifiedApiName": "ThreatDetectionFeedbackFeed"
+  },
+  {
+    "DurableId": "WorkPlanShare",
+    "DeveloperName": "WorkPlanShare",
+    "QualifiedApiName": "WorkPlanShare"
+  },
+  {
+    "DurableId": "WorkPlanHistory",
+    "DeveloperName": "WorkPlanHistory",
+    "QualifiedApiName": "WorkPlanHistory"
+  },
+  {
+    "DurableId": "WorkPlanFeed",
+    "DeveloperName": "WorkPlanFeed",
+    "QualifiedApiName": "WorkPlanFeed"
+  },
+  {
+    "DurableId": "WorkPlanChangeEvent",
+    "DeveloperName": "WorkPlanChangeEvent",
+    "QualifiedApiName": "WorkPlanChangeEvent"
+  },
+  {
+    "DurableId": "WorkPlanTemplateShare",
+    "DeveloperName": "WorkPlanTemplateShare",
+    "QualifiedApiName": "WorkPlanTemplateShare"
+  },
+  {
+    "DurableId": "WorkPlanTemplateHistory",
+    "DeveloperName": "WorkPlanTemplateHistory",
+    "QualifiedApiName": "WorkPlanTemplateHistory"
+  },
+  {
+    "DurableId": "WorkPlanTemplateFeed",
+    "DeveloperName": "WorkPlanTemplateFeed",
+    "QualifiedApiName": "WorkPlanTemplateFeed"
+  },
+  {
+    "DurableId": "WorkPlanTemplateChangeEvent",
+    "DeveloperName": "WorkPlanTemplateChangeEvent",
+    "QualifiedApiName": "WorkPlanTemplateChangeEvent"
+  },
+  {
+    "DurableId": "WorkPlanTemplateEntryHistory",
+    "DeveloperName": "WorkPlanTemplateEntryHistory",
+    "QualifiedApiName": "WorkPlanTemplateEntryHistory"
+  },
+  {
+    "DurableId": "WorkPlanTemplateEntryFeed",
+    "DeveloperName": "WorkPlanTemplateEntryFeed",
+    "QualifiedApiName": "WorkPlanTemplateEntryFeed"
+  },
+  {
+    "DurableId": "WorkPlanTemplateEntryChangeEvent",
+    "DeveloperName": "WorkPlanTemplateEntryChangeEvent",
+    "QualifiedApiName": "WorkPlanTemplateEntryChangeEvent"
+  },
+  {
+    "DurableId": "WorkStepHistory",
+    "DeveloperName": "WorkStepHistory",
+    "QualifiedApiName": "WorkStepHistory"
+  },
+  {
+    "DurableId": "WorkStepFeed",
+    "DeveloperName": "WorkStepFeed",
+    "QualifiedApiName": "WorkStepFeed"
+  },
+  {
+    "DurableId": "WorkStepChangeEvent",
+    "DeveloperName": "WorkStepChangeEvent",
+    "QualifiedApiName": "WorkStepChangeEvent"
+  },
+  {
+    "DurableId": "WorkStepTemplateShare",
+    "DeveloperName": "WorkStepTemplateShare",
+    "QualifiedApiName": "WorkStepTemplateShare"
+  },
+  {
+    "DurableId": "WorkStepTemplateHistory",
+    "DeveloperName": "WorkStepTemplateHistory",
+    "QualifiedApiName": "WorkStepTemplateHistory"
+  },
+  {
+    "DurableId": "WorkStepTemplateFeed",
+    "DeveloperName": "WorkStepTemplateFeed",
+    "QualifiedApiName": "WorkStepTemplateFeed"
+  },
+  {
+    "DurableId": "WorkStepTemplateChangeEvent",
+    "DeveloperName": "WorkStepTemplateChangeEvent",
+    "QualifiedApiName": "WorkStepTemplateChangeEvent"
+  },
+  {
+    "DurableId": "ApiAnomalyEvent",
+    "DeveloperName": "ApiAnomalyEvent",
+    "QualifiedApiName": "ApiAnomalyEvent"
+  },
+  {
+    "DurableId": "ApiAnomalyEventStore",
+    "DeveloperName": "ApiAnomalyEventStore",
+    "QualifiedApiName": "ApiAnomalyEventStore"
+  },
+  {
+    "DurableId": "ApiAnomalyEventStoreFeed",
+    "DeveloperName": "ApiAnomalyEventStoreFeed",
+    "QualifiedApiName": "ApiAnomalyEventStoreFeed"
+  },
+  {
+    "DurableId": "AppUsageAssignment",
+    "DeveloperName": "AppUsageAssignment",
+    "QualifiedApiName": "AppUsageAssignment"
+  },
+  {
+    "DurableId": "BulkApiResultEvent",
+    "DeveloperName": "BulkApiResultEvent",
+    "QualifiedApiName": "BulkApiResultEvent"
+  },
+  {
+    "DurableId": "BulkApiResultEventStore",
+    "DeveloperName": "BulkApiResultEventStore",
+    "QualifiedApiName": "BulkApiResultEventStore"
+  },
+  {
+    "DurableId": "GtwyProvPaymentMethodType",
+    "DeveloperName": "GtwyProvPaymentMethodType",
+    "QualifiedApiName": "GtwyProvPaymentMethodType"
+  },
+  {
+    "DurableId": "LocationGroupShare",
+    "DeveloperName": "LocationGroupShare",
+    "QualifiedApiName": "LocationGroupShare"
+  },
+  {
+    "DurableId": "LocationGroupHistory",
+    "DeveloperName": "LocationGroupHistory",
+    "QualifiedApiName": "LocationGroupHistory"
+  },
+  {
+    "DurableId": "LocationGroupFeed",
+    "DeveloperName": "LocationGroupFeed",
+    "QualifiedApiName": "LocationGroupFeed"
+  },
+  {
+    "DurableId": "OmniRoutingEventStore",
+    "DeveloperName": "OmniRoutingEventStore",
+    "QualifiedApiName": "OmniRoutingEventStore"
+  },
+  {
+    "DurableId": "OperatingHoursHolidayFeed",
+    "DeveloperName": "OperatingHoursHolidayFeed",
+    "QualifiedApiName": "OperatingHoursHolidayFeed"
+  },
+  {
+    "DurableId": "PlatformEventUsageMetric",
+    "DeveloperName": "PlatformEventUsageMetric",
+    "QualifiedApiName": "PlatformEventUsageMetric"
+  },
+  {
+    "DurableId": "ProcessExceptionShare",
+    "DeveloperName": "ProcessExceptionShare",
+    "QualifiedApiName": "ProcessExceptionShare"
+  },
+  {
+    "DurableId": "ProcessExceptionEvent",
+    "DeveloperName": "ProcessExceptionEvent",
+    "QualifiedApiName": "ProcessExceptionEvent"
+  },
+  {
+    "DurableId": "ProductAttributeChangeEvent",
+    "DeveloperName": "ProductAttributeChangeEvent",
+    "QualifiedApiName": "ProductAttributeChangeEvent"
+  },
+  {
+    "DurableId": "ProductAttributeSet",
+    "DeveloperName": "ProductAttributeSet",
+    "QualifiedApiName": "ProductAttributeSet"
+  },
+  {
+    "DurableId": "ProductAttributeSetItem",
+    "DeveloperName": "ProductAttributeSetItem",
+    "QualifiedApiName": "ProductAttributeSetItem"
+  },
+  {
+    "DurableId": "ServiceSetupProvisioning",
+    "DeveloperName": "ServiceSetupProvisioning",
+    "QualifiedApiName": "ServiceSetupProvisioning"
+  },
+  {
+    "DurableId": "SetupAssistantStep",
+    "DeveloperName": "SetupAssistantStep",
+    "QualifiedApiName": "SetupAssistantStep"
+  },
+  {
+    "DurableId": "AlternativePaymentMethodShare",
+    "DeveloperName": "AlternativePaymentMethodShare",
+    "QualifiedApiName": "AlternativePaymentMethodShare"
+  },
+  {
+    "DurableId": "ApexTypeImplementor",
+    "DeveloperName": "ApexTypeImplementor",
+    "QualifiedApiName": "ApexTypeImplementor"
+  },
+  {
+    "DurableId": "AsyncOperationLog",
+    "DeveloperName": "AsyncOperationLog",
+    "QualifiedApiName": "AsyncOperationLog"
+  },
+  {
+    "DurableId": "ConvDefDialogDailyMetric",
+    "DeveloperName": "ConvDefDialogDailyMetric",
+    "QualifiedApiName": "ConvDefDialogDailyMetric"
+  },
+  {
+    "DurableId": "ConvDefDialogHourlyMetric",
+    "DeveloperName": "ConvDefDialogHourlyMetric",
+    "QualifiedApiName": "ConvDefDialogHourlyMetric"
+  },
+  {
+    "DurableId": "ConversationVendorInfo",
+    "DeveloperName": "ConversationVendorInfo",
+    "QualifiedApiName": "ConversationVendorInfo"
+  },
+  {
+    "DurableId": "CouponShare",
+    "DeveloperName": "CouponShare",
+    "QualifiedApiName": "CouponShare"
+  },
+  {
+    "DurableId": "CouponHistory",
+    "DeveloperName": "CouponHistory",
+    "QualifiedApiName": "CouponHistory"
+  },
+  {
+    "DurableId": "CouponFeed",
+    "DeveloperName": "CouponFeed",
+    "QualifiedApiName": "CouponFeed"
+  },
+  {
+    "DurableId": "FlowOrchestrationEvent",
+    "DeveloperName": "FlowOrchestrationEvent",
+    "QualifiedApiName": "FlowOrchestrationEvent"
+  },
+  {
+    "DurableId": "FlowOrchestrationInstanceShare",
+    "DeveloperName": "FlowOrchestrationInstanceShare",
+    "QualifiedApiName": "FlowOrchestrationInstanceShare"
+  },
+  {
+    "DurableId": "FlowOrchestrationStageInstanceShare",
+    "DeveloperName": "FlowOrchestrationStageInstanceShare",
+    "QualifiedApiName": "FlowOrchestrationStageInstanceShare"
+  },
+  {
+    "DurableId": "FlowOrchestrationStepInstanceShare",
+    "DeveloperName": "FlowOrchestrationStepInstanceShare",
+    "QualifiedApiName": "FlowOrchestrationStepInstanceShare"
+  },
+  {
+    "DurableId": "FlowOrchestrationWorkItemShare",
+    "DeveloperName": "FlowOrchestrationWorkItemShare",
+    "QualifiedApiName": "FlowOrchestrationWorkItemShare"
+  },
+  {
+    "DurableId": "IdentityProviderEventStore",
+    "DeveloperName": "IdentityProviderEventStore",
+    "QualifiedApiName": "IdentityProviderEventStore"
+  },
+  {
+    "DurableId": "MktCalculatedInsight",
+    "DeveloperName": "MktCalculatedInsight",
+    "QualifiedApiName": "MktCalculatedInsight"
+  },
+  {
+    "DurableId": "MktCalculatedInsightHistory",
+    "DeveloperName": "MktCalculatedInsightHistory",
+    "QualifiedApiName": "MktCalculatedInsightHistory"
+  },
+  {
+    "DurableId": "MktCalculatedInsightFeed",
+    "DeveloperName": "MktCalculatedInsightFeed",
+    "QualifiedApiName": "MktCalculatedInsightFeed"
+  },
+  {
+    "DurableId": "NetworkFeedResponseMetric",
+    "DeveloperName": "NetworkFeedResponseMetric",
+    "QualifiedApiName": "NetworkFeedResponseMetric"
+  },
+  {
+    "DurableId": "PromotionMarketSegmentHistory",
+    "DeveloperName": "PromotionMarketSegmentHistory",
+    "QualifiedApiName": "PromotionMarketSegmentHistory"
+  },
+  {
+    "DurableId": "PromotionMarketSegmentFeed",
+    "DeveloperName": "PromotionMarketSegmentFeed",
+    "QualifiedApiName": "PromotionMarketSegmentFeed"
+  },
+  {
+    "DurableId": "PromotionQualifierHistory",
+    "DeveloperName": "PromotionQualifierHistory",
+    "QualifiedApiName": "PromotionQualifierHistory"
+  },
+  {
+    "DurableId": "PromotionQualifierFeed",
+    "DeveloperName": "PromotionQualifierFeed",
+    "QualifiedApiName": "PromotionQualifierFeed"
+  },
+  {
+    "DurableId": "PromotionSegmentShare",
+    "DeveloperName": "PromotionSegmentShare",
+    "QualifiedApiName": "PromotionSegmentShare"
+  },
+  {
+    "DurableId": "PromotionSegmentHistory",
+    "DeveloperName": "PromotionSegmentHistory",
+    "QualifiedApiName": "PromotionSegmentHistory"
+  },
+  {
+    "DurableId": "PromotionSegmentFeed",
+    "DeveloperName": "PromotionSegmentFeed",
+    "QualifiedApiName": "PromotionSegmentFeed"
+  },
+  {
+    "DurableId": "PromotionSegmentBuyerGroupHistory",
+    "DeveloperName": "PromotionSegmentBuyerGroupHistory",
+    "QualifiedApiName": "PromotionSegmentBuyerGroupHistory"
+  },
+  {
+    "DurableId": "PromotionSegmentBuyerGroupFeed",
+    "DeveloperName": "PromotionSegmentBuyerGroupFeed",
+    "QualifiedApiName": "PromotionSegmentBuyerGroupFeed"
+  },
+  {
+    "DurableId": "PromotionSegmentSalesStoreHistory",
+    "DeveloperName": "PromotionSegmentSalesStoreHistory",
+    "QualifiedApiName": "PromotionSegmentSalesStoreHistory"
+  },
+  {
+    "DurableId": "PromotionSegmentSalesStoreFeed",
+    "DeveloperName": "PromotionSegmentSalesStoreFeed",
+    "QualifiedApiName": "PromotionSegmentSalesStoreFeed"
+  },
+  {
+    "DurableId": "PromotionTargetHistory",
+    "DeveloperName": "PromotionTargetHistory",
+    "QualifiedApiName": "PromotionTargetHistory"
+  },
+  {
+    "DurableId": "PromotionTargetFeed",
+    "DeveloperName": "PromotionTargetFeed",
+    "QualifiedApiName": "PromotionTargetFeed"
+  },
+  {
+    "DurableId": "RecommendationResponse",
+    "DeveloperName": "RecommendationResponse",
+    "QualifiedApiName": "RecommendationResponse"
+  },
+  {
+    "DurableId": "ShipmentItemHistory",
+    "DeveloperName": "ShipmentItemHistory",
+    "QualifiedApiName": "ShipmentItemHistory"
+  },
+  {
+    "DurableId": "ShipmentItemFeed",
+    "DeveloperName": "ShipmentItemFeed",
+    "QualifiedApiName": "ShipmentItemFeed"
+  },
+  {
+    "DurableId": "ActiveFeatureLicenseMetric",
+    "DeveloperName": "ActiveFeatureLicenseMetric",
+    "QualifiedApiName": "ActiveFeatureLicenseMetric"
+  },
+  {
+    "DurableId": "ActivePermSetLicenseMetric",
+    "DeveloperName": "ActivePermSetLicenseMetric",
+    "QualifiedApiName": "ActivePermSetLicenseMetric"
+  },
+  {
+    "DurableId": "ActiveProfileMetric",
+    "DeveloperName": "ActiveProfileMetric",
+    "QualifiedApiName": "ActiveProfileMetric"
+  },
+  {
+    "DurableId": "AppointmentAssignmentPolicy",
+    "DeveloperName": "AppointmentAssignmentPolicy",
+    "QualifiedApiName": "AppointmentAssignmentPolicy"
+  },
+  {
+    "DurableId": "AppointmentScheduleAggr",
+    "DeveloperName": "AppointmentScheduleAggr",
+    "QualifiedApiName": "AppointmentScheduleAggr"
+  },
+  {
+    "DurableId": "AppointmentScheduleLog",
+    "DeveloperName": "AppointmentScheduleLog",
+    "QualifiedApiName": "AppointmentScheduleLog"
+  },
+  {
+    "DurableId": "AppointmentTopicTimeSlotHistory",
+    "DeveloperName": "AppointmentTopicTimeSlotHistory",
+    "QualifiedApiName": "AppointmentTopicTimeSlotHistory"
+  },
+  {
+    "DurableId": "AppointmentTopicTimeSlotFeed",
+    "DeveloperName": "AppointmentTopicTimeSlotFeed",
+    "QualifiedApiName": "AppointmentTopicTimeSlotFeed"
+  },
+  {
+    "DurableId": "CallCenterRoutingMap",
+    "DeveloperName": "CallCenterRoutingMap",
+    "QualifiedApiName": "CallCenterRoutingMap"
+  },
+  {
+    "DurableId": "ContactCenterChannel",
+    "DeveloperName": "ContactCenterChannel",
+    "QualifiedApiName": "ContactCenterChannel"
+  },
+  {
+    "DurableId": "DataSourceBundle",
+    "DeveloperName": "DataSourceBundle",
+    "QualifiedApiName": "DataSourceBundle"
+  },
+  {
+    "DurableId": "DataSourceBundleShare",
+    "DeveloperName": "DataSourceBundleShare",
+    "QualifiedApiName": "DataSourceBundleShare"
+  },
+  {
+    "DurableId": "IPAddressRange",
+    "DeveloperName": "IPAddressRange",
+    "QualifiedApiName": "IPAddressRange"
+  },
+  {
+    "DurableId": "MarketSegmentStatusEvent",
+    "DeveloperName": "MarketSegmentStatusEvent",
+    "QualifiedApiName": "MarketSegmentStatusEvent"
+  },
+  {
+    "DurableId": "MarketSgmtActvStatusEvent",
+    "DeveloperName": "MarketSgmtActvStatusEvent",
+    "QualifiedApiName": "MarketSgmtActvStatusEvent"
+  },
+  {
+    "DurableId": "MktSgmtActvContactPtField",
+    "DeveloperName": "MktSgmtActvContactPtField",
+    "QualifiedApiName": "MktSgmtActvContactPtField"
+  },
+  {
+    "DurableId": "MktSgmtActvContactPtSrc",
+    "DeveloperName": "MktSgmtActvContactPtSrc",
+    "QualifiedApiName": "MktSgmtActvContactPtSrc"
+  },
+  {
+    "DurableId": "MobSecurityCertPinConfig",
+    "DeveloperName": "MobSecurityCertPinConfig",
+    "QualifiedApiName": "MobSecurityCertPinConfig"
+  },
+  {
+    "DurableId": "PromptError",
+    "DeveloperName": "PromptError",
+    "QualifiedApiName": "PromptError"
+  },
+  {
+    "DurableId": "PromptErrorShare",
+    "DeveloperName": "PromptErrorShare",
+    "QualifiedApiName": "PromptErrorShare"
+  },
+  {
+    "DurableId": "WebStoreConfig",
+    "DeveloperName": "WebStoreConfig",
+    "QualifiedApiName": "WebStoreConfig"
+  },
+  {
+    "DurableId": "BusinessBrandShare",
+    "DeveloperName": "BusinessBrandShare",
+    "QualifiedApiName": "BusinessBrandShare"
+  },
+  {
+    "DurableId": "CalcInsightStatusEvent",
+    "DeveloperName": "CalcInsightStatusEvent",
+    "QualifiedApiName": "CalcInsightStatusEvent"
+  },
+  {
+    "DurableId": "CaseRelatedIssueHistory",
+    "DeveloperName": "CaseRelatedIssueHistory",
+    "QualifiedApiName": "CaseRelatedIssueHistory"
+  },
+  {
+    "DurableId": "CaseRelatedIssueFeed",
+    "DeveloperName": "CaseRelatedIssueFeed",
+    "QualifiedApiName": "CaseRelatedIssueFeed"
+  },
+  {
+    "DurableId": "ChangeRequestShare",
+    "DeveloperName": "ChangeRequestShare",
+    "QualifiedApiName": "ChangeRequestShare"
+  },
+  {
+    "DurableId": "ChangeRequestHistory",
+    "DeveloperName": "ChangeRequestHistory",
+    "QualifiedApiName": "ChangeRequestHistory"
+  },
+  {
+    "DurableId": "ChangeRequestFeed",
+    "DeveloperName": "ChangeRequestFeed",
+    "QualifiedApiName": "ChangeRequestFeed"
+  },
+  {
+    "DurableId": "ChangeRequestRelatedIssueHistory",
+    "DeveloperName": "ChangeRequestRelatedIssueHistory",
+    "QualifiedApiName": "ChangeRequestRelatedIssueHistory"
+  },
+  {
+    "DurableId": "ChangeRequestRelatedIssueFeed",
+    "DeveloperName": "ChangeRequestRelatedIssueFeed",
+    "QualifiedApiName": "ChangeRequestRelatedIssueFeed"
+  },
+  {
+    "DurableId": "ConvDefSessionMetric",
+    "DeveloperName": "ConvDefSessionMetric",
+    "QualifiedApiName": "ConvDefSessionMetric"
+  },
+  {
+    "DurableId": "CustomerShare",
+    "DeveloperName": "CustomerShare",
+    "QualifiedApiName": "CustomerShare"
+  },
+  {
+    "DurableId": "DataAction",
+    "DeveloperName": "DataAction",
+    "QualifiedApiName": "DataAction"
+  },
+  {
+    "DurableId": "DataActionHistory",
+    "DeveloperName": "DataActionHistory",
+    "QualifiedApiName": "DataActionHistory"
+  },
+  {
+    "DurableId": "DataActionFeed",
+    "DeveloperName": "DataActionFeed",
+    "QualifiedApiName": "DataActionFeed"
+  },
+  {
+    "DurableId": "DataActionTarget",
+    "DeveloperName": "DataActionTarget",
+    "QualifiedApiName": "DataActionTarget"
+  },
+  {
+    "DurableId": "DataActionTargetShare",
+    "DeveloperName": "DataActionTargetShare",
+    "QualifiedApiName": "DataActionTargetShare"
+  },
+  {
+    "DurableId": "DataActionTargetHistory",
+    "DeveloperName": "DataActionTargetHistory",
+    "QualifiedApiName": "DataActionTargetHistory"
+  },
+  {
+    "DurableId": "DataActionTargetFeed",
+    "DeveloperName": "DataActionTargetFeed",
+    "QualifiedApiName": "DataActionTargetFeed"
+  },
+  {
+    "DurableId": "DataLakeObjectInstance",
+    "DeveloperName": "DataLakeObjectInstance",
+    "QualifiedApiName": "DataLakeObjectInstance"
+  },
+  {
+    "DurableId": "DataLakeObjectInstanceHistory",
+    "DeveloperName": "DataLakeObjectInstanceHistory",
+    "QualifiedApiName": "DataLakeObjectInstanceHistory"
+  },
+  {
+    "DurableId": "DataLakeObjectInstanceFeed",
+    "DeveloperName": "DataLakeObjectInstanceFeed",
+    "QualifiedApiName": "DataLakeObjectInstanceFeed"
+  },
+  {
+    "DurableId": "DataObjectDataChgEvent",
+    "DeveloperName": "DataObjectDataChgEvent",
+    "QualifiedApiName": "DataObjectDataChgEvent"
+  },
+  {
+    "DurableId": "DataObjectMetadataChgEvent",
+    "DeveloperName": "DataObjectMetadataChgEvent",
+    "QualifiedApiName": "DataObjectMetadataChgEvent"
+  },
+  {
+    "DurableId": "FulfillOrdItemQtyChgEvent",
+    "DeveloperName": "FulfillOrdItemQtyChgEvent",
+    "QualifiedApiName": "FulfillOrdItemQtyChgEvent"
+  },
+  {
+    "DurableId": "IdRsolStatusEvent",
+    "DeveloperName": "IdRsolStatusEvent",
+    "QualifiedApiName": "IdRsolStatusEvent"
+  },
+  {
+    "DurableId": "IdentityResolution",
+    "DeveloperName": "IdentityResolution",
+    "QualifiedApiName": "IdentityResolution"
+  },
+  {
+    "DurableId": "IdentityResolutionHistory",
+    "DeveloperName": "IdentityResolutionHistory",
+    "QualifiedApiName": "IdentityResolutionHistory"
+  },
+  {
+    "DurableId": "IdentityResolutionFeed",
+    "DeveloperName": "IdentityResolutionFeed",
+    "QualifiedApiName": "IdentityResolutionFeed"
+  },
+  {
+    "DurableId": "IncidentShare",
+    "DeveloperName": "IncidentShare",
+    "QualifiedApiName": "IncidentShare"
+  },
+  {
+    "DurableId": "IncidentHistory",
+    "DeveloperName": "IncidentHistory",
+    "QualifiedApiName": "IncidentHistory"
+  },
+  {
+    "DurableId": "IncidentFeed",
+    "DeveloperName": "IncidentFeed",
+    "QualifiedApiName": "IncidentFeed"
+  },
+  {
+    "DurableId": "IncidentChangeEvent",
+    "DeveloperName": "IncidentChangeEvent",
+    "QualifiedApiName": "IncidentChangeEvent"
+  },
+  {
+    "DurableId": "MLEngagementEvent",
+    "DeveloperName": "MLEngagementEvent",
+    "QualifiedApiName": "MLEngagementEvent"
+  },
+  {
+    "DurableId": "PendingServiceRoutingInteractionInfo",
+    "DeveloperName": "PendingServiceRoutingInteractionInfo",
+    "QualifiedApiName": "PendingServiceRoutingInteractionInfo"
+  },
+  {
+    "DurableId": "PipelineInspectionListView",
+    "DeveloperName": "PipelineInspectionListView",
+    "QualifiedApiName": "PipelineInspectionListView"
+  },
+  {
+    "DurableId": "ProblemShare",
+    "DeveloperName": "ProblemShare",
+    "QualifiedApiName": "ProblemShare"
+  },
+  {
+    "DurableId": "ProblemHistory",
+    "DeveloperName": "ProblemHistory",
+    "QualifiedApiName": "ProblemHistory"
+  },
+  {
+    "DurableId": "ProblemFeed",
+    "DeveloperName": "ProblemFeed",
+    "QualifiedApiName": "ProblemFeed"
+  },
+  {
+    "DurableId": "ProblemChangeEvent",
+    "DeveloperName": "ProblemChangeEvent",
+    "QualifiedApiName": "ProblemChangeEvent"
+  },
+  {
+    "DurableId": "ProblemIncidentHistory",
+    "DeveloperName": "ProblemIncidentHistory",
+    "QualifiedApiName": "ProblemIncidentHistory"
+  },
+  {
+    "DurableId": "ProblemIncidentFeed",
+    "DeveloperName": "ProblemIncidentFeed",
+    "QualifiedApiName": "ProblemIncidentFeed"
+  },
+  {
+    "DurableId": "SellerShare",
+    "DeveloperName": "SellerShare",
+    "QualifiedApiName": "SellerShare"
+  },
+  {
+    "DurableId": "SiteMarketingDataExtensionMapping",
+    "DeveloperName": "SiteMarketingDataExtensionMapping",
+    "QualifiedApiName": "SiteMarketingDataExtensionMapping"
+  },
+  {
+    "DurableId": "UserPrioritizedRecord",
+    "DeveloperName": "UserPrioritizedRecord",
+    "QualifiedApiName": "UserPrioritizedRecord"
+  },
+  {
+    "DurableId": "UserPrioritizedRecordShare",
+    "DeveloperName": "UserPrioritizedRecordShare",
+    "QualifiedApiName": "UserPrioritizedRecordShare"
+  },
+  {
+    "DurableId": "ActivationTargetPlatform",
+    "DeveloperName": "ActivationTargetPlatform",
+    "QualifiedApiName": "ActivationTargetPlatform"
+  },
+  {
+    "DurableId": "ActivationTargetPlatformShare",
+    "DeveloperName": "ActivationTargetPlatformShare",
+    "QualifiedApiName": "ActivationTargetPlatformShare"
+  },
+  {
+    "DurableId": "ActivationTargetPlatformHistory",
+    "DeveloperName": "ActivationTargetPlatformHistory",
+    "QualifiedApiName": "ActivationTargetPlatformHistory"
+  },
+  {
+    "DurableId": "ActvTgtPlatformFieldValue",
+    "DeveloperName": "ActvTgtPlatformFieldValue",
+    "QualifiedApiName": "ActvTgtPlatformFieldValue"
+  },
+  {
+    "DurableId": "ActvTgtPlatformFieldValueShare",
+    "DeveloperName": "ActvTgtPlatformFieldValueShare",
+    "QualifiedApiName": "ActvTgtPlatformFieldValueShare"
+  },
+  {
+    "DurableId": "ActvTgtPlatformFieldValueHistory",
+    "DeveloperName": "ActvTgtPlatformFieldValueHistory",
+    "QualifiedApiName": "ActvTgtPlatformFieldValueHistory"
+  },
+  {
+    "DurableId": "ChangeRequestRelatedItemHistory",
+    "DeveloperName": "ChangeRequestRelatedItemHistory",
+    "QualifiedApiName": "ChangeRequestRelatedItemHistory"
+  },
+  {
+    "DurableId": "ChangeRequestRelatedItemFeed",
+    "DeveloperName": "ChangeRequestRelatedItemFeed",
+    "QualifiedApiName": "ChangeRequestRelatedItemFeed"
+  },
+  {
+    "DurableId": "DataStreamNewFieldEvent",
+    "DeveloperName": "DataStreamNewFieldEvent",
+    "QualifiedApiName": "DataStreamNewFieldEvent"
+  },
+  {
+    "DurableId": "EventRelayConfig",
+    "DeveloperName": "EventRelayConfig",
+    "QualifiedApiName": "EventRelayConfig"
+  },
+  {
+    "DurableId": "EventRelayConfigChangeEvent",
+    "DeveloperName": "EventRelayConfigChangeEvent",
+    "QualifiedApiName": "EventRelayConfigChangeEvent"
+  },
+  {
+    "DurableId": "EventRelayFeedback",
+    "DeveloperName": "EventRelayFeedback",
+    "QualifiedApiName": "EventRelayFeedback"
+  },
+  {
+    "DurableId": "ExperienceDiagnosticEvent",
+    "DeveloperName": "ExperienceDiagnosticEvent",
+    "QualifiedApiName": "ExperienceDiagnosticEvent"
+  },
+  {
+    "DurableId": "IncidentRelatedItemHistory",
+    "DeveloperName": "IncidentRelatedItemHistory",
+    "QualifiedApiName": "IncidentRelatedItemHistory"
+  },
+  {
+    "DurableId": "IncidentRelatedItemFeed",
+    "DeveloperName": "IncidentRelatedItemFeed",
+    "QualifiedApiName": "IncidentRelatedItemFeed"
+  },
+  {
+    "DurableId": "MktDataTransform",
+    "DeveloperName": "MktDataTransform",
+    "QualifiedApiName": "MktDataTransform"
+  },
+  {
+    "DurableId": "MktDataTransformShare",
+    "DeveloperName": "MktDataTransformShare",
+    "QualifiedApiName": "MktDataTransformShare"
+  },
+  {
+    "DurableId": "MktDataTransformHistory",
+    "DeveloperName": "MktDataTransformHistory",
+    "QualifiedApiName": "MktDataTransformHistory"
+  },
+  {
+    "DurableId": "MktDataTransformFeed",
+    "DeveloperName": "MktDataTransformFeed",
+    "QualifiedApiName": "MktDataTransformFeed"
+  },
+  {
+    "DurableId": "MktDataTransformEvent",
+    "DeveloperName": "MktDataTransformEvent",
+    "QualifiedApiName": "MktDataTransformEvent"
+  },
+  {
+    "DurableId": "MlFeatureValueMetric",
+    "DeveloperName": "MlFeatureValueMetric",
+    "QualifiedApiName": "MlFeatureValueMetric"
+  },
+  {
+    "DurableId": "OmniSupervisorConfigQueue",
+    "DeveloperName": "OmniSupervisorConfigQueue",
+    "QualifiedApiName": "OmniSupervisorConfigQueue"
+  },
+  {
+    "DurableId": "OmniSupervisorConfigSkill",
+    "DeveloperName": "OmniSupervisorConfigSkill",
+    "QualifiedApiName": "OmniSupervisorConfigSkill"
+  },
+  {
+    "DurableId": "PendingOrdSumProcEvent",
+    "DeveloperName": "PendingOrdSumProcEvent",
+    "QualifiedApiName": "PendingOrdSumProcEvent"
+  },
+  {
+    "DurableId": "ProblemRelatedItemHistory",
+    "DeveloperName": "ProblemRelatedItemHistory",
+    "QualifiedApiName": "ProblemRelatedItemHistory"
+  },
+  {
+    "DurableId": "ProblemRelatedItemFeed",
+    "DeveloperName": "ProblemRelatedItemFeed",
+    "QualifiedApiName": "ProblemRelatedItemFeed"
+  },
+  {
+    "DurableId": "UserDefinedLabel",
+    "DeveloperName": "UserDefinedLabel",
+    "QualifiedApiName": "UserDefinedLabel"
+  },
+  {
+    "DurableId": "UserDefinedLabelShare",
+    "DeveloperName": "UserDefinedLabelShare",
+    "QualifiedApiName": "UserDefinedLabelShare"
+  },
+  {
+    "DurableId": "UserDefinedLabelAssignment",
+    "DeveloperName": "UserDefinedLabelAssignment",
+    "QualifiedApiName": "UserDefinedLabelAssignment"
+  },
+  {
+    "DurableId": "UserDefinedLabelAssignmentShare",
+    "DeveloperName": "UserDefinedLabelAssignmentShare",
+    "QualifiedApiName": "UserDefinedLabelAssignmentShare"
+  },
+  {
+    "DurableId": "VendorCallCenterStatusMap",
+    "DeveloperName": "VendorCallCenterStatusMap",
+    "QualifiedApiName": "VendorCallCenterStatusMap"
+  },
+  {
+    "DurableId": "ActivityFieldHistory",
+    "DeveloperName": "ActivityFieldHistory",
+    "QualifiedApiName": "ActivityFieldHistory"
+  },
+  {
+    "DurableId": "AppointmentInvitationShare",
+    "DeveloperName": "AppointmentInvitationShare",
+    "QualifiedApiName": "AppointmentInvitationShare"
+  },
+  {
+    "DurableId": "AppointmentInvitationHistory",
+    "DeveloperName": "AppointmentInvitationHistory",
+    "QualifiedApiName": "AppointmentInvitationHistory"
+  },
+  {
+    "DurableId": "AppointmentInvitationFeed",
+    "DeveloperName": "AppointmentInvitationFeed",
+    "QualifiedApiName": "AppointmentInvitationFeed"
+  },
+  {
+    "DurableId": "DataConnectorStatusEvent",
+    "DeveloperName": "DataConnectorStatusEvent",
+    "QualifiedApiName": "DataConnectorStatusEvent"
+  },
+  {
+    "DurableId": "ExpressionSetView",
+    "DeveloperName": "ExpressionSetView",
+    "QualifiedApiName": "ExpressionSetView"
+  },
+  {
+    "DurableId": "ExtDataShare",
+    "DeveloperName": "ExtDataShare",
+    "QualifiedApiName": "ExtDataShare"
+  },
+  {
+    "DurableId": "ExtDataShareHistory",
+    "DeveloperName": "ExtDataShareHistory",
+    "QualifiedApiName": "ExtDataShareHistory"
+  },
+  {
+    "DurableId": "ExtDataShareFeed",
+    "DeveloperName": "ExtDataShareFeed",
+    "QualifiedApiName": "ExtDataShareFeed"
+  },
+  {
+    "DurableId": "ExtDataShareTarget",
+    "DeveloperName": "ExtDataShareTarget",
+    "QualifiedApiName": "ExtDataShareTarget"
+  },
+  {
+    "DurableId": "ExtDataShareTargetShare",
+    "DeveloperName": "ExtDataShareTargetShare",
+    "QualifiedApiName": "ExtDataShareTargetShare"
+  },
+  {
+    "DurableId": "ExtDataShareTargetHistory",
+    "DeveloperName": "ExtDataShareTargetHistory",
+    "QualifiedApiName": "ExtDataShareTargetHistory"
+  },
+  {
+    "DurableId": "ExtDataShareTargetFeed",
+    "DeveloperName": "ExtDataShareTargetFeed",
+    "QualifiedApiName": "ExtDataShareTargetFeed"
+  },
+  {
+    "DurableId": "ExternalDataSrcDescriptor",
+    "DeveloperName": "ExternalDataSrcDescriptor",
+    "QualifiedApiName": "ExternalDataSrcDescriptor"
+  },
+  {
+    "DurableId": "FlowTestResult",
+    "DeveloperName": "FlowTestResult",
+    "QualifiedApiName": "FlowTestResult"
+  },
+  {
+    "DurableId": "FlowTestResultShare",
+    "DeveloperName": "FlowTestResultShare",
+    "QualifiedApiName": "FlowTestResultShare"
+  },
+  {
+    "DurableId": "FlowTestView",
+    "DeveloperName": "FlowTestView",
+    "QualifiedApiName": "FlowTestView"
+  },
+  {
+    "DurableId": "MarketSegmentDefMapping",
+    "DeveloperName": "MarketSegmentDefMapping",
+    "QualifiedApiName": "MarketSegmentDefMapping"
+  },
+  {
+    "DurableId": "MktSgmtDefCalcInsightFld",
+    "DeveloperName": "MktSgmtDefCalcInsightFld",
+    "QualifiedApiName": "MktSgmtDefCalcInsightFld"
+  },
+  {
+    "DurableId": "MktSgmtDefDataMdlObjFld",
+    "DeveloperName": "MktSgmtDefDataMdlObjFld",
+    "QualifiedApiName": "MktSgmtDefDataMdlObjFld"
+  },
+  {
+    "DurableId": "PendingOrderSummary",
+    "DeveloperName": "PendingOrderSummary",
+    "QualifiedApiName": "PendingOrderSummary"
+  },
+  {
+    "DurableId": "PendingOrderSummaryChangeEvent",
+    "DeveloperName": "PendingOrderSummaryChangeEvent",
+    "QualifiedApiName": "PendingOrderSummaryChangeEvent"
+  },
+  {
+    "DurableId": "RelatedListColumnDefinition",
+    "DeveloperName": "RelatedListColumnDefinition",
+    "QualifiedApiName": "RelatedListColumnDefinition"
+  },
+  {
+    "DurableId": "RelatedListDefinition",
+    "DeveloperName": "RelatedListDefinition",
+    "QualifiedApiName": "RelatedListDefinition"
+  },
+  {
+    "DurableId": "ConvIntelligenceSignalRule",
+    "DeveloperName": "ConvIntelligenceSignalRule",
+    "QualifiedApiName": "ConvIntelligenceSignalRule"
+  },
+  {
+    "DurableId": "ConvIntelligenceSignalSubRule",
+    "DeveloperName": "ConvIntelligenceSignalSubRule",
+    "QualifiedApiName": "ConvIntelligenceSignalSubRule"
+  },
+  {
+    "DurableId": "EngagementChannelWorkTypeHistory",
+    "DeveloperName": "EngagementChannelWorkTypeHistory",
+    "QualifiedApiName": "EngagementChannelWorkTypeHistory"
+  },
+  {
+    "DurableId": "EngagementChannelWorkTypeFeed",
+    "DeveloperName": "EngagementChannelWorkTypeFeed",
+    "QualifiedApiName": "EngagementChannelWorkTypeFeed"
+  },
+  {
+    "DurableId": "ExternalClientApplication",
+    "DeveloperName": "ExternalClientApplication",
+    "QualifiedApiName": "ExternalClientApplication"
+  },
+  {
+    "DurableId": "MktMLModel",
+    "DeveloperName": "MktMLModel",
+    "QualifiedApiName": "MktMLModel"
+  },
+  {
+    "DurableId": "MktMLModelShare",
+    "DeveloperName": "MktMLModelShare",
+    "QualifiedApiName": "MktMLModelShare"
+  },
+  {
+    "DurableId": "MktMLModelHistory",
+    "DeveloperName": "MktMLModelHistory",
+    "QualifiedApiName": "MktMLModelHistory"
+  },
+  {
+    "DurableId": "MktMLModelFeed",
+    "DeveloperName": "MktMLModelFeed",
+    "QualifiedApiName": "MktMLModelFeed"
+  },
+  {
+    "DurableId": "MktMLPredictionJob",
+    "DeveloperName": "MktMLPredictionJob",
+    "QualifiedApiName": "MktMLPredictionJob"
+  },
+  {
+    "DurableId": "MktMLPredictionJobHistory",
+    "DeveloperName": "MktMLPredictionJobHistory",
+    "QualifiedApiName": "MktMLPredictionJobHistory"
+  },
+  {
+    "DurableId": "MktMLPredictionJobFeed",
+    "DeveloperName": "MktMLPredictionJobFeed",
+    "QualifiedApiName": "MktMLPredictionJobFeed"
+  },
+  {
+    "DurableId": "OmniSupervisorConfigAction",
+    "DeveloperName": "OmniSupervisorConfigAction",
+    "QualifiedApiName": "OmniSupervisorConfigAction"
+  },
+  {
+    "DurableId": "SrcPredJobStatusChgEvent",
+    "DeveloperName": "SrcPredJobStatusChgEvent",
+    "QualifiedApiName": "SrcPredJobStatusChgEvent"
+  },
+  {
+    "DurableId": "ChatRetirementRdyMetrics",
+    "DeveloperName": "ChatRetirementRdyMetrics",
+    "QualifiedApiName": "ChatRetirementRdyMetrics"
+  },
+  {
+    "DurableId": "NamedCredential",
+    "DeveloperName": "NamedCredential",
+    "QualifiedApiName": "NamedCredential"
+  },
+  {
+    "DurableId": "01Ifn000000I2jR.Share",
+    "DeveloperName": "Validator__Share",
+    "QualifiedApiName": "Validator__Share"
+  },
+  {
+    "DurableId": "01Ifn000000I2jR.History",
+    "DeveloperName": "Validator__History",
+    "QualifiedApiName": "Validator__History"
+  },
+  {
+    "DurableId": "01Ifn000000I2jR.ChangeEvent",
+    "DeveloperName": "Validator__ChangeEvent",
+    "QualifiedApiName": "Validator__ChangeEvent"
+  },
+  {
+    "DurableId": "01Ifn000000FyLd.Share",
+    "DeveloperName": "Refund_Request__Share",
+    "QualifiedApiName": "Refund_Request__Share"
+  },
+  {
+    "DurableId": "01Ifn000000FyLd.ChangeEvent",
+    "DeveloperName": "Refund_Request__ChangeEvent",
+    "QualifiedApiName": "Refund_Request__ChangeEvent"
+  },
+  {
+    "DurableId": "01Ifn000000FyLe.Share",
+    "DeveloperName": "Error_Log__Share",
+    "QualifiedApiName": "Error_Log__Share"
+  },
+  {
+    "DurableId": "01Ifn000000FyLe.History",
+    "DeveloperName": "Error_Log__History",
+    "QualifiedApiName": "Error_Log__History"
+  },
+  {
+    "DurableId": "01Ifn000000FyLe.ChangeEvent",
+    "DeveloperName": "Error_Log__ChangeEvent",
+    "QualifiedApiName": "Error_Log__ChangeEvent"
+  }
+]

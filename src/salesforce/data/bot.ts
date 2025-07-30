@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 import { FileType } from "../../salesforce";
-import { retrieveMetadata } from "./retriever";
+import { retrieve } from "./retriever";
 import { Bot, BotVersion, BotMetadataWrapper } from "..";
 
 /**
@@ -12,7 +12,7 @@ export async function getMetadataInfo(
   metadataType: FileType,
   context: vscode.ExtensionContext
 ): Promise<BotMetadataWrapper | null> {
-  return retrieveMetadata<BotMetadataWrapper>({
+  return retrieve<BotMetadataWrapper>({
     metadataName,
     metadataType,
     context,

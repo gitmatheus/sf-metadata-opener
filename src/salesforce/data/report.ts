@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 import { FileType } from "../../salesforce";
-import { retrieveMetadata } from "./retriever";
+import { retrieve } from "./retriever";
 import { Report } from "..";
 
 /**
@@ -12,7 +12,7 @@ export async function getMetadataInfo(
   metadataType: FileType,
   context: vscode.ExtensionContext
 ): Promise<Report | null> {
-  const result = await retrieveMetadata<Report>({
+  const result = await retrieve<Report>({
     metadataName,
     metadataType,
     getCommand: (name) =>
