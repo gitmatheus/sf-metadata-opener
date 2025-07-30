@@ -1,22 +1,22 @@
 import * as vscode from "vscode";
 import { FileType } from "../../salesforce";
 import { retrieveMetadata } from "./retriever";
-import { Report } from "..";
+import { Dashboard } from "..";
 
 /**
- * Queries Salesforce to get the Report metadata using the standard API.
+ * Queries Salesforce to get the Dashboard metadata using the standard API.
  * Caches the record ID if caching is enabled.
  */
 export async function getMetadataInfo(
   metadataName: string,
   metadataType: FileType,
   context: vscode.ExtensionContext
-): Promise<Report | null> {
-  const result = await retrieveMetadata<Report>({
+): Promise<Dashboard | null> {
+  const result = await retrieveMetadata<Dashboard>({
     metadataName,
     metadataType,
     getCommand: (name) =>
-      `sf data get record --sobject Report --where "DeveloperName='${name}'" --json`,
+      `sf data get record --sobject Dashboard --where "DeveloperName='${name}'" --json`,
     parseResult: (data) => {
       const record = data?.result;
       if (record?.Id) {
@@ -25,7 +25,6 @@ export async function getMetadataInfo(
           Name: record.Name,
           DeveloperName: record.DeveloperName,
           FolderName: record.FolderName,
-          Format: record.Format,
         };
       }
       return null;

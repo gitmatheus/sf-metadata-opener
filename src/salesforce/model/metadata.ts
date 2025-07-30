@@ -5,8 +5,8 @@ export const FileType = {
   Flow: ".flow-meta.xml",
   Bot: ".bot-meta.xml",
   Report: ".report-meta.xml",
+  Dashboard: ".dashboard-meta.xml",
 };
-
 
 /**
  * Human-readable labels for each metadata type.
@@ -15,6 +15,7 @@ export const MetadataLabels: Record<FileType, string> = {
   [FileType.Flow]: "Flow",
   [FileType.Bot]: "Agentforce Agent (Bot)",
   [FileType.Report]: "Report",
+  [FileType.Dashboard]: "Dashboard",
 };
 
 /**
@@ -46,20 +47,35 @@ export interface BotVersion extends Metadata {
 }
 
 /**
+ * Compound metadata type for Bot + Version
+ */
+export interface BotMetadataWrapper {
+  bot: Bot;
+  version: BotVersion;
+}
+
+/**
  * Interface representing the metadata of a Flow retrieved from Salesforce
  */
 export interface Flow extends Metadata {
   ProcessType?: string;
 }
 
-
 /**
- * Interface representing the metadata of a Flow retrieved from Salesforce
+ * Interface representing the metadata of a Report retrieved from Salesforce
  */
 export interface Report extends Metadata {
   DeveloperName?: string;
   FolderName?: string;
   Format?: string;
+}
+
+/**
+ * Interface representing the metadata of a Dashboard retrieved from Salesforce
+ */
+export interface Dashboard extends Metadata {
+  DeveloperName?: string;
+  FolderName?: string;
 }
 
 /**

@@ -1,12 +1,12 @@
 import * as vscode from "vscode";
-import * as metadata from "../../salesforce/data/bot";
+import * as metadata from "../../salesforce/data/dashboard";
 import * as handlers from "../handlers";
 import * as utils from "../../utils";
 import { FileType } from "../../salesforce";
 import { createOpenCommand, OpenMode } from "../factory";
 
 /**
- * Handles opening a Bot file from right-click or command palette.
+ * Handles opening a Dashboard file from right-click or command palette.
  */
 export async function open(
   filePath: string,
@@ -16,14 +16,15 @@ export async function open(
   return handlers.openMetadata({
     filePath,
     mode,
-    fileType: FileType.Bot,
+    fileType: FileType.Dashboard,
     buildOpenCommand: (filePath, mode) =>
       createOpenCommand(
         filePath,
         mode as OpenMode,
         {
-          metadataType: FileType.Bot,
+          metadataType: FileType.Dashboard,
           fetchMetadata: metadata.getMetadataInfo,
+          skipDefaultCli: true, // This metadata should always use the custom open command
         },
         context
       ),
@@ -31,14 +32,12 @@ export async function open(
 }
 
 /**
- * Resolves the browser path to open a Bot.
+ * Resolves the browser path to open a Dashboard.
  */
 export function resolvePath(ctx: utils.PathContext): string {
-  const recordId = ctx.metadata?.bot?.Id;
-  const versionId = ctx.metadata?.version?.Id;
-  if (!recordId) throw new Error("Missing Bot ID");
+  const recordId = ctx.metadata?.Id;
+  if (!recordId) throw new Error("Missing Dashboard ID");
 
-  return ctx.mode === OpenMode.EDIT
-    ? `/AiCopilot/copilotStudio.app#/copilot/builder?copilotId=${recordId}&versionId=${versionId}`
-    : `/lightning/setup/EinsteinCopilot/${recordId}/edit`;
+  const action = ctx.mode === OpenMode.EDIT ? "edit" : "view";
+  return `/lightning/r/Dashboard/${recordId}/${action}?queryScope=userFolders`;
 }

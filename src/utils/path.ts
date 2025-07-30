@@ -5,6 +5,7 @@ import { FileType } from "../salesforce";
 import * as flow from "../commands/flow/helpers";
 import * as bot from "../commands/bot/helpers";
 import * as report from "../commands/report/helpers";
+import * as dashboard from "../commands/dashboard/helpers";
 
 /**
  * Resolves the absolute file path from the currently active text editor in VS Code.
@@ -42,6 +43,9 @@ export function resolveMetadataPath(ctx: PathContext): string {
 
     case FileType.Report:
       return report.resolvePath(ctx);
+
+      case FileType.Dashboard:
+      return dashboard.resolvePath(ctx);
 
     default:
       throw new Error(

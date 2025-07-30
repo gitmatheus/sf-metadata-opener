@@ -1,1 +1,1 @@
-export * from "./orgData"
+export * from "./org"

@@ -5,7 +5,7 @@
   "icon": "icon.png",
   "repository": "https://github.com/gitmatheus/sf-metadata-opener",
   "description": "Right-click to open Salesforce metadata in the browser (Flows, Agentforce agents, etc.)",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "engines": {
     "vscode": "^1.102.0"
   },
@@ -13,6 +13,39 @@
     "Other"
   ],
   "main": "./dist/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "prepare:manifest": "node ./scripts/manifest/build-manifest.js",
+    "compile": "npm run prepare:manifest && webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "publish": "vsce package",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test",
+    "local-no-ext": "npm run compile && code --disable-extensions --extensionDevelopmentPath=${PWD}",
+    "local": "npm run compile && code --extensionDevelopmentPath=${PWD}"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.102.0",
+    "@types/xml2js": "^0.4.14",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "@vscode/test-cli": "^0.0.8",
+    "@vscode/test-electron": "^2.3.9",
+    "eslint": "^8.57.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "xml2js": "^0.6.2"
+  },
   "contributes": {
     "configuration": {
       "title": "Salesforce Metadata Opener",
@@ -26,6 +59,11 @@
           "type": "boolean",
           "default": true,
           "description": "Deploy the local metadata file before opening it in the browser."
+        },
+        "SalesforceMetadataOpener.enableCaching": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable caching of record IDs to improve performance. Disable if you need to always fetch the latest data."
         }
       }
     },
@@ -77,6 +115,30 @@
       {
         "command": "extension.openCurrentReportInViewMode",
         "title": "SFDX: Open Current Report in View Mode"
+      },
+      {
+        "command": "extension.openDashboardInEditMode",
+        "title": "SFDX: Open Dashboard in Edit Mode"
+      },
+      {
+        "command": "extension.openDashboardInViewMode",
+        "title": "SFDX: Open Dashboard in View Mode"
+      },
+      {
+        "command": "extension.openCurrentDashboardInEditMode",
+        "title": "SFDX: Open Current Dashboard in Edit Mode"
+      },
+      {
+        "command": "extension.openCurrentDashboardInViewMode",
+        "title": "SFDX: Open Current Dashboard in View Mode"
+      },
+      {
+        "command": "extension.clearMetadataCache",
+        "title": "SFDX: Clear Cached Record Metadata"
+      },
+      {
+        "command": "extension.displayMetadataCache",
+        "title": "SFDX: Display Cached Record Metadata"
       }
     ],
     "menus": {
@@ -110,6 +172,16 @@
           "command": "extension.openReportInViewMode",
           "when": "resourceFilename =~ /\\.report-meta\\.xml$/",
           "group": "z_commands"
+        },
+        {
+          "command": "extension.openDashboardInEditMode",
+          "when": "resourceFilename =~ /\\.dashboard-meta\\.xml$/",
+          "group": "z_commands"
+        },
+        {
+          "command": "extension.openDashboardInViewMode",
+          "when": "resourceFilename =~ /\\.dashboard-meta\\.xml$/",
+          "group": "z_commands"
         }
       ],
       "commandPalette": [
@@ -136,42 +208,17 @@
         {
           "command": "extension.openReportInViewMode",
           "when": "false"
+        },
+        {
+          "command": "extension.openDashboardInEditMode",
+          "when": "false"
+        },
+        {
+          "command": "extension.openDashboardInViewMode",
+          "when": "false"
         }
       ]
     }
-  },
-  "scripts": {
-    "vscode:prepublish": "npm run package",
-    "prepare:manifest": "node ./scripts/manifest/build-manifest.js",
-    "compile": "npm run prepare:manifest && webpack",
-    "watch": "webpack --watch",
-    "package": "webpack --mode production --devtool hidden-source-map",
-    "publish": "vsce package",
-    "compile-tests": "tsc -p . --outDir out",
-    "watch-tests": "tsc -p . -w --outDir out",
-    "pretest": "npm run compile-tests && npm run compile && npm run lint",
-    "lint": "eslint src --ext ts",
-    "test": "vscode-test",
-    "local-no-ext": "npm run compile && code --disable-extensions --extensionDevelopmentPath=${PWD}",
-    "local": "npm run compile && code --extensionDevelopmentPath=${PWD}"
-  },
-  "devDependencies": {
-    "@types/mocha": "^10.0.6",
-    "@types/node": "18.x",
-    "@types/vscode": "^1.102.0",
-    "@types/xml2js": "^0.4.14",
-    "@typescript-eslint/eslint-plugin": "^7.4.0",
-    "@typescript-eslint/parser": "^7.4.0",
-    "@vscode/test-cli": "^0.0.8",
-    "@vscode/test-electron": "^2.3.9",
-    "eslint": "^8.57.0",
-    "ts-loader": "^9.5.1",
-    "typescript": "^5.3.3",
-    "webpack": "^5.91.0",
-    "webpack-cli": "^5.1.4"
-  },
-  "dependencies": {
-    "xml2js": "^0.6.2"
   },
   "activationEvents": [
     "onCommand:extension.openFlowInBuilder",
@@ -185,6 +232,10 @@
     "onCommand:extension.openReportInEditMode",
     "onCommand:extension.openReportInViewMode",
     "onCommand:extension.openCurrentReportInEditMode",
-    "onCommand:extension.openCurrentReportInViewMode"
+    "onCommand:extension.openCurrentReportInViewMode",
+    "onCommand:extension.openDashboardInEditMode",
+    "onCommand:extension.openDashboardInViewMode",
+    "onCommand:extension.openCurrentDashboardInEditMode",
+    "onCommand:extension.openCurrentDashboardInViewMode"
   ]
 }

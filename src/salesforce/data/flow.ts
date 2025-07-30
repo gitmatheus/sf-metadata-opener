@@ -1,17 +1,22 @@
+import * as vscode from "vscode";
 import { FileType } from "../../salesforce";
 import { retrieveMetadata } from "./retriever";
 import { Flow } from "..";
 
 /**
- * Queries Salesforce to get the latest Flow version info by flow name
+ * Queries Salesforce to get the latest Flow version info by flow name.
+ * This function supports optional caching if enabled by the user.
  */
 export async function getMetadataInfo(
   metadataName: string,
-  metadataType: FileType
+  metadataType: FileType,
+  context: vscode.ExtensionContext
 ): Promise<Flow | null> {
-  return retrieveMetadata<Flow>({
+  const result = await retrieveMetadata<Flow>({
     metadataName,
     metadataType,
+    context,
+    skipCacheCheck: true, // Always fetch live data
     getCommand: (name) =>
       `sf data get record --use-tooling-api --sobject FlowDefinition --where "DeveloperName='${name}'" --json`,
     parseResult: (data) => {
@@ -19,6 +24,8 @@ export async function getMetadataInfo(
         return { Id: data.result.LatestVersionId };
       }
       return null;
-    },
+    },    
   });
+
+  return result;
 }

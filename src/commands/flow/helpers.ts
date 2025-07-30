@@ -1,3 +1,4 @@
+import * as vscode from "vscode";
 import * as metadata from "../../salesforce/data/flow";
 import * as utils from "../../utils";
 import * as fs from "fs/promises";
@@ -17,7 +18,11 @@ const RUN_MODE_SUPPORTED_TYPES = new Set([
 /**
  * Handles opening a Flow file (right-click or command palette)
  */
-export async function open(filePath: string, mode: OpenMode): Promise<void> {
+export async function open(
+  filePath: string,
+  mode: OpenMode,
+  context: vscode.ExtensionContext
+): Promise<void> {
   if (mode === OpenMode.RUN) {
     const processType = await parseProcessTypeFromXml(filePath);
     if (!processType || !shouldOfferRunMode(processType)) {
@@ -34,10 +39,15 @@ export async function open(filePath: string, mode: OpenMode): Promise<void> {
     mode,
     fileType: FileType.Flow,
     buildOpenCommand: (filePath, mode) =>
-      createOpenCommand(filePath, mode as OpenMode, {
-        metadataType: FileType.Flow,
-        fetchMetadata: metadata.getMetadataInfo,
-      }),
+      createOpenCommand(
+        filePath,
+        mode as OpenMode,
+        {
+          metadataType: FileType.Flow,
+          fetchMetadata: metadata.getMetadataInfo,
+        },
+        context
+      ),
   });
 }
 
@@ -75,10 +85,10 @@ function shouldOfferRunMode(processType: string): boolean {
  * Resolves the browser path to open a Flow either in Flow Builder or Run Mode.
  */
 export function resolvePath(ctx: utils.PathContext): string {
-  const flowId = ctx.metadata?.Id;
-  if (!flowId) throw new Error("Missing Flow ID");
+  const recordId = ctx.metadata?.Id;
+  if (!recordId) throw new Error("Missing Flow ID");
 
   return ctx.mode === OpenMode.RUN
-    ? `/flow/${ctx.metadataName}/${flowId}`
-    : `/builder_platform_interaction/flowBuilder.app?flowId=${flowId}`;
+    ? `/flow/${ctx.metadataName}/${recordId}`
+    : `/builder_platform_interaction/flowBuilder.app?flowId=${recordId}`;
 }
