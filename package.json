@@ -4,7 +4,7 @@
   "publisher": "MatheusGoncalves",
   "icon": "icon.png",
   "repository": "https://github.com/gitmatheus/sf-metadata-opener",
-  "description": "Right-click to open Salesforce metadata in the browser (Flows, Agentforce agents, etc.)",
+  "description": "Quickly open Salesforce metadata in your browser from the right-click menu or the command palette. Works with Flows, Agentforce agents, Reports, Dashboards, and more.",
   "version": "0.0.4",
   "engines": {
     "vscode": "^1.102.0"
