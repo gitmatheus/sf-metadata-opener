@@ -4,6 +4,45 @@ All notable changes to this project will be documented here.
 
 ---
 
+## [0.0.5] - 2025-07-29
+
+### ✨ Added
+
+- 📊 **Dashboard metadata support**:
+
+  - Right-click `.dashboard-meta.xml` to open in:
+    - **Edit Mode** (Lightning Dashboard Builder)
+    - **View Mode** (Standard Lightning Dashboard page)
+  - Command Palette equivalents also available.
+
+- 💾 **Metadata Caching**:
+
+  - Improves performance by storing record metadata in memory using `ExtensionContext.workspaceState`.
+  - Reduces repeated org queries for frequently opened metadata.
+  - Caching is enabled via a new setting: `Salesforce Metadata Opener: Enable Caching`.
+
+- 🧹 **Clear Metadata Cache** command:
+
+  - `SFDX: Clear Cached Record Metadata` (Command Palette)
+
+- 👀 **Display Metadata Cache** command:
+  - `SFDX: Display Cached Record Metadata` (Command Palette)
+  - Shows a JSON-formatted view of metadata grouped by org ID.
+
+### ⚙️ Changed
+
+- Flows and Bots now bypass cache by default to always fetch the latest deployed versions.
+- Cache persistence was migrated from file system to in-memory for speed.
+- Cache logic modularized under `salesforce/data/cache.ts`.
+
+### 🧼 Internal
+
+- 🧠 `retrieveMetadata()` updated to support `skipCacheCheck` flag per metadata type.
+- ♻️ `writeCachedMetadata()` and `readCachedMetadata()` now use scoped keys like `orgId:DeveloperName`.
+- 🧪 OutputChannel displays cached state directly in VS Code with a dedicated command.
+
+---
+
 ## [0.0.4] - 2025-07-28
 
 ### ✨ Added

@@ -6,9 +6,16 @@ Currently supports:
 
 - ✅ **Flows** (Screen Flows, Auto-launched, etc.)
 - ✅ **Agentforce Agents (Bots)**
-- 🆕 **Reports** (Standard and Custom Reports)
+- ✅ **Reports** (Standard and Custom Reports)
+- 🆕 **Dashboards** (Classic and Lightning)
 
-More metadata types coming soon (Dashboards, LWC, Apex, etc.)
+More metadata types coming soon (Validation Rules, Profiles, Permission Sets, etc.)
+
+---
+
+## 🧠 What It Does
+
+This extension enables rapid navigation from your VS Code workspace to your Salesforce metadata in the browser. It supports all the usual suspects like Flows, Reports, Dashboards, and Agentforce Bots, and more are coming.
 
 ---
 
@@ -17,14 +24,14 @@ More metadata types coming soon (Dashboards, LWC, Apex, etc.)
 - Context-aware file actions
 - Command Palette integration
 - Auto-deploys your metadata before launching
-- Supports both **Flow Builder / Run Mode**, **Agentforce Builder / Setup**, and **Report View / Edit**
+- Supports:
+  - **Flow Builder / Run Mode**
+  - **Agentforce Builder / Setup**
+  - **Report View / Edit**
+  - **Dashboard View / Edit**
 - Uses `sf org open` under the hood (respects your default org/session)
-
----
-
-## 🧠 What It Does
-
-This extension enables rapid navigation from your VS Code workspace to your Salesforce metadata in the browser.
+- 💾 Optional in-memory caching to reduce redundant org queries
+- 👀 Commands to view or clear metadata cache
 
 ---
 
@@ -36,12 +43,10 @@ This extension enables rapid navigation from your VS Code workspace to your Sale
   - `SFDX: Open Flow in Run Mode`
 
 - **Use the Command Palette** with a `.flow-meta.xml` file active:
-
   - `SFDX: Open Current Flow in Flow Builder`
   - `SFDX: Open Current Flow in Run Mode`
 
-ℹ️ Run Mode is only available for supported Flow types (e.g., **Screen Flows**). AutoLaunched and system flows are not compatible.
-
+ℹ️ Run Mode is only available for supported Flow types (e.g., **Screen Flows**).
 
 ---
 
@@ -53,12 +58,10 @@ This extension enables rapid navigation from your VS Code workspace to your Sale
   - `SFDX: Open Agent Details in Setup`
 
 - **Use the Command Palette** with a `.bot-meta.xml` file active:
-
   - `SFDX: Open Current Agent in Agentforce Builder`
   - `SFDX: Open Current Agent Details in Setup`
- 
 
-ℹ️ Agent Builder uses version-based routing, and this extension fetches the latest BotVersion automatically.
+ℹ️ Automatically fetches the latest BotVersion for accurate routing.
 
 ---
 
@@ -70,11 +73,25 @@ This extension enables rapid navigation from your VS Code workspace to your Sale
   - `SFDX: Open Report in View Mode`
 
 - **Use the Command Palette** with a `.report-meta.xml` file active:
-
   - `SFDX: Open Current Report in Edit Mode`
   - `SFDX: Open Current Report in View Mode`
 
-ℹ️ Report URLs are opened using direct ID-based paths. This metadata type bypasses the default CLI and always uses org queries to build the correct URL.
+ℹ️ Report URLs are opened using direct ID-based paths.
+
+---
+
+### 📈 Dashboards
+
+- **Right-click a `.dashboard-meta.xml`** file in the Explorer:
+
+  - `SFDX: Open Dashboard in Edit Mode`
+  - `SFDX: Open Dashboard in View Mode`
+
+- **Use the Command Palette** with a `.dashboard-meta.xml` file active:
+  - `SFDX: Open Current Dashboard in Edit Mode`
+  - `SFDX: Open Current Dashboard in View Mode`
+
+ℹ️ Dashboard URLs are opened using direct ID-based paths.
 
 ---
 
@@ -82,60 +99,54 @@ This extension enables rapid navigation from your VS Code workspace to your Sale
 
 You can customize the extension’s behavior via VS Code settings:
 
-#### `Salesforce Metadata Opener: Deploy Before Open`
+### `Salesforce Metadata Opener: Deploy Before Open`
 
 > **Default: `true`**
 
-- Automatically deploys your local metadata file before opening it in the browser.
-- Disable this if your metadata is already deployed or managed externally.
+Automatically deploys your metadata file before opening.
+Disable this if your metadata is already deployed or managed externally.
 
-#### `Salesforce Metadata Opener: Use Sf Command To Open Metadata`
+### `Salesforce Metadata Opener: Use Sf Command To Open Metadata`
 
 > **Default: `true`**
 
-- When enabled, uses `sf org open --source-file ...` for direct opening.
-- When disabled, the extension queries the org for IDs and constructs builder/setup links using metadata APIs.
+Uses `sf org open --source-file` when possible. When disabled, falls back to org queries + Lightning URLs.
 
-<img width="763" height="356" alt="Screenshot 2025-07-21 at 7 45 09 PM" src="https://github.com/user-attachments/assets/6b65a975-3fa6-48c0-9f04-177b0de3a632" />
+### `Salesforce Metadata Opener: Enable Caching`
+
+> **Default: `false`**
+
+Caches metadata results in memory per org, for performance and less requests to the org.
 
 ---
 
-## 🧩 Under the Hood
+## 🧪 Metadata Cache Tools
 
-All commands share robust common logic:
-
-- ✅ Validates file extension (`.flow-meta.xml`, `.bot-meta.xml`, `.report-meta.xml`)
-- 🔍 Parses metadata file or resolves DeveloperName
-- 🚀 Deploys metadata using `sf project deploy start`
-- 🔗 Opens browser via `sf org open` (either with `--source-file` or `--path`)
+- `SFDX: Display Cached Record Metadata` – view a JSON map of all cached records
+- `SFDX: Clear Cached Record Metadata` – remove all cached metadata
 
 ---
 
 ## ✅ Requirements
 
-- **Salesforce CLI (`sf`)** installed
-- An authenticated **default org** (`sf org display`)
-- A Salesforce project with metadata (e.g., `force-app/main/default/flows/`, `.../bots/`, `.../reports/`)
+- Salesforce CLI (`sf`)
+- Authenticated default org (`sf org display`)
+- A local Salesforce project
 
 ---
 
 ## 🔮 Coming Soon
 
-- Support for:
-
-  - More metadata targets (Apex, Dashboards, LWC)
-  - Better debug logging
-  - Custom org aliases and context awareness
+- Validation Rules, Profiles, Permission Sets, Record Pages, Custom Tabs
+- Debug logs and diagnostics
+- Better deploy-preview support
 
 ---
 
 ## 📣 Feedback
 
-Have a feature request? Found a bug?
-
-→ Create an [Issue](https://github.com/gitmatheus/sf-metadata-opener/issues)
-
-→ Or email: [contact@matheus.dev](mailto:contact@matheus.dev)
+→ [Open an issue](https://github.com/gitmatheus/sf-metadata-opener/issues)  
+→ Email: [contact@matheus.dev](mailto:contact@matheus.dev)
 
 ---
 
