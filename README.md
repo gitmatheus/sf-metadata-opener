@@ -4,10 +4,10 @@ A sleek, no-friction way to open Salesforce metadata directly in your browser, r
 
 Currently supports:
 
-- ✅ **Flows** (Screen Flows, Auto-launched, etc.)
+- ✅ **Flows**
 - ✅ **Agentforce Agents (Bots)**
-- ✅ **Reports** (Standard and Custom Reports)
-- 🆕 **Dashboards** (Classic and Lightning)
+- ✅ **Reports**
+- 🆕 **Dashboards**
 
 More metadata types coming soon (Validation Rules, Profiles, Permission Sets, etc.)
 
