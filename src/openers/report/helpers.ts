@@ -31,7 +31,6 @@ export async function open(
         {
           metadataType: FileType.Report,
           fetchMetadata: retriever.retrieveRecord,
-          skipDefaultCli: true, // Reports should always use the custom open command
         },
         context
       ),

@@ -31,7 +31,6 @@ export async function open(
         {
           metadataType: FileType.Dashboard,
           fetchMetadata: retriever.retrieveRecord,
-          skipDefaultCli: true, // This metadata should always use the custom open command
         },
         context
       ),

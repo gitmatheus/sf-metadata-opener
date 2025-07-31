@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 import { Properties } from "./properties";
-import {bot, flow, report, dashboard, validationRule} from "./openers";
+import {bot, dashboard, flow, report, sobject, validationRule} from "./openers";
 import { clearMetadataCache, displayMetadataCache } from "./salesforce/data/cache";
 
 // This method is called when your extension is activated
@@ -9,9 +9,10 @@ export function activate(context: vscode.ExtensionContext) {
   // Openers commands per module
   const modules = [
     { name: "Bot", handlers: bot.registerHandlers(context) },
+    { name: "Dashboard", handlers: dashboard.registerHandlers(context) },
     { name: "Flow", handlers: flow.registerHandlers(context) },
     { name: "Report", handlers: report.registerHandlers(context) },
-    { name: "Dashboard", handlers: dashboard.registerHandlers(context) },
+    { name: "SObject", handlers: sobject.registerHandlers(context) },    
     { name: "ValidationRule", handlers: validationRule.registerHandlers(context) },
   ];
 

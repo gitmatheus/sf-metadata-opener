@@ -32,7 +32,6 @@ export async function open(
         {
           metadataType: FileType.ValidationRule,
           fetchMetadata: (name, type, context) => retriever.retrieveRecord(name, type, context, resolveParentObjectName(filePath)),
-          skipDefaultCli: true, // Validation Rules should always use the custom open command
         },
         context
       ),

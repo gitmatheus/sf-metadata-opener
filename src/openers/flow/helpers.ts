@@ -52,6 +52,7 @@ export async function open(
         {
           metadataType: FileType.Flow,
           fetchMetadata: retriever.retrieveRecord,
+          canUseOpenFileCommand: true, // Flows can use the default open file sf command
         },
         context
       ),

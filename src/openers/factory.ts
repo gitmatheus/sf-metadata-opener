@@ -12,9 +12,9 @@ export enum OpenMode {
 }
 
 /**
- * Indicates which OpenModes support the use of default cli commands
+ * Indicates which OpenModes support the use of the sf open file command
  */
-export const AllowDefaultCliMode: Record<OpenMode, boolean> = {
+export const AllowOpenFileMode: Record<OpenMode, boolean> = {
   [OpenMode.EDIT]: true,
   [OpenMode.VIEW]: false,
 };
@@ -57,15 +57,20 @@ export async function createOpenCommand<T>(
       metadataType: sf.FileType,
       context: vscode.ExtensionContext
     ) => Promise<T | null>;
-    skipDefaultCli?: boolean;
+    canUseOpenFileCommand?: boolean;
   },
   context: vscode.ExtensionContext
 ): Promise<string | null> {
-  const { metadataType, fetchMetadata, skipDefaultCli = false } = options;
+  const {
+    metadataType,
+    fetchMetadata,
+    canUseOpenFileCommand = false,
+  } = options;
 
-  const useCliMode = !skipDefaultCli && AllowDefaultCliMode[mode as OpenMode];
-  if (Properties.useSfCommandToOpenMetadata && useCliMode) {
-    return sf.buildDefaultOpenCommand(filePath);
+  const useOpenFileCommand =
+    canUseOpenFileCommand && AllowOpenFileMode[mode as OpenMode];
+  if (Properties.useOpenFileCommand && useOpenFileCommand) {
+    return sf.buildOpenFileCommand(filePath);
   }
 
   const metadataName = utils.parseMetadataNameFromFilePath(

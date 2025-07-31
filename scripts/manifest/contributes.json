@@ -2,10 +2,10 @@
   "configuration": {
     "title": "Salesforce Metadata Opener",
     "properties": {
-      "SalesforceMetadataOpener.useSfCommandToOpenMetadata": {
+      "SalesforceMetadataOpener.useOpenFileCommandToOpenMetadata": {
         "type": "boolean",
         "default": true,
-        "description": "Use the `sf` CLI to open the metadata in the browser. Disable this to have the extension query the org for the metadata ID instead."
+        "description": "Use the `sf org open --source-file` CLI to open supported metadata in the browser. Disable this to have the extension query the org for the metadata ID instead."
       },
       "SalesforceMetadataOpener.deployBeforeOpen": {
         "type": "boolean",

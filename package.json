@@ -50,10 +50,10 @@
     "configuration": {
       "title": "Salesforce Metadata Opener",
       "properties": {
-        "SalesforceMetadataOpener.useSfCommandToOpenMetadata": {
+        "SalesforceMetadataOpener.useOpenFileCommandToOpenMetadata": {
           "type": "boolean",
           "default": true,
-          "description": "Use the `sf` CLI to open the metadata in the browser. Disable this to have the extension query the org for the metadata ID instead."
+          "description": "Use the `sf org open --source-file` CLI to open supported metadata in the browser. Disable this to have the extension query the org for the metadata ID instead."
         },
         "SalesforceMetadataOpener.deployBeforeOpen": {
           "type": "boolean",
@@ -118,11 +118,11 @@
       },
       {
         "command": "extension.openCurrentSObjectInEditMode",
-        "title": "SFDX: Open Current SObject in Setup"
+        "title": "SFDX: Open Current SObject in Edit Mode"
       },
       {
         "command": "extension.openCurrentSObjectInViewMode",
-        "title": "SFDX: View Current SObject in Setup"
+        "title": "SFDX: Open Current SObject in View Mode"
       },
       {
         "command": "extension.openCurrentValidationRuleInEditMode",
@@ -158,11 +158,11 @@
       },
       {
         "command": "extension.openSObjectInEditMode",
-        "title": "SFDX: Open SObject in Setup"
+        "title": "SFDX: Open SObject in Edit Mode"
       },
       {
         "command": "extension.openSObjectInViewMode",
-        "title": "SFDX: View SObject in Setup"
+        "title": "SFDX: View SObject in View Mode"
       },
       {
         "command": "extension.openValidationRuleInEditMode",

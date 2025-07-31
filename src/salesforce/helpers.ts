@@ -47,7 +47,7 @@ export async function deployMetadata(filePath: string): Promise<boolean> {
 /**
  * Builds the default `sf org open` command to launch a metadata in the browser.
  */
-export async function buildDefaultOpenCommand(
+export async function buildOpenFileCommand(
   filePath: string
 ): Promise<string> {
   return `sf org open --source-file ${filePath}`;

@@ -1,7 +1,5 @@
 import * as vscode from "vscode";
-import { FileType, stripSalesforceSuffix } from "../../salesforce";
-import { retrieve } from "../../salesforce/data/retriever";
-import { SObject } from "../../salesforce";
+import * as sf from "../../salesforce";
 
 /**
  * Queries Salesforce to get the SObject metadata using Tooling API.
@@ -9,13 +7,22 @@ import { SObject } from "../../salesforce";
  */
 export async function retrieveRecord(
   metadataName: string,
-  metadataType: FileType,
-  context: vscode.ExtensionContext,
-): Promise<SObject | null> {
-  const result = await retrieve<SObject>({
+  metadataType: sf.FileType,
+  context: vscode.ExtensionContext
+): Promise<sf.SObject | null> {
+  // If this is a Standard SObject, we just need to return its name
+  if (!sf.isCustomSObjectName(metadataName)) {
+    return {
+      Id: metadataName,
+      DeveloperName: metadataName,
+    } as sf.SObject;
+  }
+
+  const result = await sf.retrieve<sf.SObject>({
     metadataName,
     metadataType,
-    getCommand: (name) => `sf data get record --use-tooling-api --sobject CustomObject --where "DeveloperName='${name}'" --json`,
+    getCommand: (name) =>
+      `sf data get record --use-tooling-api --sobject CustomObject --where "DeveloperName='${name}'" --json`,
     parseResult: (data) => {
       const record = data?.result?.records?.[0];
       if (record?.Id) {

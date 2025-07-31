@@ -49,11 +49,11 @@
   },
   {
     "command": "extension.openCurrentSObjectInEditMode",
-    "title": "SFDX: Open Current SObject in Setup"
+    "title": "SFDX: Open Current SObject in Edit Mode"
   },
   {
     "command": "extension.openCurrentSObjectInViewMode",
-    "title": "SFDX: View Current SObject in Setup"
+    "title": "SFDX: Open Current SObject in View Mode"
   },
   {
     "command": "extension.openCurrentValidationRuleInEditMode",
@@ -89,11 +89,11 @@
   },
   {
     "command": "extension.openSObjectInEditMode",
-    "title": "SFDX: Open SObject in Setup"
+    "title": "SFDX: Open SObject in Edit Mode"
   },
   {
     "command": "extension.openSObjectInViewMode",
-    "title": "SFDX: View SObject in Setup"
+    "title": "SFDX: View SObject in View Mode"
   },
   {
     "command": "extension.openValidationRuleInEditMode",

@@ -25,27 +25,6 @@ export async function open(
     mode,
     fileType: sf.FileType.SObject,
     buildOpenCommand: async (filePath, mode) => {
-      const metadataName = utils.parseMetadataNameFromFilePath(
-        filePath,
-        sf.FileType.SObject
-      );
-
-      if (!sf.isCustomSObjectName(metadataName)) {
-        // Standard object: skip query, build path directly
-        const path = utils.resolveMetadataPath({
-          filePath,
-          mode,
-          fileType: sf.FileType.SObject,
-          metadataName,
-          metadata: {
-            DeveloperName: sf.normalizeSObjectName(metadataName),
-          } as sf.SObject,
-        });
-
-        return factory.buildOpenPathCommand(path);
-      }
-
-      // Custom object: use full pipeline with fetch
       return factory.createOpenCommand(
         filePath,
         mode,
@@ -53,7 +32,6 @@ export async function open(
           metadataType: sf.FileType.SObject,
           fetchMetadata: (name, type, context) =>
             retriever.retrieveRecord(name, type, context),
-          skipDefaultCli: true,
         },
         context
       );
@@ -69,6 +47,5 @@ export function resolvePath(ctx: utils.PathContext): string {
   const recordId = ctx.metadata?.Id || ctx.metadata?.DeveloperName;
   if (!recordId) throw new Error("Missing SObject Id or API Name");
 
-  const action = ctx.mode === factory.OpenMode.EDIT ? "edit" : "view";
-  return `/lightning/setup/ObjectManager/${recordId}/${action}`;
+  return `/lightning/setup/ObjectManager/${recordId}/${factory.OpenMode}`;
 }

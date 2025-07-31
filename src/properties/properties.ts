@@ -19,9 +19,9 @@ export class Properties {
    * Whether to use the `sf` CLI to open metadata directly.
    * If disabled, the extension will query the org to resolve the record ID.
    */
-  static get useSfCommandToOpenMetadata(): boolean {
+  static get useOpenFileCommand(): boolean {
     return this.extensionConfig.get<boolean>(
-      "useSfCommandToOpenMetadata",
+      "useOpenFileCommandToOpenMetadata",
       true
     );
   }
