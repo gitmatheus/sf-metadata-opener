@@ -1,16 +1,6 @@
 {
   "explorer/context": [
     {
-      "command": "extension.openFlowInEditMode",
-      "when": "resourceFilename =~ /\\.flow-meta\\.xml$/",
-      "group": "z_commands"
-    },
-    {
-      "command": "extension.openFlowInViewMode",
-      "when": "resourceFilename =~ /\\.flow-meta\\.xml$/",
-      "group": "z_commands"
-    },
-    {
       "command": "extension.openBotInEditMode",
       "when": "resourceFilename =~ /\\.bot-meta\\.xml$/",
       "group": "z_commands"
@@ -18,6 +8,26 @@
     {
       "command": "extension.openBotInViewMode",
       "when": "resourceFilename =~ /\\.bot-meta\\.xml$/",
+      "group": "z_commands"
+    },
+    {
+      "command": "extension.openDashboardInEditMode",
+      "when": "resourceFilename =~ /\\.dashboard-meta\\.xml$/",
+      "group": "z_commands"
+    },
+    {
+      "command": "extension.openDashboardInViewMode",
+      "when": "resourceFilename =~ /\\.dashboard-meta\\.xml$/",
+      "group": "z_commands"
+    },
+    {
+      "command": "extension.openFlowInEditMode",
+      "when": "resourceFilename =~ /\\.flow-meta\\.xml$/",
+      "group": "z_commands"
+    },
+    {
+      "command": "extension.openFlowInViewMode",
+      "when": "resourceFilename =~ /\\.flow-meta\\.xml$/",
       "group": "z_commands"
     },
     {
@@ -31,16 +41,15 @@
       "group": "z_commands"
     },
     {
-      "command": "extension.openDashboardInEditMode",
-      "when": "resourceFilename =~ /\\.dashboard-meta\\.xml$/",
+      "command": "extension.openSObjectInEditMode",
+      "when": "resourceFilename =~ /\\.object-meta\\.xml$/",
       "group": "z_commands"
     },
     {
-      "command": "extension.openDashboardInViewMode",
-      "when": "resourceFilename =~ /\\.dashboard-meta\\.xml$/",
+      "command": "extension.openSObjectInViewMode",
+      "when": "resourceFilename =~ /\\.object-meta\\.xml$/",
       "group": "z_commands"
     },
-
     {
       "command": "extension.openValidationRuleInEditMode",
       "when": "resourceFilename =~ /\\.validationRule-meta\\.xml$/",
@@ -54,19 +63,27 @@
   ],
   "commandPalette": [
     {
-      "command": "extension.openFlowInEditMode",
-      "when": "false"
-    },
-    {
-      "command": "extension.openFlowInViewMode",
-      "when": "false"
-    },
-    {
       "command": "extension.openBotInEditMode",
       "when": "false"
     },
     {
       "command": "extension.openBotInViewMode",
+      "when": "false"
+    },
+    {
+      "command": "extension.openDashboardInEditMode",
+      "when": "false"
+    },
+    {
+      "command": "extension.openDashboardInViewMode",
+      "when": "false"
+    },
+    {
+      "command": "extension.openFlowInEditMode",
+      "when": "false"
+    },
+    {
+      "command": "extension.openFlowInViewMode",
       "when": "false"
     },
     {
@@ -78,11 +95,11 @@
       "when": "false"
     },
     {
-      "command": "extension.openDashboardInEditMode",
+      "command": "extension.openSObjectInEditMode",
       "when": "false"
     },
     {
-      "command": "extension.openDashboardInViewMode",
+      "command": "extension.openSObjectInViewMode",
       "when": "false"
     },
     {
