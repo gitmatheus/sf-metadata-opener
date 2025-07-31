@@ -12,7 +12,6 @@ export function registerHandlers(context: vscode.ExtensionContext) {
   return handlers.registerHandlers(open, context);
 }
 
-
 /**
  * Handles opening a ValidationRule from right-click or command palette.
  */
@@ -25,17 +24,34 @@ export async function open(
     filePath,
     mode,
     fileType: FileType.ValidationRule,
-    buildOpenCommand: (filePath, mode) =>
-      createOpenCommand(
-        filePath,
-        mode as OpenMode,
-        {
-          metadataType: FileType.ValidationRule,
-          fetchMetadata: (name, type, context) => retriever.retrieveRecord(name, type, context, resolveParentObjectName(filePath)),
-        },
-        context
-      ),
+    buildOpenCommand: getOpenCommandBuilder(context, filePath),
   });
+}
+
+/**
+ * Returns a function that builds the open command for this opener
+ */
+function getOpenCommandBuilder(
+  context: vscode.ExtensionContext,
+  filePath: string
+) {
+  return async (filePath: string, mode: OpenMode) => {
+    return createOpenCommand(
+      filePath,
+      mode,
+      {
+        metadataType: FileType.ValidationRule,
+        fetchMetadata: (name, type, ctx) =>
+          retriever.retrieveRecord(
+            name,
+            type,
+            ctx,
+            resolveParentObjectName(filePath)
+          ),
+      },
+      context
+    );
+  };
 }
 
 /**
@@ -54,14 +70,14 @@ export function resolvePath(ctx: utils.PathContext): string {
  * Resolves the parent object name from the file path.
  * Assumes the file path follows the pattern: `{ParentObjectName}/validationRules/{ValidationRuleName}.validationRule-meta.xml`
  */
-export function resolveParentObjectName(
-  filePath: string,
-): string {
+export function resolveParentObjectName(filePath: string): string {
   const match = filePath.match(/objects\/([^/]+)\/validationRules\//);
   const parentObjectName = match?.[1];
 
   if (!parentObjectName) {
-    throw new Error("Unable to determine validation rule's parent entity's name from file path");
+    throw new Error(
+      "Unable to determine validation rule's parent entity's name from file path"
+    );
   }
 
   return parentObjectName;

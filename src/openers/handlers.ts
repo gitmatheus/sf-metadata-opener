@@ -42,7 +42,7 @@ export async function openMetadata<T>({
 
   try {
     await utils.runShellCommand(openCommand);
-    utils.showInformationMessage(`Opened ${metadataLabel} via CLI`);
+    utils.showInformationMessage(`${metadataLabel} opened in the browser`);
   } catch (error: any) {
     utils.showErrorMessage(`Failed to open ${metadataLabel}: ${error.message}`);
   }

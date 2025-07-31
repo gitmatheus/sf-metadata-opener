@@ -24,19 +24,25 @@ export async function open(
     filePath,
     mode,
     fileType: sf.FileType.SObject,
-    buildOpenCommand: async (filePath, mode) => {
-      return factory.createOpenCommand(
-        filePath,
-        mode,
-        {
-          metadataType: sf.FileType.SObject,
-          fetchMetadata: (name, type, context) =>
-            retriever.retrieveRecord(name, type, context),
-        },
-        context
-      );
-    },
+    buildOpenCommand: getOpenCommandBuilder(context),
   });
+}
+
+/**
+ * Returns a function that builds the open command for this opener
+ */
+function getOpenCommandBuilder(context: vscode.ExtensionContext) {
+  return async (filePath: string, mode: factory.OpenMode) => {
+    return factory.createOpenCommand(
+      filePath,
+      mode,
+      {
+        metadataType: sf.FileType.SObject,
+        fetchMetadata: retriever.retrieveRecord,
+      },
+      context
+    );
+  };
 }
 
 /**
@@ -47,5 +53,6 @@ export function resolvePath(ctx: utils.PathContext): string {
   const recordId = ctx.metadata?.Id || ctx.metadata?.DeveloperName;
   if (!recordId) throw new Error("Missing SObject Id or API Name");
 
-  return `/lightning/setup/ObjectManager/${recordId}/${factory.OpenMode}`;
+  const action = ctx.mode === factory.OpenMode.EDIT ? "edit" : "view";
+  return `/lightning/setup/ObjectManager/${recordId}/${action}`;
 }

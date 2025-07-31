@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 import { FileType } from "../../salesforce";
-import { retrieve } from "../../salesforce/data/retriever";
+import { retrieve } from "../../salesforce/data/service";
 import { Report } from "../../salesforce";
 
 /**

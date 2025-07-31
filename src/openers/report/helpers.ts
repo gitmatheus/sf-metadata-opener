@@ -24,17 +24,25 @@ export async function open(
     filePath,
     mode,
     fileType: FileType.Report,
-    buildOpenCommand: (filePath, mode) =>
-      createOpenCommand(
-        filePath,
-        mode as OpenMode,
-        {
-          metadataType: FileType.Report,
-          fetchMetadata: retriever.retrieveRecord,
-        },
-        context
-      ),
+    buildOpenCommand: getOpenCommandBuilder(context),
   });
+}
+
+/**
+ * Returns a function that builds the open command for this opener
+ */
+function getOpenCommandBuilder(context: vscode.ExtensionContext) {
+  return async (filePath: string, mode: OpenMode) => {
+    return createOpenCommand(
+      filePath,
+      mode,
+      {
+        metadataType: FileType.Report,
+        fetchMetadata: retriever.retrieveRecord,
+      },
+      context
+    );
+  };
 }
 
 /**

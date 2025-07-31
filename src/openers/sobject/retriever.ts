@@ -18,11 +18,20 @@ export async function retrieveRecord(
     } as sf.SObject;
   }
 
+  // For custom objects, we need to nomalize the API Name
+  const normalizedMetadataName = sf.normalizeSObjectName(metadataName);
+
   const result = await sf.retrieve<sf.SObject>({
-    metadataName,
+    metadataName: normalizedMetadataName,
     metadataType,
-    getCommand: (name) =>
-      `sf data get record --use-tooling-api --sobject CustomObject --where "DeveloperName='${name}'" --json`,
+    getCommand: (name) => `
+      sf data query --use-tooling-api --query "
+        SELECT Id,
+               DeveloperName,
+               NamespacePrefix
+          FROM CustomObject
+         WHERE DeveloperName = '${name}'
+         LIMIT 1" --json`,
     parseResult: (data) => {
       const record = data?.result?.records?.[0];
       if (record?.Id) {

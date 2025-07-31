@@ -23,7 +23,7 @@ const RUN_MODE_SUPPORTED_TYPES = new Set([
 ]);
 
 /**
- * Handles opening a Flow file (right-click or command palette)
+ * Handles opening a Flow file (right-click or command palette).
  */
 export async function open(
   filePath: string,
@@ -45,18 +45,26 @@ export async function open(
     filePath,
     mode,
     fileType: FileType.Flow,
-    buildOpenCommand: (filePath, mode) =>
-      createOpenCommand(
-        filePath,
-        mode as OpenMode,
-        {
-          metadataType: FileType.Flow,
-          fetchMetadata: retriever.retrieveRecord,
-          canUseOpenFileCommand: true, // Flows can use the default open file sf command
-        },
-        context
-      ),
+    buildOpenCommand: getOpenCommandBuilder(context),
   });
+}
+
+/**
+ * Returns a function that builds the open command for this opener
+ */
+function getOpenCommandBuilder(context: vscode.ExtensionContext) {
+  return async (filePath: string, mode: OpenMode) => {
+    return createOpenCommand(
+      filePath,
+      mode,
+      {
+        metadataType: FileType.Flow,
+        fetchMetadata: retriever.retrieveRecord,
+        canUseOpenFileCommand: true, // Flows can use the default open file sf command
+      },
+      context
+    );
+  };
 }
 
 /**

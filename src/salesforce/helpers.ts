@@ -54,20 +54,6 @@ export async function buildOpenFileCommand(
 }
 
 /**
- * Strips common Salesforce custom suffixes from object or field names.
- * Handles: __c, __r, __x, __mdt
- */
-export function stripSalesforceSuffix(name: string): string {
-  const suffixes = ["__c", "__r", "__x", "__mdt"];
-  for (const suffix of suffixes) {
-    if (name.endsWith(suffix)) {
-      return name.slice(0, -suffix.length);
-    }
-  }
-  return name;
-}
-
-/**
  * Custom Salesforce object regex, to match suffixes
  */
 export const customObjectRegex = /^(.+)(__[a-z]+)$/i;
@@ -80,7 +66,7 @@ export function isCustomSObjectName(name: string): boolean {
 }
 
 /**
- * Normalizes the SObject name by stripping the custom suffix (e.g., __c, __x).
+ * Normalizes the SObject name by stripping the custom suffix (e.g., __c, __r, __x, __mdt).
  */
 export function normalizeSObjectName(developerName: string): string {
   if (isCustomSObjectName(developerName)) {

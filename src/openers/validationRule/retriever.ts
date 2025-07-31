@@ -1,7 +1,5 @@
 import * as vscode from "vscode";
-import { FileType, stripSalesforceSuffix } from "../../salesforce";
-import { retrieve } from "../../salesforce/data/retriever";
-import { ValidationRule } from "../../salesforce";
+import * as sf from "../../salesforce";
 
 /**
  * Queries Salesforce to get the Validation Rule metadata using Tooling API.
@@ -9,13 +7,13 @@ import { ValidationRule } from "../../salesforce";
  */
 export async function retrieveRecord(
   metadataName: string,
-  metadataType: FileType,
+  metadataType: sf.FileType,
   context: vscode.ExtensionContext,
   parentObjectName: string
-): Promise<ValidationRule | null> {
+): Promise<sf.ValidationRule | null> {
   // Ensure the parent object name is stripped of any Salesforce suffixes
-  const entityDefinitionName = stripSalesforceSuffix(parentObjectName);
-  const result = await retrieve<ValidationRule>({
+  const entityDefinitionName = sf.normalizeSObjectName(parentObjectName);
+  const result = await sf.retrieve<sf.ValidationRule>({
     metadataName,
     metadataType,
     getCommand: (name) => `

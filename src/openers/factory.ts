@@ -53,8 +53,8 @@ export async function createOpenCommand<T>(
   options: {
     metadataType: sf.FileType;
     fetchMetadata: (
-      metadataName: string,
-      metadataType: sf.FileType,
+      name: string,
+      type: sf.FileType,
       context: vscode.ExtensionContext
     ) => Promise<T | null>;
     canUseOpenFileCommand?: boolean;
@@ -67,29 +67,62 @@ export async function createOpenCommand<T>(
     canUseOpenFileCommand = false,
   } = options;
 
-  const useOpenFileCommand =
-    canUseOpenFileCommand && AllowOpenFileMode[mode as OpenMode];
-  if (Properties.useOpenFileCommand && useOpenFileCommand) {
+  // Check if we can use the simpler `sf open file` command based on mode and settings
+  if (shouldUseOpenFileCommand(mode, canUseOpenFileCommand)) {
     return sf.buildOpenFileCommand(filePath);
   }
 
-  const metadataName = utils.parseMetadataNameFromFilePath(
-    filePath,
-    metadataType
-  );
-  const metadata = await fetchMetadata(metadataName, metadataType, context);
+  // Extract the metadata name from the file path
+  const metadataName = getMetadataName(filePath, metadataType);
 
+  // Fetch the metadata details using the provided fetch function
+  const metadata = await fetchMetadata(metadataName, metadataType, context);
   if (!metadata) return null;
 
-  const path = utils.resolveMetadataPath({
+  // Build the full browser path to open based on metadata
+  const path = buildMetadataPath(
     filePath,
     mode,
-    fileType: metadataType,
+    metadataType,
     metadataName,
+    metadata
+  );
+
+  // Return the complete CLI command to open the metadata in the browser
+  return buildOpenPathCommand(path);
+}
+
+/**
+ * Returns true if the `sf open file` command can be used for the given mode.
+ */
+function shouldUseOpenFileCommand(mode: OpenMode, allowed: boolean): boolean {
+  return Properties.useOpenFileCommand && allowed && AllowOpenFileMode[mode];
+}
+
+/**
+ * Extracts the metadata name from the file path, based on metadata type.
+ */
+function getMetadataName(filePath: string, type: sf.FileType): string {
+  return utils.parseMetadataNameFromFilePath(filePath, type);
+}
+
+/**
+ * Resolves the browser path using metadata context and provided file info.
+ */
+function buildMetadataPath<T>(
+  filePath: string,
+  mode: OpenMode,
+  type: sf.FileType,
+  name: string,
+  metadata: T
+): string {
+  return utils.resolveMetadataPath({
+    filePath,
+    mode,
+    fileType: type,
+    metadataName: name,
     metadata,
   });
-
-  return buildOpenPathCommand(path);
 }
 
 /**
