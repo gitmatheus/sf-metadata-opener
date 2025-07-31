@@ -38,7 +38,7 @@ export async function retrieve<T>({
     async (progress) => {
       try {
         progress.report({
-          message: `Retrieving record info for ${metadataLabel}: "${metadataName}"`,
+          message: `Retrieving ${metadataLabel} information: "${metadataName}"`,
         });
 
         const command = getCommand(utils.sanitizeName(metadataName));
