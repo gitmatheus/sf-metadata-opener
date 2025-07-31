@@ -44,7 +44,7 @@ export async function open(
         mode as OpenMode,
         {
           metadataType: FileType.Flow,
-          fetchMetadata: metadata.getMetadataInfo,
+          fetchMetadata: metadata.retrieveRecord,
         },
         context
       ),

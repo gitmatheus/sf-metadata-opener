@@ -23,7 +23,7 @@ export async function open(
         mode as OpenMode,
         {
           metadataType: FileType.ValidationRule,
-          fetchMetadata: (name, type, context) => metadata.getMetadataInfo(name, type, context, resolveParentObjectName(filePath)),
+          fetchMetadata: (name, type, context) => metadata.retrieveRecord(name, type, context, resolveParentObjectName(filePath)),
           skipDefaultCli: true, // Validation Rules should always use the custom open command
         },
         context

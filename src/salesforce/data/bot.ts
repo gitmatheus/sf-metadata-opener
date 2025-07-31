@@ -7,7 +7,7 @@ import { Bot, BotVersion, BotMetadataWrapper } from "..";
  * Retrieves the BotDefinition and latest BotVersion from Salesforce for the given bot name.
  * Always queries the org live (no caching).
  */
-export async function getMetadataInfo(
+export async function retrieveRecord(
   metadataName: string,
   metadataType: FileType,
   context: vscode.ExtensionContext

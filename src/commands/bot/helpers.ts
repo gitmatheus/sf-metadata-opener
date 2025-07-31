@@ -23,7 +23,7 @@ export async function open(
         mode as OpenMode,
         {
           metadataType: FileType.Bot,
-          fetchMetadata: metadata.getMetadataInfo,
+          fetchMetadata: metadata.retrieveRecord,
         },
         context
       ),

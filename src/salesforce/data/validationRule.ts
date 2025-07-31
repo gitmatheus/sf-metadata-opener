@@ -7,7 +7,7 @@ import { ValidationRule } from "..";
  * Queries Salesforce to get the Validation Rule metadata using the standard API.
  * Caches the record ID if caching is enabled.
  */
-export async function getMetadataInfo(
+export async function retrieveRecord(
   metadataName: string,
   metadataType: FileType,
   context: vscode.ExtensionContext,

@@ -23,7 +23,7 @@ export async function open(
         mode as OpenMode,
         {
           metadataType: FileType.Dashboard,
-          fetchMetadata: metadata.getMetadataInfo,
+          fetchMetadata: metadata.retrieveRecord,
           skipDefaultCli: true, // This metadata should always use the custom open command
         },
         context

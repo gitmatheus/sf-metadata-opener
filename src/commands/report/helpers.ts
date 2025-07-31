@@ -23,7 +23,7 @@ export async function open(
         mode as OpenMode,
         {
           metadataType: FileType.Report,
-          fetchMetadata: metadata.getMetadataInfo,
+          fetchMetadata: metadata.retrieveRecord,
           skipDefaultCli: true, // Reports should always use the custom open command
         },
         context

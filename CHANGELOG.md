@@ -57,7 +57,7 @@ All notable changes to this project will be documented here.
   - Command Palette equivalents also available.
 
 - 📁 New `src/commands/report/` folder added for Report-specific logic.
-- 🧠 `getMetadataInfo()` for reports queries the `Report` object using standard REST API, not Tooling.
+- 🧠 `retrieveRecord()` for reports queries the `Report` object using standard REST API, not Tooling.
 - 🔗 `resolvePath()` for Reports constructs direct ID-based Lightning URLs.
 - ⚙️ `skipDefaultCli` flag added to `createOpenCommand()` to force ID-based opening (used by Reports).
 

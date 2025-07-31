@@ -7,7 +7,7 @@ import { Flow } from "..";
  * Queries Salesforce to get the latest Flow version info by flow name.
  * This function supports optional caching if enabled by the user.
  */
-export async function getMetadataInfo(
+export async function retrieveRecord(
   metadataName: string,
   metadataType: FileType,
   context: vscode.ExtensionContext
