@@ -1,10 +1,10 @@
 import * as vscode from "vscode";
 import { Properties } from "./properties";
-import * as bot from "./commands/bot";
-import * as flow from "./commands/flow";
-import * as report from "./commands/report";
-import * as dashboard from "./commands/dashboard";
-import * as validationRule from "./commands/validationRule";
+import * as bot from "./openers/bot";
+import * as flow from "./openers/flow";
+import * as report from "./openers/report";
+import * as dashboard from "./openers/dashboard";
+import * as validationRule from "./openers/validationRule";
 import { clearMetadataCache, displayMetadataCache } from "./salesforce/data/cache";
 
 // This method is called when your extension is activated
