@@ -13,10 +13,6 @@ export async function open(
   mode: OpenMode,
   context: vscode.ExtensionContext
 ): Promise<void> {
-  
-  // Resolve the parent object name from the file path
-  const parentObjectName = resolveParentObjectName(filePath); 
-
   return handlers.openMetadata({
     filePath,
     mode,
@@ -27,7 +23,7 @@ export async function open(
         mode as OpenMode,
         {
           metadataType: FileType.ValidationRule,
-          fetchMetadata: (name, type, context) => metadata.getMetadataInfo(name, type, context, parentObjectName),
+          fetchMetadata: (name, type, context) => metadata.getMetadataInfo(name, type, context, resolveParentObjectName(filePath)),
           skipDefaultCli: true, // Validation Rules should always use the custom open command
         },
         context
