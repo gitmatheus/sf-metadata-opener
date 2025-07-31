@@ -19,7 +19,10 @@ export async function openMetadata<T>({
   filePath: string;
   mode: OpenMode;
   fileType: sf.FileType;
-  buildOpenCommand: (filePath: string, mode: OpenMode) => Promise<string | null>;
+  buildOpenCommand: (
+    filePath: string,
+    mode: OpenMode
+  ) => Promise<string | null>;
 }): Promise<void> {
   const metadataLabel = sf.MetadataLabels[fileType] ?? fileType;
 
@@ -50,7 +53,11 @@ export async function openMetadata<T>({
  * Used to avoid duplicate `open.ts` files for each metadata module.
  */
 export function registerOpenHandlers(
-  openFn: (filePath: string, mode: OpenMode, context: vscode.ExtensionContext) => Promise<void>,
+  openFn: (
+    filePath: string,
+    mode: OpenMode,
+    context: vscode.ExtensionContext
+  ) => Promise<void>,
   context: vscode.ExtensionContext
 ) {
   return {
@@ -68,3 +75,20 @@ export function registerOpenHandlers(
   };
 }
 
+// Export the handlers
+export function registerHandlers(
+  openFn: (
+    filePath: string,
+    mode: OpenMode,
+    context: vscode.ExtensionContext
+  ) => Promise<void>,
+  context: vscode.ExtensionContext
+) {
+  const handlers = registerOpenHandlers(openFn, context);
+  return {
+    openInEditMode: handlers.inEditMode,
+    openInViewMode: handlers.inViewMode,
+    openFileInEditMode: handlers.currentInEditMode,
+    openFileInViewMode: handlers.currentInViewMode,
+  };
+}

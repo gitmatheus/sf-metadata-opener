@@ -6,6 +6,14 @@ import { FileType } from "../../salesforce";
 import { createOpenCommand, OpenMode } from "../factory";
 
 /**
+ * Registers the open handlers for the extension context
+ */
+export function registerHandlers(context: vscode.ExtensionContext) {
+  return handlers.registerHandlers(open, context);
+}
+
+
+/**
  * Handles opening a ValidationRule from right-click or command palette.
  */
 export async function open(

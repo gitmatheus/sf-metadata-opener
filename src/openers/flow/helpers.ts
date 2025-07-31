@@ -8,6 +8,13 @@ import { createOpenCommand, OpenMode } from "../factory";
 import { FileType } from "../../salesforce";
 
 /**
+ * Registers the open handlers for the extension context
+ */
+export function registerHandlers(context: vscode.ExtensionContext) {
+  return handlers.registerHandlers(open, context);
+}
+
+/**
  * Supported Flow types for View Mode
  */
 const RUN_MODE_SUPPORTED_TYPES = new Set([
