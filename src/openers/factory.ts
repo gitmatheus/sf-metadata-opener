@@ -84,5 +84,12 @@ export async function createOpenCommand<T>(
     metadata,
   });
 
+  return buildOpenPathCommand(path);
+}
+
+/**
+ * Build the open command to open the path in the org
+ */
+export function buildOpenPathCommand(path: string): string {
   return `sf org open --path "${path}"`;
 }

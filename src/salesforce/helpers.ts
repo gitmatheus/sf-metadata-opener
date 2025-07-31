@@ -66,3 +66,26 @@ export function stripSalesforceSuffix(name: string): string {
   }
   return name;
 }
+
+/**
+ * Custom Salesforce object regex, to match suffixes
+ */
+export const customObjectRegex = /^(.+)(__[a-z]+)$/i;
+
+/**
+ * Determines whether the given SObject name is custom.
+ */
+export function isCustomSObjectName(name: string): boolean {
+  return customObjectRegex.test(name);
+}
+
+/**
+ * Normalizes the SObject name by stripping the custom suffix (e.g., __c, __x).
+ */
+export function normalizeSObjectName(developerName: string): string {
+  if (isCustomSObjectName(developerName)) {
+    return developerName.replace(customObjectRegex, "");
+  }
+
+  return developerName;
+}

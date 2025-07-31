@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import * as metadata from "./retriever";
+import * as retriever from "./retriever";
 import * as utils from "../../utils";
 import * as fs from "fs/promises";
 import * as xml2js from "xml2js";
@@ -51,7 +51,7 @@ export async function open(
         mode as OpenMode,
         {
           metadataType: FileType.Flow,
-          fetchMetadata: metadata.retrieveRecord,
+          fetchMetadata: retriever.retrieveRecord,
         },
         context
       ),

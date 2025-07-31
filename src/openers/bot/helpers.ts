@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import * as metadata from "./retriever";
+import * as retriever from "./retriever";
 import * as handlers from "../handlers";
 import * as utils from "../../utils";
 import { FileType } from "../../salesforce";
@@ -30,7 +30,7 @@ export async function open(
         mode as OpenMode,
         {
           metadataType: FileType.Bot,
-          fetchMetadata: metadata.retrieveRecord,
+          fetchMetadata: retriever.retrieveRecord,
         },
         context
       ),

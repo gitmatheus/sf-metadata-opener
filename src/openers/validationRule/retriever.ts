@@ -4,7 +4,7 @@ import { retrieve } from "../../salesforce/data/retriever";
 import { ValidationRule } from "../../salesforce";
 
 /**
- * Queries Salesforce to get the Validation Rule metadata using the standard API.
+ * Queries Salesforce to get the Validation Rule metadata using Tooling API.
  * Caches the record ID if caching is enabled.
  */
 export async function retrieveRecord(

@@ -2,24 +2,26 @@
  * File extensions for Salesforce metadata types supported by the extension.
  */
 export const FileType = {
-  Flow: ".flow-meta.xml",
   Bot: ".bot-meta.xml",
-  Report: ".report-meta.xml",
   Dashboard: ".dashboard-meta.xml",
-  ValidationRule: ".validationRule-meta.xml",
+  Flow: ".flow-meta.xml",  
+  Report: ".report-meta.xml",  
   Other: ".other-meta.xml",
+  SObject: ".object-meta.xml",
+  ValidationRule: ".validationRule-meta.xml",
 };
 
 /**
  * Human-readable labels for each metadata type.
  */
 export const MetadataLabels: Record<FileType, string> = {
-  [FileType.Flow]: "Flow",
   [FileType.Bot]: "Agentforce Agent (Bot)",
-  [FileType.Report]: "Report",
+  [FileType.Flow]: "Flow",  
   [FileType.Dashboard]: "Dashboard",
-  [FileType.ValidationRule]: "Validation Rule",
+  [FileType.Report]: "Report",   
   [FileType.Other]: "Metadata",
+  [FileType.SObject]: "SObject", 
+  [FileType.ValidationRule]: "Validation Rule",
 };
 
 /**
@@ -43,14 +45,6 @@ export interface Bot extends MetadataRecord {
 }
 
 /**
- * Interface representing the metadata of a Bot (Agentforce Agent) version retrieved from Salesforce
- */
-export interface BotVersion extends MetadataRecord {
-  Status?: string;
-  VersionNumber?: number;
-}
-
-/**
  * Compound metadata type for Bot + Version
  */
 export interface BotMetadataWrapper {
@@ -59,10 +53,34 @@ export interface BotMetadataWrapper {
 }
 
 /**
+ * Interface representing the metadata of a Bot (Agentforce Agent) version retrieved from Salesforce
+ */
+export interface BotVersion extends MetadataRecord {
+  Status?: string;
+  VersionNumber?: number;
+}
+
+/**
+ * Interface representing the metadata of a Dashboard retrieved from Salesforce
+ */
+export interface Dashboard extends MetadataRecord {
+  DeveloperName?: string;
+  FolderName?: string;
+}
+
+/**
  * Interface representing the metadata of a Flow retrieved from Salesforce
  */
 export interface Flow extends MetadataRecord {
   ProcessType?: string;
+}
+
+/**
+ * Interface representing the metadata of an Object retrieved from Salesforce
+ */
+export interface SObject extends MetadataRecord {
+  DeveloperName?: string;
+  NamespacePrefix?: string;
 }
 
 /**
@@ -75,14 +93,6 @@ export interface Report extends MetadataRecord {
 }
 
 /**
- * Interface representing the metadata of a Dashboard retrieved from Salesforce
- */
-export interface Dashboard extends MetadataRecord {
-  DeveloperName?: string;
-  FolderName?: string;
-}
-
-/**
  * Interface representing the metadata of a Validation Rule retrieved from Salesforce
  */
 export interface ValidationRule extends MetadataRecord {
@@ -91,7 +101,7 @@ export interface ValidationRule extends MetadataRecord {
   EntityDefinitionId?: string;
   ErrorMessage?: string;
   Active?: boolean;
-  ParentObjectName?: string; 
+  ParentObjectName?: string;
 }
 
 /**
