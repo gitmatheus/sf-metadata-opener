@@ -1,9 +1,7 @@
 import * as vscode from "vscode";
-import { FileType } from "../../salesforce";
+import { FileType, stripSalesforceSuffix } from "../../salesforce";
 import { retrieve } from "./retriever";
 import { ValidationRule } from "..";
-import entities from "../../salesforce/model/entities.json";
-import * as utils from "../../utils";
 
 /**
  * Queries Salesforce to get the Validation Rule metadata using the standard API.
@@ -15,11 +13,8 @@ export async function getMetadataInfo(
   context: vscode.ExtensionContext,
   parentObjectName: string
 ): Promise<ValidationRule | null> {
-  const entityDefinitionId = await getEntityDefinitionIdFromName(
-    parentObjectName,
-    context
-  );
-
+  // Ensure the parent object name is stripped of any Salesforce suffixes
+  const entityDefinitionName = stripSalesforceSuffix(parentObjectName);
   const result = await retrieve<ValidationRule>({
     metadataName,
     metadataType,
@@ -33,7 +28,7 @@ export async function getMetadataInfo(
                EntityDefinitionId 
           FROM ValidationRule
          WHERE ValidationName = '${name}'
-           AND (EntityDefinitionId = '${parentObjectName}' OR EntityDefinitionId = '${entityDefinitionId}')
+           AND (EntityDefinitionId = '${parentObjectName}' OR EntityDefinition.DeveloperName = '${entityDefinitionName}')
          LIMIT 1" --json`,
     parseResult: (data) => {
       const record = data?.result?.records?.[0];
@@ -44,8 +39,6 @@ export async function getMetadataInfo(
           ValidationName: metadataName,
           ParentObjectName: parentObjectName,
           EntityDefinitionId: record.EntityDefinitionId,
-          ErrorMessage: record.ErrorMessage,
-          Active: record.Active,
         };
       }
       return null;
@@ -54,33 +47,4 @@ export async function getMetadataInfo(
   });
 
   return result;
-}
-
-/**
- * Retrieves the EntityDefinitionId for a given object name.
- * For standard objects included in the static `entities.json`, this returns the name directly.
- * For custom objects or unknown cases, it queries the org for the actual EntityDefinition record ID.
- */
-export async function getEntityDefinitionIdFromName(
-  name: string,
-  context: vscode.ExtensionContext
-): Promise<string> {
-  const isKnownStandard = entities.some(
-    (entity) => entity.QualifiedApiName === name
-  );
-
-  if (isKnownStandard) {
-    return name;
-  }
-
-  const result = await retrieve<string>({
-    metadataName: name,
-    metadataType: FileType.Other,
-    context,
-    getCommand: (qualifiedApiName) =>
-      `sf data query --query "SELECT DurableId FROM EntityDefinition WHERE QualifiedApiName = '${qualifiedApiName}' LIMIT 1" --json`,
-    parseResult: (data) => data?.result?.records?.[0]?.DurableId ?? null,
-  });
-
-  return result ?? name;
 }

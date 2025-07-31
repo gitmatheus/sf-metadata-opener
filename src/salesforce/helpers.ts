@@ -4,7 +4,7 @@ import * as constants from "../constants";
 
 /**
  * Deploys a specific metadata file to the default Salesforce org using the Salesforce CLI.
- * 
+ *
  * @param filePath - Absolute path to the metadata file to deploy (e.g., a .flow-meta.xml file).
  * @returns A boolean indicating whether the deployment was successful.
  */
@@ -17,10 +17,10 @@ export async function deployMetadata(filePath: string): Promise<boolean> {
     },
     async (progress) => {
       progress.report({
-          message: `Deploying the metadata ...`,
-        });
+        message: `Deploying the metadata ...`,
+      });
 
-        const deployCmd = `sf project deploy start --source-dir "${filePath}" --json`;
+      const deployCmd = `sf project deploy start --source-dir "${filePath}" --json`;
 
       try {
         const deployOutput = await utils.runShellCommand(deployCmd);
@@ -47,6 +47,22 @@ export async function deployMetadata(filePath: string): Promise<boolean> {
 /**
  * Builds the default `sf org open` command to launch a metadata in the browser.
  */
-export async function buildDefaultOpenCommand(filePath: string): Promise<string> {
-    return `sf org open --source-file ${filePath}`;
+export async function buildDefaultOpenCommand(
+  filePath: string
+): Promise<string> {
+  return `sf org open --source-file ${filePath}`;
+}
+
+/**
+ * Strips common Salesforce custom suffixes from object or field names.
+ * Handles: __c, __r, __x, __mdt
+ */
+export function stripSalesforceSuffix(name: string): string {
+  const suffixes = ["__c", "__r", "__x", "__mdt"];
+  for (const suffix of suffixes) {
+    if (name.endsWith(suffix)) {
+      return name.slice(0, -suffix.length);
+    }
+  }
+  return name;
 }

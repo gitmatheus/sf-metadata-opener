@@ -52,7 +52,7 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand("extension.clearMetadataCache", async () => {
       try {
         await clearMetadataCache(context);
-        vscode.window.showInformationMessage("✅ Metadata cache cleared.");
+        vscode.window.showInformationMessage("🧹✨ Metadata cache cleared.");
       } catch (err: any) {
         vscode.window.showErrorMessage(`Error clearing cache: ${err.message}`);
       }
