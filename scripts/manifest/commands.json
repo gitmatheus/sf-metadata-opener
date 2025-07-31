@@ -70,5 +70,22 @@
   {
     "command": "extension.displayMetadataCache",
     "title": "SFDX: Display Cached Record Metadata"
+  },
+
+  {
+    "command": "extension.openValidationRuleInEditMode",
+    "title": "SFDX: Open Validation Rule in Edit Mode"
+  },
+  {
+    "command": "extension.openValidationRuleInViewMode",
+    "title": "SFDX: Open Validation Rule in View Mode"
+  },
+  {
+    "command": "extension.openCurrentValidationRuleInEditMode",
+    "title": "SFDX: Open Current Validation Rule in Edit Mode"
+  },
+  {
+    "command": "extension.openCurrentValidationRuleInViewMode",
+    "title": "SFDX: Open Current Validation Rule in View Mode"
   }
 ]

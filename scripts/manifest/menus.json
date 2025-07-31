@@ -39,6 +39,17 @@
       "command": "extension.openDashboardInViewMode",
       "when": "resourceFilename =~ /\\.dashboard-meta\\.xml$/",
       "group": "z_commands"
+    },
+
+    {
+      "command": "extension.openValidationRuleInEditMode",
+      "when": "resourceFilename =~ /\\.validationRule-meta\\.xml$/",
+      "group": "z_commands"
+    },
+    {
+      "command": "extension.openValidationRuleInViewMode",
+      "when": "resourceFilename =~ /\\.validationRule-meta\\.xml$/",
+      "group": "z_commands"
     }
   ],
   "commandPalette": [
@@ -72,6 +83,14 @@
     },
     {
       "command": "extension.openDashboardInViewMode",
+      "when": "false"
+    },
+    {
+      "command": "extension.openValidationRuleInEditMode",
+      "when": "false"
+    },
+    {
+      "command": "extension.openValidationRuleInViewMode",
       "when": "false"
     }
   ]

@@ -14,5 +14,9 @@
   "onCommand:extension.openDashboardInEditMode",
   "onCommand:extension.openDashboardInViewMode",
   "onCommand:extension.openCurrentDashboardInEditMode",
-  "onCommand:extension.openCurrentDashboardInViewMode"
+  "onCommand:extension.openCurrentDashboardInViewMode",
+  "onCommand:extension.openValidationRuleInEditMode",
+  "onCommand:extension.openValidationRuleInViewMode",
+  "onCommand:extension.openCurrentValidationRuleInEditMode",
+  "onCommand:extension.openCurrentValidationRuleInViewMode"
 ]

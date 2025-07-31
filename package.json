@@ -139,6 +139,22 @@
       {
         "command": "extension.displayMetadataCache",
         "title": "SFDX: Display Cached Record Metadata"
+      },
+      {
+        "command": "extension.openValidationRuleInEditMode",
+        "title": "SFDX: Open Validation Rule in Edit Mode"
+      },
+      {
+        "command": "extension.openValidationRuleInViewMode",
+        "title": "SFDX: Open Validation Rule in View Mode"
+      },
+      {
+        "command": "extension.openCurrentValidationRuleInEditMode",
+        "title": "SFDX: Open Current Validation Rule in Edit Mode"
+      },
+      {
+        "command": "extension.openCurrentValidationRuleInViewMode",
+        "title": "SFDX: Open Current Validation Rule in View Mode"
       }
     ],
     "menus": {
@@ -182,6 +198,16 @@
           "command": "extension.openDashboardInViewMode",
           "when": "resourceFilename =~ /\\.dashboard-meta\\.xml$/",
           "group": "z_commands"
+        },
+        {
+          "command": "extension.openValidationRuleInEditMode",
+          "when": "resourceFilename =~ /\\.validationRule-meta\\.xml$/",
+          "group": "z_commands"
+        },
+        {
+          "command": "extension.openValidationRuleInViewMode",
+          "when": "resourceFilename =~ /\\.validationRule-meta\\.xml$/",
+          "group": "z_commands"
         }
       ],
       "commandPalette": [
@@ -216,6 +242,14 @@
         {
           "command": "extension.openDashboardInViewMode",
           "when": "false"
+        },
+        {
+          "command": "extension.openValidationRuleInEditMode",
+          "when": "false"
+        },
+        {
+          "command": "extension.openValidationRuleInViewMode",
+          "when": "false"
         }
       ]
     }
@@ -236,6 +270,10 @@
     "onCommand:extension.openDashboardInEditMode",
     "onCommand:extension.openDashboardInViewMode",
     "onCommand:extension.openCurrentDashboardInEditMode",
-    "onCommand:extension.openCurrentDashboardInViewMode"
+    "onCommand:extension.openCurrentDashboardInViewMode",
+    "onCommand:extension.openValidationRuleInEditMode",
+    "onCommand:extension.openValidationRuleInViewMode",
+    "onCommand:extension.openCurrentValidationRuleInEditMode",
+    "onCommand:extension.openCurrentValidationRuleInViewMode"
   ]
 }

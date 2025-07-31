@@ -4,6 +4,7 @@ import * as bot from "./commands/bot";
 import * as flow from "./commands/flow";
 import * as report from "./commands/report";
 import * as dashboard from "./commands/dashboard";
+import * as validationRule from "./commands/validationRule";
 import { clearMetadataCache, displayMetadataCache } from "./salesforce/data/cache";
 
 // This method is called when your extension is activated
@@ -13,6 +14,7 @@ export function activate(context: vscode.ExtensionContext) {
   const flowHandlers = flow.registerHandlers(context);
   const reportHandlers = report.registerHandlers(context);
   const dashboardHandlers = dashboard.registerHandlers(context);
+  const validationRuleHandlers = validationRule.registerHandlers(context);
 
   context.subscriptions.push(
     // Flow commands
@@ -38,6 +40,13 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand("extension.openDashboardInViewMode", dashboardHandlers.openInViewMode),
     vscode.commands.registerCommand("extension.openCurrentDashboardInEditMode", dashboardHandlers.openFileInEditMode),
     vscode.commands.registerCommand("extension.openCurrentDashboardInViewMode", dashboardHandlers.openFileInViewMode),
+
+    // Validation Rule commands
+    vscode.commands.registerCommand("extension.openValidationRuleInEditMode", validationRuleHandlers.openInEditMode),
+    vscode.commands.registerCommand("extension.openValidationRuleInViewMode", validationRuleHandlers.openInViewMode),
+    vscode.commands.registerCommand("extension.openCurrentValidationRuleInEditMode", validationRuleHandlers.openFileInEditMode),
+    vscode.commands.registerCommand("extension.openCurrentValidationRuleInViewMode", validationRuleHandlers.openFileInViewMode),
+
 
     // Metadata cache commands
     vscode.commands.registerCommand("extension.clearMetadataCache", async () => {
