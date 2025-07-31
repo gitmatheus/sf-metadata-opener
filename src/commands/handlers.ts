@@ -25,7 +25,7 @@ export async function openMetadata<T>({
 
   if (!filePath.endsWith(fileType)) {
     return utils.showWarningMessage(
-      `The selected file is not a valid ${metadataLabel} metadata file.`
+      `This file is not a valid ${metadataLabel} metadata file.`
     );
   }
 
