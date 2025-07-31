@@ -3,6 +3,7 @@ import { FileType } from "../../salesforce";
 import { retrieve } from "./retriever";
 import { ValidationRule } from "..";
 import entities from "../../salesforce/model/entities.json";
+import * as utils from "../../utils";
 
 /**
  * Queries Salesforce to get the Validation Rule metadata using the standard API.
@@ -12,27 +13,30 @@ export async function getMetadataInfo(
   metadataName: string,
   metadataType: FileType,
   context: vscode.ExtensionContext,
-  parentObjectName: string,
+  parentObjectName: string
 ): Promise<ValidationRule | null> {
-  const entityDefinitionId = await getEntityDefinitionIdFromName(parentObjectName, context);
+  const entityDefinitionId = await getEntityDefinitionIdFromName(
+    parentObjectName,
+    context
+  );
 
   const result = await retrieve<ValidationRule>({
     metadataName,
     metadataType,
     getCommand: (name) => `
-      sf data query --query "
+      sf data query --use-tooling-api --query "
         SELECT Id,
                FullName,
                ErrorMessage,
                Active,
                ValidationName,
-               EntityDefinitionId, 
+               EntityDefinitionId 
           FROM ValidationRule
          WHERE ValidationName = '${name}'
            AND (EntityDefinitionId = '${parentObjectName}' OR EntityDefinitionId = '${entityDefinitionId}')
          LIMIT 1" --json`,
     parseResult: (data) => {
-      const record = data?.result;
+      const record = data?.result?.records?.[0];
       if (record?.Id) {
         return {
           Id: record.Id,
@@ -74,8 +78,8 @@ export async function getEntityDefinitionIdFromName(
     metadataType: FileType.Other,
     context,
     getCommand: (qualifiedApiName) =>
-      `sf data query --query "SELECT Id FROM EntityDefinition WHERE QualifiedApiName = '${qualifiedApiName}' LIMIT 1" --json`,
-    parseResult: (data) => data?.result?.records?.[0]?.Id ?? null,
+      `sf data query --query "SELECT DurableId FROM EntityDefinition WHERE QualifiedApiName = '${qualifiedApiName}' LIMIT 1" --json`,
+    parseResult: (data) => data?.result?.records?.[0]?.DurableId ?? null,
   });
 
   return result ?? name;

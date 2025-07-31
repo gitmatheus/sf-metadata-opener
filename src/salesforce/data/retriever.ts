@@ -42,6 +42,10 @@ export async function retrieve<T>({
         });
 
         const command = getCommand(utils.sanitizeName(metadataName));
+
+        // ATTDEV
+          utils.showInformationMessage(`command: ${command}`);
+
         const output = await utils.runShellCommand(command);
         const json = JSON.parse(output);
 

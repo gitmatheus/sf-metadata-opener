@@ -19,7 +19,7 @@ export const MetadataLabels: Record<FileType, string> = {
   [FileType.Report]: "Report",
   [FileType.Dashboard]: "Dashboard",
   [FileType.ValidationRule]: "Validation Rule",
-  [FileType.Other]: "Other",
+  [FileType.Other]: "Metadata",
 };
 
 /**

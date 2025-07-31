@@ -1,5 +1,1000 @@
 [
   {
+    "DurableId": "Contract",
+    "DeveloperName": "Contract",
+    "QualifiedApiName": "Contract"
+  },
+  {
+    "DurableId": "Order",
+    "DeveloperName": "Order",
+    "QualifiedApiName": "Order"
+  },
+  {
+    "DurableId": "OrderItem",
+    "DeveloperName": "OrderItem",
+    "QualifiedApiName": "OrderItem"
+  },
+  {
+    "DurableId": "Activity",
+    "DeveloperName": "Activity",
+    "QualifiedApiName": "Activity"
+  },
+  {
+    "DurableId": "Asset",
+    "DeveloperName": "Asset",
+    "QualifiedApiName": "Asset"
+  },
+  {
+    "DurableId": "Account",
+    "DeveloperName": "Account",
+    "QualifiedApiName": "Account"
+  },
+  {
+    "DurableId": "Contact",
+    "DeveloperName": "Contact",
+    "QualifiedApiName": "Contact"
+  },
+  {
+    "DurableId": "Lead",
+    "DeveloperName": "Lead",
+    "QualifiedApiName": "Lead"
+  },
+  {
+    "DurableId": "Product2",
+    "DeveloperName": "Product2",
+    "QualifiedApiName": "Product2"
+  },
+  {
+    "DurableId": "Campaign",
+    "DeveloperName": "Campaign",
+    "QualifiedApiName": "Campaign"
+  },
+  {
+    "DurableId": "CampaignMember",
+    "DeveloperName": "CampaignMember",
+    "QualifiedApiName": "CampaignMember"
+  },
+  {
+    "DurableId": "Case",
+    "DeveloperName": "Case",
+    "QualifiedApiName": "Case"
+  },
+  {
+    "DurableId": "ContentVersion",
+    "DeveloperName": "ContentVersion",
+    "QualifiedApiName": "ContentVersion"
+  },
+  {
+    "DurableId": "EmailMessage",
+    "DeveloperName": "EmailMessage",
+    "QualifiedApiName": "EmailMessage"
+  },
+  {
+    "DurableId": "Event",
+    "DeveloperName": "Event",
+    "QualifiedApiName": "Event"
+  },
+  {
+    "DurableId": "Individual",
+    "DeveloperName": "Individual",
+    "QualifiedApiName": "Individual"
+  },
+  {
+    "DurableId": "Opportunity",
+    "DeveloperName": "Opportunity",
+    "QualifiedApiName": "Opportunity"
+  },
+  {
+    "DurableId": "OpportunityContactRole",
+    "DeveloperName": "OpportunityContactRole",
+    "QualifiedApiName": "OpportunityContactRole"
+  },
+  {
+    "DurableId": "OpportunityLineItem",
+    "DeveloperName": "OpportunityLineItem",
+    "QualifiedApiName": "OpportunityLineItem"
+  },
+  {
+    "DurableId": "PricebookEntry",
+    "DeveloperName": "PricebookEntry",
+    "QualifiedApiName": "PricebookEntry"
+  },
+  {
+    "DurableId": "Solution",
+    "DeveloperName": "Solution",
+    "QualifiedApiName": "Solution"
+  },
+  {
+    "DurableId": "Task",
+    "DeveloperName": "Task",
+    "QualifiedApiName": "Task"
+  },
+  {
+    "DurableId": "VoiceCall",
+    "DeveloperName": "VoiceCall",
+    "QualifiedApiName": "VoiceCall"
+  },
+  {
+    "DurableId": "User",
+    "DeveloperName": "User",
+    "QualifiedApiName": "User"
+  },
+  {
+    "DurableId": "WorkOrder",
+    "DeveloperName": "WorkOrder",
+    "QualifiedApiName": "WorkOrder"
+  },
+  {
+    "DurableId": "WorkOrderLineItem",
+    "DeveloperName": "WorkOrderLineItem",
+    "QualifiedApiName": "WorkOrderLineItem"
+  },
+  {
+    "DurableId": "ServiceAppointment",
+    "DeveloperName": "ServiceAppointment",
+    "QualifiedApiName": "ServiceAppointment"
+  },
+  {
+    "DurableId": "WorkType",
+    "DeveloperName": "WorkType",
+    "QualifiedApiName": "WorkType"
+  },
+  {
+    "DurableId": "ServiceResource",
+    "DeveloperName": "ServiceResource",
+    "QualifiedApiName": "ServiceResource"
+  },
+  {
+    "DurableId": "ServiceTerritory",
+    "DeveloperName": "ServiceTerritory",
+    "QualifiedApiName": "ServiceTerritory"
+  },
+  {
+    "DurableId": "ServiceTerritoryMember",
+    "DeveloperName": "ServiceTerritoryMember",
+    "QualifiedApiName": "ServiceTerritoryMember"
+  },
+  {
+    "DurableId": "ServiceResourceSkill",
+    "DeveloperName": "ServiceResourceSkill",
+    "QualifiedApiName": "ServiceResourceSkill"
+  },
+  {
+    "DurableId": "SkillRequirement",
+    "DeveloperName": "SkillRequirement",
+    "QualifiedApiName": "SkillRequirement"
+  },
+  {
+    "DurableId": "AssignedResource",
+    "DeveloperName": "AssignedResource",
+    "QualifiedApiName": "AssignedResource"
+  },
+  {
+    "DurableId": "OperatingHours",
+    "DeveloperName": "OperatingHours",
+    "QualifiedApiName": "OperatingHours"
+  },
+  {
+    "DurableId": "ResourceAbsence",
+    "DeveloperName": "ResourceAbsence",
+    "QualifiedApiName": "ResourceAbsence"
+  },
+  {
+    "DurableId": "TimeSlot",
+    "DeveloperName": "TimeSlot",
+    "QualifiedApiName": "TimeSlot"
+  },
+  {
+    "DurableId": "ResourcePreference",
+    "DeveloperName": "ResourcePreference",
+    "QualifiedApiName": "ResourcePreference"
+  },
+  {
+    "DurableId": "AccountBrand",
+    "DeveloperName": "AccountBrand",
+    "QualifiedApiName": "AccountBrand"
+  },
+  {
+    "DurableId": "AccountCleanInfo",
+    "DeveloperName": "AccountCleanInfo",
+    "QualifiedApiName": "AccountCleanInfo"
+  },
+  {
+    "DurableId": "Address",
+    "DeveloperName": "Address",
+    "QualifiedApiName": "Address"
+  },
+  {
+    "DurableId": "AssetRelationship",
+    "DeveloperName": "AssetRelationship",
+    "QualifiedApiName": "AssetRelationship"
+  },
+  {
+    "DurableId": "AssociatedLocation",
+    "DeveloperName": "AssociatedLocation",
+    "QualifiedApiName": "AssociatedLocation"
+  },
+  {
+    "DurableId": "ChannelProgram",
+    "DeveloperName": "ChannelProgram",
+    "QualifiedApiName": "ChannelProgram"
+  },
+  {
+    "DurableId": "ChannelProgramLevel",
+    "DeveloperName": "ChannelProgramLevel",
+    "QualifiedApiName": "ChannelProgramLevel"
+  },
+  {
+    "DurableId": "ChannelProgramMember",
+    "DeveloperName": "ChannelProgramMember",
+    "QualifiedApiName": "ChannelProgramMember"
+  },
+  {
+    "DurableId": "ContactCleanInfo",
+    "DeveloperName": "ContactCleanInfo",
+    "QualifiedApiName": "ContactCleanInfo"
+  },
+  {
+    "DurableId": "ContractLineItem",
+    "DeveloperName": "ContractLineItem",
+    "QualifiedApiName": "ContractLineItem"
+  },
+  {
+    "DurableId": "DandBCompany",
+    "DeveloperName": "DandBCompany",
+    "QualifiedApiName": "DandBCompany"
+  },
+  {
+    "DurableId": "DelegatedAccount",
+    "DeveloperName": "DelegatedAccount",
+    "QualifiedApiName": "DelegatedAccount"
+  },
+  {
+    "DurableId": "DuplicateRecordItem",
+    "DeveloperName": "DuplicateRecordItem",
+    "QualifiedApiName": "DuplicateRecordItem"
+  },
+  {
+    "DurableId": "DuplicateRecordSet",
+    "DeveloperName": "DuplicateRecordSet",
+    "QualifiedApiName": "DuplicateRecordSet"
+  },
+  {
+    "DurableId": "Entitlement",
+    "DeveloperName": "Entitlement",
+    "QualifiedApiName": "Entitlement"
+  },
+  {
+    "DurableId": "EntityMilestone",
+    "DeveloperName": "EntityMilestone",
+    "QualifiedApiName": "EntityMilestone"
+  },
+  {
+    "DurableId": "Idea",
+    "DeveloperName": "Idea",
+    "QualifiedApiName": "Idea"
+  },
+  {
+    "DurableId": "QuickText",
+    "DeveloperName": "QuickText",
+    "QualifiedApiName": "QuickText"
+  },
+  {
+    "DurableId": "UserServicePresence",
+    "DeveloperName": "UserServicePresence",
+    "QualifiedApiName": "UserServicePresence"
+  },
+  {
+    "DurableId": "AgentWork",
+    "DeveloperName": "AgentWork",
+    "QualifiedApiName": "AgentWork"
+  },
+  {
+    "DurableId": "LeadCleanInfo",
+    "DeveloperName": "LeadCleanInfo",
+    "QualifiedApiName": "LeadCleanInfo"
+  },
+  {
+    "DurableId": "Shipment",
+    "DeveloperName": "Shipment",
+    "QualifiedApiName": "Shipment"
+  },
+  {
+    "DurableId": "ReturnOrder",
+    "DeveloperName": "ReturnOrder",
+    "QualifiedApiName": "ReturnOrder"
+  },
+  {
+    "DurableId": "ReturnOrderLineItem",
+    "DeveloperName": "ReturnOrderLineItem",
+    "QualifiedApiName": "ReturnOrderLineItem"
+  },
+  {
+    "DurableId": "Location",
+    "DeveloperName": "Location",
+    "QualifiedApiName": "Location"
+  },
+  {
+    "DurableId": "ContactPointEmail",
+    "DeveloperName": "ContactPointEmail",
+    "QualifiedApiName": "ContactPointEmail"
+  },
+  {
+    "DurableId": "ContactPointPhone",
+    "DeveloperName": "ContactPointPhone",
+    "QualifiedApiName": "ContactPointPhone"
+  },
+  {
+    "DurableId": "ConsumptionSchedule",
+    "DeveloperName": "ConsumptionSchedule",
+    "QualifiedApiName": "ConsumptionSchedule"
+  },
+  {
+    "DurableId": "ConsumptionRate",
+    "DeveloperName": "ConsumptionRate",
+    "QualifiedApiName": "ConsumptionRate"
+  },
+  {
+    "DurableId": "ProductConsumptionSchedule",
+    "DeveloperName": "ProductConsumptionSchedule",
+    "QualifiedApiName": "ProductConsumptionSchedule"
+  },
+  {
+    "DurableId": "ServiceTerritoryWorkType",
+    "DeveloperName": "ServiceTerritoryWorkType",
+    "QualifiedApiName": "ServiceTerritoryWorkType"
+  },
+  {
+    "DurableId": "CardPaymentMethod",
+    "DeveloperName": "CardPaymentMethod",
+    "QualifiedApiName": "CardPaymentMethod"
+  },
+  {
+    "DurableId": "ContactPointAddress",
+    "DeveloperName": "ContactPointAddress",
+    "QualifiedApiName": "ContactPointAddress"
+  },
+  {
+    "DurableId": "ContactPointConsent",
+    "DeveloperName": "ContactPointConsent",
+    "QualifiedApiName": "ContactPointConsent"
+  },
+  {
+    "DurableId": "ContactPointTypeConsent",
+    "DeveloperName": "ContactPointTypeConsent",
+    "QualifiedApiName": "ContactPointTypeConsent"
+  },
+  {
+    "DurableId": "DataUseLegalBasis",
+    "DeveloperName": "DataUseLegalBasis",
+    "QualifiedApiName": "DataUseLegalBasis"
+  },
+  {
+    "DurableId": "DataUsePurpose",
+    "DeveloperName": "DataUsePurpose",
+    "QualifiedApiName": "DataUsePurpose"
+  },
+  {
+    "DurableId": "PaymentAuthorization",
+    "DeveloperName": "PaymentAuthorization",
+    "QualifiedApiName": "PaymentAuthorization"
+  },
+  {
+    "DurableId": "PaymentGroup",
+    "DeveloperName": "PaymentGroup",
+    "QualifiedApiName": "PaymentGroup"
+  },
+  {
+    "DurableId": "ProductCatalog",
+    "DeveloperName": "ProductCatalog",
+    "QualifiedApiName": "ProductCatalog"
+  },
+  {
+    "DurableId": "ProductCategory",
+    "DeveloperName": "ProductCategory",
+    "QualifiedApiName": "ProductCategory"
+  },
+  {
+    "DurableId": "ProductCategoryProduct",
+    "DeveloperName": "ProductCategoryProduct",
+    "QualifiedApiName": "ProductCategoryProduct"
+  },
+  {
+    "DurableId": "WebStore",
+    "DeveloperName": "WebStore",
+    "QualifiedApiName": "WebStore"
+  },
+  {
+    "DurableId": "AuthorizationForm",
+    "DeveloperName": "AuthorizationForm",
+    "QualifiedApiName": "AuthorizationForm"
+  },
+  {
+    "DurableId": "AuthorizationFormConsent",
+    "DeveloperName": "AuthorizationFormConsent",
+    "QualifiedApiName": "AuthorizationFormConsent"
+  },
+  {
+    "DurableId": "AuthorizationFormDataUse",
+    "DeveloperName": "AuthorizationFormDataUse",
+    "QualifiedApiName": "AuthorizationFormDataUse"
+  },
+  {
+    "DurableId": "AuthorizationFormText",
+    "DeveloperName": "AuthorizationFormText",
+    "QualifiedApiName": "AuthorizationFormText"
+  },
+  {
+    "DurableId": "BuyerGroup",
+    "DeveloperName": "BuyerGroup",
+    "QualifiedApiName": "BuyerGroup"
+  },
+  {
+    "DurableId": "CartDeliveryGroup",
+    "DeveloperName": "CartDeliveryGroup",
+    "QualifiedApiName": "CartDeliveryGroup"
+  },
+  {
+    "DurableId": "CartItem",
+    "DeveloperName": "CartItem",
+    "QualifiedApiName": "CartItem"
+  },
+  {
+    "DurableId": "FulfillmentOrder",
+    "DeveloperName": "FulfillmentOrder",
+    "QualifiedApiName": "FulfillmentOrder"
+  },
+  {
+    "DurableId": "FulfillmentOrderLineItem",
+    "DeveloperName": "FulfillmentOrderLineItem",
+    "QualifiedApiName": "FulfillmentOrderLineItem"
+  },
+  {
+    "DurableId": "Payment",
+    "DeveloperName": "Payment",
+    "QualifiedApiName": "Payment"
+  },
+  {
+    "DurableId": "PaymentGateway",
+    "DeveloperName": "PaymentGateway",
+    "QualifiedApiName": "PaymentGateway"
+  },
+  {
+    "DurableId": "PaymentLineInvoice",
+    "DeveloperName": "PaymentLineInvoice",
+    "QualifiedApiName": "PaymentLineInvoice"
+  },
+  {
+    "DurableId": "PaymentMethod",
+    "DeveloperName": "PaymentMethod",
+    "QualifiedApiName": "PaymentMethod"
+  },
+  {
+    "DurableId": "Refund",
+    "DeveloperName": "Refund",
+    "QualifiedApiName": "Refund"
+  },
+  {
+    "DurableId": "Shift",
+    "DeveloperName": "Shift",
+    "QualifiedApiName": "Shift"
+  },
+  {
+    "DurableId": "WebCart",
+    "DeveloperName": "WebCart",
+    "QualifiedApiName": "WebCart"
+  },
+  {
+    "DurableId": "WebStoreBuyerGroup",
+    "DeveloperName": "WebStoreBuyerGroup",
+    "QualifiedApiName": "WebStoreBuyerGroup"
+  },
+  {
+    "DurableId": "WebStoreCatalog",
+    "DeveloperName": "WebStoreCatalog",
+    "QualifiedApiName": "WebStoreCatalog"
+  },
+  {
+    "DurableId": "AssetStatePeriod",
+    "DeveloperName": "AssetStatePeriod",
+    "QualifiedApiName": "AssetStatePeriod"
+  },
+  {
+    "DurableId": "CartValidationOutput",
+    "DeveloperName": "CartValidationOutput",
+    "QualifiedApiName": "CartValidationOutput"
+  },
+  {
+    "DurableId": "CreditMemo",
+    "DeveloperName": "CreditMemo",
+    "QualifiedApiName": "CreditMemo"
+  },
+  {
+    "DurableId": "CreditMemoLine",
+    "DeveloperName": "CreditMemoLine",
+    "QualifiedApiName": "CreditMemoLine"
+  },
+  {
+    "DurableId": "FulfillmentOrderItemAdjustment",
+    "DeveloperName": "FulfillmentOrderItemAdjustment",
+    "QualifiedApiName": "FulfillmentOrderItemAdjustment"
+  },
+  {
+    "DurableId": "FulfillmentOrderItemTax",
+    "DeveloperName": "FulfillmentOrderItemTax",
+    "QualifiedApiName": "FulfillmentOrderItemTax"
+  },
+  {
+    "DurableId": "RefundLinePayment",
+    "DeveloperName": "RefundLinePayment",
+    "QualifiedApiName": "RefundLinePayment"
+  },
+  {
+    "DurableId": "AssetAction",
+    "DeveloperName": "AssetAction",
+    "QualifiedApiName": "AssetAction"
+  },
+  {
+    "DurableId": "AssetActionSource",
+    "DeveloperName": "AssetActionSource",
+    "QualifiedApiName": "AssetActionSource"
+  },
+  {
+    "DurableId": "CartTax",
+    "DeveloperName": "CartTax",
+    "QualifiedApiName": "CartTax"
+  },
+  {
+    "DurableId": "CommSubscription",
+    "DeveloperName": "CommSubscription",
+    "QualifiedApiName": "CommSubscription"
+  },
+  {
+    "DurableId": "CommSubscriptionChannelType",
+    "DeveloperName": "CommSubscriptionChannelType",
+    "QualifiedApiName": "CommSubscriptionChannelType"
+  },
+  {
+    "DurableId": "CommSubscriptionConsent",
+    "DeveloperName": "CommSubscriptionConsent",
+    "QualifiedApiName": "CommSubscriptionConsent"
+  },
+  {
+    "DurableId": "CommSubscriptionTiming",
+    "DeveloperName": "CommSubscriptionTiming",
+    "QualifiedApiName": "CommSubscriptionTiming"
+  },
+  {
+    "DurableId": "CreditMemoInvApplication",
+    "DeveloperName": "CreditMemoInvApplication",
+    "QualifiedApiName": "CreditMemoInvApplication"
+  },
+  {
+    "DurableId": "DigitalWallet",
+    "DeveloperName": "DigitalWallet",
+    "QualifiedApiName": "DigitalWallet"
+  },
+  {
+    "DurableId": "EngagementChannelType",
+    "DeveloperName": "EngagementChannelType",
+    "QualifiedApiName": "EngagementChannelType"
+  },
+  {
+    "DurableId": "FinanceBalanceSnapshot",
+    "DeveloperName": "FinanceBalanceSnapshot",
+    "QualifiedApiName": "FinanceBalanceSnapshot"
+  },
+  {
+    "DurableId": "FinanceTransaction",
+    "DeveloperName": "FinanceTransaction",
+    "QualifiedApiName": "FinanceTransaction"
+  },
+  {
+    "DurableId": "LegalEntity",
+    "DeveloperName": "LegalEntity",
+    "QualifiedApiName": "LegalEntity"
+  },
+  {
+    "DurableId": "Macro",
+    "DeveloperName": "Macro",
+    "QualifiedApiName": "Macro"
+  },
+  {
+    "DurableId": "PartnerFundAllocation",
+    "DeveloperName": "PartnerFundAllocation",
+    "QualifiedApiName": "PartnerFundAllocation"
+  },
+  {
+    "DurableId": "PartnerFundClaim",
+    "DeveloperName": "PartnerFundClaim",
+    "QualifiedApiName": "PartnerFundClaim"
+  },
+  {
+    "DurableId": "PartnerFundRequest",
+    "DeveloperName": "PartnerFundRequest",
+    "QualifiedApiName": "PartnerFundRequest"
+  },
+  {
+    "DurableId": "PartnerMarketingBudget",
+    "DeveloperName": "PartnerMarketingBudget",
+    "QualifiedApiName": "PartnerMarketingBudget"
+  },
+  {
+    "DurableId": "Pricebook2",
+    "DeveloperName": "Pricebook2",
+    "QualifiedApiName": "Pricebook2"
+  },
+  {
+    "DurableId": "Recommendation",
+    "DeveloperName": "Recommendation",
+    "QualifiedApiName": "Recommendation"
+  },
+  {
+    "DurableId": "SalesStore",
+    "DeveloperName": "SalesStore",
+    "QualifiedApiName": "SalesStore"
+  },
+  {
+    "DurableId": "Scorecard",
+    "DeveloperName": "Scorecard",
+    "QualifiedApiName": "Scorecard"
+  },
+  {
+    "DurableId": "ScorecardAssociation",
+    "DeveloperName": "ScorecardAssociation",
+    "QualifiedApiName": "ScorecardAssociation"
+  },
+  {
+    "DurableId": "ScorecardMetric",
+    "DeveloperName": "ScorecardMetric",
+    "QualifiedApiName": "ScorecardMetric"
+  },
+  {
+    "DurableId": "ServiceContract",
+    "DeveloperName": "ServiceContract",
+    "QualifiedApiName": "ServiceContract"
+  },
+  {
+    "DurableId": "SocialPersona",
+    "DeveloperName": "SocialPersona",
+    "QualifiedApiName": "SocialPersona"
+  },
+  {
+    "DurableId": "UserProvisioningRequest",
+    "DeveloperName": "UserProvisioningRequest",
+    "QualifiedApiName": "UserProvisioningRequest"
+  },
+  {
+    "DurableId": "MessagingEndUser",
+    "DeveloperName": "MessagingEndUser",
+    "QualifiedApiName": "MessagingEndUser"
+  },
+  {
+    "DurableId": "MessagingSession",
+    "DeveloperName": "MessagingSession",
+    "QualifiedApiName": "MessagingSession"
+  },
+  {
+    "DurableId": "RecordAction",
+    "DeveloperName": "RecordAction",
+    "QualifiedApiName": "RecordAction"
+  },
+  {
+    "DurableId": "ContactRequest",
+    "DeveloperName": "ContactRequest",
+    "QualifiedApiName": "ContactRequest"
+  },
+  {
+    "DurableId": "WorkTypeGroup",
+    "DeveloperName": "WorkTypeGroup",
+    "QualifiedApiName": "WorkTypeGroup"
+  },
+  {
+    "DurableId": "Image",
+    "DeveloperName": "Image",
+    "QualifiedApiName": "Image"
+  },
+  {
+    "DurableId": "WorkTypeGroupMember",
+    "DeveloperName": "WorkTypeGroupMember",
+    "QualifiedApiName": "WorkTypeGroupMember"
+  },
+  {
+    "DurableId": "Invoice",
+    "DeveloperName": "Invoice",
+    "QualifiedApiName": "Invoice"
+  },
+  {
+    "DurableId": "InvoiceLine",
+    "DeveloperName": "InvoiceLine",
+    "QualifiedApiName": "InvoiceLine"
+  },
+  {
+    "DurableId": "Promotion",
+    "DeveloperName": "Promotion",
+    "QualifiedApiName": "Promotion"
+  },
+  {
+    "DurableId": "PartyConsent",
+    "DeveloperName": "PartyConsent",
+    "QualifiedApiName": "PartyConsent"
+  },
+  {
+    "DurableId": "ActivationTarget",
+    "DeveloperName": "ActivationTarget",
+    "QualifiedApiName": "ActivationTarget"
+  },
+  {
+    "DurableId": "CartDeliveryGroupMethod",
+    "DeveloperName": "CartDeliveryGroupMethod",
+    "QualifiedApiName": "CartDeliveryGroupMethod"
+  },
+  {
+    "DurableId": "WorkPlan",
+    "DeveloperName": "WorkPlan",
+    "QualifiedApiName": "WorkPlan"
+  },
+  {
+    "DurableId": "WorkPlanTemplate",
+    "DeveloperName": "WorkPlanTemplate",
+    "QualifiedApiName": "WorkPlanTemplate"
+  },
+  {
+    "DurableId": "WorkPlanTemplateEntry",
+    "DeveloperName": "WorkPlanTemplateEntry",
+    "QualifiedApiName": "WorkPlanTemplateEntry"
+  },
+  {
+    "DurableId": "WorkStep",
+    "DeveloperName": "WorkStep",
+    "QualifiedApiName": "WorkStep"
+  },
+  {
+    "DurableId": "WorkStepTemplate",
+    "DeveloperName": "WorkStepTemplate",
+    "QualifiedApiName": "WorkStepTemplate"
+  },
+  {
+    "DurableId": "LocWaitlistMsgTemplate",
+    "DeveloperName": "LocWaitlistMsgTemplate",
+    "QualifiedApiName": "LocWaitlistMsgTemplate"
+  },
+  {
+    "DurableId": "LocationGroup",
+    "DeveloperName": "LocationGroup",
+    "QualifiedApiName": "LocationGroup"
+  },
+  {
+    "DurableId": "LocationGroupAssignment",
+    "DeveloperName": "LocationGroupAssignment",
+    "QualifiedApiName": "LocationGroupAssignment"
+  },
+  {
+    "DurableId": "LocationWaitlist",
+    "DeveloperName": "LocationWaitlist",
+    "QualifiedApiName": "LocationWaitlist"
+  },
+  {
+    "DurableId": "LocationWaitlistedParty",
+    "DeveloperName": "LocationWaitlistedParty",
+    "QualifiedApiName": "LocationWaitlistedParty"
+  },
+  {
+    "DurableId": "OperatingHoursHoliday",
+    "DeveloperName": "OperatingHoursHoliday",
+    "QualifiedApiName": "OperatingHoursHoliday"
+  },
+  {
+    "DurableId": "ProcessException",
+    "DeveloperName": "ProcessException",
+    "QualifiedApiName": "ProcessException"
+  },
+  {
+    "DurableId": "ProductAttribute",
+    "DeveloperName": "ProductAttribute",
+    "QualifiedApiName": "ProductAttribute"
+  },
+  {
+    "DurableId": "ProductAttributeSetProduct",
+    "DeveloperName": "ProductAttributeSetProduct",
+    "QualifiedApiName": "ProductAttributeSetProduct"
+  },
+  {
+    "DurableId": "ReturnOrderItemAdjustment",
+    "DeveloperName": "ReturnOrderItemAdjustment",
+    "QualifiedApiName": "ReturnOrderItemAdjustment"
+  },
+  {
+    "DurableId": "ReturnOrderItemTax",
+    "DeveloperName": "ReturnOrderItemTax",
+    "QualifiedApiName": "ReturnOrderItemTax"
+  },
+  {
+    "DurableId": "AlternativePaymentMethod",
+    "DeveloperName": "AlternativePaymentMethod",
+    "QualifiedApiName": "AlternativePaymentMethod"
+  },
+  {
+    "DurableId": "Coupon",
+    "DeveloperName": "Coupon",
+    "QualifiedApiName": "Coupon"
+  },
+  {
+    "DurableId": "FlowOrchestrationInstance",
+    "DeveloperName": "FlowOrchestrationInstance",
+    "QualifiedApiName": "FlowOrchestrationInstance"
+  },
+  {
+    "DurableId": "FlowOrchestrationStageInstance",
+    "DeveloperName": "FlowOrchestrationStageInstance",
+    "QualifiedApiName": "FlowOrchestrationStageInstance"
+  },
+  {
+    "DurableId": "FlowOrchestrationStepInstance",
+    "DeveloperName": "FlowOrchestrationStepInstance",
+    "QualifiedApiName": "FlowOrchestrationStepInstance"
+  },
+  {
+    "DurableId": "FlowOrchestrationWorkItem",
+    "DeveloperName": "FlowOrchestrationWorkItem",
+    "QualifiedApiName": "FlowOrchestrationWorkItem"
+  },
+  {
+    "DurableId": "LearningItem",
+    "DeveloperName": "LearningItem",
+    "QualifiedApiName": "LearningItem"
+  },
+  {
+    "DurableId": "PaymentAuthAdjustment",
+    "DeveloperName": "PaymentAuthAdjustment",
+    "QualifiedApiName": "PaymentAuthAdjustment"
+  },
+  {
+    "DurableId": "PromotionMarketSegment",
+    "DeveloperName": "PromotionMarketSegment",
+    "QualifiedApiName": "PromotionMarketSegment"
+  },
+  {
+    "DurableId": "PromotionQualifier",
+    "DeveloperName": "PromotionQualifier",
+    "QualifiedApiName": "PromotionQualifier"
+  },
+  {
+    "DurableId": "PromotionSegment",
+    "DeveloperName": "PromotionSegment",
+    "QualifiedApiName": "PromotionSegment"
+  },
+  {
+    "DurableId": "PromotionSegmentBuyerGroup",
+    "DeveloperName": "PromotionSegmentBuyerGroup",
+    "QualifiedApiName": "PromotionSegmentBuyerGroup"
+  },
+  {
+    "DurableId": "PromotionSegmentSalesStore",
+    "DeveloperName": "PromotionSegmentSalesStore",
+    "QualifiedApiName": "PromotionSegmentSalesStore"
+  },
+  {
+    "DurableId": "PromotionTarget",
+    "DeveloperName": "PromotionTarget",
+    "QualifiedApiName": "PromotionTarget"
+  },
+  {
+    "DurableId": "ShipmentItem",
+    "DeveloperName": "ShipmentItem",
+    "QualifiedApiName": "ShipmentItem"
+  },
+  {
+    "DurableId": "AppointmentTopicTimeSlot",
+    "DeveloperName": "AppointmentTopicTimeSlot",
+    "QualifiedApiName": "AppointmentTopicTimeSlot"
+  },
+  {
+    "DurableId": "CartItemPriceAdjustment",
+    "DeveloperName": "CartItemPriceAdjustment",
+    "QualifiedApiName": "CartItemPriceAdjustment"
+  },
+  {
+    "DurableId": "FlowOrchestrationLog",
+    "DeveloperName": "FlowOrchestrationLog",
+    "QualifiedApiName": "FlowOrchestrationLog"
+  },
+  {
+    "DurableId": "WebCartAdjustmentGroup",
+    "DeveloperName": "WebCartAdjustmentGroup",
+    "QualifiedApiName": "WebCartAdjustmentGroup"
+  },
+  {
+    "DurableId": "BusinessBrand",
+    "DeveloperName": "BusinessBrand",
+    "QualifiedApiName": "BusinessBrand"
+  },
+  {
+    "DurableId": "CaseRelatedIssue",
+    "DeveloperName": "CaseRelatedIssue",
+    "QualifiedApiName": "CaseRelatedIssue"
+  },
+  {
+    "DurableId": "ChangeRequest",
+    "DeveloperName": "ChangeRequest",
+    "QualifiedApiName": "ChangeRequest"
+  },
+  {
+    "DurableId": "ChangeRequestRelatedIssue",
+    "DeveloperName": "ChangeRequestRelatedIssue",
+    "QualifiedApiName": "ChangeRequestRelatedIssue"
+  },
+  {
+    "DurableId": "Customer",
+    "DeveloperName": "Customer",
+    "QualifiedApiName": "Customer"
+  },
+  {
+    "DurableId": "Incident",
+    "DeveloperName": "Incident",
+    "QualifiedApiName": "Incident"
+  },
+  {
+    "DurableId": "Problem",
+    "DeveloperName": "Problem",
+    "QualifiedApiName": "Problem"
+  },
+  {
+    "DurableId": "ProblemIncident",
+    "DeveloperName": "ProblemIncident",
+    "QualifiedApiName": "ProblemIncident"
+  },
+  {
+    "DurableId": "Seller",
+    "DeveloperName": "Seller",
+    "QualifiedApiName": "Seller"
+  },
+  {
+    "DurableId": "ChangeRequestRelatedItem",
+    "DeveloperName": "ChangeRequestRelatedItem",
+    "QualifiedApiName": "ChangeRequestRelatedItem"
+  },
+  {
+    "DurableId": "IncidentRelatedItem",
+    "DeveloperName": "IncidentRelatedItem",
+    "QualifiedApiName": "IncidentRelatedItem"
+  },
+  {
+    "DurableId": "ProblemRelatedItem",
+    "DeveloperName": "ProblemRelatedItem",
+    "QualifiedApiName": "ProblemRelatedItem"
+  },
+  {
+    "DurableId": "WebCartAdjustmentBasis",
+    "DeveloperName": "WebCartAdjustmentBasis",
+    "QualifiedApiName": "WebCartAdjustmentBasis"
+  },
+  {
+    "DurableId": "AppointmentInvitation",
+    "DeveloperName": "AppointmentInvitation",
+    "QualifiedApiName": "AppointmentInvitation"
+  },
+  {
+    "DurableId": "AppointmentInvitee",
+    "DeveloperName": "AppointmentInvitee",
+    "QualifiedApiName": "AppointmentInvitee"
+  },
+  {
+    "DurableId": "EngagementChannelWorkType",
+    "DeveloperName": "EngagementChannelWorkType",
+    "QualifiedApiName": "EngagementChannelWorkType"
+  },
+  {
+    "DurableId": "ShiftEngagementChannel",
+    "DeveloperName": "ShiftEngagementChannel",
+    "QualifiedApiName": "ShiftEngagementChannel"
+  },
+  {
+    "DurableId": "ShiftWorkTopic",
+    "DeveloperName": "ShiftWorkTopic",
+    "QualifiedApiName": "ShiftWorkTopic"
+  },
+  {
     "DurableId": "ContractHistory",
     "DeveloperName": "ContractHistory",
     "QualifiedApiName": "ContractHistory"
