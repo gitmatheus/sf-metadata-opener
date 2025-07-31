@@ -6,12 +6,6 @@ import { clearMetadataCache, displayMetadataCache } from "./salesforce/data/cach
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-  const botHandlers = bot.registerHandlers(context);
-  const flowHandlers = flow.registerHandlers(context);
-  const reportHandlers = report.registerHandlers(context);
-  const dashboardHandlers = dashboard.registerHandlers(context);
-  const validationRuleHandlers = validationRule.registerHandlers(context);
-
   // Openers commands per module
   const modules = [
     { name: "Bot", handlers: bot.registerHandlers(context) },
