@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 import { FileType } from "../../salesforce";
-import { retrieve } from "./retriever";
-import { Dashboard } from "..";
+import { retrieve } from "../../salesforce/data/retriever";
+import { Dashboard } from "../../salesforce";
 
 /**
  * Queries Salesforce to get the Dashboard metadata using the standard API.

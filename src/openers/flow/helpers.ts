@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import * as metadata from "../../salesforce/data/flow";
+import * as metadata from "./retriever";
 import * as utils from "../../utils";
 import * as fs from "fs/promises";
 import * as xml2js from "xml2js";

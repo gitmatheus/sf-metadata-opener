@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 import { FileType } from "../../salesforce";
-import { retrieve } from "./retriever";
-import { Bot, BotVersion, BotMetadataWrapper } from "..";
+import { retrieve } from "../../salesforce/data/retriever";
+import { Bot, BotVersion, BotMetadataWrapper } from "../../salesforce";
 
 /**
  * Retrieves the BotDefinition and latest BotVersion from Salesforce for the given bot name.

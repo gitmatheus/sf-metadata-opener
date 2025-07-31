@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 import { FileType } from "../../salesforce";
-import { retrieve } from "./retriever";
-import { Flow } from "..";
+import { retrieve } from "../../salesforce/data/retriever";
+import { Flow } from "../../salesforce";
 
 /**
  * Queries Salesforce to get the latest Flow version info by flow name.

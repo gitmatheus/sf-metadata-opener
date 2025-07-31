@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 import { FileType } from "../../salesforce";
-import { retrieve } from "./retriever";
-import { Report } from "..";
+import { retrieve } from "../../salesforce/data/retriever";
+import { Report } from "../../salesforce";
 
 /**
  * Queries Salesforce to get the Report metadata using the standard API.

@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 import { FileType, stripSalesforceSuffix } from "../../salesforce";
-import { retrieve } from "./retriever";
-import { ValidationRule } from "..";
+import { retrieve } from "../../salesforce/data/retriever";
+import { ValidationRule } from "../../salesforce";
 
 /**
  * Queries Salesforce to get the Validation Rule metadata using the standard API.
