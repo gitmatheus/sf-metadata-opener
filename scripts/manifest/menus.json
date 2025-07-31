@@ -1,7 +1,7 @@
 {
   "explorer/context": [
     {
-      "command": "extension.openFlowInBuilder",
+      "command": "extension.openFlowInEditMode",
       "when": "resourceFilename =~ /\\.flow-meta\\.xml$/",
       "group": "z_commands"
     },
@@ -54,7 +54,7 @@
   ],
   "commandPalette": [
     {
-      "command": "extension.openFlowInBuilder",
+      "command": "extension.openFlowInEditMode",
       "when": "false"
     },
     {

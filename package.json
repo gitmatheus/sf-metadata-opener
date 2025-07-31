@@ -69,7 +69,7 @@
     },
     "commands": [
       {
-        "command": "extension.openFlowInBuilder",
+        "command": "extension.openFlowInEditMode",
         "title": "SFDX: Open Flow in Flow Builder"
       },
       {
@@ -160,7 +160,7 @@
     "menus": {
       "explorer/context": [
         {
-          "command": "extension.openFlowInBuilder",
+          "command": "extension.openFlowInEditMode",
           "when": "resourceFilename =~ /\\.flow-meta\\.xml$/",
           "group": "z_commands"
         },
@@ -212,7 +212,7 @@
       ],
       "commandPalette": [
         {
-          "command": "extension.openFlowInBuilder",
+          "command": "extension.openFlowInEditMode",
           "when": "false"
         },
         {
@@ -255,7 +255,7 @@
     }
   },
   "activationEvents": [
-    "onCommand:extension.openFlowInBuilder",
+    "onCommand:extension.openFlowInEditMode",
     "onCommand:extension.openFlowInViewMode",
     "onCommand:extension.openCurrentFlowInEditMode",
     "onCommand:extension.openCurrentFlowInViewMode",

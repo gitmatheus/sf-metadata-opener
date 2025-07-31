@@ -1,6 +1,6 @@
 [
   {
-    "command": "extension.openFlowInBuilder",
+    "command": "extension.openFlowInEditMode",
     "title": "SFDX: Open Flow in Flow Builder"
   },
   {

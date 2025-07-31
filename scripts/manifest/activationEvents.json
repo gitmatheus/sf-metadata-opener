@@ -1,5 +1,5 @@
 [
-  "onCommand:extension.openFlowInBuilder",
+  "onCommand:extension.openFlowInEditMode",
   "onCommand:extension.openFlowInViewMode",
   "onCommand:extension.openCurrentFlowInEditMode",
   "onCommand:extension.openCurrentFlowInViewMode",
