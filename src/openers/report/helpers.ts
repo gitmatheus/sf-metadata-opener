@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import * as metadata from "./retriver";
+import * as metadata from "./retriever";
 import * as handlers from "../handlers";
 import * as utils from "../../utils";
 import { FileType } from "../../salesforce";

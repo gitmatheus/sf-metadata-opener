@@ -4,16 +4,16 @@
     "title": "SFDX: Open Flow in Flow Builder"
   },
   {
-    "command": "extension.openFlowInRunMode",
-    "title": "SFDX: Open Flow in Run Mode"
+    "command": "extension.openFlowInViewMode",
+    "title": "SFDX: Open Flow in View Mode"
   },
   {
     "command": "extension.openCurrentFlowInEditMode",
     "title": "SFDX: Open Current Flow in Flow Builder"
   },
   {
-    "command": "extension.openCurrentFlowInRunMode",
-    "title": "SFDX: Open Current Flow in Run Mode"
+    "command": "extension.openCurrentFlowInViewMode",
+    "title": "SFDX: Open Current Flow in View Mode"
   },
   {
     "command": "extension.openBotInEditMode",

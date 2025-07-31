@@ -19,9 +19,9 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
     // Flow commands
     vscode.commands.registerCommand("extension.openFlowInBuilder", flowHandlers.openInEditMode),
-    vscode.commands.registerCommand("extension.openFlowInRunMode", flowHandlers.openInRunMode),
+    vscode.commands.registerCommand("extension.openFlowInViewMode", flowHandlers.openInViewMode),
     vscode.commands.registerCommand("extension.openCurrentFlowInEditMode", flowHandlers.openFileInEditMode),
-    vscode.commands.registerCommand("extension.openCurrentFlowInRunMode", flowHandlers.openFileInRunMode),
+    vscode.commands.registerCommand("extension.openCurrentFlowInViewMode", flowHandlers.openFileInViewMode),
 
     // Bot commands
     vscode.commands.registerCommand("extension.openBotInEditMode", botHandlers.openInEditMode),

@@ -25,7 +25,7 @@ This extension enables rapid navigation from your VS Code workspace to your Sale
 - Command Palette integration
 - Auto-deploys your metadata before launching
 - Supports:
-  - **Flow Builder / Run Mode**
+  - **Flow Builder / View Mode**
   - **Agentforce Builder / Setup**
   - **Report View / Edit**
   - **Dashboard View / Edit**
@@ -40,13 +40,13 @@ This extension enables rapid navigation from your VS Code workspace to your Sale
 - **Right-click a `.flow-meta.xml`** file in the Explorer:
 
   - `SFDX: Open Flow in Flow Builder`
-  - `SFDX: Open Flow in Run Mode`
+  - `SFDX: Open Flow in View Mode`
 
 - **Use the Command Palette** with a `.flow-meta.xml` file active:
   - `SFDX: Open Current Flow in Flow Builder`
-  - `SFDX: Open Current Flow in Run Mode`
+  - `SFDX: Open Current Flow in View Mode`
 
-ℹ️ Run Mode is only available for supported Flow types (e.g., **Screen Flows**).
+ℹ️ View Mode is only available for supported Flow types (e.g., **Screen Flows**).
 
 ---
 

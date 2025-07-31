@@ -125,7 +125,7 @@ All notable changes to this project will be documented here.
 ### ⚙️ Changed
 
 - Logic split to conditionally skip deploy or metadata queries based on settings.
-- Improved flow handling for Run Mode with better type validation.
+- Improved flow handling for View Mode with better type validation.
 - `Properties` class added to centralize extension setting access.
 - Commands now reload configuration in real time via `onDidChangeConfiguration`.
 
@@ -141,7 +141,7 @@ All notable changes to this project will be documented here.
 
 ### 🚀 Initial Release
 
-- Open `.flow-meta.xml` in Flow Builder or Run Mode.
+- Open `.flow-meta.xml` in Flow Builder or View Mode.
 - Supports right-click menu and command palette.
 - Automatically deploys metadata before launch.
 - Queries latest Flow ID and handles screen flow type detection.

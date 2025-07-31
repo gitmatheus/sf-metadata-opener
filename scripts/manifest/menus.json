@@ -6,7 +6,7 @@
       "group": "z_commands"
     },
     {
-      "command": "extension.openFlowInRunMode",
+      "command": "extension.openFlowInViewMode",
       "when": "resourceFilename =~ /\\.flow-meta\\.xml$/",
       "group": "z_commands"
     },
@@ -58,7 +58,7 @@
       "when": "false"
     },
     {
-      "command": "extension.openFlowInRunMode",
+      "command": "extension.openFlowInViewMode",
       "when": "false"
     },
     {

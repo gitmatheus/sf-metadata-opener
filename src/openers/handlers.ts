@@ -56,7 +56,6 @@ export function registerOpenHandlers(
   return {
     inEditMode: (uri: vscode.Uri) => openFn(uri.fsPath, OpenMode.EDIT, context),
     inViewMode: (uri: vscode.Uri) => openFn(uri.fsPath, OpenMode.VIEW, context),
-    inRunMode: (uri: vscode.Uri) => openFn(uri.fsPath, OpenMode.RUN, context),
 
     currentInEditMode: () => {
       const filePath = utils.resolveFilePathFromEditor();
@@ -65,10 +64,6 @@ export function registerOpenHandlers(
     currentInViewMode: () => {
       const filePath = utils.resolveFilePathFromEditor();
       if (filePath) return openFn(filePath, OpenMode.VIEW, context);
-    },
-    currentInRunMode: () => {
-      const filePath = utils.resolveFilePathFromEditor();
-      if (filePath) return openFn(filePath, OpenMode.RUN, context);
     },
   };
 }

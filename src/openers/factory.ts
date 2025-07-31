@@ -7,7 +7,6 @@ import { Properties } from "../properties";
  * Modes in which the metadata can be opened
  */
 export enum OpenMode {
-  RUN = "run",
   EDIT = "edit",
   VIEW = "view",
 }
@@ -16,7 +15,6 @@ export enum OpenMode {
  * Indicates which OpenModes support the use of default cli commands
  */
 export const AllowDefaultCliMode: Record<OpenMode, boolean> = {
-  [OpenMode.RUN]: false,
   [OpenMode.EDIT]: true,
   [OpenMode.VIEW]: false,
 };

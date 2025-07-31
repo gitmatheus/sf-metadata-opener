@@ -73,16 +73,16 @@
         "title": "SFDX: Open Flow in Flow Builder"
       },
       {
-        "command": "extension.openFlowInRunMode",
-        "title": "SFDX: Open Flow in Run Mode"
+        "command": "extension.openFlowInViewMode",
+        "title": "SFDX: Open Flow in View Mode"
       },
       {
         "command": "extension.openCurrentFlowInEditMode",
         "title": "SFDX: Open Current Flow in Flow Builder"
       },
       {
-        "command": "extension.openCurrentFlowInRunMode",
-        "title": "SFDX: Open Current Flow in Run Mode"
+        "command": "extension.openCurrentFlowInViewMode",
+        "title": "SFDX: Open Current Flow in View Mode"
       },
       {
         "command": "extension.openBotInEditMode",
@@ -165,7 +165,7 @@
           "group": "z_commands"
         },
         {
-          "command": "extension.openFlowInRunMode",
+          "command": "extension.openFlowInViewMode",
           "when": "resourceFilename =~ /\\.flow-meta\\.xml$/",
           "group": "z_commands"
         },
@@ -216,7 +216,7 @@
           "when": "false"
         },
         {
-          "command": "extension.openFlowInRunMode",
+          "command": "extension.openFlowInViewMode",
           "when": "false"
         },
         {
@@ -256,9 +256,9 @@
   },
   "activationEvents": [
     "onCommand:extension.openFlowInBuilder",
-    "onCommand:extension.openFlowInRunMode",
+    "onCommand:extension.openFlowInViewMode",
     "onCommand:extension.openCurrentFlowInEditMode",
-    "onCommand:extension.openCurrentFlowInRunMode",
+    "onCommand:extension.openCurrentFlowInViewMode",
     "onCommand:extension.openBotInEditMode",
     "onCommand:extension.openBotInViewMode",
     "onCommand:extension.openCurrentBotInEditMode",

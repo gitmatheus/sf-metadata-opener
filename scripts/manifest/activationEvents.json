@@ -1,8 +1,8 @@
 [
   "onCommand:extension.openFlowInBuilder",
-  "onCommand:extension.openFlowInRunMode",
+  "onCommand:extension.openFlowInViewMode",
   "onCommand:extension.openCurrentFlowInEditMode",
-  "onCommand:extension.openCurrentFlowInRunMode",
+  "onCommand:extension.openCurrentFlowInViewMode",
   "onCommand:extension.openBotInEditMode",
   "onCommand:extension.openBotInViewMode",
   "onCommand:extension.openCurrentBotInEditMode",

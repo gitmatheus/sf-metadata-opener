@@ -8,7 +8,7 @@ import { createOpenCommand, OpenMode } from "../factory";
 import { FileType } from "../../salesforce";
 
 /**
- * Supported Flow types for Run Mode
+ * Supported Flow types for View Mode
  */
 const RUN_MODE_SUPPORTED_TYPES = new Set([
   "Flow", // Main supported type for screen flows
@@ -23,11 +23,11 @@ export async function open(
   mode: OpenMode,
   context: vscode.ExtensionContext
 ): Promise<void> {
-  if (mode === OpenMode.RUN) {
+  if (mode === OpenMode.VIEW) {
     const processType = await parseProcessTypeFromXml(filePath);
-    if (!processType || !shouldOfferRunMode(processType)) {
+    if (!processType || !shouldOfferViewMode(processType)) {
       return utils.showWarningMessage(
-        `Run Mode is not supported for this Flow type: ${
+        `View Mode is not supported for this Flow type: ${
           processType || "Unknown"
         }`
       );
@@ -75,20 +75,20 @@ export async function parseProcessTypeFromXml(
 }
 
 /**
- * Determines whether the given Flow type supports being run in "Run Mode"
+ * Determines whether the given Flow type supports being run in "View Mode"
  */
-function shouldOfferRunMode(processType: string): boolean {
+function shouldOfferViewMode(processType: string): boolean {
   return RUN_MODE_SUPPORTED_TYPES.has(processType);
 }
 
 /**
- * Resolves the browser path to open a Flow either in Flow Builder or Run Mode.
+ * Resolves the browser path to open a Flow either in Flow Builder or View Mode.
  */
 export function resolvePath(ctx: utils.PathContext): string {
   const recordId = ctx.metadata?.Id;
   if (!recordId) throw new Error("Missing Flow ID");
 
-  return ctx.mode === OpenMode.RUN
+  return ctx.mode === OpenMode.VIEW
     ? `/flow/${ctx.metadataName}/${recordId}`
     : `/builder_platform_interaction/flowBuilder.app?flowId=${recordId}`;
 }
