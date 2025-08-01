@@ -54,22 +54,20 @@ The extension will open the page in Edit or View mode, contextually for each typ
 
 ## 🛠️ Supported Metadata Types
 
-| Metadata Type   | Edit Mode Target   | View Mode Target              |
-| --------------- | ------------------ | ----------------------------- |
-| Flow            | Flow Builder       | Flow View Page (if supported) |
-| Bot             | Agentforce Builder | Agent Setup Page              |
-| Report          | Report Builder     | Report Viewer                 |
-| Dashboard       | Dashboard Builder  | Dashboard Viewer              |
-| Validation Rule | Edit in Setup      | Open in Detail Page           |
-| SObject         | Edit in Setup      | Open in Detail Page           |
+| Metadata Type             | Edit Mode Target   | View Mode Target              |
+| ------------------------- | ------------------ | ----------------------------- |
+| Flow                      | Flow Builder       | Flow View Page (if supported) |
+| Agentforce Agent          | Agentforce Builder | Agent Setup Page              |
+| Report                    | Report Builder     | Report Viewer                 |
+| Dashboard                 | Dashboard Builder  | Dashboard Viewer              |
+| Validation Rule           | Edit in Setup      | Open in Detail Page           |
+| Object (Standard/Custom ) | Edit in Setup      | Open in Detail Page           |
 
 ---
 
 ## ⚙️ Configuration Options
 
 ### `Deployable Metadata Types`
-
-> **Default: none selected**
 
 Choose which metadata types should be auto-deployed before opening.
 Each type is opt-in. You control exactly which ones to deploy.
@@ -118,6 +116,7 @@ From the Command Palette:
 ## 📣 Feedback
 
 → [Open an issue](https://github.com/gitmatheus/sf-metadata-opener/issues)
+
 → Email: [contact@matheus.dev](mailto:contact@matheus.dev)
 
 ---
