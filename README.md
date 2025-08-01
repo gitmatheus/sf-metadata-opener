@@ -1,7 +1,3 @@
-Got it. Here's the updated **README** with **no em dashes** and all the new features included:
-
----
-
 # 🚀 Salesforce Metadata Opener
 
 A sleek, no-friction way to open Salesforce metadata directly in your browser, right from VS Code.
