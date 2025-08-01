@@ -38,17 +38,16 @@ This extension lets you quickly jump from a metadata file in your project to its
 ## ✅ How To Use It
 
 - **Right-click** a supported metadata file to open it in your org
-- **Or** use the Command Palette:
 
   - `SFDX: Open ... in Edit Mode`
   - `SFDX: Open ... in View Mode`
+
+- **Or** use the Command Palette:
 
   - `SFDX: Open Current ... in Edit Mode`
   - `SFDX: Open Current ... in View Mode`
 
 The extension will open the page in Edit or View mode, contextually for each type.
-
-[IMG TBD]
 
 ---
 
@@ -72,7 +71,7 @@ The extension will open the page in Edit or View mode, contextually for each typ
 Choose which metadata types should be auto-deployed before opening.
 Each type is opt-in. You control exactly which ones to deploy.
 
-[IMG TBD]
+<img width="644" height="360" alt="List of options to select the deployable metadata types" src="https://github.com/user-attachments/assets/6663b90b-1360-4eae-9b2c-fee8322dcbce" />
 
 ### `Use Sf Command To Open Metadata`
 
