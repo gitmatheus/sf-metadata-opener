@@ -16,6 +16,7 @@ export async function retrieveRecord(
   const result = await sf.retrieve<sf.ValidationRule>({
     metadataName,
     metadataType,
+    parentKey: parentObjectName, // used for caching
     getCommand: (name) => `
       sf data query --use-tooling-api --query "
         SELECT Id,

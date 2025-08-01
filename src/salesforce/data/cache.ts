@@ -6,10 +6,11 @@ import { getOrgId } from "./org";
  */
 export async function readCachedMetadata<T>(
   metadataName: string,
-  context: vscode.ExtensionContext
+  context: vscode.ExtensionContext,
+  parentKey?: string
 ): Promise<T | undefined> {
   const orgId = await getOrgId();
-  const key = `${orgId}:${metadataName}`;
+  const key = buildCacheKey(metadataName, orgId, parentKey);
   return context.workspaceState.get<T>(key);
 }
 
@@ -19,10 +20,11 @@ export async function readCachedMetadata<T>(
 export async function writeCachedMetadata<T>(
   metadataName: string,
   metadata: T,
-  context: vscode.ExtensionContext
+  context: vscode.ExtensionContext,
+  parentKey?: string
 ): Promise<void> {
   const orgId = await getOrgId();
-  const key = `${orgId}:${metadataName}`;
+  const key = buildCacheKey(metadataName, orgId, parentKey);
   await context.workspaceState.update(key, metadata);
 }
 
@@ -80,4 +82,20 @@ export async function getFullMetadataCache(
   }
 
   return grouped;
+}
+
+/**
+ * Constructs a unique cache key for a metadata record, optionally scoped by parent.
+ * Format:
+ *   - Standard:        {orgId}:{metadataName}
+ *   - With parentKey:  {orgId}:{parentKey}:{metadataName}
+ */
+function buildCacheKey(
+  metadataName: string,
+  orgId: string,
+  parentKey?: string
+): string {
+  return parentKey
+    ? `${orgId}:${parentKey}:${metadataName}`
+    : `${orgId}:${metadataName}`;
 }

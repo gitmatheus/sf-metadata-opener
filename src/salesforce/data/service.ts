@@ -14,6 +14,7 @@ export async function retrieve<T>({
   parseResult,
   context,
   skipCacheCheck = false,
+  parentKey,
 }: {
   metadataName: string;
   metadataType: FileType;
@@ -21,12 +22,13 @@ export async function retrieve<T>({
   parseResult: (data: any) => T | null;
   context: vscode.ExtensionContext;
   skipCacheCheck?: boolean;
+  parentKey?: string; // New optional parameter
 }): Promise<T | null> {
   const metadataLabel = MetadataLabels[metadataType] ?? metadataType;
 
   // Try reading from the cache unless explicitly disabled
   if (Properties.enableCaching && !skipCacheCheck) {
-    const cached = await tryReadFromCache<T>(metadataName, context);
+    const cached = await tryReadFromCache<T>(metadataName, context, parentKey);
     if (cached) return cached;
   }
 
@@ -53,7 +55,7 @@ export async function retrieve<T>({
 
         // Save the result to cache for future use
         if (Properties.enableCaching && !skipCacheCheck) {
-          await writeCachedMetadata(metadataName, result, context);
+          await writeCachedMetadata(metadataName, result, context, parentKey);
         }
 
         return result;
@@ -72,9 +74,10 @@ export async function retrieve<T>({
  */
 async function tryReadFromCache<T>(
   metadataName: string,
-  context: vscode.ExtensionContext
+  context: vscode.ExtensionContext,
+  parentKey?: string
 ): Promise<T | null> {
-  const cached = await readCachedMetadata<T>(metadataName, context);
+  const cached = await readCachedMetadata<T>(metadataName, context, parentKey);
   return cached ?? null;
 }
 
