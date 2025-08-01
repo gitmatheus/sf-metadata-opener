@@ -1,27 +1,37 @@
 [
   "onCommand:extension.openBotInEditMode",
   "onCommand:extension.openBotInViewMode",
+
   "onCommand:extension.openDashboardInEditMode",
   "onCommand:extension.openDashboardInViewMode",
+
   "onCommand:extension.openFlowInEditMode",
   "onCommand:extension.openFlowInViewMode",
+
   "onCommand:extension.openReportInEditMode",
   "onCommand:extension.openReportInViewMode",
+
   "onCommand:extension.openSObjectInEditMode",
   "onCommand:extension.openSObjectInViewMode",
+
   "onCommand:extension.openValidationRuleInEditMode",
   "onCommand:extension.openValidationRuleInViewMode",
   
   "onCommand:extension.openCurrentBotInEditMode",
   "onCommand:extension.openCurrentBotInViewMode",
+
   "onCommand:extension.openCurrentDashboardInEditMode",
   "onCommand:extension.openCurrentDashboardInViewMode",
+
   "onCommand:extension.openCurrentFlowInEditMode",
   "onCommand:extension.openCurrentFlowInViewMode",
+
   "onCommand:extension.openCurrentReportInEditMode",
   "onCommand:extension.openCurrentReportInViewMode",
+
   "onCommand:extension.openCurrentSObjectInEditMode",
   "onCommand:extension.openCurrentSObjectInViewMode",
+  
   "onCommand:extension.openCurrentValidationRuleInEditMode",
   "onCommand:extension.openCurrentValidationRuleInViewMode",
 

@@ -62,22 +62,34 @@ export async function displayMetadataCache(
 }
 
 /**
- * Displays all cached metadata in a structured object grouped by org.
+ * Displays all cached metadata in a structured object grouped by org and parent key (if applicable).
  */
 export async function getFullMetadataCache(
   context: vscode.ExtensionContext
-): Promise<Record<string, Record<string, unknown>>> {
+): Promise<Record<string, Record<string, Record<string, unknown>>>> {
   const allKeys = context.workspaceState.keys();
-  const grouped: Record<string, Record<string, unknown>> = {};
+  const grouped: Record<string, Record<string, Record<string, unknown>>> = {};
 
   for (const key of allKeys) {
-    const [orgId, metadataName] = key.split(":");
-    if (!orgId || !metadataName) continue;
+    const parts = key.split(":");
+    if (parts.length < 2) continue;
+
+    const [orgId, ...rest] = parts;
+    if (!orgId) continue;
 
     const value = await context.workspaceState.get(key);
-    if (value) {
+    if (!value) continue;
+
+    if (rest.length === 1) {
+      // No parentKey: orgId -> <global> group
       grouped[orgId] ??= {};
-      grouped[orgId][metadataName] = value;
+      grouped[orgId]["__global__"] ??= {};
+      grouped[orgId]["__global__"][rest[0]] = value;
+    } else if (rest.length === 2) {
+      const [parentKey, metadataName] = rest;
+      grouped[orgId] ??= {};
+      grouped[orgId][parentKey] ??= {};
+      grouped[orgId][parentKey][metadataName] = value;
     }
   }
 
