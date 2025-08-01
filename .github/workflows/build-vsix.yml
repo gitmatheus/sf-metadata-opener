@@ -25,7 +25,7 @@ jobs:
         run: npm run compile
 
       - name: 📦 Package Extension as VSIX
-        run: npx vsce package
+        run: npm run publish
 
       - name: 📤 Upload VSIX Artifact
         uses: actions/upload-artifact@v4
