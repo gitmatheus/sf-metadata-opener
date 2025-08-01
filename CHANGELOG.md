@@ -4,6 +4,68 @@ All notable changes to this project will be documented here.
 
 ---
 
+## [1.0.0] - 2025-07-31
+
+### ✨ Added
+
+- 🧱 **New metadata support**:
+
+  - ✅ **Validation Rules**
+  - ✅ **SObjects** (Standard & Custom)
+
+- 🧠 **Per-type deploy setting**:
+
+  - New setting: `Salesforce Metadata Opener: Deployable Metadata Types`
+  - Allows selecting which metadata types should be deployed automatically before opening
+  - Fully replaces the old `deployBeforeOpen` global toggle
+
+- ⚙️ **Custom SObject suffix parsing**:
+
+  - Robust recognition for 20+ suffixes (`__c`, `__e`, `__mdt`, etc.)
+  - Utilities like `normalizeSObjectName()` and `getSObjectTypeLabel()` included
+
+### 🔄 Changed
+
+- 🏗️ **Project structure refactor**:
+
+  - All metadata openers moved to `src/openers/{type}/`
+  - Each opener defines:
+
+    - `registerHandlers()`
+    - `resolvePath()`
+    - `retrieveRecord()` (Tooling or REST)
+
+- 🧠 **Generic open logic**:
+
+  - Introduced shared `openMetadata()` handler for all types
+  - URL resolution now modular via `resolveMetadataPath()`, mapped by type
+
+- 🧩 **Factory pattern improvements**:
+
+  - `createOpenCommand()` generates CLI open strings or fallback URLs
+  - `buildOpenPathCommand()` available for direct Lightning URL use
+
+- 🧠 **Smarter deploy logic**:
+
+  - Deploy now respects configured types via `deployableMetadataTypes`
+
+### 🧼 Internal
+
+- 🧠 **Record metadata caching**:
+
+  - Now supports parent-aware keys (e.g., `Account:MyValidationRule`)
+  - Centralized in `salesforce/data/cache.ts`
+
+- 📦 **Metadata settings mapped properly**:
+
+  - `DeployableMetadataKeys` maps setting strings to `FileType`
+  - Label consistency via `MetadataLabels` and `enumDescriptions`
+
+- 🔗 **Simplified activation & menu config**:
+
+  - Command, context menu, and palette entries sorted alphabetically
+  - Auto-completion now fully reflects supported types
+
 ## [0.0.5] - 2025-07-29
 
 ### ✨ Added

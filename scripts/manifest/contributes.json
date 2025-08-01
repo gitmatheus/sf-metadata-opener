@@ -9,7 +9,7 @@
       },
       "SalesforceMetadataOpener.enableCaching": {
         "type": "boolean",
-        "default": false,
+        "default": true,
         "description": "Enable caching of record IDs to improve performance. Disable if you need to always fetch the latest data."
       },
       "SalesforceMetadataOpener.deployableMetadataTypes": {
