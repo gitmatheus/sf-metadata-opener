@@ -1,9 +1,16 @@
 import * as vscode from "vscode";
-import * as metadata from "../../salesforce/data/bot";
+import * as retriever from "./retriever";
 import * as handlers from "../handlers";
 import * as utils from "../../utils";
 import { FileType } from "../../salesforce";
 import { createOpenCommand, OpenMode } from "../factory";
+
+/**
+ * Registers the open handlers for the extension context
+ */
+export function registerHandlers(context: vscode.ExtensionContext) {
+  return handlers.registerHandlers(open, context);
+}
 
 /**
  * Handles opening a Bot file from right-click or command palette.
@@ -17,17 +24,25 @@ export async function open(
     filePath,
     mode,
     fileType: FileType.Bot,
-    buildOpenCommand: (filePath, mode) =>
-      createOpenCommand(
-        filePath,
-        mode as OpenMode,
-        {
-          metadataType: FileType.Bot,
-          fetchMetadata: metadata.getMetadataInfo,
-        },
-        context
-      ),
+    buildOpenCommand: getOpenCommandBuilder(context),
   });
+}
+
+/**
+ * Returns a function that builds the open command for this opener
+ */
+function getOpenCommandBuilder(context: vscode.ExtensionContext) {
+  return async (filePath: string, mode: OpenMode) => {
+    return createOpenCommand(
+      filePath,
+      mode,
+      {
+        metadataType: FileType.Bot,
+        fetchMetadata: retriever.retrieveRecord,
+      },
+      context
+    );
+  };
 }
 
 /**

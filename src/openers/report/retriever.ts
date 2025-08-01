@@ -1,18 +1,18 @@
 import * as vscode from "vscode";
 import { FileType } from "../../salesforce";
-import { retrieveMetadata } from "./retriever";
-import { Report } from "..";
+import { retrieve } from "../../salesforce/data/service";
+import { Report } from "../../salesforce";
 
 /**
  * Queries Salesforce to get the Report metadata using the standard API.
  * Caches the record ID if caching is enabled.
  */
-export async function getMetadataInfo(
+export async function retrieveRecord(
   metadataName: string,
   metadataType: FileType,
   context: vscode.ExtensionContext
 ): Promise<Report | null> {
-  const result = await retrieveMetadata<Report>({
+  const result = await retrieve<Report>({
     metadataName,
     metadataType,
     getCommand: (name) =>

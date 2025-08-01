@@ -1,18 +1,18 @@
 import * as vscode from "vscode";
 import { FileType } from "../../salesforce";
-import { retrieveMetadata } from "./retriever";
-import { Dashboard } from "..";
+import { retrieve } from "../../salesforce/data/service";
+import { Dashboard } from "../../salesforce";
 
 /**
  * Queries Salesforce to get the Dashboard metadata using the standard API.
  * Caches the record ID if caching is enabled.
  */
-export async function getMetadataInfo(
+export async function retrieveRecord(
   metadataName: string,
   metadataType: FileType,
   context: vscode.ExtensionContext
 ): Promise<Dashboard | null> {
-  const result = await retrieveMetadata<Dashboard>({
+  const result = await retrieve<Dashboard>({
     metadataName,
     metadataType,
     getCommand: (name) =>

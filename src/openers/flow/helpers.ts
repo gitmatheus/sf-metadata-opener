@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import * as metadata from "../../salesforce/data/flow";
+import * as retriever from "./retriever";
 import * as utils from "../../utils";
 import * as fs from "fs/promises";
 import * as xml2js from "xml2js";
@@ -8,7 +8,14 @@ import { createOpenCommand, OpenMode } from "../factory";
 import { FileType } from "../../salesforce";
 
 /**
- * Supported Flow types for Run Mode
+ * Registers the open handlers for the extension context
+ */
+export function registerHandlers(context: vscode.ExtensionContext) {
+  return handlers.registerHandlers(open, context);
+}
+
+/**
+ * Supported Flow types for View Mode
  */
 const RUN_MODE_SUPPORTED_TYPES = new Set([
   "Flow", // Main supported type for screen flows
@@ -16,18 +23,18 @@ const RUN_MODE_SUPPORTED_TYPES = new Set([
 ]);
 
 /**
- * Handles opening a Flow file (right-click or command palette)
+ * Handles opening a Flow file (right-click or command palette).
  */
 export async function open(
   filePath: string,
   mode: OpenMode,
   context: vscode.ExtensionContext
 ): Promise<void> {
-  if (mode === OpenMode.RUN) {
+  if (mode === OpenMode.VIEW) {
     const processType = await parseProcessTypeFromXml(filePath);
-    if (!processType || !shouldOfferRunMode(processType)) {
+    if (!processType || !shouldOfferViewMode(processType)) {
       return utils.showWarningMessage(
-        `Run Mode is not supported for this Flow type: ${
+        `View Mode is not supported for this Flow type: ${
           processType || "Unknown"
         }`
       );
@@ -38,17 +45,26 @@ export async function open(
     filePath,
     mode,
     fileType: FileType.Flow,
-    buildOpenCommand: (filePath, mode) =>
-      createOpenCommand(
-        filePath,
-        mode as OpenMode,
-        {
-          metadataType: FileType.Flow,
-          fetchMetadata: metadata.getMetadataInfo,
-        },
-        context
-      ),
+    buildOpenCommand: getOpenCommandBuilder(context),
   });
+}
+
+/**
+ * Returns a function that builds the open command for this opener
+ */
+function getOpenCommandBuilder(context: vscode.ExtensionContext) {
+  return async (filePath: string, mode: OpenMode) => {
+    return createOpenCommand(
+      filePath,
+      mode,
+      {
+        metadataType: FileType.Flow,
+        fetchMetadata: retriever.retrieveRecord,
+        canUseOpenFileCommand: true, // Flows can use the default open file sf command
+      },
+      context
+    );
+  };
 }
 
 /**
@@ -75,20 +91,20 @@ export async function parseProcessTypeFromXml(
 }
 
 /**
- * Determines whether the given Flow type supports being run in "Run Mode"
+ * Determines whether the given Flow type supports being run in "View Mode"
  */
-function shouldOfferRunMode(processType: string): boolean {
+function shouldOfferViewMode(processType: string): boolean {
   return RUN_MODE_SUPPORTED_TYPES.has(processType);
 }
 
 /**
- * Resolves the browser path to open a Flow either in Flow Builder or Run Mode.
+ * Resolves the browser path to open a Flow either in Flow Builder or View Mode.
  */
 export function resolvePath(ctx: utils.PathContext): string {
   const recordId = ctx.metadata?.Id;
   if (!recordId) throw new Error("Missing Flow ID");
 
-  return ctx.mode === OpenMode.RUN
+  return ctx.mode === OpenMode.VIEW
     ? `/flow/${ctx.metadataName}/${recordId}`
     : `/builder_platform_interaction/flowBuilder.app?flowId=${recordId}`;
 }

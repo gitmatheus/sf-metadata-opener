@@ -5,7 +5,7 @@
   "icon": "icon.png",
   "repository": "https://github.com/gitmatheus/sf-metadata-opener",
   "description": "Right-click to open Salesforce metadata in the browser (Flows, Agentforce agents, etc.)",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.102.0"
   },
@@ -50,39 +50,53 @@
     "configuration": {
       "title": "Salesforce Metadata Opener",
       "properties": {
-        "SalesforceMetadataOpener.useSfCommandToOpenMetadata": {
+        "SalesforceMetadataOpener.useOpenFileCommandToOpenMetadata": {
           "type": "boolean",
           "default": true,
-          "description": "Use the `sf` CLI to open the metadata in the browser. Disable this to have the extension query the org for the metadata ID instead."
-        },
-        "SalesforceMetadataOpener.deployBeforeOpen": {
-          "type": "boolean",
-          "default": true,
-          "description": "Deploy the local metadata file before opening it in the browser."
+          "description": "Use the `sf org open --source-file` CLI to open supported metadata in the browser. Disable this to have the extension query the org for the metadata ID instead."
         },
         "SalesforceMetadataOpener.enableCaching": {
           "type": "boolean",
-          "default": false,
+          "default": true,
           "description": "Enable caching of record IDs to improve performance. Disable if you need to always fetch the latest data."
+        },
+        "SalesforceMetadataOpener.deployableMetadataTypes": {
+          "type": "array",
+          "default": [
+            "Flow",
+            "Bot"
+          ],
+          "description": "Select which metadata types should be auto-deployed before opening.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Flow",
+              "Bot",
+              "Report",
+              "Dashboard",
+              "ValidationRule",
+              "SObject"
+            ],
+            "enumDescriptions": [
+              "Flows",
+              "Agentforce Agents (Bots)",
+              "Reports",
+              "Dashboards",
+              "Validation Rules",
+              "Standard and Custom Objects"
+            ]
+          }
         }
       }
     },
     "commands": [
       {
-        "command": "extension.openFlowInBuilder",
-        "title": "SFDX: Open Flow in Flow Builder"
+        "command": "extension.clearMetadataCache",
+        "title": "SFDX: Clear Cached Record Metadata"
       },
       {
-        "command": "extension.openFlowInRunMode",
-        "title": "SFDX: Open Flow in Run Mode"
-      },
-      {
-        "command": "extension.openCurrentFlowInEditMode",
-        "title": "SFDX: Open Current Flow in Flow Builder"
-      },
-      {
-        "command": "extension.openCurrentFlowInRunMode",
-        "title": "SFDX: Open Current Flow in Run Mode"
+        "command": "extension.displayMetadataCache",
+        "title": "SFDX: Display Cached Record Metadata"
       },
       {
         "command": "extension.openBotInEditMode",
@@ -101,12 +115,20 @@
         "title": "SFDX: Open Current Agent Details in Setup"
       },
       {
-        "command": "extension.openReportInEditMode",
-        "title": "SFDX: Open Report in Edit Mode"
+        "command": "extension.openCurrentDashboardInEditMode",
+        "title": "SFDX: Open Current Dashboard in Edit Mode"
       },
       {
-        "command": "extension.openReportInViewMode",
-        "title": "SFDX: Open Report in View Mode"
+        "command": "extension.openCurrentDashboardInViewMode",
+        "title": "SFDX: Open Current Dashboard in View Mode"
+      },
+      {
+        "command": "extension.openCurrentFlowInEditMode",
+        "title": "SFDX: Open Current Flow in Flow Builder"
+      },
+      {
+        "command": "extension.openCurrentFlowInViewMode",
+        "title": "SFDX: Open Current Flow in View Mode"
       },
       {
         "command": "extension.openCurrentReportInEditMode",
@@ -117,6 +139,22 @@
         "title": "SFDX: Open Current Report in View Mode"
       },
       {
+        "command": "extension.openCurrentSObjectInEditMode",
+        "title": "SFDX: Open Current SObject in Edit Mode"
+      },
+      {
+        "command": "extension.openCurrentSObjectInViewMode",
+        "title": "SFDX: Open Current SObject in View Mode"
+      },
+      {
+        "command": "extension.openCurrentValidationRuleInEditMode",
+        "title": "SFDX: Open Current Validation Rule in Edit Mode"
+      },
+      {
+        "command": "extension.openCurrentValidationRuleInViewMode",
+        "title": "SFDX: Open Current Validation Rule in View Mode"
+      },
+      {
         "command": "extension.openDashboardInEditMode",
         "title": "SFDX: Open Dashboard in Edit Mode"
       },
@@ -125,35 +163,41 @@
         "title": "SFDX: Open Dashboard in View Mode"
       },
       {
-        "command": "extension.openCurrentDashboardInEditMode",
-        "title": "SFDX: Open Current Dashboard in Edit Mode"
+        "command": "extension.openFlowInEditMode",
+        "title": "SFDX: Open Flow in Flow Builder"
       },
       {
-        "command": "extension.openCurrentDashboardInViewMode",
-        "title": "SFDX: Open Current Dashboard in View Mode"
+        "command": "extension.openFlowInViewMode",
+        "title": "SFDX: Open Flow in View Mode"
       },
       {
-        "command": "extension.clearMetadataCache",
-        "title": "SFDX: Clear Cached Record Metadata"
+        "command": "extension.openReportInEditMode",
+        "title": "SFDX: Open Report in Edit Mode"
       },
       {
-        "command": "extension.displayMetadataCache",
-        "title": "SFDX: Display Cached Record Metadata"
+        "command": "extension.openReportInViewMode",
+        "title": "SFDX: Open Report in View Mode"
+      },
+      {
+        "command": "extension.openSObjectInEditMode",
+        "title": "SFDX: Open SObject in Edit Mode"
+      },
+      {
+        "command": "extension.openSObjectInViewMode",
+        "title": "SFDX: View SObject in View Mode"
+      },
+      {
+        "command": "extension.openValidationRuleInEditMode",
+        "title": "SFDX: Open Validation Rule in Edit Mode"
+      },
+      {
+        "command": "extension.openValidationRuleInViewMode",
+        "title": "SFDX: Open Validation Rule in View Mode"
       }
     ],
     "menus": {
       "explorer/context": [
         {
-          "command": "extension.openFlowInBuilder",
-          "when": "resourceFilename =~ /\\.flow-meta\\.xml$/",
-          "group": "z_commands"
-        },
-        {
-          "command": "extension.openFlowInRunMode",
-          "when": "resourceFilename =~ /\\.flow-meta\\.xml$/",
-          "group": "z_commands"
-        },
-        {
           "command": "extension.openBotInEditMode",
           "when": "resourceFilename =~ /\\.bot-meta\\.xml$/",
           "group": "z_commands"
@@ -161,6 +205,26 @@
         {
           "command": "extension.openBotInViewMode",
           "when": "resourceFilename =~ /\\.bot-meta\\.xml$/",
+          "group": "z_commands"
+        },
+        {
+          "command": "extension.openDashboardInEditMode",
+          "when": "resourceFilename =~ /\\.dashboard-meta\\.xml$/",
+          "group": "z_commands"
+        },
+        {
+          "command": "extension.openDashboardInViewMode",
+          "when": "resourceFilename =~ /\\.dashboard-meta\\.xml$/",
+          "group": "z_commands"
+        },
+        {
+          "command": "extension.openFlowInEditMode",
+          "when": "resourceFilename =~ /\\.flow-meta\\.xml$/",
+          "group": "z_commands"
+        },
+        {
+          "command": "extension.openFlowInViewMode",
+          "when": "resourceFilename =~ /\\.flow-meta\\.xml$/",
           "group": "z_commands"
         },
         {
@@ -174,31 +238,49 @@
           "group": "z_commands"
         },
         {
-          "command": "extension.openDashboardInEditMode",
-          "when": "resourceFilename =~ /\\.dashboard-meta\\.xml$/",
+          "command": "extension.openSObjectInEditMode",
+          "when": "resourceFilename =~ /\\.object-meta\\.xml$/",
           "group": "z_commands"
         },
         {
-          "command": "extension.openDashboardInViewMode",
-          "when": "resourceFilename =~ /\\.dashboard-meta\\.xml$/",
+          "command": "extension.openSObjectInViewMode",
+          "when": "resourceFilename =~ /\\.object-meta\\.xml$/",
+          "group": "z_commands"
+        },
+        {
+          "command": "extension.openValidationRuleInEditMode",
+          "when": "resourceFilename =~ /\\.validationRule-meta\\.xml$/",
+          "group": "z_commands"
+        },
+        {
+          "command": "extension.openValidationRuleInViewMode",
+          "when": "resourceFilename =~ /\\.validationRule-meta\\.xml$/",
           "group": "z_commands"
         }
       ],
       "commandPalette": [
         {
-          "command": "extension.openFlowInBuilder",
-          "when": "false"
-        },
-        {
-          "command": "extension.openFlowInRunMode",
-          "when": "false"
-        },
-        {
           "command": "extension.openBotInEditMode",
           "when": "false"
         },
         {
           "command": "extension.openBotInViewMode",
+          "when": "false"
+        },
+        {
+          "command": "extension.openDashboardInEditMode",
+          "when": "false"
+        },
+        {
+          "command": "extension.openDashboardInViewMode",
+          "when": "false"
+        },
+        {
+          "command": "extension.openFlowInEditMode",
+          "when": "false"
+        },
+        {
+          "command": "extension.openFlowInViewMode",
           "when": "false"
         },
         {
@@ -210,32 +292,50 @@
           "when": "false"
         },
         {
-          "command": "extension.openDashboardInEditMode",
+          "command": "extension.openSObjectInEditMode",
           "when": "false"
         },
         {
-          "command": "extension.openDashboardInViewMode",
+          "command": "extension.openSObjectInViewMode",
+          "when": "false"
+        },
+        {
+          "command": "extension.openValidationRuleInEditMode",
+          "when": "false"
+        },
+        {
+          "command": "extension.openValidationRuleInViewMode",
           "when": "false"
         }
       ]
     }
   },
   "activationEvents": [
-    "onCommand:extension.openFlowInBuilder",
-    "onCommand:extension.openFlowInRunMode",
-    "onCommand:extension.openCurrentFlowInEditMode",
-    "onCommand:extension.openCurrentFlowInRunMode",
     "onCommand:extension.openBotInEditMode",
     "onCommand:extension.openBotInViewMode",
-    "onCommand:extension.openCurrentBotInEditMode",
-    "onCommand:extension.openCurrentBotInViewMode",
-    "onCommand:extension.openReportInEditMode",
-    "onCommand:extension.openReportInViewMode",
-    "onCommand:extension.openCurrentReportInEditMode",
-    "onCommand:extension.openCurrentReportInViewMode",
     "onCommand:extension.openDashboardInEditMode",
     "onCommand:extension.openDashboardInViewMode",
+    "onCommand:extension.openFlowInEditMode",
+    "onCommand:extension.openFlowInViewMode",
+    "onCommand:extension.openReportInEditMode",
+    "onCommand:extension.openReportInViewMode",
+    "onCommand:extension.openSObjectInEditMode",
+    "onCommand:extension.openSObjectInViewMode",
+    "onCommand:extension.openValidationRuleInEditMode",
+    "onCommand:extension.openValidationRuleInViewMode",
+    "onCommand:extension.openCurrentBotInEditMode",
+    "onCommand:extension.openCurrentBotInViewMode",
     "onCommand:extension.openCurrentDashboardInEditMode",
-    "onCommand:extension.openCurrentDashboardInViewMode"
+    "onCommand:extension.openCurrentDashboardInViewMode",
+    "onCommand:extension.openCurrentFlowInEditMode",
+    "onCommand:extension.openCurrentFlowInViewMode",
+    "onCommand:extension.openCurrentReportInEditMode",
+    "onCommand:extension.openCurrentReportInViewMode",
+    "onCommand:extension.openCurrentSObjectInEditMode",
+    "onCommand:extension.openCurrentSObjectInViewMode",
+    "onCommand:extension.openCurrentValidationRuleInEditMode",
+    "onCommand:extension.openCurrentValidationRuleInViewMode",
+    "onCommand:extension.clearMetadataCache",
+    "onCommand:extension.displayMetadataCache"
   ]
 }

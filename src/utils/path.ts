@@ -2,10 +2,12 @@ import * as vscode from "vscode";
 import * as path from "path";
 import { FileType } from "../salesforce";
 
-import * as flow from "../commands/flow/helpers";
-import * as bot from "../commands/bot/helpers";
-import * as report from "../commands/report/helpers";
-import * as dashboard from "../commands/dashboard/helpers";
+import * as flow from "../openers/flow/helpers";
+import * as bot from "../openers/bot/helpers";
+import * as report from "../openers/report/helpers";
+import * as dashboard from "../openers/dashboard/helpers";
+import * as validationRule from "../openers/validationRule/helpers";
+import * as sobject from "../openers/sobject/helpers";
 
 /**
  * Resolves the absolute file path from the currently active text editor in VS Code.
@@ -26,6 +28,22 @@ export type PathContext = {
   metadata: any; // Object returned by the metadata query
 };
 
+// Defines the type signature for all metadata path resolver functions.
+// Each resolver takes a PathContext and returns a Salesforce-relative browser URL.
+type ResolverFn = (ctx: PathContext) => string;
+
+const resolvePathMap: Record<FileType, ResolverFn> = {
+  [FileType.Bot]: bot.resolvePath,
+  [FileType.Dashboard]: dashboard.resolvePath,
+  [FileType.Flow]: flow.resolvePath,
+  [FileType.Report]: report.resolvePath,
+  [FileType.SObject]: sobject.resolvePath,
+  [FileType.ValidationRule]: validationRule.resolvePath,
+  [FileType.Other]: () => {
+    throw new Error("Unsupported metadata type for direct browser resolution.");
+  },
+};
+
 /**
  * Resolves the correct browser path for the given metadata context.
  * Delegates to metadata-specific resolution functions based on file type.
@@ -34,24 +52,13 @@ export type PathContext = {
  * @returns A Salesforce-relative path that can be used with `sf org open`
  */
 export function resolveMetadataPath(ctx: PathContext): string {
-  switch (ctx.fileType) {
-    case FileType.Flow:
-      return flow.resolvePath(ctx);
-
-    case FileType.Bot:
-      return bot.resolvePath(ctx);
-
-    case FileType.Report:
-      return report.resolvePath(ctx);
-
-      case FileType.Dashboard:
-      return dashboard.resolvePath(ctx);
-
-    default:
-      throw new Error(
-        `Unsupported FileType: ${ctx.fileType}. Contact your developer so this new type can be supported (path).`
-      );
+  const resolver = resolvePathMap[ctx.fileType];
+  if (!resolver) {
+    throw new Error(
+      `Unsupported FileType: ${ctx.fileType}. Contact your developer so this new type can be supported (path).`
+    );
   }
+  return resolver(ctx);
 }
 
 /**

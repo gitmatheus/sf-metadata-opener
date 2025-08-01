@@ -19,17 +19,24 @@ export async function openMetadata<T>({
   filePath: string;
   mode: OpenMode;
   fileType: sf.FileType;
-  buildOpenCommand: (filePath: string, mode: OpenMode) => Promise<string | null>;
+  buildOpenCommand: (
+    filePath: string,
+    mode: OpenMode
+  ) => Promise<string | null>;
 }): Promise<void> {
   const metadataLabel = sf.MetadataLabels[fileType] ?? fileType;
 
   if (!filePath.endsWith(fileType)) {
     return utils.showWarningMessage(
-      `The selected file is not a valid ${metadataLabel} metadata file.`
+      `This file is not a valid ${metadataLabel} metadata file.`
     );
   }
 
-  if (Properties.deployBeforeOpen) {
+  const deployableTypes = Properties.deployableMetadataTypes
+    .map((key) => sf.DeployableMetadataKeys[key])
+    .filter(Boolean); // in case the config contains an invalid entry
+
+  if (deployableTypes.includes(fileType)) {
     const deployed = await sf.deployMetadata(filePath);
     if (!deployed) return;
   }
@@ -39,10 +46,33 @@ export async function openMetadata<T>({
 
   try {
     await utils.runShellCommand(openCommand);
-    utils.showInformationMessage(`Opened ${metadataLabel} via CLI`);
+    utils.showInformationMessage(`${metadataLabel} opened in the browser`);
   } catch (error: any) {
     utils.showErrorMessage(`Failed to open ${metadataLabel}: ${error.message}`);
   }
+}
+
+/**
+ * Registers open handlers for the extension context.
+ *
+ * This allows metadata modules to register their open commands
+ * without duplicating the handler logic.
+ */
+export function registerHandlers(
+  openFn: (
+    filePath: string,
+    mode: OpenMode,
+    context: vscode.ExtensionContext
+  ) => Promise<void>,
+  context: vscode.ExtensionContext
+) {
+  const handlers = registerOpenHandlers(openFn, context);
+  return {
+    openInEditMode: handlers.inEditMode,
+    openInViewMode: handlers.inViewMode,
+    openFileInEditMode: handlers.currentInEditMode,
+    openFileInViewMode: handlers.currentInViewMode,
+  };
 }
 
 /**
@@ -50,13 +80,16 @@ export async function openMetadata<T>({
  * Used to avoid duplicate `open.ts` files for each metadata module.
  */
 export function registerOpenHandlers(
-  openFn: (filePath: string, mode: OpenMode, context: vscode.ExtensionContext) => Promise<void>,
+  openFn: (
+    filePath: string,
+    mode: OpenMode,
+    context: vscode.ExtensionContext
+  ) => Promise<void>,
   context: vscode.ExtensionContext
 ) {
   return {
     inEditMode: (uri: vscode.Uri) => openFn(uri.fsPath, OpenMode.EDIT, context),
     inViewMode: (uri: vscode.Uri) => openFn(uri.fsPath, OpenMode.VIEW, context),
-    inRunMode: (uri: vscode.Uri) => openFn(uri.fsPath, OpenMode.RUN, context),
 
     currentInEditMode: () => {
       const filePath = utils.resolveFilePathFromEditor();
@@ -66,10 +99,5 @@ export function registerOpenHandlers(
       const filePath = utils.resolveFilePathFromEditor();
       if (filePath) return openFn(filePath, OpenMode.VIEW, context);
     },
-    currentInRunMode: () => {
-      const filePath = utils.resolveFilePathFromEditor();
-      if (filePath) return openFn(filePath, OpenMode.RUN, context);
-    },
   };
 }
-

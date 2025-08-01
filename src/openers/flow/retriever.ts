@@ -1,18 +1,18 @@
 import * as vscode from "vscode";
 import { FileType } from "../../salesforce";
-import { retrieveMetadata } from "./retriever";
-import { Flow } from "..";
+import { retrieve } from "../../salesforce/data/service";
+import { Flow } from "../../salesforce";
 
 /**
  * Queries Salesforce to get the latest Flow version info by flow name.
  * This function supports optional caching if enabled by the user.
  */
-export async function getMetadataInfo(
+export async function retrieveRecord(
   metadataName: string,
   metadataType: FileType,
   context: vscode.ExtensionContext
 ): Promise<Flow | null> {
-  const result = await retrieveMetadata<Flow>({
+  const result = await retrieve<Flow>({
     metadataName,
     metadataType,
     context,

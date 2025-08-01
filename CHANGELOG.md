@@ -4,6 +4,68 @@ All notable changes to this project will be documented here.
 
 ---
 
+## [1.0.0] - 2025-07-31
+
+### ✨ Added
+
+- 🧱 **New metadata support**:
+
+  - ✅ **Validation Rules**
+  - ✅ **SObjects** (Standard & Custom)
+
+- 🧠 **Per-type deploy setting**:
+
+  - New setting: `Salesforce Metadata Opener: Deployable Metadata Types`
+  - Allows selecting which metadata types should be deployed automatically before opening
+  - Fully replaces the old `deployBeforeOpen` global toggle
+
+- ⚙️ **Custom SObject suffix parsing**:
+
+  - Robust recognition for 20+ suffixes (`__c`, `__e`, `__mdt`, etc.)
+  - Utilities like `normalizeSObjectName()` and `getSObjectTypeLabel()` included
+
+### 🔄 Changed
+
+- 🏗️ **Project structure refactor**:
+
+  - All metadata openers moved to `src/openers/{type}/`
+  - Each opener defines:
+
+    - `registerHandlers()`
+    - `resolvePath()`
+    - `retrieveRecord()` (Tooling or REST)
+
+- 🧠 **Generic open logic**:
+
+  - Introduced shared `openMetadata()` handler for all types
+  - URL resolution now modular via `resolveMetadataPath()`, mapped by type
+
+- 🧩 **Factory pattern improvements**:
+
+  - `createOpenCommand()` generates CLI open strings or fallback URLs
+  - `buildOpenPathCommand()` available for direct Lightning URL use
+
+- 🧠 **Smarter deploy logic**:
+
+  - Deploy now respects configured types via `deployableMetadataTypes`
+
+### 🧼 Internal
+
+- 🧠 **Record metadata caching**:
+
+  - Now supports parent-aware keys (e.g., `Account:MyValidationRule`)
+  - Centralized in `salesforce/data/cache.ts`
+
+- 📦 **Metadata settings mapped properly**:
+
+  - `DeployableMetadataKeys` maps setting strings to `FileType`
+  - Label consistency via `MetadataLabels` and `enumDescriptions`
+
+- 🔗 **Simplified activation & menu config**:
+
+  - Command, context menu, and palette entries sorted alphabetically
+  - Auto-completion now fully reflects supported types
+
 ## [0.0.5] - 2025-07-29
 
 ### ✨ Added
@@ -57,7 +119,7 @@ All notable changes to this project will be documented here.
   - Command Palette equivalents also available.
 
 - 📁 New `src/commands/report/` folder added for Report-specific logic.
-- 🧠 `getMetadataInfo()` for reports queries the `Report` object using standard REST API, not Tooling.
+- 🧠 `retrieveRecord()` for reports queries the `Report` object using standard REST API, not Tooling.
 - 🔗 `resolvePath()` for Reports constructs direct ID-based Lightning URLs.
 - ⚙️ `skipDefaultCli` flag added to `createOpenCommand()` to force ID-based opening (used by Reports).
 
@@ -125,7 +187,7 @@ All notable changes to this project will be documented here.
 ### ⚙️ Changed
 
 - Logic split to conditionally skip deploy or metadata queries based on settings.
-- Improved flow handling for Run Mode with better type validation.
+- Improved flow handling for View Mode with better type validation.
 - `Properties` class added to centralize extension setting access.
 - Commands now reload configuration in real time via `onDidChangeConfiguration`.
 
@@ -141,7 +203,7 @@ All notable changes to this project will be documented here.
 
 ### 🚀 Initial Release
 
-- Open `.flow-meta.xml` in Flow Builder or Run Mode.
+- Open `.flow-meta.xml` in Flow Builder or View Mode.
 - Supports right-click menu and command palette.
 - Automatically deploys metadata before launch.
 - Queries latest Flow ID and handles screen flow type detection.

@@ -1,3 +1,3 @@
-export * from "./data";
 export * from "./helpers";
-export * from "./model";
+export * from "./data/model";
+export * from "./data/service";

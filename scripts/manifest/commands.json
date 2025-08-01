@@ -1,19 +1,11 @@
 [
   {
-    "command": "extension.openFlowInBuilder",
-    "title": "SFDX: Open Flow in Flow Builder"
+    "command": "extension.clearMetadataCache",
+    "title": "SFDX: Clear Cached Record Metadata"
   },
   {
-    "command": "extension.openFlowInRunMode",
-    "title": "SFDX: Open Flow in Run Mode"
-  },
-  {
-    "command": "extension.openCurrentFlowInEditMode",
-    "title": "SFDX: Open Current Flow in Flow Builder"
-  },
-  {
-    "command": "extension.openCurrentFlowInRunMode",
-    "title": "SFDX: Open Current Flow in Run Mode"
+    "command": "extension.displayMetadataCache",
+    "title": "SFDX: Display Cached Record Metadata"
   },
   {
     "command": "extension.openBotInEditMode",
@@ -32,12 +24,20 @@
     "title": "SFDX: Open Current Agent Details in Setup"
   },
   {
-    "command": "extension.openReportInEditMode",
-    "title": "SFDX: Open Report in Edit Mode"
+    "command": "extension.openCurrentDashboardInEditMode",
+    "title": "SFDX: Open Current Dashboard in Edit Mode"
   },
   {
-    "command": "extension.openReportInViewMode",
-    "title": "SFDX: Open Report in View Mode"
+    "command": "extension.openCurrentDashboardInViewMode",
+    "title": "SFDX: Open Current Dashboard in View Mode"
+  },
+  {
+    "command": "extension.openCurrentFlowInEditMode",
+    "title": "SFDX: Open Current Flow in Flow Builder"
+  },
+  {
+    "command": "extension.openCurrentFlowInViewMode",
+    "title": "SFDX: Open Current Flow in View Mode"
   },
   {
     "command": "extension.openCurrentReportInEditMode",
@@ -48,6 +48,22 @@
     "title": "SFDX: Open Current Report in View Mode"
   },
   {
+    "command": "extension.openCurrentSObjectInEditMode",
+    "title": "SFDX: Open Current SObject in Edit Mode"
+  },
+  {
+    "command": "extension.openCurrentSObjectInViewMode",
+    "title": "SFDX: Open Current SObject in View Mode"
+  },
+  {
+    "command": "extension.openCurrentValidationRuleInEditMode",
+    "title": "SFDX: Open Current Validation Rule in Edit Mode"
+  },
+  {
+    "command": "extension.openCurrentValidationRuleInViewMode",
+    "title": "SFDX: Open Current Validation Rule in View Mode"
+  },
+  {
     "command": "extension.openDashboardInEditMode",
     "title": "SFDX: Open Dashboard in Edit Mode"
   },
@@ -56,19 +72,35 @@
     "title": "SFDX: Open Dashboard in View Mode"
   },
   {
-    "command": "extension.openCurrentDashboardInEditMode",
-    "title": "SFDX: Open Current Dashboard in Edit Mode"
+    "command": "extension.openFlowInEditMode",
+    "title": "SFDX: Open Flow in Flow Builder"
   },
   {
-    "command": "extension.openCurrentDashboardInViewMode",
-    "title": "SFDX: Open Current Dashboard in View Mode"
+    "command": "extension.openFlowInViewMode",
+    "title": "SFDX: Open Flow in View Mode"
   },
   {
-    "command": "extension.clearMetadataCache",
-    "title": "SFDX: Clear Cached Record Metadata"
+    "command": "extension.openReportInEditMode",
+    "title": "SFDX: Open Report in Edit Mode"
   },
   {
-    "command": "extension.displayMetadataCache",
-    "title": "SFDX: Display Cached Record Metadata"
+    "command": "extension.openReportInViewMode",
+    "title": "SFDX: Open Report in View Mode"
+  },
+  {
+    "command": "extension.openSObjectInEditMode",
+    "title": "SFDX: Open SObject in Edit Mode"
+  },
+  {
+    "command": "extension.openSObjectInViewMode",
+    "title": "SFDX: View SObject in View Mode"
+  },
+  {
+    "command": "extension.openValidationRuleInEditMode",
+    "title": "SFDX: Open Validation Rule in Edit Mode"
+  },
+  {
+    "command": "extension.openValidationRuleInViewMode",
+    "title": "SFDX: Open Validation Rule in View Mode"
   }
 ]

@@ -1,18 +1,18 @@
 import * as vscode from "vscode";
 import { FileType } from "../../salesforce";
-import { retrieveMetadata } from "./retriever";
-import { Bot, BotVersion, BotMetadataWrapper } from "..";
+import { retrieve } from "../../salesforce/data/service";
+import { Bot, BotVersion, BotMetadataWrapper } from "../../salesforce";
 
 /**
  * Retrieves the BotDefinition and latest BotVersion from Salesforce for the given bot name.
  * Always queries the org live (no caching).
  */
-export async function getMetadataInfo(
+export async function retrieveRecord(
   metadataName: string,
   metadataType: FileType,
   context: vscode.ExtensionContext
 ): Promise<BotMetadataWrapper | null> {
-  return retrieveMetadata<BotMetadataWrapper>({
+  return retrieve<BotMetadataWrapper>({
     metadataName,
     metadataType,
     context,
