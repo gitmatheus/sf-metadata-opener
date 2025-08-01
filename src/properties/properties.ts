@@ -16,6 +16,14 @@ export class Properties {
   );
 
   /**
+   * Returns the list of metadata types that should be auto-deployed before opening.
+   * Matches against human-readable type labels (e.g., "Flow", "ValidationRule").
+   */
+  static get deployableMetadataTypes(): string[] {
+    return this.extensionConfig.get<string[]>("deployableMetadataTypes", []);
+  }
+
+  /**
    * Whether to use the `sf` CLI to open metadata directly.
    * If disabled, the extension will query the org to resolve the record ID.
    */
@@ -24,14 +32,6 @@ export class Properties {
       "useOpenFileCommandToOpenMetadata",
       true
     );
-  }
-
-  /**
-   * Whether to deploy the local metadata file before opening it in the browser.
-   * Helps ensure the latest version is visible in the org.
-   */
-  static get deployBeforeOpen(): boolean {
-    return this.extensionConfig.get<boolean>("deployBeforeOpen", true);
   }
 
   /**

@@ -55,15 +55,37 @@
           "default": true,
           "description": "Use the `sf org open --source-file` CLI to open supported metadata in the browser. Disable this to have the extension query the org for the metadata ID instead."
         },
-        "SalesforceMetadataOpener.deployBeforeOpen": {
-          "type": "boolean",
-          "default": true,
-          "description": "Deploy the local metadata file before opening it in the browser."
-        },
         "SalesforceMetadataOpener.enableCaching": {
           "type": "boolean",
           "default": false,
           "description": "Enable caching of record IDs to improve performance. Disable if you need to always fetch the latest data."
+        },
+        "SalesforceMetadataOpener.deployableMetadataTypes": {
+          "type": "array",
+          "default": [
+            "Flow",
+            "Bot"
+          ],
+          "description": "Select which metadata types should be auto-deployed before opening.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Flow",
+              "Bot",
+              "Report",
+              "Dashboard",
+              "ValidationRule",
+              "SObject"
+            ],
+            "enumDescriptions": [
+              "Flows",
+              "Agentforce Agents (Bots)",
+              "Reports",
+              "Dashboards",
+              "Validation Rules",
+              "Standard and Custom Objects"
+            ]
+          }
         }
       }
     },

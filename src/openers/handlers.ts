@@ -32,7 +32,11 @@ export async function openMetadata<T>({
     );
   }
 
-  if (Properties.deployBeforeOpen) {
+  const deployableTypes = Properties.deployableMetadataTypes
+    .map((key) => sf.DeployableMetadataKeys[key])
+    .filter(Boolean); // in case the config contains an invalid entry
+
+  if (deployableTypes.includes(fileType)) {
     const deployed = await sf.deployMetadata(filePath);
     if (!deployed) return;
   }
