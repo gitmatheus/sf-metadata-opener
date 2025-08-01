@@ -1,0 +1,15 @@
+.vscode/
+src/
+test/
+out/
+scripts/
+tsconfig.json
+webpack.config.js
+esbuild.js
+.eslintrc.*
+.prettierrc
+node_modules/**
+**/*.map
+
+!dist/extension.js
+!icon.png
