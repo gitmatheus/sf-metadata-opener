@@ -9,16 +9,17 @@
   "engines": {
     "vscode": "^1.102.0"
   },
-  "categories": [
-    "Other"
-  ],
+  "categories": ["Other"],
   "main": "./dist/extension.js",
   "scripts": {
-    "vscode:prepublish": "npm run package",
     "prepare:manifest": "node ./scripts/manifest/build-manifest.js",
-    "compile": "npm run prepare:manifest && webpack",
-    "watch": "webpack --watch",
-    "package": "webpack --mode production --devtool hidden-source-map",
+    "check-types": "tsc --noEmit",
+    "compile": "npm run prepare:manifest && npm run check-types && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch",
+    "package": "npm run prepare:manifest && npm run check-types && node esbuild.js --production",
+    "vscode:prepublish": "npm run package",
     "publish": "vsce package",
     "compile-tests": "tsc -p . --outDir out",
     "watch-tests": "tsc -p . -w --outDir out",
