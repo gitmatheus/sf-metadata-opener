@@ -1,5 +1,7 @@
 import * as vscode from "vscode";
-import * as sf from "../../salesforce";
+import { FileType } from "../../salesforce";
+import { retrieve } from "../../salesforce/data/service";
+import { Dashboard } from "../../salesforce";
 
 /**
  * Queries Salesforce to get the Dashboard metadata using the standard API.
@@ -7,10 +9,10 @@ import * as sf from "../../salesforce";
  */
 export async function retrieveRecord(
   metadataName: string,
-  metadataType: sf.FileType,
+  metadataType: FileType,
   context: vscode.ExtensionContext
-): Promise<sf.Dashboard | null> {
-  const result = await sf.retrieve<sf.Dashboard>({
+): Promise<Dashboard | null> {
+  const result = await retrieve<Dashboard>({
     metadataName,
     metadataType,
     getCommand: (name) =>
