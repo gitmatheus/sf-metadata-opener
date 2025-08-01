@@ -1,5 +1,6 @@
 import * as vscode from "vscode";
 import * as sf from "../../salesforce";
+import * as utils from "../../utils";
 
 /**
  * Queries Salesforce to get the SObject metadata using Tooling API.
@@ -11,10 +12,10 @@ export async function retrieveRecord(
   context: vscode.ExtensionContext
 ): Promise<sf.SObject | null> {
   // If this is a Standard SObject, we just need to return its name
-  if (!sf.isCustomSObjectName(metadataName)) {
+  if (sf.isStandardSObject(metadataName)) {
     return {
-      Id: metadataName,
       DeveloperName: metadataName,
+      isCustom: false,
     } as sf.SObject;
   }
 
@@ -39,6 +40,7 @@ export async function retrieveRecord(
           Id: record.Id,
           DeveloperName: record.DeveloperName,
           NamespacePrefix: record.NamespacePrefix,
+          isCustom: true,
         };
       }
       return null;

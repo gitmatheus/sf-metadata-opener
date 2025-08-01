@@ -5,7 +5,7 @@ import { FileType, MetadataLabels } from "../../salesforce";
 import { readCachedMetadata, writeCachedMetadata } from "./cache";
 
 /**
- * Generic helper to retrieve Salesforce metadata with CLI + progress feedback.
+ * Generic helper to retrieve Salesforce metadata using the CLI with optional caching and progress feedback.
  */
 export async function retrieve<T>({
   metadataName,
@@ -13,7 +13,7 @@ export async function retrieve<T>({
   getCommand,
   parseResult,
   context,
-  skipCacheCheck = false, // Optional flag to ignore cached values
+  skipCacheCheck = false,
 }: {
   metadataName: string;
   metadataType: FileType;
@@ -24,9 +24,9 @@ export async function retrieve<T>({
 }): Promise<T | null> {
   const metadataLabel = MetadataLabels[metadataType] ?? metadataType;
 
-  // 💾 Try memory cache first (unless explicitly skipped)
+  // Try reading from the cache unless explicitly disabled
   if (Properties.enableCaching && !skipCacheCheck) {
-    const cached = await readCachedMetadata<T>(metadataName, context);
+    const cached = await tryReadFromCache<T>(metadataName, context);
     if (cached) return cached;
   }
 
@@ -41,17 +41,17 @@ export async function retrieve<T>({
           message: `Retrieving ${metadataLabel} information: "${metadataName}"`,
         });
 
-        const command = getCommand(utils.sanitizeName(metadataName));
-        const output = await utils.runShellCommand(command);
-        const json = JSON.parse(output);
-
-        const result = parseResult(json);
+        const result = await fetchAndParse<T>(
+          metadataName,
+          getCommand,
+          parseResult
+        );
         if (!result) {
           utils.showErrorMessage(`${metadataLabel} not found.`);
           return null;
         }
 
-        // 💾 Store full object in cache
+        // Save the result to cache for future use
         if (Properties.enableCaching && !skipCacheCheck) {
           await writeCachedMetadata(metadataName, result, context);
         }
@@ -65,4 +65,39 @@ export async function retrieve<T>({
       }
     }
   );
+}
+
+/**
+ * Attempts to read metadata from the local cache.
+ */
+async function tryReadFromCache<T>(
+  metadataName: string,
+  context: vscode.ExtensionContext
+): Promise<T | null> {
+  const cached = await readCachedMetadata<T>(metadataName, context);
+  return cached ?? null;
+}
+
+/**
+ * Executes the CLI command, parses the result, and returns the metadata object.
+ */
+async function fetchAndParse<T>(
+  metadataName: string,
+  getCommand: (name: string) => string,
+  parseResult: (data: any) => T | null
+): Promise<T | null> {
+  // Clean up the metadata name to ensure it's safe for shell execution
+  const sanitizedName = utils.sanitizeName(metadataName);
+
+  // Build the CLI command using the sanitized name
+  const command = getCommand(sanitizedName);
+
+  // Run the command in the shell and capture the output
+  const output = await utils.runShellCommand(command);
+
+  // Parse the output string into a JSON object
+  const json = JSON.parse(output);
+
+  // Use the caller-provided function to extract and structure the result
+  return parseResult(json);
 }

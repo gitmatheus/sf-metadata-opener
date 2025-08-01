@@ -81,6 +81,7 @@ export interface Flow extends MetadataRecord {
 export interface SObject extends MetadataRecord {
   DeveloperName?: string;
   NamespacePrefix?: string;
+  isCustom?: boolean
 }
 
 /**

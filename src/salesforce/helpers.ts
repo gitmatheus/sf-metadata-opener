@@ -47,31 +47,56 @@ export async function deployMetadata(filePath: string): Promise<boolean> {
 /**
  * Builds the default `sf org open` command to launch a metadata in the browser.
  */
-export async function buildOpenFileCommand(
-  filePath: string
-): Promise<string> {
+export async function buildOpenFileCommand(filePath: string): Promise<string> {
   return `sf org open --source-file ${filePath}`;
 }
 
-/**
- * Custom Salesforce object regex, to match suffixes
- */
-export const customObjectRegex = /^(.+)(__[a-z]+)$/i;
+export function getCustomSObjectSuffix(developerName: string): string | null {
+  const name = developerName.toLowerCase();
 
-/**
- * Determines whether the given SObject name is custom.
- */
-export function isCustomSObjectName(name: string): boolean {
-  return customObjectRegex.test(name);
+  for (const suffix of Object.keys(constants.SOBJECT_CUSTOM_SUFFIXES)) {
+    if (name.endsWith(suffix.toLowerCase())) {
+      return suffix;
+    }
+  }
+
+  return null;
 }
 
 /**
- * Normalizes the SObject name by stripping the custom suffix (e.g., __c, __r, __x, __mdt).
+ * Removes the custom suffix from the developer name, if one exists.
  */
 export function normalizeSObjectName(developerName: string): string {
-  if (isCustomSObjectName(developerName)) {
-    return developerName.replace(customObjectRegex, "");
-  }
+  const suffix = getCustomSObjectSuffix(developerName);
+  return suffix ? developerName.slice(0, -suffix.length) : developerName;
+}
 
-  return developerName;
+/**
+ * Determines if the SObject is custom by checking for known suffixes.
+ */
+export function isCustomSObjectName(developerName: string): boolean {
+  return getCustomSObjectSuffix(developerName) !== null;
+}
+
+/**
+ * Determines if the given field API name represents a standard field.
+ * Custom fields always end with '__c' in Salesforce.
+ */
+export function isStandardField(developerName: string): boolean {
+  return !developerName.endsWith("__c");
+}
+
+/**
+ * Determines if the given SObject API name represents a standard object.
+ */
+export function isStandardSObject(developerName: string): boolean {
+  return !isCustomSObjectName(developerName);
+}
+
+/**
+ * Returns the type label for a custom object suffix, if any.
+ */
+export function getSObjectTypeLabel(developerName: string): string | null {
+  const suffix = getCustomSObjectSuffix(developerName);
+  return suffix ? constants.SOBJECT_CUSTOM_SUFFIXES[suffix] : null;
 }
