@@ -1,6 +1,5 @@
 import * as vscode from "vscode";
 import * as sf from "../../salesforce";
-import * as utils from "../../utils";
 
 /**
  * Queries Salesforce to get the SObject metadata using Tooling API.

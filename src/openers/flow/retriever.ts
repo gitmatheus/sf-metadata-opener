@@ -1,7 +1,5 @@
 import * as vscode from "vscode";
-import { FileType } from "../../salesforce";
-import { retrieve } from "../../salesforce/data/service";
-import { Flow } from "../../salesforce";
+import * as sf from "../../salesforce";
 
 /**
  * Queries Salesforce to get the latest Flow version info by flow name.
@@ -9,10 +7,10 @@ import { Flow } from "../../salesforce";
  */
 export async function retrieveRecord(
   metadataName: string,
-  metadataType: FileType,
+  metadataType: sf.FileType,
   context: vscode.ExtensionContext
-): Promise<Flow | null> {
-  const result = await retrieve<Flow>({
+): Promise<sf.Flow | null> {
+  const result = await sf.retrieve<sf.Flow>({
     metadataName,
     metadataType,
     context,

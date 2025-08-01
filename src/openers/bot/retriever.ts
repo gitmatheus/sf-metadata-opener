@@ -1,7 +1,5 @@
 import * as vscode from "vscode";
-import { FileType } from "../../salesforce";
-import { retrieve } from "../../salesforce/data/service";
-import { Bot, BotVersion, BotMetadataWrapper } from "../../salesforce";
+import * as sf from "../../salesforce";
 
 /**
  * Retrieves the BotDefinition and latest BotVersion from Salesforce for the given bot name.
@@ -9,10 +7,10 @@ import { Bot, BotVersion, BotMetadataWrapper } from "../../salesforce";
  */
 export async function retrieveRecord(
   metadataName: string,
-  metadataType: FileType,
+  metadataType: sf.FileType,
   context: vscode.ExtensionContext
-): Promise<BotMetadataWrapper | null> {
-  return retrieve<BotMetadataWrapper>({
+): Promise<sf.BotMetadataWrapper | null> {
+  return sf.retrieve<sf.BotMetadataWrapper>({
     metadataName,
     metadataType,
     context,
@@ -33,8 +31,8 @@ export async function retrieveRecord(
          AND IsDeleted = false
        LIMIT 1" --json`,
     parseResult: (data) => {
-      const bot: Bot | undefined = data?.result?.records?.[0];
-      const version: BotVersion | undefined = bot?.BotVersions?.records?.[0];
+      const bot: sf.Bot | undefined = data?.result?.records?.[0];
+      const version: sf.BotVersion | undefined = bot?.BotVersions?.records?.[0];
       return bot?.Id && version?.Id ? { bot, version } : null;
     },
   });

@@ -1,7 +1,5 @@
 import * as vscode from "vscode";
-import { FileType } from "../../salesforce";
-import { retrieve } from "../../salesforce/data/service";
-import { Report } from "../../salesforce";
+import * as sf from "../../salesforce";
 
 /**
  * Queries Salesforce to get the Report metadata using the standard API.
@@ -9,10 +7,10 @@ import { Report } from "../../salesforce";
  */
 export async function retrieveRecord(
   metadataName: string,
-  metadataType: FileType,
+  metadataType: sf.FileType,
   context: vscode.ExtensionContext
-): Promise<Report | null> {
-  const result = await retrieve<Report>({
+): Promise<sf.Report | null> {
+  const result = await sf.retrieve<sf.Report>({
     metadataName,
     metadataType,
     getCommand: (name) =>
