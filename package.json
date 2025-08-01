@@ -312,6 +312,8 @@
     "onCommand:extension.openCurrentSObjectInEditMode",
     "onCommand:extension.openCurrentSObjectInViewMode",
     "onCommand:extension.openCurrentValidationRuleInEditMode",
-    "onCommand:extension.openCurrentValidationRuleInViewMode"
+    "onCommand:extension.openCurrentValidationRuleInViewMode",
+    "onCommand:extension.clearMetadataCache",
+    "onCommand:extension.displayMetadataCache"
   ]
 }
