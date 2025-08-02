@@ -4,6 +4,60 @@ All notable changes to this project will be documented here.
 
 ---
 
+## [1.0.1] - 2025-08-01
+
+### ✨ Added
+
+- ⚡ **FlexiPage support** (Lightning App Builder):
+
+  - Right-click `.flexipage-meta.xml` to open in:
+
+    - **Edit Mode** (App Builder)
+    - **View Mode** (FlexiPage Setup)
+
+  - Full support for Command Palette and file context menu
+
+- ⚙️ **Custom edit URL builder for FlexiPages**:
+
+  - Mirrors the behavior of SObjects: uses `retUrl` to redirect users back to the FlexiPage list after edit
+
+- 🧩 **New `openFileSupportedMetadataTypes` setting**:
+
+  - Works in conjunction with `useOpenFileCommandToOpenMetadata`
+  - Allows selecting _which_ types (e.g., `Flow`, `FlexiPage`) use `sf org open --source-file`
+  - Fully configurable per type (default: `["Flow", "FlexiPage"]`)
+
+### 🔄 Changed
+
+- 🧠 `mustUseOpenFileCommand()` now validates against:
+
+  - CLI mode (`edit` only)
+  - Global toggle (`useOpenFileCommandToOpenMetadata`)
+  - User-selected types (`openFileSupportedMetadataTypes`)
+  - Internal file support flag
+
+- 🧼 Improved descriptions for related settings in `package.json`:
+
+  - Clearer relationship between global toggle and type list
+  - Marked both as _EDIT-mode only_
+
+- ✅ `DeployableMetadataKeys` and settings updated to include `"FlexiPage"`
+
+### 🧼 Internal
+
+- 🧩 Added `src/openers/flexipage/` module with:
+
+  - `registerHandlers()`
+  - `retrieveRecord()` using Tooling API
+  - `resolvePath()` with retUrl support
+  - Full typing in `model.ts`
+
+- 🔗 Updated `extension.ts` and manifest files to auto-register FlexiPage commands
+
+- 📋 Menu conditions and activation events added for `.flexipage-meta.xml`
+
+---
+
 ## [1.0.0] - 2025-07-31
 
 ### ✨ Added
