@@ -20,6 +20,18 @@
       "when": "resourceFilename =~ /\\.dashboard-meta\\.xml$/",
       "group": "z_commands"
     },
+
+    {
+      "command": "extension.openFlexiPageInEditMode",
+      "when": "resourceFilename =~ /\\.flexipage-meta\\.xml$/",
+      "group": "z_commands"
+    },
+    {
+      "command": "extension.openFlexiPageInViewMode",
+      "when": "resourceFilename =~ /\\.flexipage-meta\\.xml$/",
+      "group": "z_commands"
+    },
+
     {
       "command": "extension.openFlowInEditMode",
       "when": "resourceFilename =~ /\\.flow-meta\\.xml$/",
@@ -30,6 +42,7 @@
       "when": "resourceFilename =~ /\\.flow-meta\\.xml$/",
       "group": "z_commands"
     },
+
     {
       "command": "extension.openReportInEditMode",
       "when": "resourceFilename =~ /\\.report-meta\\.xml$/",
@@ -78,6 +91,16 @@
       "command": "extension.openDashboardInViewMode",
       "when": "false"
     },
+
+    {
+      "command": "extension.openFlexiPageInEditMode",
+      "when": "false"
+    },
+    {
+      "command": "extension.openFlexiPageInViewMode",
+      "when": "false"
+    },
+
     {
       "command": "extension.openFlowInEditMode",
       "when": "false"
@@ -86,6 +109,7 @@
       "command": "extension.openFlowInViewMode",
       "when": "false"
     },
+
     {
       "command": "extension.openReportInEditMode",
       "when": "false"

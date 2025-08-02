@@ -68,7 +68,7 @@ export async function createOpenCommand<T>(
   } = options;
 
   // Check if we can use the simpler `sf open file` command based on mode and settings
-  if (shouldUseOpenFileCommand(mode, canUseOpenFileCommand)) {
+  if (mustUseOpenFileCommand(mode, metadataType, canUseOpenFileCommand)) {
     return sf.buildOpenFileCommand(filePath);
   }
 
@@ -93,21 +93,40 @@ export async function createOpenCommand<T>(
 }
 
 /**
- * Returns true if the `sf open file` command can be used for the given mode.
+ * Determines whether the `sf org open --source-file` command should be used
+ * to open metadata in the browser instead of resolving the ID manually.
+ *
+ * This decision is based on the current mode, user settings, and metadata type.
+ *
+ * @param mode - The mode in which the metadata is being opened (e.g., edit, view)
+ * @param metadataType - The metadata type (e.g., "Flow", "FlexiPage")
+ * @param canUseOpenFileCommand - Whether this metadata type *technically supports* `sf org open --source-file`
+ *                                 (defined by the caller based on extension capabilities)
+ *
+ * @returns true if the CLI open command should be used
  */
-function shouldUseOpenFileCommand(mode: OpenMode, allowed: boolean): boolean {
-  return Properties.useOpenFileCommand && allowed && AllowOpenFileMode[mode];
+function mustUseOpenFileCommand(
+  mode: OpenMode,
+  metadataType: sf.FileType,
+  canUseOpenFileCommand: boolean
+): boolean {
+  return (
+    canUseOpenFileCommand &&
+    Properties.useOpenFileCommand &&
+    Properties.openFileSupportedMetadataTypes.includes(metadataType) &&
+    AllowOpenFileMode[mode]
+  );
 }
 
 /**
- * Extracts the metadata name from the file path, based on metadata type.
+ * Extracts the metadata name from the file path, based on metadata type
  */
 function getMetadataName(filePath: string, type: sf.FileType): string {
   return utils.parseMetadataNameFromFilePath(filePath, type);
 }
 
 /**
- * Resolves the browser path using metadata context and provided file info.
+ * Resolves the browser path using metadata context and provided file info
  */
 function buildMetadataPath<T>(
   filePath: string,

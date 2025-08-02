@@ -2,12 +2,13 @@ import * as vscode from "vscode";
 import * as path from "path";
 import { FileType } from "../salesforce";
 
-import * as flow from "../openers/flow/helpers";
 import * as bot from "../openers/bot/helpers";
-import * as report from "../openers/report/helpers";
 import * as dashboard from "../openers/dashboard/helpers";
-import * as validationRule from "../openers/validationRule/helpers";
+import * as flexipage from "../openers/flexipage/helpers";
+import * as flow from "../openers/flow/helpers";
+import * as report from "../openers/report/helpers";
 import * as sobject from "../openers/sobject/helpers";
+import * as validationRule from "../openers/validationRule/helpers";
 
 /**
  * Resolves the absolute file path from the currently active text editor in VS Code.
@@ -35,6 +36,7 @@ type ResolverFn = (ctx: PathContext) => string;
 const resolvePathMap: Record<FileType, ResolverFn> = {
   [FileType.Bot]: bot.resolvePath,
   [FileType.Dashboard]: dashboard.resolvePath,
+  [FileType.FlexiPage]: flexipage.resolvePath,
   [FileType.Flow]: flow.resolvePath,
   [FileType.Report]: report.resolvePath,
   [FileType.SObject]: sobject.resolvePath,

@@ -35,6 +35,17 @@ export class Properties {
   }
 
   /**
+   * Returns the list of metadata types that should use `sf org open --source-file`,
+   * as defined by the user's current settings.
+   */
+  static get openFileSupportedMetadataTypes(): string[] {
+    return this.extensionConfig.get<string[]>(
+      "openFileSupportedMetadataTypes",
+      []
+    );
+  }
+
+  /**
    * Returns whether caching of record IDs is enabled.
    * This helps avoid repeated queries for the same metadata.
    */

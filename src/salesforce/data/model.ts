@@ -4,6 +4,7 @@
 export const FileType = {
   Bot: ".bot-meta.xml",
   Dashboard: ".dashboard-meta.xml",
+  FlexiPage: ".flexipage-meta.xml",
   Flow: ".flow-meta.xml",
   Report: ".report-meta.xml",
   Other: ".other-meta.xml",
@@ -21,8 +22,9 @@ export type FileType = (typeof FileType)[keyof typeof FileType];
  */
 export const MetadataLabels: Record<FileType, string> = {
   [FileType.Bot]: "Agentforce Agent (Bot)",
-  [FileType.Flow]: "Flow",
   [FileType.Dashboard]: "Dashboard",
+  [FileType.FlexiPage]: "FlexiPage",
+  [FileType.Flow]: "Flow",
   [FileType.Report]: "Report",
   [FileType.Other]: "Metadata",
   [FileType.SObject]: "Object",
@@ -33,12 +35,13 @@ export const MetadataLabels: Record<FileType, string> = {
  * Maps config keys (from user settings) to internal FileType values.
  */
 export const DeployableMetadataKeys: Record<string, FileType> = {
-  Flow: FileType.Flow,
   Bot: FileType.Bot,
-  Report: FileType.Report,
   Dashboard: FileType.Dashboard,
+  FlexiPage: FileType.FlexiPage,
+  Flow: FileType.Flow,
+  Report: FileType.Report,
+  SObject: FileType.SObject,
   ValidationRule: FileType.ValidationRule,
-  SObject: FileType.SObject
 };
 
 /**
@@ -83,6 +86,17 @@ export interface BotVersion extends MetadataRecord {
 export interface Dashboard extends MetadataRecord {
   DeveloperName?: string;
   FolderName?: string;
+}
+
+/**
+ * Interface representing the metadata of a FlexiPage retrieved from Salesforce
+ */
+export interface FlexiPage extends MetadataRecord {
+  Description?: string;
+  DeveloperName?: string;
+  EntityDefinitionId?: string;
+  MasterLabel?: string;
+  ParentFlexiPage?: string;
 }
 
 /**
