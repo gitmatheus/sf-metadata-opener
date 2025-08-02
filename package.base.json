@@ -5,7 +5,7 @@
   "icon": "icon.png",
   "repository": "https://github.com/gitmatheus/sf-metadata-opener",
   "description": "Right-click to open Salesforce metadata in the browser (Flows, Agentforce agents, etc.)",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.102.0"
   },

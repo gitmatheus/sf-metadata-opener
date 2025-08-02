@@ -5,7 +5,7 @@
   "icon": "icon.png",
   "repository": "https://github.com/gitmatheus/sf-metadata-opener",
   "description": "Right-click to open Salesforce metadata in the browser (Flows, Agentforce agents, etc.)",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.102.0"
   },
@@ -60,6 +60,25 @@
           "type": "boolean",
           "default": true,
           "description": "Use the `sf org open --source-file` CLI to open supported metadata in the browser. Disable this to have the extension query the org for the metadata ID instead."
+        },
+        "SalesforceMetadataOpener.openFileSupportedMetadataTypes": {
+          "type": "array",
+          "default": [
+            "Flow",
+            "FlexiPage"
+          ],
+          "description": "Select which metadata types should use `sf org open --source-file` to open in the browser.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Flow",
+              "FlexiPage"
+            ],
+            "enumDescriptions": [
+              "Flows",
+              "FlexiPages"
+            ]
+          }
         },
         "SalesforceMetadataOpener.enableCaching": {
           "type": "boolean",

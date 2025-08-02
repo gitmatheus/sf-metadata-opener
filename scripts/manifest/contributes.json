@@ -7,6 +7,16 @@
         "default": true,
         "description": "Use the `sf org open --source-file` CLI to open supported metadata in the browser. Disable this to have the extension query the org for the metadata ID instead."
       },
+      "SalesforceMetadataOpener.openFileSupportedMetadataTypes": {
+        "type": "array",
+        "default": ["Flow", "FlexiPage"],
+        "description": "Select which metadata types should use `sf org open --source-file` to open in the browser.",
+        "items": {
+          "type": "string",
+          "enum": ["Flow", "FlexiPage"],
+          "enumDescriptions": ["Flows", "FlexiPages"]
+        }
+      },
       "SalesforceMetadataOpener.enableCaching": {
         "type": "boolean",
         "default": true,
