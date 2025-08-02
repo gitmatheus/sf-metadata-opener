@@ -108,6 +108,12 @@ From the Command Palette:
 
 ---
 
+## 📦 Salesforce Metadata Opener on VS Marketplace
+
+→ [Install Salesforce Metadata Opener](https://marketplace.visualstudio.com/items?itemName=MatheusGoncalves.sf-metadata-opener)
+
+---
+
 ## 📣 Feedback
 
 → [Open an issue](https://github.com/gitmatheus/sf-metadata-opener/issues)
