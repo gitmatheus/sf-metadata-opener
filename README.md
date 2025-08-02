@@ -4,12 +4,13 @@ A sleek, no-friction way to open Salesforce metadata directly in your browser, r
 
 Currently supports:
 
-- ✅ **Flows**
 - ✅ **Agentforce Agents (Bots)**
-- ✅ **Reports**
-- ✅ **Dashboards**
-- ✅ **Validation Rules**
 - ✅ **Custom and Standard Objects**
+- ✅ **Dashboards**
+- ✅ **FlexiPages**
+- ✅ **Flows**
+- ✅ **Reports**
+- ✅ **Validation Rules**
 
 ---
 
@@ -49,14 +50,15 @@ The extension will open the page in Edit or View mode, contextually for each typ
 
 ## 🛠️ Supported Metadata Types
 
-| Metadata Type             | Edit Mode Target   | View Mode Target              |
-| ------------------------- | ------------------ | ----------------------------- |
-| Flow                      | Flow Builder       | Flow View Page (if supported) |
-| Agentforce Agent          | Agentforce Builder | Agent Setup Page              |
-| Report                    | Report Builder     | Report Viewer                 |
-| Dashboard                 | Dashboard Builder  | Dashboard Viewer              |
-| Validation Rule           | Edit in Setup      | Open in Detail Page           |
-| Object (Standard/Custom ) | Edit in Setup      | Open in Detail Page           |
+| Metadata Type             | Edit Mode Target      | View Mode Target              |
+| ------------------------- | --------------------- | ----------------------------- |
+| Agentforce Agent          | Agentforce Builder    | Agent Setup Page              |
+| Dashboard                 | Dashboard Builder     | Dashboard Viewer              |
+| FlexiPage                 | Lightning App Builder | FlexiPage Setup Page          |
+| Flow                      | Flow Builder          | Flow View Page (if supported) |
+| Object (Standard/Custom ) | Edit in Setup         | Open in Detail Page           |
+| Report                    | Report Builder        | Report Viewer                 |
+| Validation Rule           | Edit in Setup         | Open in Detail Page           |
 
 ---
 
@@ -73,7 +75,14 @@ Each type is opt-in. You control exactly which ones to deploy.
 
 > **Default: `true`**
 
-Uses `sf org open --source-file` when supported. If disabled, the extension builds the Lightning URL directly.
+Enable global support for the `sf org open --source-file` CLI. If disabled, the extension always uses an org-based ID URL resolution.
+
+### `Metadata Types That Use CLI`
+
+> **Default: `["Flow", "FlexiPage"]`**
+
+Select which metadata types are allowed to use `sf org open --source-file`.  
+Others will fallback to org-based ID resolution and open via constructed URL.
 
 ### `Enable Caching`
 
@@ -102,8 +111,7 @@ From the Command Palette:
 
 ## 🔮 Coming Soon
 
-- Profiles, Permission Sets, Record Pages, Custom Tabs
-- Deploy preview diagnostics
+- Profiles, Permission Sets, Custom Tabs, and more
 - CLI fallback options for complex metadata
 
 ---
