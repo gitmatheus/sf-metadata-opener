@@ -59,7 +59,7 @@
         "SalesforceMetadataOpener.useOpenFileCommandToOpenMetadata": {
           "type": "boolean",
           "default": true,
-          "description": "Use the `sf org open --source-file` CLI to open supported metadata in the browser. Disable this to have the extension query the org for the metadata ID instead."
+          "description": "Enable support for the `sf org open --source-file` command. When enabled, metadata types listed above may use this CLI-based method to open in the browser. Disable this entirely to always use the fallback org-based ID resolution instead. Available for EDIT mode only."
         },
         "SalesforceMetadataOpener.openFileSupportedMetadataTypes": {
           "type": "array",
@@ -67,7 +67,7 @@
             "Flow",
             "FlexiPage"
           ],
-          "description": "Select which metadata types should use `sf org open --source-file` to open in the browser.",
+          "description": "Specify which metadata types are eligible to use `sf org open --source-file`. This list is only used when the below setting is enabled. Removing a type here forces the extension to resolve the metadata ID from the org instead. Available for EDIT mode only.",
           "items": {
             "type": "string",
             "enum": [
@@ -95,20 +95,22 @@
           "items": {
             "type": "string",
             "enum": [
-              "Flow",
               "Bot",
-              "Report",
               "Dashboard",
-              "ValidationRule",
-              "SObject"
+              "FlexiPage",
+              "Flow",
+              "Report",
+              "SObject",
+              "ValidationRule"
             ],
             "enumDescriptions": [
-              "Flows",
               "Agentforce Agents (Bots)",
-              "Reports",
               "Dashboards",
-              "Validation Rules",
-              "Standard and Custom Objects"
+              "FlexiPages",
+              "Flows",
+              "Reports",
+              "Standard and Custom Objects",
+              "Validation Rules"
             ]
           }
         }
@@ -148,6 +150,14 @@
         "title": "SFDX: Open Current Dashboard in View Mode"
       },
       {
+        "command": "extension.openCurrentFlexiPageInEditMode",
+        "title": "SFDX: Open Current FlexiPage in Lightning App Builder"
+      },
+      {
+        "command": "extension.openCurrentFlexiPageInViewMode",
+        "title": "SFDX: Open Current FlexiPage Details in Setup"
+      },
+      {
         "command": "extension.openCurrentFlowInEditMode",
         "title": "SFDX: Open Current Flow in Flow Builder"
       },
@@ -169,7 +179,7 @@
       },
       {
         "command": "extension.openCurrentSObjectInViewMode",
-        "title": "SFDX: Open Current SObject in View Mode"
+        "title": "SFDX: Open Current SObject Details in Setup"
       },
       {
         "command": "extension.openCurrentValidationRuleInEditMode",
@@ -177,7 +187,7 @@
       },
       {
         "command": "extension.openCurrentValidationRuleInViewMode",
-        "title": "SFDX: Open Current Validation Rule in View Mode"
+        "title": "SFDX: Open Current Validation Rule Details in Setup"
       },
       {
         "command": "extension.openDashboardInEditMode",
@@ -186,6 +196,14 @@
       {
         "command": "extension.openDashboardInViewMode",
         "title": "SFDX: Open Dashboard in View Mode"
+      },
+      {
+        "command": "extension.openFlexiPageInEditMode",
+        "title": "SFDX: Open FlexiPage in Lightning App Builder"
+      },
+      {
+        "command": "extension.openFlexiPageInViewMode",
+        "title": "SFDX: Open FlexiPage Details in Setup"
       },
       {
         "command": "extension.openFlowInEditMode",
@@ -240,6 +258,16 @@
         {
           "command": "extension.openDashboardInViewMode",
           "when": "resourceFilename =~ /\\.dashboard-meta\\.xml$/",
+          "group": "z_commands"
+        },
+        {
+          "command": "extension.openFlexiPageInEditMode",
+          "when": "resourceFilename =~ /\\.flexipage-meta\\.xml$/",
+          "group": "z_commands"
+        },
+        {
+          "command": "extension.openFlexiPageInViewMode",
+          "when": "resourceFilename =~ /\\.flexipage-meta\\.xml$/",
           "group": "z_commands"
         },
         {
@@ -298,6 +326,14 @@
         },
         {
           "command": "extension.openDashboardInViewMode",
+          "when": "false"
+        },
+        {
+          "command": "extension.openFlexiPageInEditMode",
+          "when": "false"
+        },
+        {
+          "command": "extension.openFlexiPageInViewMode",
           "when": "false"
         },
         {

@@ -31,6 +31,16 @@
     "command": "extension.openCurrentDashboardInViewMode",
     "title": "SFDX: Open Current Dashboard in View Mode"
   },
+
+  {
+    "command": "extension.openCurrentFlexiPageInEditMode",
+    "title": "SFDX: Open Current FlexiPage in Lightning App Builder"
+  },
+  {
+    "command": "extension.openCurrentFlexiPageInViewMode",
+    "title": "SFDX: Open Current FlexiPage Details in Setup"
+  },
+
   {
     "command": "extension.openCurrentFlowInEditMode",
     "title": "SFDX: Open Current Flow in Flow Builder"
@@ -39,6 +49,7 @@
     "command": "extension.openCurrentFlowInViewMode",
     "title": "SFDX: Open Current Flow in View Mode"
   },
+
   {
     "command": "extension.openCurrentReportInEditMode",
     "title": "SFDX: Open Current Report in Edit Mode"
@@ -47,22 +58,25 @@
     "command": "extension.openCurrentReportInViewMode",
     "title": "SFDX: Open Current Report in View Mode"
   },
+
   {
     "command": "extension.openCurrentSObjectInEditMode",
     "title": "SFDX: Open Current SObject in Edit Mode"
   },
   {
     "command": "extension.openCurrentSObjectInViewMode",
-    "title": "SFDX: Open Current SObject in View Mode"
+    "title": "SFDX: Open Current SObject Details in Setup"
   },
+
   {
     "command": "extension.openCurrentValidationRuleInEditMode",
     "title": "SFDX: Open Current Validation Rule in Edit Mode"
   },
   {
     "command": "extension.openCurrentValidationRuleInViewMode",
-    "title": "SFDX: Open Current Validation Rule in View Mode"
+    "title": "SFDX: Open Current Validation Rule Details in Setup"
   },
+
   {
     "command": "extension.openDashboardInEditMode",
     "title": "SFDX: Open Dashboard in Edit Mode"
@@ -71,6 +85,16 @@
     "command": "extension.openDashboardInViewMode",
     "title": "SFDX: Open Dashboard in View Mode"
   },
+
+  {
+    "command": "extension.openFlexiPageInEditMode",
+    "title": "SFDX: Open FlexiPage in Lightning App Builder"
+  },
+  {
+    "command": "extension.openFlexiPageInViewMode",
+    "title": "SFDX: Open FlexiPage Details in Setup"
+  },
+
   {
     "command": "extension.openFlowInEditMode",
     "title": "SFDX: Open Flow in Flow Builder"
