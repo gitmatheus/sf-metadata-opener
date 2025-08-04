@@ -151,7 +151,7 @@ All notable changes to this project will be documented here.
 - 🧩 **Factory pattern improvements**:
 
   - `createOpenCommand()` generates CLI open strings or fallback URLs
-  - `buildOpenPathCommand()` available for direct Lightning URL use
+  - `buildOpenPathCommand()` available for direct URL use
 
 - 🧠 **Smarter deploy logic**:
 
@@ -221,14 +221,14 @@ All notable changes to this project will be documented here.
 
   - Right-click `.report-meta.xml` to open in:
 
-    - **Edit Mode** (Lightning Report Builder)
-    - **View Mode** (Standard Lightning Report Page)
+    - **Edit Mode** (Report Builder)
+    - **View Mode** (Standard Report Page)
 
   - Command Palette equivalents also available.
 
 - 📁 New `src/commands/report/` folder added for Report-specific logic.
 - 🧠 `retrieveRecord()` for reports queries the `Report` object using standard REST API, not Tooling.
-- 🔗 `resolvePath()` for Reports constructs direct ID-based Lightning URLs.
+- 🔗 `resolvePath()` for Reports constructs direct ID-based URLs.
 - ⚙️ `skipDefaultCli` flag added to `createOpenCommand()` to force ID-based opening (used by Reports).
 
 ### ⚙️ Changed
