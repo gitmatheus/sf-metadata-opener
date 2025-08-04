@@ -57,7 +57,7 @@ The extension will open the page in Edit or View mode, contextually for each typ
 | Dashboard                | Dashboard Builder       | Dashboard Viewer              |
 | FlexiPage                | Lightning App Builder   | FlexiPage Setup Page          |
 | Flow                     | Flow Builder            | Flow View Page (if supported) |
-| Permission Sets          | Permission Set Overview | Permission Set Summary        |
+| Permission Set           | Permission Set Overview | Permission Set Summary        |
 | Object (Standard/Custom) | Edit in Setup           | Open in Detail Page           |
 | Report                   | Report Builder          | Report Viewer                 |
 | Validation Rule          | Edit in Setup           | Open in Detail Page           |
