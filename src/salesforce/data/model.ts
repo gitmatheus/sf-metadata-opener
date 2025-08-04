@@ -6,8 +6,9 @@ export const FileType = {
   Dashboard: ".dashboard-meta.xml",
   FlexiPage: ".flexipage-meta.xml",
   Flow: ".flow-meta.xml",
-  Report: ".report-meta.xml",
   Other: ".other-meta.xml",
+  PermissionSet: ".permissionset-meta.xml",
+  Report: ".report-meta.xml",
   SObject: ".object-meta.xml",
   ValidationRule: ".validationRule-meta.xml",
 };
@@ -25,8 +26,9 @@ export const MetadataLabels: Record<FileType, string> = {
   [FileType.Dashboard]: "Dashboard",
   [FileType.FlexiPage]: "FlexiPage",
   [FileType.Flow]: "Flow",
-  [FileType.Report]: "Report",
   [FileType.Other]: "Metadata",
+  [FileType.PermissionSet]: "Permission Set",
+  [FileType.Report]: "Report",
   [FileType.SObject]: "Object",
   [FileType.ValidationRule]: "Validation Rule",
 };
@@ -39,6 +41,7 @@ export const DeployableMetadataKeys: Record<string, FileType> = {
   Dashboard: FileType.Dashboard,
   FlexiPage: FileType.FlexiPage,
   Flow: FileType.Flow,
+  PermissionSet: FileType.PermissionSet,
   Report: FileType.Report,
   SObject: FileType.SObject,
   ValidationRule: FileType.ValidationRule,
@@ -104,6 +107,15 @@ export interface FlexiPage extends MetadataRecord {
  */
 export interface Flow extends MetadataRecord {
   ProcessType?: string;
+}
+
+/**
+ * Interface representing the metadata of a PermissionSet retrieved from Salesforce
+ */
+export interface PermissionSet extends MetadataRecord {
+  Label?: string;
+  Description?: string;
+  IsCustom?: boolean;
 }
 
 /**

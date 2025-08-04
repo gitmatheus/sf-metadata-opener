@@ -4,8 +4,8 @@
   "publisher": "MatheusGoncalves",
   "icon": "icon.png",
   "repository": "https://github.com/gitmatheus/sf-metadata-opener",
-  "description": "Right-click to open Salesforce metadata in the browser (Flows, Agentforce agents, etc.)",
-  "version": "1.0.1",
+  "description": "Right-click to open Salesforce metadata in the browser (Flows, Agentforce Agents, Dashboards, Reports, etc.)",
+  "version": "1.0.2",
   "engines": {
     "vscode": "^1.102.0"
   },
@@ -89,7 +89,8 @@
           "type": "array",
           "default": [
             "Flow",
-            "Bot"
+            "Bot",
+            "PermissionSet"
           ],
           "description": "Select which metadata types should be auto-deployed before opening.",
           "items": {
@@ -99,6 +100,7 @@
               "Dashboard",
               "FlexiPage",
               "Flow",
+              "PermissionSet",
               "Report",
               "SObject",
               "ValidationRule"
@@ -108,6 +110,7 @@
               "Dashboards",
               "FlexiPages",
               "Flows",
+              "PermissionSet",
               "Reports",
               "Standard and Custom Objects",
               "Validation Rules"
@@ -214,6 +217,22 @@
         "title": "SFDX: Open Flow in View Mode"
       },
       {
+        "command": "extension.openPermissionSetInViewMode",
+        "title": "SFDX: Open Permission Set Summary"
+      },
+      {
+        "command": "extension.openPermissionSetInEditMode",
+        "title": "SFDX: Open Permission Set in Setup"
+      },
+      {
+        "command": "extension.openCurrentPermissionSetInViewMode",
+        "title": "SFDX: Open Current Permission Set Summary"
+      },
+      {
+        "command": "extension.openCurrentPermissionSetInEditMode",
+        "title": "SFDX: Open Current Permission Set in Setup"
+      },
+      {
         "command": "extension.openReportInEditMode",
         "title": "SFDX: Open Report in Edit Mode"
       },
@@ -281,6 +300,16 @@
           "group": "z_commands"
         },
         {
+          "command": "extension.openPermissionSetInEditMode",
+          "when": "resourceFilename =~ /\\.permissionset-meta\\.xml$/",
+          "group": "z_commands"
+        },
+        {
+          "command": "extension.openPermissionSetInViewMode",
+          "when": "resourceFilename =~ /\\.permissionset-meta\\.xml$/",
+          "group": "z_commands"
+        },
+        {
           "command": "extension.openReportInEditMode",
           "when": "resourceFilename =~ /\\.report-meta\\.xml$/",
           "group": "z_commands"
@@ -345,6 +374,14 @@
           "when": "false"
         },
         {
+          "command": "extension.openPermissionSetInEditMode",
+          "when": "false"
+        },
+        {
+          "command": "extension.openPermissionSetInViewMode",
+          "when": "false"
+        },
+        {
           "command": "extension.openReportInEditMode",
           "when": "false"
         },
@@ -378,6 +415,8 @@
     "onCommand:extension.openDashboardInViewMode",
     "onCommand:extension.openFlowInEditMode",
     "onCommand:extension.openFlowInViewMode",
+    "onCommand:extension.openPermissionSetInEditMode",
+    "onCommand:extension.openPermissionSetInViewMode",
     "onCommand:extension.openReportInEditMode",
     "onCommand:extension.openReportInViewMode",
     "onCommand:extension.openSObjectInEditMode",
@@ -390,6 +429,8 @@
     "onCommand:extension.openCurrentDashboardInViewMode",
     "onCommand:extension.openCurrentFlowInEditMode",
     "onCommand:extension.openCurrentFlowInViewMode",
+    "onCommand:extension.openCurrentPermissionSetInEditMode",
+    "onCommand:extension.openCurrentPermissionSetInViewMode",
     "onCommand:extension.openCurrentReportInEditMode",
     "onCommand:extension.openCurrentReportInViewMode",
     "onCommand:extension.openCurrentSObjectInEditMode",

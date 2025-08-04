@@ -44,6 +44,17 @@
     },
 
     {
+      "command": "extension.openPermissionSetInEditMode",
+      "when": "resourceFilename =~ /\\.permissionset-meta\\.xml$/",
+      "group": "z_commands"
+    },
+    {
+      "command": "extension.openPermissionSetInViewMode",
+      "when": "resourceFilename =~ /\\.permissionset-meta\\.xml$/",
+      "group": "z_commands"
+    },
+
+    {
       "command": "extension.openReportInEditMode",
       "when": "resourceFilename =~ /\\.report-meta\\.xml$/",
       "group": "z_commands"
@@ -107,6 +118,15 @@
     },
     {
       "command": "extension.openFlowInViewMode",
+      "when": "false"
+    },
+
+    {
+      "command": "extension.openPermissionSetInEditMode",
+      "when": "false"
+    },
+    {
+      "command": "extension.openPermissionSetInViewMode",
       "when": "false"
     },
 

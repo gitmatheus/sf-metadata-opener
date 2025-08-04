@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [ ! -f "./package.json" ]; then
-  echo "🛠  Generating package.json from base manifest..."
-  node scripts/manifest/build-manifest.js
-fi
+# Always regenerate package.json
+echo "🛠 Regenerating package.json"
+rm -f package.json
+node scripts/manifest/build-manifest.js
 
 npm run compile

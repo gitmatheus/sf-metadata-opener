@@ -103,6 +103,24 @@
     "command": "extension.openFlowInViewMode",
     "title": "SFDX: Open Flow in View Mode"
   },
+
+  {
+    "command": "extension.openPermissionSetInViewMode",
+    "title": "SFDX: Open Permission Set Summary"
+  },
+  {
+    "command": "extension.openPermissionSetInEditMode",
+    "title": "SFDX: Open Permission Set in Setup"
+  },
+  {
+    "command": "extension.openCurrentPermissionSetInViewMode",
+    "title": "SFDX: Open Current Permission Set Summary"
+  },
+  {
+    "command": "extension.openCurrentPermissionSetInEditMode",
+    "title": "SFDX: Open Current Permission Set in Setup"
+  },
+
   {
     "command": "extension.openReportInEditMode",
     "title": "SFDX: Open Report in Edit Mode"
