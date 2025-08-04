@@ -6,6 +6,7 @@ import * as bot from "../openers/bot/helpers";
 import * as dashboard from "../openers/dashboard/helpers";
 import * as flexipage from "../openers/flexipage/helpers";
 import * as flow from "../openers/flow/helpers";
+import * as permissionset from "../openers/permissionset/helpers";
 import * as report from "../openers/report/helpers";
 import * as sobject from "../openers/sobject/helpers";
 import * as validationRule from "../openers/validationRule/helpers";
@@ -38,6 +39,7 @@ const resolvePathMap: Record<FileType, ResolverFn> = {
   [FileType.Dashboard]: dashboard.resolvePath,
   [FileType.FlexiPage]: flexipage.resolvePath,
   [FileType.Flow]: flow.resolvePath,
+  [FileType.PermissionSet]: permissionset.resolvePath,
   [FileType.Report]: report.resolvePath,
   [FileType.SObject]: sobject.resolvePath,
   [FileType.ValidationRule]: validationRule.resolvePath,

@@ -4,6 +4,60 @@ All notable changes to this project will be documented here.
 
 ---
 
+## [1.0.2] - 2025-08-04
+
+### ✨ Added
+
+- 🔐 **Permission Set metadata support**:
+
+  - Right-click `.permissionset-meta.xml` to open in:
+
+    - **Edit Mode** (Setup detail page)
+    - **View Mode** (Permission Set Summary)
+
+  - Supports both context menu and Command Palette
+
+- 🧭 **Custom URL resolver for Permission Sets**:
+
+  - View mode: `/lightning/setup/PermSets/{id}/summary`
+  - Edit mode: `/lightning/setup/PermSets/page?address=%2F{id}`
+
+- 🧩 **New metadata interface**: `PermissionSet`
+
+  - Fields: `Id`, `Name`, `Label`, `Description`, `IsCustom`
+
+- ⚙️ **Deployable type support**:
+
+  - `PermissionSet` added to:
+
+    - `DeployableMetadataKeys`
+    - `deployableMetadataTypes` setting (`contributes.json`)
+
+### 🔄 Changed
+
+- 🧠 Central metadata model updated:
+
+  - `FileType`, `MetadataLabels`, and `DeployableMetadataKeys` extended with `PermissionSet`
+
+- ⚙️ Manifest updates:
+
+  - Commands, menus, and activation events added for `.permissionset-meta.xml`
+
+### 🧼 Internal
+
+- 🧩 New folder: `src/openers/permissionset/`
+
+  - `helpers.ts`: open/edit handlers and path resolver
+  - `retriever.ts`: uses `sf data get record` for ID lookup
+
+- 🧭 `resolvePathMap` extended in `utils/path.ts` for `PermissionSet`
+
+- 🛠 `extension.ts` and `openers/index.ts` updated to register handlers
+
+- 📋 All manifest files updated via `scripts/manifest/`, not `package.json`
+
+---
+
 ## [1.0.1] - 2025-08-01
 
 ### ✨ Added
@@ -97,7 +151,7 @@ All notable changes to this project will be documented here.
 - 🧩 **Factory pattern improvements**:
 
   - `createOpenCommand()` generates CLI open strings or fallback URLs
-  - `buildOpenPathCommand()` available for direct Lightning URL use
+  - `buildOpenPathCommand()` available for direct URL use
 
 - 🧠 **Smarter deploy logic**:
 
@@ -167,14 +221,14 @@ All notable changes to this project will be documented here.
 
   - Right-click `.report-meta.xml` to open in:
 
-    - **Edit Mode** (Lightning Report Builder)
-    - **View Mode** (Standard Lightning Report Page)
+    - **Edit Mode** (Report Builder)
+    - **View Mode** (Standard Report Page)
 
   - Command Palette equivalents also available.
 
 - 📁 New `src/commands/report/` folder added for Report-specific logic.
 - 🧠 `retrieveRecord()` for reports queries the `Report` object using standard REST API, not Tooling.
-- 🔗 `resolvePath()` for Reports constructs direct ID-based Lightning URLs.
+- 🔗 `resolvePath()` for Reports constructs direct ID-based URLs.
 - ⚙️ `skipDefaultCli` flag added to `createOpenCommand()` to force ID-based opening (used by Reports).
 
 ### ⚙️ Changed

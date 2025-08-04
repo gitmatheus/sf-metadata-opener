@@ -8,6 +8,9 @@
   "onCommand:extension.openFlowInEditMode",
   "onCommand:extension.openFlowInViewMode",
 
+  "onCommand:extension.openPermissionSetInEditMode",
+  "onCommand:extension.openPermissionSetInViewMode",
+
   "onCommand:extension.openReportInEditMode",
   "onCommand:extension.openReportInViewMode",
 
@@ -16,7 +19,7 @@
 
   "onCommand:extension.openValidationRuleInEditMode",
   "onCommand:extension.openValidationRuleInViewMode",
-  
+
   "onCommand:extension.openCurrentBotInEditMode",
   "onCommand:extension.openCurrentBotInViewMode",
 
@@ -26,12 +29,15 @@
   "onCommand:extension.openCurrentFlowInEditMode",
   "onCommand:extension.openCurrentFlowInViewMode",
 
+  "onCommand:extension.openCurrentPermissionSetInEditMode",
+  "onCommand:extension.openCurrentPermissionSetInViewMode",
+
   "onCommand:extension.openCurrentReportInEditMode",
   "onCommand:extension.openCurrentReportInViewMode",
 
   "onCommand:extension.openCurrentSObjectInEditMode",
   "onCommand:extension.openCurrentSObjectInViewMode",
-  
+
   "onCommand:extension.openCurrentValidationRuleInEditMode",
   "onCommand:extension.openCurrentValidationRuleInViewMode",
 

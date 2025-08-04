@@ -9,6 +9,7 @@ Currently supports:
 - ✅ **Dashboards**
 - ✅ **FlexiPages**
 - ✅ **Flows**
+- ✅ **Permission Sets**
 - ✅ **Reports**
 - ✅ **Validation Rules**
 
@@ -50,15 +51,16 @@ The extension will open the page in Edit or View mode, contextually for each typ
 
 ## 🛠️ Supported Metadata Types
 
-| Metadata Type             | Edit Mode Target      | View Mode Target              |
-| ------------------------- | --------------------- | ----------------------------- |
-| Agentforce Agent          | Agentforce Builder    | Agent Setup Page              |
-| Dashboard                 | Dashboard Builder     | Dashboard Viewer              |
-| FlexiPage                 | Lightning App Builder | FlexiPage Setup Page          |
-| Flow                      | Flow Builder          | Flow View Page (if supported) |
-| Object (Standard/Custom ) | Edit in Setup         | Open in Detail Page           |
-| Report                    | Report Builder        | Report Viewer                 |
-| Validation Rule           | Edit in Setup         | Open in Detail Page           |
+| Metadata Type            | Edit Mode Target        | View Mode Target              |
+| ------------------------ | ----------------------- | ----------------------------- |
+| Agentforce Agent         | Agentforce Builder      | Agent Setup Page              |
+| Dashboard                | Dashboard Builder       | Dashboard Viewer              |
+| FlexiPage                | Lightning App Builder   | FlexiPage Setup Page          |
+| Flow                     | Flow Builder            | Flow View Page (if supported) |
+| Permission Set           | Permission Set Overview | Permission Set Summary        |
+| Object (Standard/Custom) | Edit in Setup           | Open in Detail Page           |
+| Report                   | Report Builder          | Report Viewer                 |
+| Validation Rule          | Edit in Setup           | Open in Detail Page           |
 
 ---
 
@@ -111,7 +113,7 @@ From the Command Palette:
 
 ## 🔮 Coming Soon
 
-- Profiles, Permission Sets, Custom Tabs, and more
+- Profiles, Custom Tabs, Email Templates, and more
 - CLI fallback options for complex metadata
 
 ---
