@@ -4,49 +4,88 @@ All notable changes to this project will be documented here.
 
 ---
 
+## [1.0.3] - 2025-08-11
+
+### ✨ Added
+
+- 👤 **Profile metadata support**:
+  - Right-click `.profile-meta.xml` to open in:
+    - **Edit Mode** (Profile Setup detail page)
+    - **View Mode** (Profile Setup summary page)
+
+  - Available in:
+    - Explorer context menu
+    - Editor context menu
+    - Command Palette (when explicitly enabled)
+
+- **Custom URL resolver for Profiles**:
+  - View mode: `/lightning/setup/EnhancedProfiles/page?address=%2F{id}`
+  - Edit mode: `/lightning/setup/EnhancedProfiles/page?address=%2F{id}%2Fe`
+
+- **New metadata interface**: `Profile`
+  - Fields: `Id`, `Name`, `UserLicenseId`, `UserType`
+
+### 🔄 Changed
+
+- Central metadata model updated:
+  - `FileType`, `MetadataLabels`, and `DeployableMetadataKeys` extended with `Profile`
+
+- **Sanitization logic updated**:
+  - `sanitizeName()` now decodes URL-encoded characters (e.g., `%3A` → `:`)
+  - Allows spaces and colons for Profiles, while keeping strict validation for other metadata types
+
+- ⚙️ Manifest updates:
+  - Commands, menus (Explorer + Editor), and activation events added for `.profile-meta.xml`
+
+### 🧼 Internal
+
+- New folder: `src/openers/profile/`
+  - `helpers.ts`: open/edit handlers and path resolver
+  - `retriever.ts`: uses `sf data get record` with sanitized name decoding for ID lookup
+
+- `resolvePathMap` extended in `utils/path.ts` for `Profile`
+
+- `openers/index.ts` and `extension.ts` updated to register handlers
+- Updated node version
+
+- 📋 All manifest files updated via `scripts/manifest/`, not `package.json`
+
+---
+
 ## [1.0.2] - 2025-08-04
 
 ### ✨ Added
 
 - 🔐 **Permission Set metadata support**:
-
   - Right-click `.permissionset-meta.xml` to open in:
-
     - **Edit Mode** (Setup detail page)
     - **View Mode** (Permission Set Summary)
 
   - Supports both context menu and Command Palette
 
 - 🧭 **Custom URL resolver for Permission Sets**:
-
   - View mode: `/lightning/setup/PermSets/{id}/summary`
   - Edit mode: `/lightning/setup/PermSets/page?address=%2F{id}`
 
 - 🧩 **New metadata interface**: `PermissionSet`
-
   - Fields: `Id`, `Name`, `Label`, `Description`, `IsCustom`
 
 - ⚙️ **Deployable type support**:
-
   - `PermissionSet` added to:
-
     - `DeployableMetadataKeys`
     - `deployableMetadataTypes` setting (`contributes.json`)
 
 ### 🔄 Changed
 
 - 🧠 Central metadata model updated:
-
   - `FileType`, `MetadataLabels`, and `DeployableMetadataKeys` extended with `PermissionSet`
 
 - ⚙️ Manifest updates:
-
   - Commands, menus, and activation events added for `.permissionset-meta.xml`
 
 ### 🧼 Internal
 
 - 🧩 New folder: `src/openers/permissionset/`
-
   - `helpers.ts`: open/edit handlers and path resolver
   - `retriever.ts`: uses `sf data get record` for ID lookup
 
@@ -63,20 +102,16 @@ All notable changes to this project will be documented here.
 ### ✨ Added
 
 - ⚡ **FlexiPage support** (Lightning App Builder):
-
   - Right-click `.flexipage-meta.xml` to open in:
-
     - **Edit Mode** (App Builder)
     - **View Mode** (FlexiPage Setup)
 
   - Full support for Command Palette and file context menu
 
 - ⚙️ **Custom edit URL builder for FlexiPages**:
-
   - Mirrors the behavior of SObjects: uses `retUrl` to redirect users back to the FlexiPage list after edit
 
 - 🧩 **New `openFileSupportedMetadataTypes` setting**:
-
   - Works in conjunction with `useOpenFileCommandToOpenMetadata`
   - Allows selecting _which_ types (e.g., `Flow`, `FlexiPage`) use `sf org open --source-file`
   - Fully configurable per type (default: `["Flow", "FlexiPage"]`)
@@ -84,14 +119,12 @@ All notable changes to this project will be documented here.
 ### 🔄 Changed
 
 - 🧠 `mustUseOpenFileCommand()` now validates against:
-
   - CLI mode (`edit` only)
   - Global toggle (`useOpenFileCommandToOpenMetadata`)
   - User-selected types (`openFileSupportedMetadataTypes`)
   - Internal file support flag
 
 - 🧼 Improved descriptions for related settings in `package.json`:
-
   - Clearer relationship between global toggle and type list
   - Marked both as _EDIT-mode only_
 
@@ -100,7 +133,6 @@ All notable changes to this project will be documented here.
 ### 🧼 Internal
 
 - 🧩 Added `src/openers/flexipage/` module with:
-
   - `registerHandlers()`
   - `retrieveRecord()` using Tooling API
   - `resolvePath()` with retUrl support
@@ -117,60 +149,49 @@ All notable changes to this project will be documented here.
 ### ✨ Added
 
 - 🧱 **New metadata support**:
-
   - ✅ **Validation Rules**
   - ✅ **SObjects** (Standard & Custom)
 
 - 🧠 **Per-type deploy setting**:
-
   - New setting: `Salesforce Metadata Opener: Deployable Metadata Types`
   - Allows selecting which metadata types should be deployed automatically before opening
   - Fully replaces the old `deployBeforeOpen` global toggle
 
 - ⚙️ **Custom SObject suffix parsing**:
-
   - Robust recognition for 20+ suffixes (`__c`, `__e`, `__mdt`, etc.)
   - Utilities like `normalizeSObjectName()` and `getSObjectTypeLabel()` included
 
 ### 🔄 Changed
 
 - 🏗️ **Project structure refactor**:
-
   - All metadata openers moved to `src/openers/{type}/`
   - Each opener defines:
-
     - `registerHandlers()`
     - `resolvePath()`
     - `retrieveRecord()` (Tooling or REST)
 
 - 🧠 **Generic open logic**:
-
   - Introduced shared `openMetadata()` handler for all types
   - URL resolution now modular via `resolveMetadataPath()`, mapped by type
 
 - 🧩 **Factory pattern improvements**:
-
   - `createOpenCommand()` generates CLI open strings or fallback URLs
   - `buildOpenPathCommand()` available for direct URL use
 
 - 🧠 **Smarter deploy logic**:
-
   - Deploy now respects configured types via `deployableMetadataTypes`
 
 ### 🧼 Internal
 
 - 🧠 **Record metadata caching**:
-
   - Now supports parent-aware keys (e.g., `Account:MyValidationRule`)
   - Centralized in `salesforce/data/cache.ts`
 
 - 📦 **Metadata settings mapped properly**:
-
   - `DeployableMetadataKeys` maps setting strings to `FileType`
   - Label consistency via `MetadataLabels` and `enumDescriptions`
 
 - 🔗 **Simplified activation & menu config**:
-
   - Command, context menu, and palette entries sorted alphabetically
   - Auto-completion now fully reflects supported types
 
@@ -179,20 +200,17 @@ All notable changes to this project will be documented here.
 ### ✨ Added
 
 - 📊 **Dashboard metadata support**:
-
   - Right-click `.dashboard-meta.xml` to open in:
     - **Edit Mode** (Lightning Dashboard Builder)
     - **View Mode** (Standard Lightning Dashboard page)
   - Command Palette equivalents also available.
 
 - 💾 **Metadata Caching**:
-
   - Improves performance by storing record metadata in memory using `ExtensionContext.workspaceState`.
   - Reduces repeated org queries for frequently opened metadata.
   - Caching is enabled via a new setting: `Salesforce Metadata Opener: Enable Caching`.
 
 - 🧹 **Clear Metadata Cache** command:
-
   - `SFDX: Clear Cached Record Metadata` (Command Palette)
 
 - 👀 **Display Metadata Cache** command:
@@ -218,9 +236,7 @@ All notable changes to this project will be documented here.
 ### ✨ Added
 
 - 📊 **Report metadata support**:
-
   - Right-click `.report-meta.xml` to open in:
-
     - **Edit Mode** (Report Builder)
     - **View Mode** (Standard Report Page)
 
@@ -234,7 +250,6 @@ All notable changes to this project will be documented here.
 ### ⚙️ Changed
 
 - 🌐 `resolveMetadataPath()` no longer contains logic for each metadata type.
-
   - That logic is now delegated to `resolvePath()` functions in each helper (`flow`, `bot`, `report`).
 
 - ✂️ Removed centralized `resolveBotPath`, `resolveFlowPath`, `resolveReportPath` from `utils/path.ts`.
@@ -254,9 +269,7 @@ All notable changes to this project will be documented here.
 ### ✨ Added
 
 - 🧠 **Agentforce Agent (Bot) support**:
-
   - Right-click `.bot-meta.xml` to open in:
-
     - Agentforce Builder
     - Setup (Details page)
 
@@ -288,7 +301,6 @@ All notable changes to this project will be documented here.
 ### ✨ Added
 
 - Configuration settings:
-
   - `Deploy Before Open`: Toggle automatic deployment before opening flows.
   - `Use Sf Command To Open Flow`: Open using `--source-file` instead of querying the org.
 

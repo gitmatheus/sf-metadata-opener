@@ -10,6 +10,7 @@ Currently supports:
 - ✅ **FlexiPages**
 - ✅ **Flows**
 - ✅ **Permission Sets**
+- ✅ **Profiles**
 - ✅ **Reports**
 - ✅ **Validation Rules**
 
@@ -17,7 +18,7 @@ Currently supports:
 
 ## 🧠 What It Does
 
-This extension lets you quickly jump from a metadata file in your project to its corresponding Salesforce UI. Whether you're editing a Flow, an Agentforce Agent, a Validation Rule, or a dashboard, it's all just one click away.
+This extension lets you quickly jump from a metadata file in your project to its corresponding Salesforce UI. Whether you're editing a Flow, an Agentforce Agent, a Profile, a Validation Rule, a Dashboard, etc... It's all just one click away.
 
 ---
 
@@ -36,12 +37,10 @@ This extension lets you quickly jump from a metadata file in your project to its
 ## ✅ How To Use It
 
 - **Right-click** a supported metadata file to open it in your org
-
   - `SFDX: Open ... in Edit Mode`
   - `SFDX: Open ... in View Mode`
 
 - **Or** use the Command Palette:
-
   - `SFDX: Open Current ... in Edit Mode`
   - `SFDX: Open Current ... in View Mode`
 
@@ -58,6 +57,7 @@ The extension will open the page in Edit or View mode, contextually for each typ
 | FlexiPage                | Lightning App Builder   | FlexiPage Setup Page          |
 | Flow                     | Flow Builder            | Flow View Page (if supported) |
 | Permission Set           | Permission Set Overview | Permission Set Summary        |
+| Profile                  | Profile Setup Page      | Profile Setup Summary         |
 | Object (Standard/Custom) | Edit in Setup           | Open in Detail Page           |
 | Report                   | Report Builder          | Report Viewer                 |
 | Validation Rule          | Edit in Setup           | Open in Detail Page           |
@@ -113,7 +113,7 @@ From the Command Palette:
 
 ## 🔮 Coming Soon
 
-- Profiles, Custom Tabs, Email Templates, and more
+- Custom Tabs, Email Templates, and more
 - CLI fallback options for complex metadata
 
 ---

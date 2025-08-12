@@ -55,6 +55,17 @@
     },
 
     {
+      "command": "extension.openProfileInEditMode",
+      "when": "resourceFilename =~ /\\.profile-meta\\.xml$/",
+      "group": "z_commands"
+    },
+    {
+      "command": "extension.openProfileInViewMode",
+      "when": "resourceFilename =~ /\\.profile-meta\\.xml$/",
+      "group": "z_commands"
+    },
+
+    {
       "command": "extension.openReportInEditMode",
       "when": "resourceFilename =~ /\\.report-meta\\.xml$/",
       "group": "z_commands"
@@ -85,6 +96,105 @@
       "group": "z_commands"
     }
   ],
+
+  "editor/context": [
+    {
+      "command": "extension.openBotInEditMode",
+      "when": "resourceFilename =~ /\\.bot-meta\\.xml$/",
+      "group": "z_commands"
+    },
+    {
+      "command": "extension.openBotInViewMode",
+      "when": "resourceFilename =~ /\\.bot-meta\\.xml$/",
+      "group": "z_commands"
+    },
+    {
+      "command": "extension.openDashboardInEditMode",
+      "when": "resourceFilename =~ /\\.dashboard-meta\\.xml$/",
+      "group": "z_commands"
+    },
+    {
+      "command": "extension.openDashboardInViewMode",
+      "when": "resourceFilename =~ /\\.dashboard-meta\\.xml$/",
+      "group": "z_commands"
+    },
+
+    {
+      "command": "extension.openFlexiPageInEditMode",
+      "when": "resourceFilename =~ /\\.flexipage-meta\\.xml$/",
+      "group": "z_commands"
+    },
+    {
+      "command": "extension.openFlexiPageInViewMode",
+      "when": "resourceFilename =~ /\\.flexipage-meta\\.xml$/",
+      "group": "z_commands"
+    },
+
+    {
+      "command": "extension.openFlowInEditMode",
+      "when": "resourceFilename =~ /\\.flow-meta\\.xml$/",
+      "group": "z_commands"
+    },
+    {
+      "command": "extension.openFlowInViewMode",
+      "when": "resourceFilename =~ /\\.flow-meta\\.xml$/",
+      "group": "z_commands"
+    },
+
+    {
+      "command": "extension.openPermissionSetInEditMode",
+      "when": "resourceFilename =~ /\\.permissionset-meta\\.xml$/",
+      "group": "z_commands"
+    },
+    {
+      "command": "extension.openPermissionSetInViewMode",
+      "when": "resourceFilename =~ /\\.permissionset-meta\\.xml$/",
+      "group": "z_commands"
+    },
+
+    {
+      "command": "extension.openProfileInEditMode",
+      "when": "resourceFilename =~ /\\.profile-meta\\.xml$/",
+      "group": "z_commands"
+    },
+    {
+      "command": "extension.openProfileInViewMode",
+      "when": "resourceFilename =~ /\\.profile-meta\\.xml$/",
+      "group": "z_commands"
+    },
+
+    {
+      "command": "extension.openReportInEditMode",
+      "when": "resourceFilename =~ /\\.report-meta\\.xml$/",
+      "group": "z_commands"
+    },
+    {
+      "command": "extension.openReportInViewMode",
+      "when": "resourceFilename =~ /\\.report-meta\\.xml$/",
+      "group": "z_commands"
+    },
+    {
+      "command": "extension.openSObjectInEditMode",
+      "when": "resourceFilename =~ /\\.object-meta\\.xml$/",
+      "group": "z_commands"
+    },
+    {
+      "command": "extension.openSObjectInViewMode",
+      "when": "resourceFilename =~ /\\.object-meta\\.xml$/",
+      "group": "z_commands"
+    },
+    {
+      "command": "extension.openValidationRuleInEditMode",
+      "when": "resourceFilename =~ /\\.validationRule-meta\\.xml$/",
+      "group": "z_commands"
+    },
+    {
+      "command": "extension.openValidationRuleInViewMode",
+      "when": "resourceFilename =~ /\\.validationRule-meta\\.xml$/",
+      "group": "z_commands"
+    }
+  ],
+
   "commandPalette": [
     {
       "command": "extension.openBotInEditMode",
@@ -127,6 +237,15 @@
     },
     {
       "command": "extension.openPermissionSetInViewMode",
+      "when": "false"
+    },
+
+    {
+      "command": "extension.openProfileInEditMode",
+      "when": "false"
+    },
+    {
+      "command": "extension.openProfileInViewMode",
       "when": "false"
     },
 
