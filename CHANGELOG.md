@@ -45,7 +45,8 @@ All notable changes to this project will be documented here.
 
 - `resolvePathMap` extended in `utils/path.ts` for `Profile`
 
-- 🛠 `openers/index.ts` and `extension.ts` updated to register handlers
+- `openers/index.ts` and `extension.ts` updated to register handlers
+- Updated node version
 
 - 📋 All manifest files updated via `scripts/manifest/`, not `package.json`
 
