@@ -14,16 +14,22 @@ export async function retrieveRecord(
     metadataName,
     metadataType,
     getCommand: (name) =>
-      `sf data get record --sobject Profile --where "Name='${name}'" --json`,
+      `sf data query --query "
+        SELECT Id, 
+               Name, 
+               UserLicenseId, 
+               UserType 
+          FROM Profile 
+         WHERE Name = '${name}' 
+         LIMIT 1" --json`,
     parseResult: (data) => {
-      const record = data?.result;
+      const record = data?.result?.records?.[0];
       if (record?.Id) {
         return {
           Id: record.Id,
           Name: record.Name,
           UserLicenseId: record.UserLicenseId,
           UserType: record.UserType,
-          PermissionsPermissionName: record.PermissionsPermissionName,
         };
       }
       return null;

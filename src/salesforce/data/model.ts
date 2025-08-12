@@ -125,7 +125,6 @@ export interface PermissionSet extends MetadataRecord {
  * Interface representing the metadata of a Profile retrieved from Salesforce
  */
 export interface Profile extends MetadataRecord {
-  PermissionsPermissionName: string;
   UserLicenseId: string;
   UserType: string;
 }
