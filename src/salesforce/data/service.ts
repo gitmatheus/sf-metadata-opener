@@ -40,7 +40,7 @@ export async function retrieve<T>({
     async (progress) => {
       try {
         progress.report({
-          message: `Retrieving ${metadataLabel} information: "${metadataName}"`,
+          message: `Retrieving ${metadataLabel} information: "${utils.sanitizeName(metadataName)}"`,
         });
 
         const result = await fetchAndParse<T>(

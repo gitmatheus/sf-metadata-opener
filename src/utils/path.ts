@@ -95,12 +95,6 @@ export function sanitizeName(name: string): string {
     throw new Error(`Invalid URL-encoded sequence in name: ${name}`);
   }
 
-  // Allow letters, numbers, underscores, dashes, spaces, and colons
-  // Reject anything else
-  if (!/^[\w\- :]+$/.test(decoded)) {
-    throw new Error("Name contains unsupported characters.");
-  }
-
   // Escape single quotes for SOQL
   return decoded.replace(/'/g, "\\'");
 }

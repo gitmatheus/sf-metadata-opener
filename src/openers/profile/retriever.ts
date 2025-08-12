@@ -13,8 +13,8 @@ export async function retrieveRecord(
   return retrieve<Profile>({
     metadataName,
     metadataType,
-    getCommand: () =>
-      `sf data get record --sobject Profile --where "Name='${metadataName}'" --json`,
+    getCommand: (name) =>
+      `sf data get record --sobject Profile --where "Name='${name}'" --json`,
     parseResult: (data) => {
       const record = data?.result;
       if (record?.Id) {
