@@ -122,6 +122,23 @@
   },
 
   {
+    "command": "extension.openProfileInEditMode",
+    "title": "SFDX: Open Profile in Edit Mode"
+  },
+  {
+    "command": "extension.openProfileInViewMode",
+    "title": "SFDX: Open Profile in View Mode"
+  },
+  {
+    "command": "extension.openCurrentProfileInEditMode",
+    "title": "SFDX: Open Current Profile in Edit Mode"
+  },
+  {
+    "command": "extension.openCurrentProfileInViewMode",
+    "title": "SFDX: Open Current Profile in View Mode"
+  },
+
+  {
     "command": "extension.openReportInEditMode",
     "title": "SFDX: Open Report in Edit Mode"
   },

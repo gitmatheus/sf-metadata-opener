@@ -11,6 +11,11 @@
   "onCommand:extension.openPermissionSetInEditMode",
   "onCommand:extension.openPermissionSetInViewMode",
 
+  "onCommand:extension.openProfileInEditMode",
+  "onCommand:extension.openProfileInViewMode",
+  "onCommand:extension.openCurrentProfileInEditMode",
+  "onCommand:extension.openCurrentProfileInViewMode",
+
   "onCommand:extension.openReportInEditMode",
   "onCommand:extension.openReportInViewMode",
 

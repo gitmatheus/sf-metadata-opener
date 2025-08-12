@@ -7,6 +7,7 @@ import * as dashboard from "../openers/dashboard/helpers";
 import * as flexipage from "../openers/flexipage/helpers";
 import * as flow from "../openers/flow/helpers";
 import * as permissionset from "../openers/permissionset/helpers";
+import * as profile from "../openers/profile/helpers";
 import * as report from "../openers/report/helpers";
 import * as sobject from "../openers/sobject/helpers";
 import * as validationRule from "../openers/validationRule/helpers";
@@ -40,6 +41,7 @@ const resolvePathMap: Record<FileType, ResolverFn> = {
   [FileType.FlexiPage]: flexipage.resolvePath,
   [FileType.Flow]: flow.resolvePath,
   [FileType.PermissionSet]: permissionset.resolvePath,
+  [FileType.Profile]: profile.resolvePath,
   [FileType.Report]: report.resolvePath,
   [FileType.SObject]: sobject.resolvePath,
   [FileType.ValidationRule]: validationRule.resolvePath,
@@ -73,4 +75,32 @@ export function parseMetadataNameFromFilePath(
   fileType: FileType
 ): string {
   return path.basename(filePath).replace(fileType, "");
+}
+
+/**
+ * Sanitizes a metadata name for safe SOQL/CLI use.
+ * Decodes URL-encoded sequences and escapes single quotes.
+ * Allows spaces and colons for types like Profiles.
+ */
+export function sanitizeName(name: string): string {
+  if (!name || typeof name !== "string") {
+    throw new Error("Invalid name: must be a non-empty string.");
+  }
+
+  // Decode URL-encoded sequences like %3A or %20
+  let decoded;
+  try {
+    decoded = decodeURIComponent(name);
+  } catch {
+    throw new Error(`Invalid URL-encoded sequence in name: ${name}`);
+  }
+
+  // Allow letters, numbers, underscores, dashes, spaces, and colons
+  // Reject anything else
+  if (!/^[\w\- :]+$/.test(decoded)) {
+    throw new Error("Name contains unsupported characters.");
+  }
+
+  // Escape single quotes for SOQL
+  return decoded.replace(/'/g, "\\'");
 }

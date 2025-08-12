@@ -55,6 +55,17 @@
     },
 
     {
+      "command": "extension.openProfileInEditMode",
+      "when": "resourceFilename =~ /\\.profile-meta\\.xml$/",
+      "group": "z_commands"
+    },
+    {
+      "command": "extension.openProfileInViewMode",
+      "when": "resourceFilename =~ /\\.profile-meta\\.xml$/",
+      "group": "z_commands"
+    },
+
+    {
       "command": "extension.openReportInEditMode",
       "when": "resourceFilename =~ /\\.report-meta\\.xml$/",
       "group": "z_commands"
@@ -127,6 +138,15 @@
     },
     {
       "command": "extension.openPermissionSetInViewMode",
+      "when": "false"
+    },
+
+    {
+      "command": "extension.openProfileInEditMode",
+      "when": "false"
+    },
+    {
+      "command": "extension.openProfileInViewMode",
       "when": "false"
     },
 

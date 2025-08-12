@@ -49,7 +49,9 @@ export async function retrieve<T>({
           parseResult
         );
         if (!result) {
-          utils.showErrorMessage(`${metadataLabel} not found. Double-check if it's deployed to your org.`);
+          utils.showErrorMessage(
+            `${metadataLabel} not found. Double-check if it's deployed to your org.`
+          );
           return null;
         }
 
@@ -62,7 +64,9 @@ export async function retrieve<T>({
       } catch (error: any) {
         // Handle known "no record" CLI error
         if (error?.name === "DataRecordGetNoRecord") {
-          utils.showErrorMessage(`${metadataLabel} not found. Double-check if it's deployed to your org.`);
+          utils.showErrorMessage(
+            `${metadataLabel} not found. Double-check if it's deployed to your org.`
+          );
           return null;
         }
 

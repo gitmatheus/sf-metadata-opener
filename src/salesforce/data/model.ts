@@ -8,6 +8,7 @@ export const FileType = {
   Flow: ".flow-meta.xml",
   Other: ".other-meta.xml",
   PermissionSet: ".permissionset-meta.xml",
+  Profile: ".profile-meta.xml",
   Report: ".report-meta.xml",
   SObject: ".object-meta.xml",
   ValidationRule: ".validationRule-meta.xml",
@@ -28,6 +29,7 @@ export const MetadataLabels: Record<FileType, string> = {
   [FileType.Flow]: "Flow",
   [FileType.Other]: "Metadata",
   [FileType.PermissionSet]: "Permission Set",
+  [FileType.Profile]: "Profile",
   [FileType.Report]: "Report",
   [FileType.SObject]: "Object",
   [FileType.ValidationRule]: "Validation Rule",
@@ -42,6 +44,7 @@ export const DeployableMetadataKeys: Record<string, FileType> = {
   FlexiPage: FileType.FlexiPage,
   Flow: FileType.Flow,
   PermissionSet: FileType.PermissionSet,
+  Profile: FileType.Profile,
   Report: FileType.Report,
   SObject: FileType.SObject,
   ValidationRule: FileType.ValidationRule,
@@ -116,6 +119,15 @@ export interface PermissionSet extends MetadataRecord {
   Label?: string;
   Description?: string;
   IsCustom?: boolean;
+}
+
+/**
+ * Interface representing the metadata of a Profile retrieved from Salesforce
+ */
+export interface Profile extends MetadataRecord {
+  PermissionsPermissionName: string;
+  UserLicenseId: string;
+  UserType: string;
 }
 
 /**

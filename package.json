@@ -101,6 +101,7 @@
               "FlexiPage",
               "Flow",
               "PermissionSet",
+              "Profile",
               "Report",
               "SObject",
               "ValidationRule"
@@ -110,7 +111,8 @@
               "Dashboards",
               "FlexiPages",
               "Flows",
-              "PermissionSet",
+              "Permission Sets",
+              "Profiles",
               "Reports",
               "Standard and Custom Objects",
               "Validation Rules"
@@ -233,6 +235,22 @@
         "title": "SFDX: Open Current Permission Set in Setup"
       },
       {
+        "command": "extension.openProfileInEditMode",
+        "title": "SFDX: Open Profile in Edit Mode"
+      },
+      {
+        "command": "extension.openProfileInViewMode",
+        "title": "SFDX: Open Profile in View Mode"
+      },
+      {
+        "command": "extension.openCurrentProfileInEditMode",
+        "title": "SFDX: Open Current Profile in Edit Mode"
+      },
+      {
+        "command": "extension.openCurrentProfileInViewMode",
+        "title": "SFDX: Open Current Profile in View Mode"
+      },
+      {
         "command": "extension.openReportInEditMode",
         "title": "SFDX: Open Report in Edit Mode"
       },
@@ -310,6 +328,16 @@
           "group": "z_commands"
         },
         {
+          "command": "extension.openProfileInEditMode",
+          "when": "resourceFilename =~ /\\.profile-meta\\.xml$/",
+          "group": "z_commands"
+        },
+        {
+          "command": "extension.openProfileInViewMode",
+          "when": "resourceFilename =~ /\\.profile-meta\\.xml$/",
+          "group": "z_commands"
+        },
+        {
           "command": "extension.openReportInEditMode",
           "when": "resourceFilename =~ /\\.report-meta\\.xml$/",
           "group": "z_commands"
@@ -382,6 +410,14 @@
           "when": "false"
         },
         {
+          "command": "extension.openProfileInEditMode",
+          "when": "false"
+        },
+        {
+          "command": "extension.openProfileInViewMode",
+          "when": "false"
+        },
+        {
           "command": "extension.openReportInEditMode",
           "when": "false"
         },
@@ -417,6 +453,10 @@
     "onCommand:extension.openFlowInViewMode",
     "onCommand:extension.openPermissionSetInEditMode",
     "onCommand:extension.openPermissionSetInViewMode",
+    "onCommand:extension.openProfileInEditMode",
+    "onCommand:extension.openProfileInViewMode",
+    "onCommand:extension.openCurrentProfileInEditMode",
+    "onCommand:extension.openCurrentProfileInViewMode",
     "onCommand:extension.openReportInEditMode",
     "onCommand:extension.openReportInViewMode",
     "onCommand:extension.openSObjectInEditMode",
