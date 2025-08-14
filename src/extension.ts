@@ -10,7 +10,7 @@ import {
   recordtype,
   report,
   sobject,
-  validationRule,
+  validationrule,
 } from "./openers";
 import { clearMetadataCache, displayMetadataCache } from "./salesforce/data/cache";
 
@@ -28,7 +28,7 @@ export function activate(context: vscode.ExtensionContext) {
     { name: "RecordType", handlers: recordtype.registerHandlers(context) },
     { name: "Report", handlers: report.registerHandlers(context) },
     { name: "SObject", handlers: sobject.registerHandlers(context) },    
-    { name: "ValidationRule", handlers: validationRule.registerHandlers(context) },
+    { name: "ValidationRule", handlers: validationrule.registerHandlers(context) },
   ];
 
   for (const { name, handlers } of modules) {
