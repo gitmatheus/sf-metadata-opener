@@ -60,6 +60,23 @@
   },
 
   {
+    "command": "extension.openRecordTypeInEditMode",
+    "title": "SFDX: Open Record Type in Edit Mode"
+  },
+  {
+    "command": "extension.openRecordTypeInViewMode",
+    "title": "SFDX: Open Record Type in View Mode"
+  },
+  {
+    "command": "extension.openCurrentRecordTypeInEditMode",
+    "title": "SFDX: Open Current Record Type in Edit Mode"
+  },
+  {
+    "command": "extension.openCurrentRecordTypeInViewMode",
+    "title": "SFDX: Open Current Record Type in View Mode"
+  },
+
+  {
     "command": "extension.openCurrentSObjectInEditMode",
     "title": "SFDX: Open Current SObject in Edit Mode"
   },
@@ -146,6 +163,7 @@
     "command": "extension.openReportInViewMode",
     "title": "SFDX: Open Report in View Mode"
   },
+
   {
     "command": "extension.openSObjectInEditMode",
     "title": "SFDX: Open SObject in Edit Mode"
