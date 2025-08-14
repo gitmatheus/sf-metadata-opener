@@ -7,5 +7,5 @@ export * as profile from "./profile/helpers";
 export * as recordtype from "./recordtype/helpers";
 export * as report from "./report/helpers";
 export * as sobject from "./sobject/helpers";
-export * as validationRule from "./validationrule/helpers";
+export * as validationrule from "./validationrule/helpers";
 export * as factory from "./factory";
