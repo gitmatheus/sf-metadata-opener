@@ -12,7 +12,7 @@ export enum OpenMode {
 }
 
 /**
- * Indicates which OpenModes support the use of the sf open file command
+ * Indicates which OpenModes support the use of the sf org open file command
  */
 export const AllowOpenFileMode: Record<OpenMode, boolean> = {
   [OpenMode.EDIT]: true,
@@ -67,7 +67,7 @@ export async function createOpenCommand<T>(
     canUseOpenFileCommand = false,
   } = options;
 
-  // Check if we can use the simpler `sf open file` command based on mode and settings
+  // Check if we can use the simpler `sf org open file` command based on mode and settings
   if (mustUseOpenFileCommand(mode, metadataType, canUseOpenFileCommand)) {
     return sf.buildOpenFileCommand(filePath);
   }

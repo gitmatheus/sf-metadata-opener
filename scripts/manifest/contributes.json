@@ -25,7 +25,7 @@
       },
       "SalesforceMetadataOpener.deployableMetadataTypes": {
         "type": "array",
-        "default": ["Flow", "Bot", "PermissionSet"],
+        "default": ["Flow", "Bot", "PermissionSet", "RecordType"],
         "description": "Select which metadata types should be auto-deployed before opening.",
         "items": {
           "type": "string",
@@ -36,6 +36,7 @@
             "Flow",
             "PermissionSet",
             "Profile",
+            "RecordType",
             "Report",
             "SObject",
             "ValidationRule"
@@ -47,6 +48,7 @@
             "Flows",
             "Permission Sets",
             "Profiles",
+            "Record Types",
             "Reports",
             "Standard and Custom Objects",
             "Validation Rules"

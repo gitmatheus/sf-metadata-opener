@@ -8,9 +8,10 @@ import * as flexipage from "../openers/flexipage/helpers";
 import * as flow from "../openers/flow/helpers";
 import * as permissionset from "../openers/permissionset/helpers";
 import * as profile from "../openers/profile/helpers";
+import * as recordtype from "../openers/recordtype/helpers";
 import * as report from "../openers/report/helpers";
 import * as sobject from "../openers/sobject/helpers";
-import * as validationRule from "../openers/validationRule/helpers";
+import * as validationrule from "../openers/validationrule/helpers";
 
 /**
  * Resolves the absolute file path from the currently active text editor in VS Code.
@@ -42,9 +43,10 @@ const resolvePathMap: Record<FileType, ResolverFn> = {
   [FileType.Flow]: flow.resolvePath,
   [FileType.PermissionSet]: permissionset.resolvePath,
   [FileType.Profile]: profile.resolvePath,
+  [FileType.RecordType]: recordtype.resolvePath,
   [FileType.Report]: report.resolvePath,
   [FileType.SObject]: sobject.resolvePath,
-  [FileType.ValidationRule]: validationRule.resolvePath,
+  [FileType.ValidationRule]: validationrule.resolvePath,
   [FileType.Other]: () => {
     throw new Error("Unsupported metadata type for direct browser resolution.");
   },

@@ -4,12 +4,125 @@ All notable changes to this project will be documented here.
 
 ---
 
+# 📦 Changelog
+
+All notable changes to this project will be documented here.
+
+---
+
+## [1.0.4] - 2025-08-13
+
+### ✨ Added
+
+- 🪪 **Record Type metadata support**
+
+  - Right-click `.recordType-meta.xml` to open in:
+
+    - **Edit Mode** in Object Manager
+    - **View Mode** in Object Manager
+
+  - Available in:
+
+    - Explorer context menu
+    - Editor context menu
+    - Command Palette, including current file variants
+
+- **Custom URL resolver for Record Types**
+
+  - Edit and View both route through Object Manager
+  - Edit requires the parent object internal Id, the `EntityDefinition.DurableId`
+  - View accepts the internal Id, falls back to the API name when needed
+  - Path pattern used by the resolver:
+
+    - Edit, `"/lightning/setup/ObjectManager/{01I...}/RecordTypes/{recordTypeId}/edit"`
+    - View, `"/lightning/setup/ObjectManager/{01I... or API name}/RecordTypes/{recordTypeId}/view"`
+
+- **New metadata interface**: `RecordType`
+
+  - Fields: `Id`, `DeveloperName`, `SobjectType`, `IsActive`, `BusinessProcessId`, `EntityDefinitionId`
+
+### 🔄 Changed
+
+- **Deployable type support**
+
+  - `RecordType` added to `DeployableMetadataKeys`
+  - `RecordType` added to the `deployableMetadataTypes` default and enum, with label `Record Types`
+
+- **Node typings**
+
+  - `@types/node` updated from `18.11.9` to `20.x`
+
+- **Factory comments clarified**
+
+  - References to the CLI open behavior updated to say `sf org open file`
+
+### 🧼 Internal
+
+- New folder `src/openers/recordtype/`
+
+  - `helpers.ts`
+
+    - Conditionally fetches the parent object `EntityDefinitionId` only for **Edit Mode**
+    - `resolvePath()` prefers `EntityDefinitionId`, falls back to `SobjectType` for **View Mode**
+    - Disables CLI file open, since Record Types are not supported by `sf org open --source-file`
+
+  - `retriever.ts`
+
+    - Queries `RecordType` by `SobjectType` and `DeveloperName`
+    - When requested, resolves `EntityDefinition.DurableId` via Tooling for Object Manager URLs
+
+- `src/extension.ts`
+
+  - Registers `RecordType` handlers
+
+- `src/openers/index.ts`
+
+  - Exports `recordtype` helper module
+  - Validation Rule helper export normalized to match on-disk casing
+
+- `src/utils/path.ts`
+
+  - Maps `FileType.RecordType` to `recordtype.resolvePath`
+  - Validation Rule resolver import normalized to match on-disk casing
+
+- **Manifest updates** in `scripts/manifest/`
+
+  - **commands.json**
+
+    - `extension.openRecordTypeInEditMode`
+    - `extension.openRecordTypeInViewMode`
+    - `extension.openCurrentRecordTypeInEditMode`
+    - `extension.openCurrentRecordTypeInViewMode`
+
+  - **menus.json**
+
+    - Explorer and Editor context menus for `.recordType-meta.xml`
+
+  - **activationEvents.json**
+
+    - Activation entries for all Record Type commands
+
+  - **contributes.json**
+
+    - `RecordType` added to `deployableMetadataTypes` default and enum
+    - `Record Types` added to `enumDescriptions`
+
+- `package.json` and `package.base.json`
+
+  - Version bumped to `1.0.4`
+  - Dev dependencies updated to include `@types/node` `20.x`
+  - Generated command, menu, and activation sections now include Record Types
+
+---
+
 ## [1.0.3] - 2025-08-11
 
 ### ✨ Added
 
 - 👤 **Profile metadata support**:
+
   - Right-click `.profile-meta.xml` to open in:
+
     - **Edit Mode** (Profile Setup detail page)
     - **View Mode** (Profile Setup summary page)
 
@@ -19,6 +132,7 @@ All notable changes to this project will be documented here.
     - Command Palette (when explicitly enabled)
 
 - **Custom URL resolver for Profiles**:
+
   - View mode: `/lightning/setup/EnhancedProfiles/page?address=%2F{id}`
   - Edit mode: `/lightning/setup/EnhancedProfiles/page?address=%2F{id}%2Fe`
 
@@ -28,9 +142,11 @@ All notable changes to this project will be documented here.
 ### 🔄 Changed
 
 - Central metadata model updated:
+
   - `FileType`, `MetadataLabels`, and `DeployableMetadataKeys` extended with `Profile`
 
 - **Sanitization logic updated**:
+
   - `sanitizeName()` now decodes URL-encoded characters (e.g., `%3A` → `:`)
   - Allows spaces and colons for Profiles, while keeping strict validation for other metadata types
 
@@ -40,6 +156,7 @@ All notable changes to this project will be documented here.
 ### 🧼 Internal
 
 - New folder: `src/openers/profile/`
+
   - `helpers.ts`: open/edit handlers and path resolver
   - `retriever.ts`: uses `sf data get record` with sanitized name decoding for ID lookup
 
@@ -57,17 +174,21 @@ All notable changes to this project will be documented here.
 ### ✨ Added
 
 - 🔐 **Permission Set metadata support**:
+
   - Right-click `.permissionset-meta.xml` to open in:
+
     - **Edit Mode** (Setup detail page)
     - **View Mode** (Permission Set Summary)
 
   - Supports both context menu and Command Palette
 
 - 🧭 **Custom URL resolver for Permission Sets**:
+
   - View mode: `/lightning/setup/PermSets/{id}/summary`
   - Edit mode: `/lightning/setup/PermSets/page?address=%2F{id}`
 
 - 🧩 **New metadata interface**: `PermissionSet`
+
   - Fields: `Id`, `Name`, `Label`, `Description`, `IsCustom`
 
 - ⚙️ **Deployable type support**:
@@ -78,6 +199,7 @@ All notable changes to this project will be documented here.
 ### 🔄 Changed
 
 - 🧠 Central metadata model updated:
+
   - `FileType`, `MetadataLabels`, and `DeployableMetadataKeys` extended with `PermissionSet`
 
 - ⚙️ Manifest updates:
@@ -86,6 +208,7 @@ All notable changes to this project will be documented here.
 ### 🧼 Internal
 
 - 🧩 New folder: `src/openers/permissionset/`
+
   - `helpers.ts`: open/edit handlers and path resolver
   - `retriever.ts`: uses `sf data get record` for ID lookup
 
@@ -102,13 +225,16 @@ All notable changes to this project will be documented here.
 ### ✨ Added
 
 - ⚡ **FlexiPage support** (Lightning App Builder):
+
   - Right-click `.flexipage-meta.xml` to open in:
+
     - **Edit Mode** (App Builder)
     - **View Mode** (FlexiPage Setup)
 
   - Full support for Command Palette and file context menu
 
 - ⚙️ **Custom edit URL builder for FlexiPages**:
+
   - Mirrors the behavior of SObjects: uses `retUrl` to redirect users back to the FlexiPage list after edit
 
 - 🧩 **New `openFileSupportedMetadataTypes` setting**:
@@ -119,12 +245,14 @@ All notable changes to this project will be documented here.
 ### 🔄 Changed
 
 - 🧠 `mustUseOpenFileCommand()` now validates against:
+
   - CLI mode (`edit` only)
   - Global toggle (`useOpenFileCommandToOpenMetadata`)
   - User-selected types (`openFileSupportedMetadataTypes`)
   - Internal file support flag
 
 - 🧼 Improved descriptions for related settings in `package.json`:
+
   - Clearer relationship between global toggle and type list
   - Marked both as _EDIT-mode only_
 
@@ -133,6 +261,7 @@ All notable changes to this project will be documented here.
 ### 🧼 Internal
 
 - 🧩 Added `src/openers/flexipage/` module with:
+
   - `registerHandlers()`
   - `retrieveRecord()` using Tooling API
   - `resolvePath()` with retUrl support
@@ -149,10 +278,12 @@ All notable changes to this project will be documented here.
 ### ✨ Added
 
 - 🧱 **New metadata support**:
+
   - ✅ **Validation Rules**
   - ✅ **SObjects** (Standard & Custom)
 
 - 🧠 **Per-type deploy setting**:
+
   - New setting: `Salesforce Metadata Opener: Deployable Metadata Types`
   - Allows selecting which metadata types should be deployed automatically before opening
   - Fully replaces the old `deployBeforeOpen` global toggle
@@ -164,6 +295,7 @@ All notable changes to this project will be documented here.
 ### 🔄 Changed
 
 - 🏗️ **Project structure refactor**:
+
   - All metadata openers moved to `src/openers/{type}/`
   - Each opener defines:
     - `registerHandlers()`
@@ -171,10 +303,12 @@ All notable changes to this project will be documented here.
     - `retrieveRecord()` (Tooling or REST)
 
 - 🧠 **Generic open logic**:
+
   - Introduced shared `openMetadata()` handler for all types
   - URL resolution now modular via `resolveMetadataPath()`, mapped by type
 
 - 🧩 **Factory pattern improvements**:
+
   - `createOpenCommand()` generates CLI open strings or fallback URLs
   - `buildOpenPathCommand()` available for direct URL use
 
@@ -184,10 +318,12 @@ All notable changes to this project will be documented here.
 ### 🧼 Internal
 
 - 🧠 **Record metadata caching**:
+
   - Now supports parent-aware keys (e.g., `Account:MyValidationRule`)
   - Centralized in `salesforce/data/cache.ts`
 
 - 📦 **Metadata settings mapped properly**:
+
   - `DeployableMetadataKeys` maps setting strings to `FileType`
   - Label consistency via `MetadataLabels` and `enumDescriptions`
 
@@ -200,17 +336,20 @@ All notable changes to this project will be documented here.
 ### ✨ Added
 
 - 📊 **Dashboard metadata support**:
+
   - Right-click `.dashboard-meta.xml` to open in:
     - **Edit Mode** (Lightning Dashboard Builder)
     - **View Mode** (Standard Lightning Dashboard page)
   - Command Palette equivalents also available.
 
 - 💾 **Metadata Caching**:
+
   - Improves performance by storing record metadata in memory using `ExtensionContext.workspaceState`.
   - Reduces repeated org queries for frequently opened metadata.
   - Caching is enabled via a new setting: `Salesforce Metadata Opener: Enable Caching`.
 
 - 🧹 **Clear Metadata Cache** command:
+
   - `SFDX: Clear Cached Record Metadata` (Command Palette)
 
 - 👀 **Display Metadata Cache** command:
@@ -236,7 +375,9 @@ All notable changes to this project will be documented here.
 ### ✨ Added
 
 - 📊 **Report metadata support**:
+
   - Right-click `.report-meta.xml` to open in:
+
     - **Edit Mode** (Report Builder)
     - **View Mode** (Standard Report Page)
 
@@ -250,6 +391,7 @@ All notable changes to this project will be documented here.
 ### ⚙️ Changed
 
 - 🌐 `resolveMetadataPath()` no longer contains logic for each metadata type.
+
   - That logic is now delegated to `resolvePath()` functions in each helper (`flow`, `bot`, `report`).
 
 - ✂️ Removed centralized `resolveBotPath`, `resolveFlowPath`, `resolveReportPath` from `utils/path.ts`.
@@ -269,7 +411,9 @@ All notable changes to this project will be documented here.
 ### ✨ Added
 
 - 🧠 **Agentforce Agent (Bot) support**:
+
   - Right-click `.bot-meta.xml` to open in:
+
     - Agentforce Builder
     - Setup (Details page)
 

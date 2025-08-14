@@ -16,6 +16,11 @@
   "onCommand:extension.openCurrentProfileInEditMode",
   "onCommand:extension.openCurrentProfileInViewMode",
 
+  "onCommand:extension.openRecordTypeInEditMode",
+  "onCommand:extension.openRecordTypeInViewMode",
+  "onCommand:extension.openCurrentRecordTypeInEditMode",
+  "onCommand:extension.openCurrentRecordTypeInViewMode",
+
   "onCommand:extension.openReportInEditMode",
   "onCommand:extension.openReportInViewMode",
 
