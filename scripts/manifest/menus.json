@@ -66,6 +66,17 @@
     },
 
     {
+      "command": "extension.openRecordTypeInEditMode",
+      "when": "resourceFilename =~ /\\.recordType-meta\\.xml$/",
+      "group": "z_commands"
+    },
+    {
+      "command": "extension.openRecordTypeInViewMode",
+      "when": "resourceFilename =~ /\\.recordType-meta\\.xml$/",
+      "group": "z_commands"
+    },
+
+    {
       "command": "extension.openReportInEditMode",
       "when": "resourceFilename =~ /\\.report-meta\\.xml$/",
       "group": "z_commands"
@@ -75,6 +86,7 @@
       "when": "resourceFilename =~ /\\.report-meta\\.xml$/",
       "group": "z_commands"
     },
+
     {
       "command": "extension.openSObjectInEditMode",
       "when": "resourceFilename =~ /\\.object-meta\\.xml$/",
@@ -160,6 +172,17 @@
     {
       "command": "extension.openProfileInViewMode",
       "when": "resourceFilename =~ /\\.profile-meta\\.xml$/",
+      "group": "z_commands"
+    },
+
+    {
+      "command": "extension.openRecordTypeInEditMode",
+      "when": "resourceFilename =~ /\\.recordType-meta\\.xml$/",
+      "group": "z_commands"
+    },
+    {
+      "command": "extension.openRecordTypeInViewMode",
+      "when": "resourceFilename =~ /\\.recordType-meta\\.xml$/",
       "group": "z_commands"
     },
 
@@ -250,6 +273,15 @@
     },
 
     {
+      "command": "extension.openRecordTypeInEditMode",
+      "when": "false"
+    },
+    {
+      "command": "extension.openRecordTypeInViewMode",
+      "when": "false"
+    },
+
+    {
       "command": "extension.openReportInEditMode",
       "when": "false"
     },
@@ -257,6 +289,7 @@
       "command": "extension.openReportInViewMode",
       "when": "false"
     },
+
     {
       "command": "extension.openSObjectInEditMode",
       "when": "false"

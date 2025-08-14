@@ -11,6 +11,7 @@ Currently supports:
 - ✅ **Flows**
 - ✅ **Permission Sets**
 - ✅ **Profiles**
+- ✅ **Record Types**
 - ✅ **Reports**
 - ✅ **Validation Rules**
 
@@ -37,6 +38,7 @@ This extension lets you quickly jump from a metadata file in your project to its
 ## ✅ How To Use It
 
 - **Right-click** a supported metadata file to open it in your org
+
   - `SFDX: Open ... in Edit Mode`
   - `SFDX: Open ... in View Mode`
 
@@ -59,6 +61,7 @@ The extension will open the page in Edit or View mode, contextually for each typ
 | Permission Set           | Permission Set Overview | Permission Set Summary        |
 | Profile                  | Profile Setup Page      | Profile Setup Summary         |
 | Object (Standard/Custom) | Edit in Setup           | Open in Detail Page           |
+| Record Type              | Edit in Setup           | Open in Detail Page           |
 | Report                   | Report Builder          | Report Viewer                 |
 | Validation Rule          | Edit in Setup           | Open in Detail Page           |
 

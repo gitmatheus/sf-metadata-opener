@@ -5,7 +5,7 @@
   "icon": "icon.png",
   "repository": "https://github.com/gitmatheus/sf-metadata-opener",
   "description": "Right-click to open Salesforce metadata in the browser (Flows, Agentforce Agents, Dashboards, Reports, etc.)",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "engines": {
     "vscode": "^1.102.0"
   },
@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@types/mocha": "^10.0.6",
-    "@types/node": "18.11.9",
+    "@types/node": "20.x",
     "@types/vscode": "^1.102.0",
     "@types/xml2js": "^0.4.14",
     "@typescript-eslint/eslint-plugin": "^8.38.0",
@@ -90,7 +90,8 @@
           "default": [
             "Flow",
             "Bot",
-            "PermissionSet"
+            "PermissionSet",
+            "RecordType"
           ],
           "description": "Select which metadata types should be auto-deployed before opening.",
           "items": {
@@ -102,6 +103,7 @@
               "Flow",
               "PermissionSet",
               "Profile",
+              "RecordType",
               "Report",
               "SObject",
               "ValidationRule"
@@ -113,6 +115,7 @@
               "Flows",
               "Permission Sets",
               "Profiles",
+              "Record Types",
               "Reports",
               "Standard and Custom Objects",
               "Validation Rules"
@@ -177,6 +180,22 @@
       {
         "command": "extension.openCurrentReportInViewMode",
         "title": "SFDX: Open Current Report in View Mode"
+      },
+      {
+        "command": "extension.openRecordTypeInEditMode",
+        "title": "SFDX: Open Record Type in Edit Mode"
+      },
+      {
+        "command": "extension.openRecordTypeInViewMode",
+        "title": "SFDX: Open Record Type in View Mode"
+      },
+      {
+        "command": "extension.openCurrentRecordTypeInEditMode",
+        "title": "SFDX: Open Current Record Type in Edit Mode"
+      },
+      {
+        "command": "extension.openCurrentRecordTypeInViewMode",
+        "title": "SFDX: Open Current Record Type in View Mode"
       },
       {
         "command": "extension.openCurrentSObjectInEditMode",
@@ -338,6 +357,16 @@
           "group": "z_commands"
         },
         {
+          "command": "extension.openRecordTypeInEditMode",
+          "when": "resourceFilename =~ /\\.recordType-meta\\.xml$/",
+          "group": "z_commands"
+        },
+        {
+          "command": "extension.openRecordTypeInViewMode",
+          "when": "resourceFilename =~ /\\.recordType-meta\\.xml$/",
+          "group": "z_commands"
+        },
+        {
           "command": "extension.openReportInEditMode",
           "when": "resourceFilename =~ /\\.report-meta\\.xml$/",
           "group": "z_commands"
@@ -430,6 +459,16 @@
           "group": "z_commands"
         },
         {
+          "command": "extension.openRecordTypeInEditMode",
+          "when": "resourceFilename =~ /\\.recordType-meta\\.xml$/",
+          "group": "z_commands"
+        },
+        {
+          "command": "extension.openRecordTypeInViewMode",
+          "when": "resourceFilename =~ /\\.recordType-meta\\.xml$/",
+          "group": "z_commands"
+        },
+        {
           "command": "extension.openReportInEditMode",
           "when": "resourceFilename =~ /\\.report-meta\\.xml$/",
           "group": "z_commands"
@@ -510,6 +549,14 @@
           "when": "false"
         },
         {
+          "command": "extension.openRecordTypeInEditMode",
+          "when": "false"
+        },
+        {
+          "command": "extension.openRecordTypeInViewMode",
+          "when": "false"
+        },
+        {
           "command": "extension.openReportInEditMode",
           "when": "false"
         },
@@ -549,6 +596,10 @@
     "onCommand:extension.openProfileInViewMode",
     "onCommand:extension.openCurrentProfileInEditMode",
     "onCommand:extension.openCurrentProfileInViewMode",
+    "onCommand:extension.openRecordTypeInEditMode",
+    "onCommand:extension.openRecordTypeInViewMode",
+    "onCommand:extension.openCurrentRecordTypeInEditMode",
+    "onCommand:extension.openCurrentRecordTypeInViewMode",
     "onCommand:extension.openReportInEditMode",
     "onCommand:extension.openReportInViewMode",
     "onCommand:extension.openSObjectInEditMode",

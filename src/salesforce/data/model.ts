@@ -9,6 +9,7 @@ export const FileType = {
   Other: ".other-meta.xml",
   PermissionSet: ".permissionset-meta.xml",
   Profile: ".profile-meta.xml",
+  RecordType: ".recordType-meta.xml",
   Report: ".report-meta.xml",
   SObject: ".object-meta.xml",
   ValidationRule: ".validationRule-meta.xml",
@@ -30,6 +31,7 @@ export const MetadataLabels: Record<FileType, string> = {
   [FileType.Other]: "Metadata",
   [FileType.PermissionSet]: "Permission Set",
   [FileType.Profile]: "Profile",
+  [FileType.RecordType]: "Record Type",
   [FileType.Report]: "Report",
   [FileType.SObject]: "Object",
   [FileType.ValidationRule]: "Validation Rule",
@@ -45,6 +47,7 @@ export const DeployableMetadataKeys: Record<string, FileType> = {
   Flow: FileType.Flow,
   PermissionSet: FileType.PermissionSet,
   Profile: FileType.Profile,
+  RecordType: FileType.RecordType,
   Report: FileType.Report,
   SObject: FileType.SObject,
   ValidationRule: FileType.ValidationRule,
@@ -136,6 +139,17 @@ export interface SObject extends MetadataRecord {
   DeveloperName?: string;
   NamespacePrefix?: string;
   isCustom?: boolean;
+}
+
+/**
+ * Interface representing the metadata of a RecordType retrieved from Salesforce
+ */
+export interface RecordType extends MetadataRecord {
+  DeveloperName: string;
+  SobjectType?: string;
+  IsActive?: boolean;
+  EntityDefinitionId?: string;
+  BusinessProcessId?: string | null;
 }
 
 /**
