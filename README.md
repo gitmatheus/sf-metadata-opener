@@ -1,5 +1,8 @@
 # 🚀 Salesforce Metadata Opener
 
+![VSCodeSFMetadataOpener_e](https://github.com/user-attachments/assets/4246e286-2891-4748-a3f5-300bb917f70d)
+
+
 A sleek, no-friction way to open Salesforce metadata directly in your browser, right from VS Code.
 
 Currently supports:
